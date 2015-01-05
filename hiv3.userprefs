@@ -1,0 +1,26 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/Interfaces/StoryContainer.cs">
+    <Files>
+      <File FileName="Assets/Plugins/Stories/Storylets/UncleLawnMower.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/Interfaces/IStory.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/Manager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/Attribute.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/Status.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/Statuses.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/BaseAttributes.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/Person.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/UI/AttributeView.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/UI/CharacterStats.cs" Line="65" Column="5" />
+      <File FileName="Assets/Plugins/Stories/Story.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/Stories/Trunk.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/Stories/Branch.cs" Line="18" Column="1" />
+      <File FileName="Assets/Plugins/Interfaces/StoryContainer.cs" Line="36" Column="90" />
+      <File FileName="Assets/Plugins/Interfaces/StoryView.cs" Line="8" Column="14" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
