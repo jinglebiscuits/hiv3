@@ -50,19 +50,22 @@
      <Compile Include="Assets\Plugins\BaseAttributes.cs" />
      <Compile Include="Assets\Plugins\Interfaces\IQuality.cs" />
      <Compile Include="Assets\Plugins\Interfaces\IStory.cs" />
-     <Compile Include="Assets\Plugins\Interfaces\ScrollingRect.cs" />
-     <Compile Include="Assets\Plugins\Interfaces\StoryContainer.cs" />
-     <Compile Include="Assets\Plugins\Interfaces\StoryView.cs" />
      <Compile Include="Assets\Plugins\Manager.cs" />
      <Compile Include="Assets\Plugins\Person.cs" />
+     <Compile Include="Assets\Plugins\Player.cs" />
      <Compile Include="Assets\Plugins\Status.cs" />
      <Compile Include="Assets\Plugins\Statuses.cs" />
      <Compile Include="Assets\Plugins\Stories\Branch.cs" />
+     <Compile Include="Assets\Plugins\Stories\Result.cs" />
      <Compile Include="Assets\Plugins\Stories\Story.cs" />
      <Compile Include="Assets\Plugins\Stories\Storylets\UncleLawnMower.cs" />
      <Compile Include="Assets\Plugins\Stories\Trunk.cs" />
      <Compile Include="Assets\Plugins\UI\AttributeView.cs" />
+     <Compile Include="Assets\Plugins\UI\BrowseStoriesView.cs" />
      <Compile Include="Assets\Plugins\UI\CharacterStats.cs" />
+     <Compile Include="Assets\Plugins\UI\Clock\HourHand.cs" />
+     <Compile Include="Assets\Plugins\UI\StoryContainer.cs" />
+     <Compile Include="Assets\Plugins\UI\StoryView.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>

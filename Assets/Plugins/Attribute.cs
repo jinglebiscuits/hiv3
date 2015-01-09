@@ -124,27 +124,49 @@ public class Attribute : IQuality {
 
 			_points --;
 		}
-		Points += _points;
-		if(pyramid)
-		{
-			if(Points >= Level)
-			{
-
-				Points -= Level;
-				Level += 1;
-			}
-		}
 	}
 
+	public void RemovePoints(int _points)
+	{
+		while (_points > 0)
+		{
+			Points -= 1;
+			if(Pyramid)
+			{
+				//check to see if ability should level down
+				if(Points < 0)
+				{
+					LevelDown();
+				}
+			}
+			else
+			{
+				LevelDown();
+			}
+			
+			_points --;
+		}
+	}
 
 	/// <summary>
 	/// Increases level by 1 and resets points to 0.
 	/// </summary>
-	public void LevelUp()
+	private void LevelUp()
 	{
 		Level += 1;
 		Points = 0;
 	}
 	
-
+	private void LevelDown()
+	{
+		Level -= 1;
+		if(Pyramid)
+		{
+			Points = Level - 1;
+		}
+		else
+		{
+			Points = 0;
+		}
+	}
 }

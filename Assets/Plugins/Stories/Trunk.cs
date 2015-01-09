@@ -1,6 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
 using System.Collections;
 
+/// <summary>
+/// A Trunk represents the base of a story. Each trunk needs a unique name.
+/// </summary>
 public class Trunk : Story {
 
 	/// <summary>
@@ -16,13 +19,13 @@ public class Trunk : Story {
 	/// Other decks can allow for some randomness in what's available to the player.
 	private string deck;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	/// <summary>
+	/// All possible choices branching from this trunk.
+	/// </summary>
+	private List<Branch> branches = new List<Branch>();
+
+	override public bool Requirements(Person person)
+	{
+		return false;
 	}
 }

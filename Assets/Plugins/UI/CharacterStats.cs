@@ -35,11 +35,7 @@ public class CharacterStats : MonoBehaviour {
 		mettle.transform.SetParent(this.transform, false);
 		mettle.GetComponent<RectTransform>().position += new Vector3(0, -144, 0);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 
 	public BaseAttributes BaseAttributes {
 		get {
@@ -47,20 +43,6 @@ public class CharacterStats : MonoBehaviour {
 		}
 		set {
 			baseAttributes = value;
-			//ShowAttributes(value);
 		}
 	}
-
-//	private void ShowAttributes(BaseAttributes baseAttributes)
-//	{
-//		int count = 0;
-//		foreach(Attribute attribute in baseAttributes.attributes)
-//		{
-//			GameObject clone = (GameObject) Instantiate(attributeViewPrefab);
-//			clone.GetComponent<AttributeView>().Attribute = attribute;
-//			clone.transform.SetParent(this.transform, false);
-//			clone.GetComponent<RectTransform>().position += new Vector3(0, count * -48, 0);
-//			count ++;
-//		}
-//	}
 }

@@ -27,6 +27,12 @@ public class Status : IQuality {
 		throw new System.NotImplementedException ();
 	}
 
+	public void RemovePoints (int points)
+	{
+		throw new System.NotImplementedException ();
+	}
+
+	#region accessors
 	public string Name {
 		get {
 			throw new System.NotImplementedException ();
@@ -80,4 +86,5 @@ public class Status : IQuality {
 			throw new System.NotImplementedException ();
 		}
 	}
+	#endregion
 }

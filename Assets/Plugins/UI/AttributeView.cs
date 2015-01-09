@@ -13,12 +13,8 @@ public class AttributeView : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+		//When pointEvent() is called on attached attribute, run the UpdateView() method.
 		attribute.pointEvent +=	UpdateView;
-	}
-
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
 	public Attribute Attribute {

@@ -14,11 +14,6 @@ public class Person : MonoBehaviour {
 
 	}
 
-	public void Update()
-	{
-
-	}
-
 	public void AddPointsToAttribute(AttributeType attributeType, int points)
 	{
 		Attribute attribute;
