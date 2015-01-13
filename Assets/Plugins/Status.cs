@@ -20,34 +20,23 @@ public class Status : IQuality {
 		this.modifier = modifier;
 		this.pyramid = pyramid;
 	}
-	
-
-	public void AddPoints (int points)
-	{
-		throw new System.NotImplementedException ();
-	}
-
-	public void RemovePoints (int points)
-	{
-		throw new System.NotImplementedException ();
-	}
 
 	#region accessors
 	public string Name {
 		get {
-			throw new System.NotImplementedException ();
+			return this.name;
 		}
 		set {
-			throw new System.NotImplementedException ();
+			name = value;
 		}
 	}
 
 	public string Description {
 		get {
-			throw new System.NotImplementedException ();
+			return this.description;
 		}
 		set {
-			throw new System.NotImplementedException ();
+			description = value;
 		}
 	}
 
@@ -62,29 +51,109 @@ public class Status : IQuality {
 
 	public int Level {
 		get {
-			throw new System.NotImplementedException ();
+			return this.level;
 		}
 		set {
-			throw new System.NotImplementedException ();
+			level = value;
 		}
 	}
 
 	public int Points {
 		get {
-			throw new System.NotImplementedException ();
+			return this.points;
 		}
 		set {
-			throw new System.NotImplementedException ();
+			points = value;
+		}
+	}
+
+	public int Modifier {
+		get {
+			return this.modifier;
+		}
+		set {
+			modifier = value;
 		}
 	}
 
 	public bool Pyramid {
 		get {
-			throw new System.NotImplementedException ();
+			return this.pyramid;
 		}
 		set {
-			throw new System.NotImplementedException ();
+			pyramid = value;
 		}
 	}
 	#endregion
+
+	public void AddPoints(int _points)
+	{
+		while (_points > 0)
+		{
+			Points += 1;
+			if(Pyramid)
+			{
+				//check to see if ability should level up
+				if(Points >= Level)
+				{
+					LevelUp();
+				}
+			}
+			else
+			{
+				LevelUp();
+			}
+			
+			_points --;
+		}
+	}
+	
+	public void RemovePoints(int _points)
+	{
+		while (_points > 0)
+		{
+			Points -= 1;
+			if(Pyramid)
+			{
+				//check to see if ability should level down
+				if(Points < 0)
+				{
+					LevelDown();
+				}
+			}
+			else
+			{
+				LevelDown();
+			}
+			
+			_points --;
+		}
+	}
+	
+	/// <summary>
+	/// Increases level by 1 and resets points to 0.
+	/// </summary>
+	private void LevelUp()
+	{
+		Level += 1;
+		Points = 0;
+	}
+	
+	private void LevelDown()
+	{
+		Level -= 1;
+		if(Pyramid)
+		{
+			Points = Level - 1;
+		}
+		else
+		{
+			Points = 0;
+		}
+	}
+
+	public int CompareTo (IQuality other)
+	{
+		return this.Level.CompareTo(other.Level);
+	}
 }

@@ -6,11 +6,14 @@ using System.Collections;
 public class Manager : MonoBehaviour {
 
 	public Person person;
-	public CharacterStats characterStats;
+	public CharacterStatsView characterStatsView;
+	public 
 
 	// Use this for initialization
-	void Awake () {
-		characterStats.BaseAttributes = person.baseAttributes;
+	void Start () {
+		characterStatsView.BaseAttributes = GameObject.Find("Player").GetComponent<Player>().FocusedPerson.baseAttributes;
+		characterStatsView.ViewConstructor();
+		//characterStatsView.BaseAttributes = person.baseAttributes;
 	}
 	
 	// Update is called once per frame

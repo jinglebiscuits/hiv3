@@ -4,7 +4,7 @@ public class Attribute : IQuality {
 
 	public delegate void MyEventHandler();
 	public event MyEventHandler pointEvent;
-	public event MyEventHandler levelEvent;
+	//public event MyEventHandler levelEvent; //I don't think I'll ever use this.
 
 	private string name;
 	private string description;
@@ -22,6 +22,10 @@ public class Attribute : IQuality {
 		
 	}
 	
+	public Attribute (string name)
+	{
+		this.name = name;
+	}
 	
 	/// <summary>
 	/// Constructor
@@ -35,7 +39,7 @@ public class Attribute : IQuality {
 		Pyramid = pyramid;
 	}
 
-	#region Properties
+	#region Accessor Methods
 	
 	public string Name {
 		get {
@@ -101,7 +105,6 @@ public class Attribute : IQuality {
 			pyramid = value;
 		}
 	}
-
 	#endregion
 
 	public void AddPoints(int _points)
@@ -168,5 +171,10 @@ public class Attribute : IQuality {
 		{
 			Points = 0;
 		}
+	}
+
+	public int CompareTo (IQuality other)
+	{
+		return this.Level.CompareTo(other.Level);
 	}
 }
