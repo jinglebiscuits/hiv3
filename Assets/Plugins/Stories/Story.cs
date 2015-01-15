@@ -38,11 +38,17 @@ public class Story {
 		get {
 			return this.title;
 		}
+		set {
+			title = value;
+		}
 	}
 
 	public string Description {
 		get {
 			return this.description;
+		}
+		set {
+			description = value;
 		}
 	}
 

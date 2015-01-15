@@ -8,7 +8,7 @@ public class Branch : Story{
 	
 	private Result defaultResult;
 	private Result successResult;
-	private float timeCost;
+	private Result chosenResult;
 	private Story linkedEvent;
 
 	#region Contructors
@@ -22,7 +22,7 @@ public class Branch : Story{
 		this.requirements = new List<Requirement>();
 		this.defaultResult = new Result();
 		this.successResult = new Result();
-		this.timeCost = 1.0f;
+		this.chosenResult = null;
 		this.linkedEvent = new Story();
 	}
 	
@@ -32,7 +32,7 @@ public class Branch : Story{
 	{
 		this.defaultResult = defaultResult;
 		this.successResult = null;
-		this.timeCost = 1.0f;
+		this.chosenResult = null;
 		this.linkedEvent = null;
 	}
 
@@ -41,7 +41,7 @@ public class Branch : Story{
 	{
 		this.defaultResult = defaultResult;
 		this.successResult = successResult;
-		this.timeCost = 1.0f;
+		this.chosenResult = null;
 		this.linkedEvent = null;
 	}
 
@@ -50,7 +50,7 @@ public class Branch : Story{
 	{
 		this.defaultResult = defaultResult;
 		this.successResult = successResult;
-		this.timeCost = 1.0f;
+		this.chosenResult = null;
 		this.linkedEvent = linkedEvent;
 	}
 	#endregion
@@ -74,12 +74,12 @@ public class Branch : Story{
 		}
 	}
 
-	public float TimeCost {
+	public Result ChosenResult {
 		get {
-			return this.timeCost;
+			return this.chosenResult;
 		}
 		set {
-			timeCost = value;
+			chosenResult = value;
 		}
 	}
 
@@ -100,10 +100,12 @@ public class Branch : Story{
 		//Decide which result to use
 		if(successResult != null)
 		{
-			PickResult().AffectCharacter(person);
+			PickResult();
 		}
 		else
-			defaultResult.AffectCharacter(person);
+			chosenResult = defaultResult;
+
+		chosenResult.AffectCharacter(person);
 	}
 
 	private void UseTime()
@@ -111,10 +113,9 @@ public class Branch : Story{
 		//push time forward timeCost
 	}
 
-	private Result PickResult()
+	private void PickResult()
 	{
 		//Do some clever math stuff to pick which result
-		Result result = defaultResult; //this is just a placeholder
-		return result;
+		chosenResult = defaultResult; //this is just a placeholder
 	}
 }

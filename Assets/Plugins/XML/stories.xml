@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trunks>
+    <trunk>
+        <title>Title</title>
+        <description>Description</description>
+        <icon>Icon</icon>
+        <buttonText>Button Text</buttonText>
+        <requirement>
+            <quality>Quality</quality>
+            <min>Min</min>
+            <max>Max</max>
+        </requirement>
+        <trunkTag>Tag</trunkTag>
+        <area>Area</area>
+        <urgency>Urgency</urgency>
+        <deck>Deck</deck>
+        <branch>
+            <title>Title</title>
+            <description>Description</description>
+            <icon>Icon</icon>
+            <buttonText>Button Text</buttonText>
+            <requirement>
+                <quality>Quality</quality>
+                <min>Min</min>
+                <max>Max</max>
+            </requirement>
+            <defaultResult>
+                <stuff/>
+            </defaultResult>
+            <successResult>
+                <stuff/>
+            </successResult>
+            <timeCost>Time</timeCost>
+            <linkedStory>Linked Story</linkedStory>
+        </branch>
+    </trunk>
+
+
+    <trunk>
+        <title>Intelligence Story 1</title>
+        <description>Play this story to get smart.</description>
+        <icon>Icon</icon>
+        <buttonText>Go!</buttonText>
+        <requirement>
+            <quality>Intelligence</quality>
+            <min>0</min>
+            <max>10</max>
+        </requirement>
+        <trunkTag>Test</trunkTag>
+        <area>Intro</area>
+        <urgency>10</urgency>
+        <deck>Default</deck>
+        <branch>
+            <title>Reaching deep into your memory...</title>
+            <description>Description</description>
+            <icon>Icon</icon>
+            <buttonText>Button Text</buttonText>
+            <requirement>
+                <quality>Quality</quality>
+                <min>Min</min>
+                <max>Max</max>
+            </requirement>
+            <defaultResult>
+                <stuff/>
+            </defaultResult>
+            <successResult>
+                <stuff/>
+            </successResult>
+            <timeCost>Time</timeCost>
+            <linkedStory>Linked Story</linkedStory>
+        </branch>
+    </trunk>
+    
+    <trunk>
+        <title>Intelligence Story2</title>
+        <description>Play this story to get smarter.</description>
+        <icon>Icon</icon>
+        <buttonText>Go!</buttonText>
+        <requirement>
+            <quality>Intelligence</quality>
+            <min>9</min>
+            <max>15</max>
+        </requirement>
+        <trunkTag>Test</trunkTag>
+        <area>Intro</area>
+        <urgency>10</urgency>
+        <deck>Default</deck>
+        <branch>
+            <title>Reaching deep into your memory...</title>
+            <description>Description</description>
+            <icon>Icon</icon>
+            <buttonText>Button Text</buttonText>
+            <requirement>
+                <quality>Quality</quality>
+                <min>Min</min>
+                <max>Max</max>
+            </requirement>
+            <defaultResult>
+                <stuff/>
+            </defaultResult>
+            <successResult>
+                <stuff/>
+            </successResult>
+            <timeCost>Time</timeCost>
+            <linkedStory>Linked Story</linkedStory>
+        </branch>
+    </trunk>
+    
+    <trunk>
+        <title>Social Story 1</title>
+        <description>Play this story to make acquaintances.</description>
+        <icon>Icon</icon>
+        <buttonText>Go!</buttonText>
+        <requirement>
+            <quality>Intelligence</quality>
+            <min>0</min>
+            <max>10</max>
+        </requirement>
+        <trunkTag>Test</trunkTag>
+        <area>Intro</area>
+        <urgency>10</urgency>
+        <deck>Default</deck>
+        <branch>
+            <title>Reaching deep into your memory...</title>
+            <description>Description</description>
+            <icon>Icon</icon>
+            <buttonText>Button Text</buttonText>
+            <requirement>
+                <quality>Quality</quality>
+                <min>Min</min>
+                <max>Max</max>
+            </requirement>
+            <defaultResult>
+                <stuff/>
+            </defaultResult>
+            <successResult>
+                <stuff/>
+            </successResult>
+            <timeCost>Time</timeCost>
+            <linkedStory>Linked Story</linkedStory>
+        </branch>
+    </trunk>
+    
+    <trunk>
+        <title>Social Story 2</title>
+        <description>Play this story to make friends.</description>
+        <icon>Icon</icon>
+        <buttonText>Go!</buttonText>
+        <requirement>
+            <quality>Intelligence</quality>
+            <min>0</min>
+            <max>10</max>
+        </requirement>
+        <trunkTag>Test</trunkTag>
+        <area>Intro</area>
+        <urgency>10</urgency>
+        <deck>Default</deck>
+        <branch>
+            <title>Reaching deep into your memory...</title>
+            <description>Description</description>
+            <icon>Icon</icon>
+            <buttonText>Button Text</buttonText>
+            <requirement>
+                <quality>Quality</quality>
+                <min>Min</min>
+                <max>Max</max>
+            </requirement>
+            <defaultResult>
+                <stuff/>
+            </defaultResult>
+            <successResult>
+                <stuff/>
+            </successResult>
+            <timeCost>Time</timeCost>
+            <linkedStory>Linked Story</linkedStory>
+        </branch>
+    </trunk>
+    
+    <trunk>
+        <title>Physical Story 1</title>
+        <description>Play this story to get in shape.</description>
+        <icon>Icon</icon>
+        <buttonText>Go!</buttonText>
+        <requirement>
+            <quality>Intelligence</quality>
+            <min>0</min>
+            <max>10</max>
+        </requirement>
+        <trunkTag>Test</trunkTag>
+        <area>Intro</area>
+        <urgency>10</urgency>
+        <deck>Default</deck>
+        <branch>
+            <title>Reaching deep into your memory...</title>
+            <description>Description</description>
+            <icon>Icon</icon>
+            <buttonText>Button Text</buttonText>
+            <requirement>
+                <quality>Quality</quality>
+                <min>Min</min>
+                <max>Max</max>
+            </requirement>
+            <defaultResult>
+                <stuff/>
+            </defaultResult>
+            <successResult>
+                <stuff/>
+            </successResult>
+            <timeCost>Time</timeCost>
+            <linkedStory>Linked Story</linkedStory>
+        </branch>
+    </trunk>
+    
+    <trunk>
+        <title>Physical Story 2</title>
+        <description>Play this story to get ripped.</description>
+        <icon>Icon</icon>
+        <buttonText>Go!</buttonText>
+        <requirement>
+            <quality>Intelligence</quality>
+            <min>0</min>
+            <max>10</max>
+        </requirement>
+        <trunkTag>Test</trunkTag>
+        <area>Intro</area>
+        <urgency>10</urgency>
+        <deck>Default</deck>
+        <branch>
+            <title>Reaching deep into your memory...</title>
+            <description>Description</description>
+            <icon>Icon</icon>
+            <buttonText>Button Text</buttonText>
+            <requirement>
+                <quality>Quality</quality>
+                <min>Min</min>
+                <max>Max</max>
+            </requirement>
+            <defaultResult>
+                <stuff/>
+            </defaultResult>
+            <successResult>
+                <stuff/>
+            </successResult>
+            <timeCost>Time</timeCost>
+            <linkedStory>Linked Story</linkedStory>
+        </branch>
+    </trunk>
+    
+    <trunk>
+        <title>Mettle Story 1</title>
+        <description>Play this story to get tough.</description>
+        <icon>Icon</icon>
+        <buttonText>Go!</buttonText>
+        <requirement>
+            <quality>Intelligence</quality>
+            <min>0</min>
+            <max>10</max>
+        </requirement>
+        <trunkTag>Test</trunkTag>
+        <area>Intro</area>
+        <urgency>10</urgency>
+        <deck>Default</deck>
+        <branch>
+            <title>Reaching deep into your memory...</title>
+            <description>Description</description>
+            <icon>Icon</icon>
+            <buttonText>Button Text</buttonText>
+            <requirement>
+                <quality>Quality</quality>
+                <min>Min</min>
+                <max>Max</max>
+            </requirement>
+            <defaultResult>
+                <stuff/>
+            </defaultResult>
+            <successResult>
+                <stuff/>
+            </successResult>
+            <timeCost>Time</timeCost>
+            <linkedStory>Linked Story</linkedStory>
+        </branch>
+    </trunk>
+    
+    <trunk>
+        <title>Mettle Story 2</title>
+        <description>Play this story to get wise.</description>
+        <icon>Icon</icon>
+        <buttonText>Go!</buttonText>
+        <requirement>
+            <quality>Intelligence</quality>
+            <min>0</min>
+            <max>10</max>
+        </requirement>
+        <trunkTag>Test</trunkTag>
+        <area>Intro</area>
+        <urgency>10</urgency>
+        <deck>Default</deck>
+        <branch>
+            <title>Reaching deep into your memory...</title>
+            <description>Description</description>
+            <icon>Icon</icon>
+            <buttonText>Button Text</buttonText>
+            <requirement>
+                <quality>Quality</quality>
+                <min>Min</min>
+                <max>Max</max>
+            </requirement>
+            <defaultResult>
+                <stuff/>
+            </defaultResult>
+            <successResult>
+                <stuff/>
+            </successResult>
+            <timeCost>Time</timeCost>
+            <linkedStory>Linked Story</linkedStory>
+        </branch>
+    </trunk>
+    
+    <trunk>
+        <title>Int/Phys Story 1</title>
+        <description>Play this story to win games.</description>
+        <icon>Icon</icon>
+        <buttonText>Go!</buttonText>
+        <requirement>
+            <quality>Intelligence</quality>
+            <min>0</min>
+            <max>10</max>
+        </requirement>
+        <trunkTag>Test</trunkTag>
+        <area>Intro</area>
+        <urgency>10</urgency>
+        <deck>Default</deck>
+        <branch>
+            <title>Reaching deep into your memory...</title>
+            <description>Description</description>
+            <icon>Icon</icon>
+            <buttonText>Button Text</buttonText>
+            <requirement>
+                <quality>Quality</quality>
+                <min>Min</min>
+                <max>Max</max>
+            </requirement>
+            <defaultResult>
+                <stuff/>
+            </defaultResult>
+            <successResult>
+                <stuff/>
+            </successResult>
+            <timeCost>Time</timeCost>
+            <linkedStory>Linked Story</linkedStory>
+        </branch>
+    </trunk>
+</trunks> 

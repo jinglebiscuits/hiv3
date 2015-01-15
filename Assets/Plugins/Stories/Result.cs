@@ -2,9 +2,13 @@
 
 public class Result {
 
+	public delegate void MyEventHandler();
+	public event MyEventHandler resultEvent;
+
 	private string title;
 	private string description;
 	private IQuality qualityAffected;
+	private int timeCost;
 	private int changedBy;
 
 	#region Constructors
@@ -13,6 +17,7 @@ public class Result {
 		this.title = "Result_Title";
 		this.description = "Result_Description";
 		this.qualityAffected = new Attribute();
+		this.timeCost = 1;
 		this.changedBy = 0;
 	}
 
@@ -21,6 +26,7 @@ public class Result {
 		this.title = title;
 		this.description = description;
 		this.qualityAffected = qualityAffected;
+		this.timeCost = 1;
 		this.changedBy = changedBy;
 	}
 	#endregion
@@ -53,6 +59,15 @@ public class Result {
 		}
 	}
 
+	public int TimeCost {
+		get {
+			return this.timeCost;
+		}
+		set {
+			timeCost = value;
+		}
+	}
+
 	public int ChangedBy {
 		get {
 			return this.changedBy;
@@ -65,7 +80,22 @@ public class Result {
 
 	public void AffectCharacter(Person person)
 	{
-		//do the things
-		person.baseAttributes.intelligence.AddPoints(changedBy);
+		//Let subscribers know
+		if(resultEvent != null)
+		{
+			resultEvent();
+		}
+
+		IQuality qualityToAffect = null;
+		foreach(IQuality quality in person.Qualities)
+		{
+			if(quality.Name == qualityAffected.Name)
+			{
+				qualityToAffect = quality;
+				break;
+			}
+		}
+		qualityToAffect.AddPoints(changedBy);
+		person.Clock.Hour += TimeCost;
 	}
 }

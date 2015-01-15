@@ -10,6 +10,7 @@ public class CharacterStatsView : MonoBehaviour {
 	public GameObject physicalViewPrefab;
 	public GameObject socialViewPrefab;
 	public GameObject mettleViewPrefab;
+	public GameObject intelligence;
 	private BaseAttributes baseAttributes;
 
 	// Use this for initialization
@@ -18,27 +19,32 @@ public class CharacterStatsView : MonoBehaviour {
 
 	}
 
+	void Update()
+	{
+		
+	}
+
 	public void ViewConstructor()
 	{
-		GameObject intelligence = (GameObject) Instantiate(intelligenceViewPrefab);
+		intelligence = (GameObject) Instantiate(intelligenceViewPrefab);
 		intelligence.GetComponent<AttributeView>().Attribute = baseAttributes.intelligence;
 		intelligence.transform.SetParent(this.transform, false);
-		intelligence.GetComponent<RectTransform>().position += new Vector3(0, 0, 0);
+		intelligence.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, 0);
 		
 		GameObject physical = (GameObject) Instantiate(physicalViewPrefab);
 		physical.GetComponent<AttributeView>().Attribute = baseAttributes.physical;
 		physical.transform.SetParent(this.transform, false);
-		physical.GetComponent<RectTransform>().position += new Vector3(0, -48, 0);
+		physical.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, -48);
 		
 		GameObject social = (GameObject) Instantiate(socialViewPrefab);
 		social.GetComponent<AttributeView>().Attribute = baseAttributes.social;
 		social.transform.SetParent(this.transform, false);
-		social.GetComponent<RectTransform>().position += new Vector3(0, -96, 0);
+		social.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, -96);
 		
 		GameObject mettle = (GameObject) Instantiate(mettleViewPrefab);
 		mettle.GetComponent<AttributeView>().Attribute = baseAttributes.mettle;
 		mettle.transform.SetParent(this.transform, false);
-		mettle.GetComponent<RectTransform>().position += new Vector3(0, -144, 0);
+		mettle.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, -144);
 	}
 
 

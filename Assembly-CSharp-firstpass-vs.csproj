@@ -63,13 +63,22 @@
      <Compile Include="Assets\Plugins\Stories\Storylets\Forest.cs" />
      <Compile Include="Assets\Plugins\Stories\Trunk.cs" />
      <Compile Include="Assets\Plugins\UI\AttributeView.cs" />
-     <Compile Include="Assets\Plugins\UI\BranchView.cs" />
      <Compile Include="Assets\Plugins\UI\BrowseStoriesView.cs" />
      <Compile Include="Assets\Plugins\UI\CharacterStatsView.cs" />
+     <Compile Include="Assets\Plugins\UI\Clock\Clock.cs" />
+     <Compile Include="Assets\Plugins\UI\Clock\ClockView.cs" />
      <Compile Include="Assets\Plugins\UI\Clock\HourHand.cs" />
      <Compile Include="Assets\Plugins\UI\PersonView.cs" />
      <Compile Include="Assets\Plugins\UI\StoryContainer.cs" />
-     <Compile Include="Assets\Plugins\UI\StoryView.cs" />
+     <Compile Include="Assets\Plugins\UI\StoryViews\BranchView.cs" />
+     <Compile Include="Assets\Plugins\UI\StoryViews\ResultView.cs" />
+     <Compile Include="Assets\Plugins\UI\StoryViews\StoryView.cs" />
+     <Compile Include="Assets\Plugins\UI\StoryViews\TrunkView.cs" />
+     <Compile Include="Assets\Plugins\UI\ViewManager.cs" />
+     <Compile Include="Assets\Plugins\XML\XML.cs" />
+     <None Include="Assets\Plugins\XML\xmlTest.xml" />
+     <None Include="Assets\Plugins\XML\stories.xml" />
+     <None Include="Assets\Plugins\UI\stories.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>

@@ -1,23 +1,21 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/UI/BranchView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/UI/Clock/Clock.cs">
     <Files>
-      <File FileName="Assets/Plugins/UI/BranchView.cs" Line="11" Column="14" />
-      <File FileName="Assets/Plugins/UI/PersonView.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/Stories/Trunk.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/Stories/Branch.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/Stories/Story.cs" Line="1" Column="1" />
       <File FileName="Assets/Plugins/UI/BrowseStoriesView.cs" Line="1" Column="1" />
       <File FileName="Assets/Plugins/Stories/Storylets/Forest.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/Stories/Requirement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/Interfaces/IQuality.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/Stories/Result.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/Stories/Result.cs" Line="99" Column="33" />
       <File FileName="Assets/Plugins/Player.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/Person.cs" Line="24" Column="24" />
+      <File FileName="Assets/Plugins/Manager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/UI/ViewManager.cs" Line="10" Column="116" />
+      <File FileName="Assets/Plugins/UI/StoryContainer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Plugins/UI/StoryViews/StoryView.cs" Line="27" Column="25" />
+      <File FileName="Assets/Plugins/Stories/Branch.cs" Line="96" Column="26" />
+      <File FileName="Assets/Plugins/UI/Clock/Clock.cs" Line="26" Column="6" />
       <File FileName="Assets/Plugins/Attributes/Attribute.cs" Line="1" Column="1" />
       <File FileName="Assets/Plugins/UI/AttributeView.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/Person.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/Manager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/UI/StoryView.cs" Line="14" Column="1" />
+      <File FileName="Assets/Plugins/UI/StoryViews/BranchView.cs" Line="45" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -21,6 +21,22 @@ public class Forest {
 		trunks[7].Requirements.Add(new Requirement(new Attribute("Physical"), 5, 10));
 		trunks[8].Requirements.Add(new Requirement(new Attribute("Physical"), 8, 12));
 		trunks[9].Requirements.Add(new Requirement(new Attribute("Mettle"), 0, 10));
+
+		trunks[0].Branches.Add(new Branch());
+		trunks[0].Title = "First Mission!";
+		trunks[0].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Intelligence"), 1);
+
+		trunks[1].Branches.Add(new Branch());
+		trunks[1].Title = "Second Mission!";
+		trunks[1].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Intelligence"), 1);
+
+		trunks[2].Branches.Add(new Branch());
+		trunks[2].Title = "Third Mission!";
+		trunks[2].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Intelligence"), 1);
+
+		trunks[3].Branches.Add(new Branch());
+		trunks[3].Title = "Fourth Mission!";
+		trunks[3].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Social"), 1);
 	}
 	
 }
