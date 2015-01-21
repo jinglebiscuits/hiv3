@@ -19,7 +19,7 @@ public class Branch : Story{
 		this.title = "branch_title";
 		this.description = "branch_description";
 		this.icon = "branch_icon";
-		this.buttonText = "branch_button_text";
+		this.buttonText = "Go";
 		this.requirements = new List<Requirement>();
 		this.defaultResult = new Result();
 		this.successResult = new Result();

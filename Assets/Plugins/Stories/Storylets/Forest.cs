@@ -9,7 +9,9 @@ public class Forest {
 	{
 		for (int i = 0; i < 10; i++)
 		{
-			trunks.Add (new Trunk());
+			Trunk t = new Trunk();
+			t.ButtonText = "Go";
+			trunks.Add (t);
 		}
 		trunks[0].Requirements.Add(new Requirement(new Attribute("Intelligence"), 0, 6));
 		trunks[1].Requirements.Add(new Requirement(new Attribute("Intelligence"), 6, 8));

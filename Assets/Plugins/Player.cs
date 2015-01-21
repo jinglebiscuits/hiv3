@@ -27,6 +27,5 @@ public class Player : MonoBehaviour {
 		Person scott = new Person();
 		persons.Add (scott);
 		focusedPerson = scott;
-		transform.GetComponent<PersonView>().Person = focusedPerson;
 	}
 }

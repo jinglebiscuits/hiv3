@@ -62,6 +62,9 @@ public class Story {
 		get {
 			return this.buttonText;
 		}
+		set{
+			buttonText = value;
+		}
 	}
 
 	public List<Requirement> Requirements {
