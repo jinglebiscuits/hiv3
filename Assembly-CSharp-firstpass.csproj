@@ -48,13 +48,13 @@
   <ItemGroup>
      <Compile Include="Assets\Plugins\Attributes\Attribute.cs" />
      <Compile Include="Assets\Plugins\Attributes\BaseAttributes.cs" />
+     <Compile Include="Assets\Plugins\BaseStatus.cs" />
      <Compile Include="Assets\Plugins\GameClock.cs" />
      <Compile Include="Assets\Plugins\Interfaces\IQuality.cs" />
      <Compile Include="Assets\Plugins\Interfaces\IStory.cs" />
      <Compile Include="Assets\Plugins\Manager.cs" />
      <Compile Include="Assets\Plugins\Person.cs" />
      <Compile Include="Assets\Plugins\Player.cs" />
-     <Compile Include="Assets\Plugins\Status.cs" />
      <Compile Include="Assets\Plugins\Statuses.cs" />
      <Compile Include="Assets\Plugins\Stories\Branch.cs" />
      <Compile Include="Assets\Plugins\Stories\Requirement.cs" />
@@ -67,7 +67,6 @@
      <Compile Include="Assets\Plugins\UI\CharacterStatsView.cs" />
      <Compile Include="Assets\Plugins\UI\Clock\Clock.cs" />
      <Compile Include="Assets\Plugins\UI\Clock\ClockView.cs" />
-     <Compile Include="Assets\Plugins\UI\Clock\HourHand.cs" />
      <Compile Include="Assets\Plugins\UI\PersonView.cs" />
      <Compile Include="Assets\Plugins\UI\StoryContainer.cs" />
      <Compile Include="Assets\Plugins\UI\StoryViews\BranchView.cs" />

@@ -5,9 +5,12 @@ using System.Collections.Generic;
 public class Person {
 
 	private BaseAttributes baseAttributes = new BaseAttributes();
-	private Status[] statuses = new Status[8];
+	private BaseStatuses baseStatuses = new BaseStatuses();
 	private List<IQuality> qualities = new List<IQuality>();
 	private Clock clock;
+
+	private Forest forest;
+	private List<Trunk> availableTrunks;
 
 	public Person()
 	{
@@ -16,14 +19,20 @@ public class Person {
 			qualities.Add (attribute);
 		}
 
-		foreach(IQuality status in statuses)
+		foreach(IQuality status in baseStatuses.statuses)
 		{
 			qualities.Add (status);
 		}
 
 		clock = new Clock(8);
+		qualities.Add (clock);
+
+		forest = new Forest();
+		availableTrunks = new List<Trunk>();
+		UpdateAvailableTrunkList();
 	}
 
+	#region Accessor Methods
 	public BaseAttributes BaseAttributes {
 		get {
 			return this.baseAttributes;
@@ -33,12 +42,12 @@ public class Person {
 		}
 	}
 
-	public Status[] Statuses {
+	public BaseStatuses BaseStatuses {
 		get {
-			return this.statuses;
+			return this.baseStatuses;
 		}
 		set {
-			statuses = value;
+			baseStatuses = value;
 		}
 	}
 
@@ -59,12 +68,20 @@ public class Person {
 			clock = value;
 		}
 	}
-}
 
-public enum AttributeType
-{
-	intelligence,
-	physical,
-	social,
-	mettle
-};
+	public List<Trunk> AvailableTrunks {
+		get {
+			return this.availableTrunks;
+		}
+		set {
+			availableTrunks = value;
+		}
+	}
+	#endregion
+
+	public void UpdateAvailableTrunkList()
+	{
+		availableTrunks.Clear();
+		availableTrunks = forest.FetchAvailableTrunks(this);
+	}
+}

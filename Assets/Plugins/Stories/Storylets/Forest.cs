@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Forest {
 
-	public List<Trunk> trunks = new List<Trunk>();
+	private List<Trunk> trunks = new List<Trunk>();
 
 	public Forest ()
 	{
@@ -14,6 +14,7 @@ public class Forest {
 		trunks[0].Requirements.Add(new Requirement(new Attribute("Intelligence"), 0, 6));
 		trunks[1].Requirements.Add(new Requirement(new Attribute("Intelligence"), 6, 8));
 		trunks[2].Requirements.Add(new Requirement(new Attribute("Intelligence"), 8, 10));
+		trunks[2].Requirements.Add(new Requirement(new Attribute("Social"), 7, 10));
 		trunks[3].Requirements.Add(new Requirement(new Attribute("Social"), 0, 6));
 		trunks[4].Requirements.Add(new Requirement(new Attribute("Social"), 6, 7));
 		trunks[5].Requirements.Add(new Requirement(new Attribute("Social"), 8, 11));
@@ -23,20 +24,104 @@ public class Forest {
 		trunks[9].Requirements.Add(new Requirement(new Attribute("Mettle"), 0, 10));
 
 		trunks[0].Branches.Add(new Branch());
-		trunks[0].Title = "First Mission!";
+		trunks[0].Title = "Study";
 		trunks[0].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Intelligence"), 1);
 
 		trunks[1].Branches.Add(new Branch());
-		trunks[1].Title = "Second Mission!";
+		trunks[1].Title = "Homework Time";
 		trunks[1].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Intelligence"), 1);
+		trunks[1].Requirements.Add(new Requirement(new Clock(1), 15, 23));
 
 		trunks[2].Branches.Add(new Branch());
-		trunks[2].Title = "Third Mission!";
+		trunks[2].Title = "Group Study";
 		trunks[2].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Intelligence"), 1);
 
 		trunks[3].Branches.Add(new Branch());
-		trunks[3].Title = "Fourth Mission!";
+		trunks[3].Title = "Strike up a conversation.";
 		trunks[3].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Social"), 1);
+
+		trunks[4].Branches.Add(new Branch());
+		trunks[4].Title = "Text a friend.";
+		trunks[4].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Social"), 1);
+
+		trunks[5].Branches.Add(new Branch());
+		trunks[5].Title = "Ask a friend about their goals.";
+		trunks[5].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Social"), 1);
+
+		trunks[6].Branches.Add(new Branch());
+		trunks[6].Title = "Go jogging.";
+		trunks[6].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Physical"), 1);
+
+		trunks[7].Branches.Add(new Branch());
+		trunks[7].Title = "Practice basketball.";
+		trunks[7].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Physical"), 1);
+
+		trunks[8].Branches.Add(new Branch());
+		trunks[8].Title = "Team Practice";
+		trunks[8].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Physical"), 1);
+
+		trunks[9].Branches.Add(new Branch());
+		trunks[9].Title = "Go for a quiet walk.";
+		trunks[9].Branches[0].DefaultResult = new Result("Oh yeah", "You done good", new Attribute("Mettle"), 1);
 	}
-	
+
+	#region Accessor Methods
+	public List<Trunk> Trunks {
+		get {
+			return this.trunks;
+		}
+		set {
+			trunks = value;
+		}
+	}
+	#endregion
+
+	public List<Trunk> FetchAvailableTrunks(Person person)
+	{
+		List<Trunk> availableTrunks = new List<Trunk>();
+		foreach(Trunk trunk in trunks)
+		{
+			if(PersonMeetsTrunkRequirements(person, trunk)) {
+				availableTrunks.Add (trunk);
+			}
+		}
+		return availableTrunks;
+	}
+
+	private bool PersonMeetsTrunkRequirements(Person person, Trunk trunk)
+	{
+		List<IQuality> qualities = person.Qualities;
+
+		if(trunk.Requirements.Count > 0)
+		{
+			foreach(Requirement requirement in trunk.Requirements)
+			{
+				IQuality matchingQuality = FindMatchingQuality(qualities, requirement);
+				if(matchingQuality == null)
+				{
+					return false;
+				}
+				else if (matchingQuality.Level > requirement.QualityMax || matchingQuality.Level < requirement.QualityMin) {
+					return false;
+				}
+			}
+		}
+		else
+		{
+			return true;
+		}
+		return true;
+	}
+
+	private IQuality FindMatchingQuality(List<IQuality> qualities, Requirement requirement)
+	{
+		foreach(IQuality quality in qualities)
+		{
+			if(quality.Name == requirement.Quality.Name)
+			{
+				return quality;
+			}
+		}
+		return null;
+	}
 }

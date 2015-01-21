@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Collections;
 
 /// <summary>
@@ -8,6 +8,7 @@ public class Branch : Story{
 	
 	private Result defaultResult;
 	private Result successResult;
+	private int difficulty;
 	private Result chosenResult;
 	private Story linkedEvent;
 
@@ -27,6 +28,7 @@ public class Branch : Story{
 	}
 	
 
+	
 	public Branch (string title, string description, string icon, string buttonText, List<Requirement> requirements, Result defaultResult)
 		:base(title, description, icon, buttonText, requirements)
 	{

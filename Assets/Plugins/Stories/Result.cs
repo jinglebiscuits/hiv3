@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 
 public class Result {
 
@@ -96,6 +96,6 @@ public class Result {
 			}
 		}
 		qualityToAffect.AddPoints(changedBy);
-		person.Clock.Hour += TimeCost;
+		person.Clock.AddPoints(TimeCost);
 	}
 }

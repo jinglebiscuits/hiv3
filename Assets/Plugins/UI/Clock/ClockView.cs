@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class ClockView : MonoBehaviour {
@@ -11,11 +11,12 @@ public class ClockView : MonoBehaviour {
 	void Start ()
 	{
 		clock = GameObject.Find("Player").GetComponent<Player>().FocusedPerson.Clock;
-		clock.clockEvent += UpdateClock;
+		clock.pointEvent += UpdateClock;
+		UpdateClock();
 	}
 	
 	private void UpdateClock()
 	{
-		hourHand.GetComponent<HourHand>().Hour = clock.Hour;
+		hourHand.transform.rotation = Quaternion.Euler(0, 0, -30 * clock.Level);
 	}
 }

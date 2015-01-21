@@ -19,11 +19,13 @@ public class StoryContainer : MonoBehaviour {
 
 	public float storyHeight;
 	public float padding;
-	public Forest forest = new Forest();
+	//public Forest forest = new Forest();
+	public Person person;
 
 	// Use this for initialization
 	void Start ()
 	{
+		person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
 		storyHeight = -2*storyViewPrefab.GetComponent<RectTransform>().anchoredPosition.y;
 		padding = storyHeight*-0.1f;
 		ShowStories();
@@ -40,8 +42,10 @@ public class StoryContainer : MonoBehaviour {
 	public void ShowStories()
 	{
 		WipeViews();
+		person.UpdateAvailableTrunkList();
 		int count = 0;
-		foreach(Story story in forest.trunks)
+		//foreach(Story story in forest.trunks)
+		foreach(Story story in person.AvailableTrunks)
 		{
 			GameObject clone = (GameObject) Instantiate(storyViewPrefab);
 			clone.GetComponent<StoryView>().Story = story;
