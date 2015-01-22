@@ -68,14 +68,14 @@ public class Forest {
 	}
 
 	#region Accessor Methods
-	public List<Trunk> Trunks {
-		get {
-			return this.trunks;
-		}
-		set {
-			trunks = value;
-		}
-	}
+//	public List<Trunk> Trunks {
+//		get {
+//			return this.trunks;
+//		}
+//		set {
+//			trunks = value;
+//		}
+//	}
 	#endregion
 
 	public List<Trunk> FetchAvailableTrunks(Person person)
@@ -83,47 +83,12 @@ public class Forest {
 		List<Trunk> availableTrunks = new List<Trunk>();
 		foreach(Trunk trunk in trunks)
 		{
-			if(PersonMeetsTrunkRequirements(person, trunk)) {
-				availableTrunks.Add (trunk);
+			if(trunk.IsPlayableByPerson(person)){
+				availableTrunks.Add(trunk);
 			}
 		}
 		return availableTrunks;
 	}
 
-	private bool PersonMeetsTrunkRequirements(Person person, Trunk trunk)
-	{
-		List<IQuality> qualities = person.Qualities;
 
-		if(trunk.Requirements.Count > 0)
-		{
-			foreach(Requirement requirement in trunk.Requirements)
-			{
-				IQuality matchingQuality = FindMatchingQuality(qualities, requirement);
-				if(matchingQuality == null)
-				{
-					return false;
-				}
-				else if (matchingQuality.Level > requirement.QualityMax || matchingQuality.Level < requirement.QualityMin) {
-					return false;
-				}
-			}
-		}
-		else
-		{
-			return true;
-		}
-		return true;
-	}
-
-	private IQuality FindMatchingQuality(List<IQuality> qualities, Requirement requirement)
-	{
-		foreach(IQuality quality in qualities)
-		{
-			if(quality.Name == requirement.Quality.Name)
-			{
-				return quality;
-			}
-		}
-		return null;
-	}
 }

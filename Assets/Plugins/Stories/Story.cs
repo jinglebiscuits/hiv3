@@ -73,4 +73,49 @@ public class Story {
 		}
 	}
 	#endregion
+
+
+	#region Methods
+	public bool IsVisibleToPerson(Person person)
+	{
+		return true;
+	}
+
+	public bool IsPlayableByPerson(Person person)
+	{
+		List<IQuality> qualities = person.Qualities;
+		
+		if(Requirements.Count > 0)
+		{
+			foreach(Requirement requirement in Requirements)
+			{
+				IQuality matchingQuality = FindMatchingQuality(qualities, requirement);
+				if(matchingQuality == null)
+				{
+					return false;
+				}
+				else if (matchingQuality.Level > requirement.QualityMax || matchingQuality.Level < requirement.QualityMin) {
+					return false;
+				}
+			}
+		}
+		else
+		{
+			return true;
+		}
+		return true;
+	}
+
+	private IQuality FindMatchingQuality(List<IQuality> qualities, Requirement requirement)
+	{
+		foreach(IQuality quality in qualities)
+		{
+			if(quality.Name == requirement.Quality.Name)
+			{
+				return quality;
+			}
+		}
+		return null;
+	}
+	#endregion
 }
