@@ -54,6 +54,8 @@ public class StoryContainer : MonoBehaviour {
 			storyViews.Add(clone);
 			count ++;
 		}
+
+		transform.parent.GetComponent<BrowseStoriesView>().ResetScrollToTop();
 	}
 
 	public void ShowBranches(Trunk trunk)
@@ -73,6 +75,8 @@ public class StoryContainer : MonoBehaviour {
 			branchViews.Add (clone);
 			count ++;
 		}
+
+		transform.parent.GetComponent<BrowseStoriesView>().ResetScrollToTop();
 	}
 
 	public void ShowResult(Result result)
@@ -81,6 +85,8 @@ public class StoryContainer : MonoBehaviour {
 		resultView = (GameObject) Instantiate(resultViewPrefab);
 		resultView.GetComponent<ResultView>().Result = result;
 		resultView.transform.SetParent(this.transform, false);
+
+		transform.parent.GetComponent<BrowseStoriesView>().ResetScrollToTop();
 	}
 
 	private void WipeViews()

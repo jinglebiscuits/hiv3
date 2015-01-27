@@ -14,7 +14,7 @@ public class AttributeView : MonoBehaviour {
 	void Start ()
 	{
 		//When pointEvent() is called on attached attribute, run the UpdateView() method.
-		attribute.pointEvent +=	UpdateView;
+		//attribute.pointEvent +=	UpdateView;
 	}
 
 	public Attribute Attribute {
@@ -23,6 +23,8 @@ public class AttributeView : MonoBehaviour {
 		}
 		set {
 			attribute = value;
+			attribute.pointEvent -=	UpdateView;
+			attribute.pointEvent +=	UpdateView;
 			UpdateView();
 		}
 	}

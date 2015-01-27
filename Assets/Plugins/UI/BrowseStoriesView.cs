@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 /// <summary>
@@ -7,10 +8,12 @@ using System.Collections;
 public class BrowseStoriesView : MonoBehaviour {
 
 	private Forest forest = new Forest();
+	private ScrollRect scrollRect;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Awake () {
+		scrollRect = transform.GetComponent<ScrollRect>();
+		scrollRect.verticalNormalizedPosition = 1;
 	}
 	
 	// Update is called once per frame
@@ -25,5 +28,10 @@ public class BrowseStoriesView : MonoBehaviour {
 		set {
 			forest = value;
 		}
+	}
+
+	public void ResetScrollToTop()
+	{
+		scrollRect.verticalNormalizedPosition = 1;
 	}
 }

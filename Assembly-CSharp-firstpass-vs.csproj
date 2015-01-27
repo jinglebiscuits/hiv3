@@ -46,16 +46,16 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Plugins\Attributes\Attribute.cs" />
-     <Compile Include="Assets\Plugins\Attributes\BaseAttributes.cs" />
-     <Compile Include="Assets\Plugins\BaseStatus.cs" />
      <Compile Include="Assets\Plugins\GameClock.cs" />
      <Compile Include="Assets\Plugins\Interfaces\IQuality.cs" />
      <Compile Include="Assets\Plugins\Interfaces\IStory.cs" />
      <Compile Include="Assets\Plugins\Manager.cs" />
      <Compile Include="Assets\Plugins\Person.cs" />
      <Compile Include="Assets\Plugins\Player.cs" />
-     <Compile Include="Assets\Plugins\Statuses.cs" />
+     <Compile Include="Assets\Plugins\Qualities\Attributes\Attribute.cs" />
+     <Compile Include="Assets\Plugins\Qualities\Attributes\BaseAttributes.cs" />
+     <Compile Include="Assets\Plugins\Qualities\Statuses\BaseStatuses.cs" />
+     <Compile Include="Assets\Plugins\Qualities\Statuses\Status.cs" />
      <Compile Include="Assets\Plugins\Stories\Branch.cs" />
      <Compile Include="Assets\Plugins\Stories\Requirement.cs" />
      <Compile Include="Assets\Plugins\Stories\Result.cs" />

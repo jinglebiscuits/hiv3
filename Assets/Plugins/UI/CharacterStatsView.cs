@@ -3,14 +3,11 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class CharacterStatsView : MonoBehaviour {
-
-
-	public GameObject attributeViewPrefab;
-	public GameObject intelligenceViewPrefab;
-	public GameObject physicalViewPrefab;
-	public GameObject socialViewPrefab;
-	public GameObject mettleViewPrefab;
-	public GameObject intelligence;
+	
+	public GameObject intelligenceView;
+	public GameObject physicalView;
+	public GameObject socialView;
+	public GameObject mettleView;
 	private BaseAttributes baseAttributes;
 
 	// Use this for initialization
@@ -26,25 +23,25 @@ public class CharacterStatsView : MonoBehaviour {
 
 	public void ViewConstructor()
 	{
-		intelligence = (GameObject) Instantiate(intelligenceViewPrefab);
-		intelligence.GetComponent<AttributeView>().Attribute = baseAttributes.intelligence;
-		intelligence.transform.SetParent(this.transform, false);
-		intelligence.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, 0);
+		//intelligence = (GameObject) Instantiate(intelligenceViewPrefab);
+		intelligenceView.GetComponent<AttributeView>().Attribute = baseAttributes.intelligence;
+		intelligenceView.transform.SetParent(this.transform, false);
+		//intelligenceView.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, 0);
 		
-		GameObject physical = (GameObject) Instantiate(physicalViewPrefab);
-		physical.GetComponent<AttributeView>().Attribute = baseAttributes.physical;
-		physical.transform.SetParent(this.transform, false);
-		physical.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, -48);
+		//GameObject physical = (GameObject) Instantiate(physicalViewPrefab);
+		physicalView.GetComponent<AttributeView>().Attribute = baseAttributes.physical;
+		physicalView.transform.SetParent(this.transform, false);
+		//physical.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, -48);
 		
-		GameObject social = (GameObject) Instantiate(socialViewPrefab);
-		social.GetComponent<AttributeView>().Attribute = baseAttributes.social;
-		social.transform.SetParent(this.transform, false);
-		social.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, -96);
+		//GameObject social = (GameObject) Instantiate(socialViewPrefab);
+		socialView.GetComponent<AttributeView>().Attribute = baseAttributes.social;
+		socialView.transform.SetParent(this.transform, false);
+		//socialView.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, -96);
 		
-		GameObject mettle = (GameObject) Instantiate(mettleViewPrefab);
-		mettle.GetComponent<AttributeView>().Attribute = baseAttributes.mettle;
-		mettle.transform.SetParent(this.transform, false);
-		mettle.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, -144);
+		//GameObject mettle = (GameObject) Instantiate(mettleViewPrefab);
+		mettleView.GetComponent<AttributeView>().Attribute = baseAttributes.mettle;
+		mettleView.transform.SetParent(this.transform, false);
+		//mettle.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, -144);
 	}
 
 

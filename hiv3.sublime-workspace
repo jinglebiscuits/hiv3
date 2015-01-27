@@ -1,0 +1,300 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"b",
+				"buttonText"
+			],
+			[
+				"Mesh",
+				"MeshBasicMaterial"
+			],
+			[
+				"rang",
+				"rangeDistance"
+			],
+			[
+				"ran",
+				"rangeDistance"
+			],
+			[
+				"spel",
+				"Spell"
+			],
+			[
+				"current",
+				"currentHP"
+			],
+			[
+				"in",
+				"innerHTML"
+			],
+			[
+				"back",
+				"background-color"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/Stories",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/Stories/Storylets"
+	],
+	"file_history":
+	[
+		"/Users/scottwehby/Desktop/trunk.xml",
+		"/Users/scottwehby/Desktop/Temp/Takeout/Location History/LocationHistory.json",
+		"/Users/scottwehby/Documents/workspace/Subte/Prints/route1.svg",
+		"/Users/scottwehby/Desktop/Subte/Prints/systemMap.svg",
+		"/Users/scottwehby/Desktop/Subte/Prints/route14.svg",
+		"/Users/scottwehby/Documents/workspace/MSP/Modules/PeriodicTable/Assets/Plugins/ShellProperties.cs",
+		"/Users/scottwehby/Documents/workspace/MSP/Modules/AbsorptionSpectroscopy/Assets/Plugins/Graph/SubstanceGraph.cs",
+		"/Users/scottwehby/Documents/workspace/MSP/Modules/AbsorptionSpectroscopy/Assets/Plugins/Graph/Randomness.cs",
+		"/Users/scottwehby/Documents/workspace/MSP/Modules/AbsorptionSpectroscopy/Assets/Plugins/Graph/EnergyCubeScript.cs",
+		"/Users/scottwehby/Documents/workspace/MSP/Modules/AbsorptionSpectroscopy/Assets/Plugins/Graph/GraphHandler.cs",
+		"/Users/scottwehby/Desktop/Subte/GTFSdata/birmingham-jefferson-county-transit-authority_20140520_1951/csvToShape.py",
+		"/Users/scottwehby/Documents/workspace/MSP/Modules/Spectroscope/Spectroscope/Spectroscope.html",
+		"/Users/scottwehby/Desktop/color_ramp.xml",
+		"/Users/scottwehby/Desktop/Subte/png/map-icons/svg/I-blank.svg",
+		"/Users/scottwehby/Desktop/Subte/GISdata/zipCodeBoundaries/zipCodeBoundaries.dbf",
+		"/Users/scottwehby/Desktop/Subte/csvToShape.py",
+		"/Users/scottwehby/Desktop/Subte/14Ex.svg",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/templates/dndHelper.html",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/javascript/app.js",
+		"/Users/scottwehby/Downloads/AdmiralPhilipeCasanova.dnd4e",
+		"/Users/scottwehby/Downloads/Charles.dnd4e",
+		"/Users/scottwehby/Dropbox/monsterhealthcare/index.html",
+		"/Users/scottwehby/Dropbox/Public/PeriodicTable/MSPPeriodicTable.html",
+		"/Users/scottwehby/Documents/learning/web_development/3d/javascript/Detector.js",
+		"/Users/scottwehby/Documents/learning/web_development/3d/javascript/3d.js",
+		"/Users/scottwehby/Documents/learning/web_development/3d/templates/3d.html",
+		"/Users/scottwehby/Documents/learning/web_development/3d/3d.py",
+		"/Users/scottwehby/Documents/learning/web_development/3d/app.yaml",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/app.yaml",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/templates/index.html",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/templates/test.html",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/templates/jqueryTest.html",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/templates/marrok.html",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/styles/bootstrap.css",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/javascript/bootstrap.js",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/dnd.py",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/styles/style.css",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/javascript/bootstrap.min.js",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/templates/indexdnd.html",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/styles/bootstrap.min.css",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/Marrok.dnd4e",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/styles/2-col-portfolio.css",
+		"/Users/scottwehby/Documents/learning/web_development/blog/blog.py",
+		"/Users/scottwehby/Documents/learning/web_development/dnd/app.js"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"name",
+			"route",
+			"virtue",
+			"sneak attack",
+			"rogue",
+			"3x",
+			"marrok",
+			"id",
+			"special",
+			"h2",
+			"encounter",
+			"col-md-6",
+			"border-box",
+			"box-sizing",
+			"col-md-6 portfolio-item",
+			"portfolio",
+			"col-md-6",
+			"aler",
+			"div",
+			"h2",
+			"input",
+			"148",
+			"line-height",
+			"40",
+			"h1",
+			"row",
+			"line-height",
+			"line",
+			"line-height",
+			"row",
+			"navbar",
+			"width",
+			"navbar-header",
+			"druid",
+			"p {",
+			"p ",
+			"col-md-6",
+			"responsive",
+			"position",
+			"body",
+			"show",
+			"hide",
+			"updatehp",
+			"hp",
+			"details",
+			"button",
+			"body",
+			"function",
+			"body",
+			"storm spike",
+			"65",
+			"60",
+			"unarmed",
+			"input"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "hiv3.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/learning/web_development/dnd/dnd.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
