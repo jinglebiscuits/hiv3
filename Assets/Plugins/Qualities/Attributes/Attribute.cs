@@ -84,11 +84,6 @@ public class Attribute : IQuality {
 		}
 		set {
 			points = value;
-			//let subscribers know
-			if(pointEvent != null)
-			{
-				pointEvent();
-			}
 		}
 	}
 
@@ -107,6 +102,32 @@ public class Attribute : IQuality {
 	}
 	#endregion
 
+//	public void AddPoints(int _points)
+//	{
+//		while (_points > 0)
+//		{
+//			Points += 1;
+//			if(Pyramid)
+//			{
+//				//check to see if ability should level up
+//				if(Points >= Level)
+//				{
+//					LevelUp();
+//				}
+//			}
+//			else
+//			{
+//				LevelUp();
+//			}
+//
+//			_points --;
+//		}
+//	}
+
+	/// <summary>
+	/// To replace above method.
+	/// </summary>
+	/// <param name="_points">_points.</param>
 	public void AddPoints(int _points)
 	{
 		while (_points > 0)
@@ -124,8 +145,14 @@ public class Attribute : IQuality {
 			{
 				LevelUp();
 			}
-
+			
 			_points --;
+		}
+
+		//let subscribers know
+		if(pointEvent != null)
+		{
+			pointEvent();
 		}
 	}
 
@@ -148,6 +175,12 @@ public class Attribute : IQuality {
 			}
 			
 			_points --;
+		}
+
+		//let subscribers know
+		if(pointEvent != null)
+		{
+			pointEvent();
 		}
 	}
 
