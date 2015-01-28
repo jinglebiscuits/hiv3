@@ -106,7 +106,13 @@ public class Story {
 		return true;
 	}
 
-	private IQuality FindMatchingQuality(List<IQuality> qualities, Requirement requirement)
+	/// <summary>
+	/// Finds the matching quality.
+	/// </summary>
+	/// <returns>The matching quality.</returns>
+	/// <param name="qualities">List of person's qualities.</param>
+	/// <param name="requirement">Requirement to match qualities with.</param>
+	protected IQuality FindMatchingQuality(List<IQuality> qualities, Requirement requirement)
 	{
 		foreach(IQuality quality in qualities)
 		{

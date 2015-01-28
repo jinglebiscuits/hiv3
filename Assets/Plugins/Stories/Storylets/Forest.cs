@@ -7,7 +7,7 @@ public class Forest {
 
 	public Forest ()
 	{
-		for (int i = 0; i < 11; i++)
+		for (int i = 0; i < 12; i++)
 		{
 			Trunk t = new Trunk();
 			t.ButtonText = "Go";
@@ -70,6 +70,14 @@ public class Forest {
 		trunks[10].Title = "Glimpse the future";
 		trunks[10].Branches[0].DefaultResult = new Result("Your future is bright!", "This is where the end picture will go.", new Attribute("Intelligence"), 1);
 		trunks[10].Requirements.Add(new Requirement(new Clock(1), 21, 21));
+
+		trunks[11].Branches.Add(new Branch());
+		trunks[11].Title = "Chess match with a friend.";
+		trunks[11].Branches[0].DefaultResult = new Result("Maybe next time", "Not all is lost. You've picked up a few tricks even in defeat.", new Attribute("Intelligence"), 1);
+		trunks[11].Branches[0].SuccessResult = new Result("Victory!", "AT has outsmarted his opponent.", new Attribute("Intelligence"), 3);
+		trunks[11].Branches[0].Requirements.Add(new Requirement(new Attribute("Intelligence"), 0, 6));
+		trunks[11].Branches[0].Difficulty = 10;
+		trunks[11].Requirements.Add(new Requirement(new Attribute("Intelligence"), 0, 6));
 	}
 
 	#region Accessor Methods

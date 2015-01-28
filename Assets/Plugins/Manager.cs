@@ -4,7 +4,9 @@ using System;
 using System.Collections;
 
 public class Manager : MonoBehaviour {
-	
+
+	public static System.Random rand = new System.Random();
+
 	// Use this for initialization
 	void Start () {
 		

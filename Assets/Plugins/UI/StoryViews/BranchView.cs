@@ -10,13 +10,16 @@ public class BranchView : MonoBehaviour {
 	public Text branchTitle;
 	public Text branchDescription;
 	public Text buttonText;
+	public Player player;
 
-	public void Start()
+	public void Awake()
 	{
 //		TestMethod();
 //		branchTitle.text = branch.Title;
 //		branchDescription.text = branch.Description;
 //		buttonText.text = branch.ButtonText;
+		player = GameObject.FindWithTag("Player").GetComponent<Player>();
+		print (player.FocusedPerson.Qualities.Count);
 	}
 
 	public Branch Branch {
@@ -25,6 +28,8 @@ public class BranchView : MonoBehaviour {
 		}
 		set {
 			branch = value;
+			if(branch.SuccessResult != null)
+				branch.CalculateChanceOfSuccess(player.FocusedPerson);
 			branchTitle.text = branch.Title;
 			branchDescription.text = branch.Description;
 			buttonText.text = branch.ButtonText;
@@ -42,7 +47,7 @@ public class BranchView : MonoBehaviour {
 
 	public void ChooseBranch()
 	{
-		branch.ChooseBranch(GameObject.Find("Player").GetComponent<Player>().FocusedPerson);
+		branch.ChooseBranch(player.FocusedPerson);
 		transform.parent.GetComponent<StoryContainer>().ShowResult(branch.ChosenResult);
 	}
 }
