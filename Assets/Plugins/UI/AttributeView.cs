@@ -11,11 +11,17 @@ public class AttributeView : MonoBehaviour {
 	public Text attributeLevel;
 	public Slider attributePointsProgress;
 
+	/// <summary>
+	/// how much the point value changes per tick of the coroutine.
+	/// </summary>
+	private float pointDelta;
+	private float timeToAnimatePoint;
+
 	// Use this for initialization
 	void Start ()
 	{
-		//When pointEvent() is called on attached attribute, run the UpdateView() method.
-		//attribute.pointEvent +=	UpdateView;
+		pointDelta = 0.05f;
+		timeToAnimatePoint = 0.5f;
 	}
 
 	public Attribute Attribute {
@@ -47,8 +53,8 @@ public class AttributeView : MonoBehaviour {
 			//animate bar up to actualPoints
 			while(actualPoints > attributePointsProgress.value)
 			{
-				attributePointsProgress.value += 0.1f;
-				yield return new WaitForSeconds(0.05f);
+				attributePointsProgress.value += pointDelta;
+				yield return new WaitForSeconds(timeToAnimatePoint*pointDelta);
 			}
 		}
 		//if the actual level is greater than the displayed level
@@ -60,8 +66,8 @@ public class AttributeView : MonoBehaviour {
 				//animate points going up until slider value = displayed level
 				while(attributePointsProgress.value < Convert.ToInt32(this.attributeLevel.text))
 				{
-					attributePointsProgress.value += 0.1f;
-					yield return new WaitForSeconds(0.05f);
+					attributePointsProgress.value += pointDelta;
+					yield return new WaitForSeconds(timeToAnimatePoint*pointDelta);
 				}
 				attributePointsProgress.value = 0;
 				attributePointsProgress.maxValue ++;
@@ -70,8 +76,8 @@ public class AttributeView : MonoBehaviour {
 
 			while(attributePointsProgress.value < actualPoints)
 			{
-				attributePointsProgress.value += 0.1f;
-				yield return new WaitForSeconds(0.05f);
+				attributePointsProgress.value += pointDelta;
+				yield return new WaitForSeconds(timeToAnimatePoint*pointDelta);
 			}
 		}
 	}

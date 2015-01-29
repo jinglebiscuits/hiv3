@@ -9,17 +9,13 @@ public class BranchView : MonoBehaviour {
 	public Image branchIcon;
 	public Text branchTitle;
 	public Text branchDescription;
+	public Text chanceOfSuccess;
 	public Text buttonText;
 	public Player player;
 
 	public void Awake()
 	{
-//		TestMethod();
-//		branchTitle.text = branch.Title;
-//		branchDescription.text = branch.Description;
-//		buttonText.text = branch.ButtonText;
 		player = GameObject.FindWithTag("Player").GetComponent<Player>();
-		print (player.FocusedPerson.Qualities.Count);
 	}
 
 	public Branch Branch {
@@ -29,7 +25,14 @@ public class BranchView : MonoBehaviour {
 		set {
 			branch = value;
 			if(branch.SuccessResult != null)
+			{
 				branch.CalculateChanceOfSuccess(player.FocusedPerson);
+				chanceOfSuccess.text = branch.ChanceOfSuccess.ToString() + "% chance of success";
+			}
+			else
+			{
+				Destroy(chanceOfSuccess);
+			}
 			branchTitle.text = branch.Title;
 			branchDescription.text = branch.Description;
 			buttonText.text = branch.ButtonText;
