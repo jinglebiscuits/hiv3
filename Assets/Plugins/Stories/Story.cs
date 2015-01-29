@@ -89,7 +89,7 @@ public class Story {
 		{
 			foreach(Requirement requirement in Requirements)
 			{
-				IQuality matchingQuality = FindMatchingQuality(qualities, requirement);
+				IQuality matchingQuality = FindMatchingQuality(qualities, requirement.Quality);
 				if(matchingQuality == null)
 				{
 					return false;
@@ -112,11 +112,11 @@ public class Story {
 	/// <returns>The matching quality.</returns>
 	/// <param name="qualities">List of person's qualities.</param>
 	/// <param name="requirement">Requirement to match qualities with.</param>
-	protected IQuality FindMatchingQuality(List<IQuality> qualities, Requirement requirement)
+	protected IQuality FindMatchingQuality(List<IQuality> qualities, IQuality qualityToMatch)
 	{
 		foreach(IQuality quality in qualities)
 		{
-			if(quality.Name == requirement.Quality.Name)
+			if(quality.Name == qualityToMatch.Name)
 			{
 				return quality;
 			}

@@ -78,7 +78,7 @@ public class Result {
 	}
 	#endregion
 
-	public void AffectCharacter(Person person)
+	public void AffectPerson(Person person)
 	{
 		//Let subscribers know
 		if(resultEvent != null)
