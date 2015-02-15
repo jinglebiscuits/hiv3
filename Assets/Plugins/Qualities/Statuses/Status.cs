@@ -11,6 +11,13 @@ public class Status : IQuality {
 	private int modifier;
 	private bool pyramid;
 
+
+	public Status (string name)
+	{
+		this.name = name;
+		this.tag = "Status";
+	}
+
 	public Status (string name, string description, int level, int points, int modifier, bool pyramid)
 	{
 		this.name = name;
@@ -19,6 +26,7 @@ public class Status : IQuality {
 		this.points = points;
 		this.modifier = modifier;
 		this.pyramid = pyramid;
+		this.tag = "Status";
 	}
 
 	#region accessors

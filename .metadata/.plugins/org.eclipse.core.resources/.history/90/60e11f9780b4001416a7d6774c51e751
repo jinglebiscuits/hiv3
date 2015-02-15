@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hivXMLSchema.xsd">
+	<title>Sherwood</title>
+  <trunk>
+    <title>Study</title>
+    <description>A.T. gets busy learning.</description>
+    <icon>Icon of a book</icon>
+    <buttonText>Go</buttonText>
+    <trunkTag>Home</trunkTag>
+    <area>area</area>
+    <urgency>1</urgency>
+    <deck>deck</deck>
+    <requirements>
+    	<requirement>
+    		<quality>
+    			<attributeQuality>Intelligence</attributeQuality>
+    		</quality>
+    		<qualityMin>1</qualityMin>
+    		<qualityMax>20</qualityMax>
+    	</requirement>
+    	<requirement>
+    		<quality>
+    			<timeQuality>Time</timeQuality>
+    		</quality>
+    		<qualityMin>15</qualityMin>
+    		<qualityMax>22</qualityMax>
+    	</requirement>
+    </requirements>
+    <branches>
+      <branch>
+        <title>Algebra looks good</title>
+        <description>A.T. seeks to unlock the mysteries of math.</description>
+        <icon>Equations</icon>
+        <buttonText>Go</buttonText>
+        <requirements/>
+        <defaultResult>
+          <title>title</title>
+          <description>description</description>
+          <timeCost>0</timeCost>
+          <effect>
+          	<quality>
+          		<attributeQuality>Intelligence</attributeQuality>
+          	</quality>
+          	<changedBy>0</changedBy>
+          </effect>
+        </defaultResult>
+        <successResult>
+        	<title>title</title>
+        	<description>description</description>
+        	<timeCost>0</timeCost>
+        </successResult>
+        <testedQualities/>
+        <difficulty>1</difficulty>
+        <linkedEvent>null</linkedEvent>
+      </branch>
+    </branches>
+  </trunk>
+  <trunk>
+  	<title>Meditate</title>
+  	<description>A.T. needs to take a break from the stress of life. Everyone needs a mental rejuvination sometimes.</description>
+  	<icon>icon</icon>
+  	<buttonText>Go</buttonText>
+  	<trunkTag>Anywhere</trunkTag>
+  	<area>area</area>
+  	<urgency>1</urgency>
+  	<deck>deck</deck>
+  	<requirements></requirements>
+  	<branches>
+  		<branch>
+  			<title>A.T. meditates for an hour.</title>
+  			<description>His mind wanders here and there, but A.T. remembers to bring his focus back to where he is. Breathing in, breathing out. Everything is ok.</description>
+  			<icon>icon</icon>
+  			<buttonText>Go</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>Practice makes perfect</title>
+  				<description>Discipline of the mind isn't formed over night, and sometimes external circumstance can even throw an old monk off.</description>
+  				<timeCost>1</timeCost>
+  				<effect>
+  					<quality>
+  						<attributeQuality>Mettle</attributeQuality>
+  					</quality>
+  					<changedBy>1</changedBy>
+  				</effect>
+  			</defaultResult>
+  			<successResult>
+  				<title>[A.T.] gets through a solid hour of focused meditation!</title>
+  				<description>[A.T.]'s mind is rejuvinated! [He] thinking clearly and feels hopeful about the future.</description>
+  				<timeCost>1</timeCost>
+  				<effect>
+  					<quality>
+  						<attributeQuality>Mettle</attributeQuality>
+  					</quality>
+  					<changedBy>3</changedBy>
+  				</effect>
+  			</successResult>
+  			<testedQualities>
+  				<quality>
+  					<attributeQuality>Mettle</attributeQuality>
+  				</quality></testedQualities>
+  			<difficulty>6</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  	</branches>
+  </trunk>
+</forest>

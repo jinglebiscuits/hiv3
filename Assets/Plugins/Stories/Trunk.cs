@@ -52,11 +52,17 @@ public class Trunk : Story{
 		get {
 			return this.trunkTag;
 		}
+		set {
+			trunkTag = value;
+		}
 	}
 
 	public string Area {
 		get {
 			return this.area;
+		}
+		set {
+			area = value;
 		}
 	}
 
@@ -64,17 +70,26 @@ public class Trunk : Story{
 		get {
 			return this.urgency;
 		}
+		set {
+			urgency = value;
+		}
 	}
 
 	public string Deck {
 		get {
 			return this.deck;
 		}
+		set {
+			deck = value;
+		}
 	}
 
 	public List<Branch> Branches {
 		get {
 			return this.branches;
+		}
+		set {
+			branches = value;
 		}
 	}
 	#endregion

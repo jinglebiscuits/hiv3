@@ -56,6 +56,9 @@ public class Story {
 		get {
 			return this.icon;
 		}
+		set {
+			icon = value;
+		}
 	}
 
 	public string ButtonText {
@@ -70,6 +73,9 @@ public class Story {
 	public List<Requirement> Requirements {
 		get {
 			return this.requirements;
+		}
+		set {
+			requirements = value;
 		}
 	}
 	#endregion

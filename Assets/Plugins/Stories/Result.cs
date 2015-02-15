@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 
 public class Result {
 
@@ -7,27 +8,32 @@ public class Result {
 
 	private string title;
 	private string description;
-	private IQuality qualityAffected;
 	private int timeCost;
-	private int changedBy;
+	private List<Effect> effects;
 
 	#region Constructors
 	public Result ()
 	{
 		this.title = "Result_Title";
 		this.description = "Result_Description";
-		this.qualityAffected = new Attribute();
 		this.timeCost = 1;
-		this.changedBy = 0;
+		this.effects = new List<Effect>();
 	}
 
-	public Result (string title, string description, IQuality qualityAffected, int changedBy)
+	public Result (string title, string description)
 	{
 		this.title = title;
 		this.description = description;
-		this.qualityAffected = qualityAffected;
 		this.timeCost = 1;
-		this.changedBy = changedBy;
+		this.effects = new List<Effect>();
+	}
+
+	public Result (string title, string description, int timeCost)
+	{
+		this.title = title;
+		this.description = description;
+		this.timeCost = timeCost;
+		this.effects = new List<Effect>();
 	}
 	#endregion
 
@@ -49,16 +55,7 @@ public class Result {
 			description = value;
 		}
 	}
-
-	public IQuality QualityAffected {
-		get {
-			return this.qualityAffected;
-		}
-		set {
-			qualityAffected = value;
-		}
-	}
-
+		
 	public int TimeCost {
 		get {
 			return this.timeCost;
@@ -68,17 +65,17 @@ public class Result {
 		}
 	}
 
-	public int ChangedBy {
+	public List<Effect> Effects {
 		get {
-			return this.changedBy;
+			return this.effects;
 		}
 		set {
-			changedBy = value;
+			effects = value;
 		}
 	}
 	#endregion
 
-	public void AffectPerson(Person person)
+	public void EffectPerson(Person person)
 	{
 		//Let subscribers know
 		if(resultEvent != null)
@@ -86,16 +83,22 @@ public class Result {
 			resultEvent();
 		}
 
-		IQuality qualityToAffect = null;
-		foreach(IQuality quality in person.Qualities)
+		foreach(Effect effect in this.effects)
 		{
-			if(quality.Name == qualityAffected.Name)
+			FindMatchingQuality(person.Qualities, effect.QualityEffected).AddPoints(effect.ChangedBy);
+		}
+		person.Clock.AddPoints(TimeCost);
+	}
+
+	private IQuality FindMatchingQuality(List<IQuality> qualities, IQuality qualityToMatch) //duplicate code. needs cleaning
+	{
+		foreach(IQuality quality in qualities)
+		{
+			if(quality.Name == qualityToMatch.Name)
 			{
-				qualityToAffect = quality;
-				break;
+				return quality;
 			}
 		}
-		qualityToAffect.AddPoints(changedBy);
-		person.Clock.AddPoints(TimeCost);
+		return null;
 	}
 }

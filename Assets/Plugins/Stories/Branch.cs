@@ -130,27 +130,6 @@ public class Branch : Story{
 	}
 	#endregion
 
-	public void ChooseBranch(Person person)
-	{
-		//Decide which result to use
-		if(successResult != null)
-		{
-			PickResult(person.Qualities);
-		}
-		else
-			chosenResult = defaultResult;
-
-		chosenResult.AffectPerson(person);
-	}
-
-	private void PickResult(List<IQuality> qualities)
-	{
-		if(Manager.rand.Next(101) <= ChanceOfSuccess)
-			chosenResult = successResult;
-		else
-			chosenResult = defaultResult;
-	}
-
 	public void CalculateChanceOfSuccess(Person person)
 	{
 		int qualityLevelSum = 0;
@@ -161,5 +140,26 @@ public class Branch : Story{
 		float qualityLevel = (float) qualityLevelSum/TestedQualities.Count;
 		float difficultyScaler = 0.6f;
 		ChanceOfSuccess = qualityLevel*difficultyScaler*100/difficulty;
+	}
+
+	public void ChooseBranch(Person person)
+	{
+		//Decide which result to use
+		if(successResult != null)
+		{
+			PickResult(person.Qualities);
+		}
+		else
+			chosenResult = defaultResult;
+
+		chosenResult.EffectPerson(person);
+	}
+
+	private void PickResult(List<IQuality> qualities)
+	{
+		if(Manager.rand.Next(101) <= ChanceOfSuccess)
+			chosenResult = successResult;
+		else
+			chosenResult = defaultResult;
 	}
 }

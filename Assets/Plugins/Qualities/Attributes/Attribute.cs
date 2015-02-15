@@ -19,12 +19,13 @@ public class Attribute : IQuality {
 	/// </summary>
 	public Attribute() : this("null", "null", 0, 0, false)
 	{
-		
+		this.tag = "Attribute";
 	}
 	
 	public Attribute (string name)
 	{
 		this.name = name;
+		this.tag = "Attribute";
 	}
 	
 	/// <summary>
@@ -37,6 +38,7 @@ public class Attribute : IQuality {
 		Level = level;
 		Points = points;
 		Pyramid = pyramid;
+		this.tag = "Attribute";
 	}
 
 	#region Accessor Methods

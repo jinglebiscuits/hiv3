@@ -12,9 +12,16 @@ public class Clock : IQuality {
 	public delegate void MyEventHandler();
 	public event MyEventHandler pointEvent;
 
+	#region Constructors
 	public Clock()
 	{
 		level = 0;
+	}
+
+	public Clock (string name)
+	{
+		this.name = name;
+		this.tag = "Clock";
 	}
 
 	/// <summary>
@@ -38,8 +45,9 @@ public class Clock : IQuality {
 		this.points = points;
 		this.pyramid = false;
 	}
-	
+	#endregion
 
+	#region Accessor Methods
 	public string Name {
 		get {
 			return this.name;
@@ -115,6 +123,7 @@ public class Clock : IQuality {
 			level = value;
 		}
 	}
+	#endregion
 
 	public void AddPoints(int _points)
 	{

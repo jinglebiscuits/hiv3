@@ -28,7 +28,7 @@ public class ResultView : MonoBehaviour {
 			result = value;
 			resultTitle.text = result.Title;
 			resultDescription.text = result.Description;
-			resultEffects.text = result.QualityAffected.Name + " gains " + result.ChangedBy + " points!" + "Time cost:" + result.TimeCost + " hour";
+			resultEffects.text = result.Effects[0].QualityEffected.Name + " gains " + result.Effects[0].ChangedBy + " points!\n" + "Time cost:" + result.TimeCost + " hour";
 			buttonText.text = "Return";
 		}
 	}
