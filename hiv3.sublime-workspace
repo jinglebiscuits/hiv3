@@ -4,6 +4,42 @@
 		"selected_items":
 		[
 			[
+				"Vecto",
+				"Vector2()"
+			],
+			[
+				"vector3",
+				"Vector3(x, y)"
+			],
+			[
+				"tran",
+				"Transform"
+			],
+			[
+				"Req",
+				"Requirements"
+			],
+			[
+				"Transform",
+				"Transform.Translate(translation, relativeTo)"
+			],
+			[
+				"Update",
+				"UpdateAvailableTrunkList"
+			],
+			[
+				"avail",
+				"availableTrunks"
+			],
+			[
+				"Debu",
+				"Debug.Log(message)"
+			],
+			[
+				"add",
+				"Array.Add()"
+			],
+			[
 				"b",
 				"buttonText"
 			],
@@ -39,6 +75,39 @@
 	},
 	"buffers":
 	[
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 219,
+				"line_ending": "Unix",
+				"name": "[Ll]ibrary/"
+			}
+		},
+		{
+			"file": "Assets/Plugins/Interfaces/IQuality.cs",
+			"settings":
+			{
+				"buffer_size": 679,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Plugins/UI/AttributeView.cs",
+			"settings":
+			{
+				"buffer_size": 2378,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Plugins/Person.cs",
+			"settings":
+			{
+				"buffer_size": 1454,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -49,6 +118,46 @@
 			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				"removpa",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: remopa",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: removep",
+				"Package Control: Remove Package"
+			],
+			[
+				" ",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"istall",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"c#",
+				"Set Syntax: C#"
 			]
 		],
 		"width": 449.0
@@ -73,11 +182,30 @@
 	"expanded_folders":
 	[
 		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins",
-		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/Stories",
-		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/Stories/Storylets"
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/UI"
 	],
 	"file_history":
 	[
+		"/Users/scottwehby/Downloads/Character Object.xml",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/Attributes/Attribute.cs",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/Player.cs",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/UI/StoryViews/ResultView.cs",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/Stories/Result.cs",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/UI/StoryContainer.cs",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/Person.cs",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/Stories/Requirement.cs",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/Stories/Branch.cs",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/Stories/Storylets/Forest.cs",
+		"/Users/scottwehby/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/hiv3.sublime-project",
+		"/Users/scottwehby/Library/Application Support/Sublime Text 3/Packages/User/C#.sublime-settings",
+		"/Users/scottwehby/Library/Application Support/Sublime Text 3/Packages/User/UnityC#.sublime-settings",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/Manager.cs",
+		"/Users/scottwehby/Documents/workspace/HIV/unityProjects/hiv3/Assets/Plugins/BaseStatus.cs",
+		"/Users/scottwehby/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/Users/scottwehby/Library/Application Support/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/Users/scottwehby/Library/Application Support/Sublime Text 3/Packages/User/ApplySyntax.sublime-settings",
+		"/Users/scottwehby/Library/Application Support/Sublime Text 3/Packages/ApplySyntax/ApplySyntax.sublime-settings",
 		"/Users/scottwehby/Desktop/trunk.xml",
 		"/Users/scottwehby/Desktop/Temp/Takeout/Location History/LocationHistory.json",
 		"/Users/scottwehby/Documents/workspace/Subte/Prints/route1.svg",
@@ -125,7 +253,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -139,6 +267,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"trunks",
 			"name",
 			"route",
 			"virtue",
@@ -210,8 +339,129 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								219,
+								219
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"auto_name": "[Ll]ibrary/",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Plugins/Interfaces/IQuality.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 679,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Assets/Plugins/UI/AttributeView.cs",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/Unity3D/UnityC#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Assets/Plugins/Person.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1454,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"syntax": "Packages/C#/C#.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 323.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -247,6 +497,10 @@
 	},
 	"menu_visible": true,
 	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.variable_get":
 	{
 		"height": 0.0
 	},

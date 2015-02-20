@@ -29,6 +29,7 @@
 				<xs:enumeration value="Angry"></xs:enumeration>
 				<xs:enumeration value="At Risk"></xs:enumeration>
 				<xs:enumeration value="Insecure"></xs:enumeration>
+				<xs:enumeration value="Intro Complete"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
@@ -141,8 +142,8 @@
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="quality"/>
-				<xs:element name="qualityMin" type="xs:positiveInteger" default="1"/>
-				<xs:element name="qualityMax" type="xs:positiveInteger" default="100"/>
+				<xs:element name="qualityMin" type="xs:int" default="1"/>
+				<xs:element name="qualityMax" type="xs:int" default="100"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

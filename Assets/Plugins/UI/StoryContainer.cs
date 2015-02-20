@@ -21,14 +21,15 @@ public class StoryContainer : MonoBehaviour {
 	public float padding;
 	//public Forest forest = new Forest();
 	public Person person;
+	public Manager manager;
 
 	// Use this for initialization
 	void Start ()
 	{
 		person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
+		manager = GameObject.Find("Manager").GetComponent<Manager>();
 		storyHeight = -2*storyViewPrefab.GetComponent<RectTransform>().anchoredPosition.y;
 		padding = storyHeight*-0.1f;
-		ShowStories();
 	}
 	
 	// Update is called once per frame
@@ -42,7 +43,7 @@ public class StoryContainer : MonoBehaviour {
 	public void ShowStories()
 	{
 		WipeViews();
-		person.UpdateAvailableTrunkList();
+		manager.UpdateTrunks();
 		int count = 0;
 		//foreach(Story story in forest.trunks)
 		foreach(Story story in person.AvailableTrunks)

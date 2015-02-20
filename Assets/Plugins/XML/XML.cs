@@ -11,7 +11,7 @@ public class XML : MonoBehaviour{
 	public TextAsset storiesXML;
 	public List<Trunk> trunks = new List<Trunk>();
 
-	void Start()
+	void Awake()
 	{
 		xDoc = XDocument.Parse(storiesXML.text);
 		var result = from q in xDoc.Descendants("trunk")
@@ -51,10 +51,7 @@ public class XML : MonoBehaviour{
 			}
 			foreach(XElement branch in trunk.Element("branches").Descendants("branch"))
 			{
-//				trunks.Last ().Branches.Add(new Branch(branch.Element("title").Value,
-//				                                       branch.Element("description").Value,
-//				                                       branch.Element("icon").Value,
-//				                                       branch.Element("buttonText").Value,
+				trunks.Last ().Branches.Add(ElementToBranch(branch));
 
 			}
 				
@@ -63,7 +60,12 @@ public class XML : MonoBehaviour{
 
 		foreach(Trunk trunk in trunks)
 		{
+			print (trunks.Count);
 			print (trunk.Title);
+			foreach(Branch branch in trunk.Branches)
+			{
+//				print (branch.Title);
+			}
 		}
 
 //		foreach(Trunk trunk in result)
@@ -73,7 +75,7 @@ public class XML : MonoBehaviour{
 
 	}
 
-	private Branch ElemenetToBranch(XElement eBranch)
+	private Branch ElementToBranch(XElement eBranch)
 	{
 		Branch branch = new Branch();
 		branch.Title = eBranch.Element("title").Value;
@@ -85,39 +87,60 @@ public class XML : MonoBehaviour{
 			branch.Requirements.Add(ElementToRequirement(requirement));
 		}
 
+		branch.DefaultResult = ElementToResult(eBranch.Element("defaultResult"));
 
+		return branch;
 	}
 
 	private Requirement ElementToRequirement(XElement requirement)
 	{
-		IQuality quality = null;
-		string caseSwitch = requirement.Element("quality").Descendants().First().Name.ToString();
-		switch (caseSwitch)
-		{
-		case "attributeQuality":
-			print ("att");
-			quality = new Attribute(requirement.Element("quality").Value);
-			break;
-		case "statusQuality":
-			print ("stat");
-			quality = new Status(requirement.Element("quality").Value);
-			break;
-			//					case "itemQuality":
-			//						print ("item");
-			//						quality = new Item(requirement.Element("quality").Value);
-			//						break;
-		case "timeQuality":
-			print("time");
-			quality = new Clock(requirement.Element("quality").Value);
-			break;
-		default:
-			print ("unknown quality type");
-			break;
-		}
+		IQuality quality = MatchQuality(requirement);
 		int min = int.Parse(requirement.Element("qualityMin").Value);
 		int max = int.Parse (requirement.Element("qualityMax").Value);
 
 		return new Requirement(quality, min, max);
 	}
-	
+
+	private Result ElementToResult(XElement eResult)
+	{
+		Result result = new Result();
+		result.Title = eResult.Element("title").Value;
+		result.Description = eResult.Element("description").Value;
+		result.TimeCost = int.Parse(eResult.Element("timeCost").Value);
+
+		foreach(XElement effect in xDoc.Descendants("effect"))
+		{
+			IQuality quality = MatchQuality(effect);
+			result.Effects.Add (new Effect(quality, int.Parse(effect.Element("changedBy").Value)));
+			print ("effected quality is " + quality.Name);
+		}
+		return result;
+	}
+
+	private IQuality MatchQuality(XElement element)
+	{
+		IQuality quality = null;
+		string caseSwitch = element.Element("quality").Descendants().First().Name.ToString();
+		switch (caseSwitch)
+		{
+			case "attributeQuality":
+			quality = new Attribute(element.Element("quality").Value);
+			break;
+			case "statusQuality":
+			quality = new Status(element.Element("quality").Value);
+			break;
+			case "itemQuality":
+			print ("item");
+			quality = new Item(element.Element("quality").Value);
+			break;
+			case "timeQuality":
+			quality = new Clock(element.Element("quality").Value);
+			break;
+			default:
+			print ("unknown quality type");
+			break;
+		}
+
+		return quality;
+	}
 }

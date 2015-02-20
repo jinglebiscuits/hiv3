@@ -5,10 +5,7 @@ public class Requirement {
 	private IQuality quality;
 	private int qualityMin;
 	private int qualityMax;
-
-	/// <summary>
-    /// The constructor sets the name, age and cash
-    /// </summary>
+	
     /// <param name="quality">The quality to be compared</param>
     /// <param name="qualityMin">minimum quality level</param>
     /// <param name="qualityMax">maximum quality level</param>

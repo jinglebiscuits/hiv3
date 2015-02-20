@@ -54,6 +54,8 @@
      <Compile Include="Assets\Plugins\Player.cs" />
      <Compile Include="Assets\Plugins\Qualities\Attributes\Attribute.cs" />
      <Compile Include="Assets\Plugins\Qualities\Attributes\BaseAttributes.cs" />
+     <Compile Include="Assets\Plugins\Qualities\Items\BaseItems.cs" />
+     <Compile Include="Assets\Plugins\Qualities\Items\Item.cs" />
      <Compile Include="Assets\Plugins\Qualities\Statuses\BaseStatuses.cs" />
      <Compile Include="Assets\Plugins\Qualities\Statuses\Status.cs" />
      <Compile Include="Assets\Plugins\Stories\Branch.cs" />
@@ -79,6 +81,7 @@
      <None Include="Assets\Plugins\XML\hivXMLSchema.xml" />
      <None Include="Assets\Plugins\XML\stories.xml" />
      <None Include="Assets\Plugins\XML\NewFile1.xml" />
+     <None Include="Assets\Plugins\XML\caleb_stories.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
  </Reference>
