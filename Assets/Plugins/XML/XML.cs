@@ -108,7 +108,7 @@ public class XML : MonoBehaviour{
 		result.Description = eResult.Element("description").Value;
 		result.TimeCost = int.Parse(eResult.Element("timeCost").Value);
 
-		foreach(XElement effect in xDoc.Descendants("effect"))
+		foreach(XElement effect in eResult.Descendants("effect"))
 		{
 			IQuality quality = MatchQuality(effect);
 			result.Effects.Add (new Effect(quality, int.Parse(effect.Element("changedBy").Value)));

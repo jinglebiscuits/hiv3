@@ -73,6 +73,7 @@
      <Compile Include="Assets\Plugins\UI\PersonView.cs" />
      <Compile Include="Assets\Plugins\UI\StoryContainer.cs" />
      <Compile Include="Assets\Plugins\UI\StoryViews\BranchView.cs" />
+     <Compile Include="Assets\Plugins\UI\StoryViews\EffectView.cs" />
      <Compile Include="Assets\Plugins\UI\StoryViews\ResultView.cs" />
      <Compile Include="Assets\Plugins\UI\StoryViews\StoryView.cs" />
      <Compile Include="Assets\Plugins\UI\StoryViews\TrunkView.cs" />
