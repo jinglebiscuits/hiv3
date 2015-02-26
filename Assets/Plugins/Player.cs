@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Player : MonoBehaviour {
-
-	private List<Person> persons = new List<Person>();
+	
 	private Person focusedPerson;
 
 	// Use this for initialization
@@ -25,7 +24,6 @@ public class Player : MonoBehaviour {
 	public void DefaultSetup()
 	{
 		Person scott = new Person();
-		persons.Add (scott);
 		focusedPerson = scott;
 	}
 }

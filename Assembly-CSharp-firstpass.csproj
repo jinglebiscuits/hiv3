@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Plugins\Avatar.cs" />
      <Compile Include="Assets\Plugins\GameClock.cs" />
      <Compile Include="Assets\Plugins\Interfaces\IQuality.cs" />
      <Compile Include="Assets\Plugins\Interfaces\IStory.cs" />
@@ -66,10 +67,12 @@
      <Compile Include="Assets\Plugins\Stories\Storylets\Forest.cs" />
      <Compile Include="Assets\Plugins\Stories\Trunk.cs" />
      <Compile Include="Assets\Plugins\UI\AttributeView.cs" />
+     <Compile Include="Assets\Plugins\UI\AvatarView.cs" />
      <Compile Include="Assets\Plugins\UI\BrowseStoriesView.cs" />
      <Compile Include="Assets\Plugins\UI\CharacterStatsView.cs" />
      <Compile Include="Assets\Plugins\UI\Clock\Clock.cs" />
      <Compile Include="Assets\Plugins\UI\Clock\ClockView.cs" />
+     <Compile Include="Assets\Plugins\UI\ColorPicker.cs" />
      <Compile Include="Assets\Plugins\UI\PersonView.cs" />
      <Compile Include="Assets\Plugins\UI\StoryContainer.cs" />
      <Compile Include="Assets\Plugins\UI\StoryViews\BranchView.cs" />
