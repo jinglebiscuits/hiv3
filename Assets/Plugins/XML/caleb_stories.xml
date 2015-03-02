@@ -149,3 +149,138 @@
 			</branch>
 		</branches>
 	</trunk>
+	<trunk>
+		<title>Lawnmower</title>
+		<description>Help [] fix the lawnmower</description>
+		<icon>icon</icon>
+		<buttonText>buttonText</buttonText>
+		<trunkTag>trunkTag</trunkTag>
+		<area>area</area>
+		<urgency>1</urgency>
+		<deck>deck</deck>
+		<requirements>
+			<requirement>
+				<quality>
+					<statusQuality>Chapter1</statusQuality>
+					
+				</quality>
+				<qualityMin>1</qualityMin>
+				<qualityMax>1</qualityMax>
+			</requirement></requirements>
+		<branches>
+			<branch>
+				<title>Punch it</title>
+				<description>description</description>
+				<icon>icon</icon>
+				<buttonText>buttonText</buttonText>
+				<requirements></requirements>
+				<defaultResult>
+					<title>title</title>
+					<description>description</description>
+					<timeCost>1</timeCost>
+					<effect>
+						<quality>
+							<attributeQuality>Physical</attributeQuality>
+						</quality>
+						<changedBy>1</changedBy>
+					</effect>
+					<effect>
+						<quality>
+							<statusQuality>Chapter1</statusQuality>
+							
+						</quality>
+						<changedBy>1</changedBy>
+					</effect>
+				</defaultResult>
+				<testedQualities></testedQualities>
+				<difficulty>1</difficulty>
+				<linkedEvent>null</linkedEvent>
+			</branch>
+		</branches>
+	</trunk>
+	<trunk>
+		<title>Dialogue</title>
+		<description>description</description>
+		<icon>icon</icon>
+		<buttonText>buttonText</buttonText>
+		<trunkTag>trunkTag</trunkTag>
+		<area>area</area>
+		<urgency>1</urgency>
+		<deck>deck</deck>
+		<requirements>
+			<requirement>
+				<quality>
+					<statusQuality>Well Rested</statusQuality>
+					
+				</quality>
+				<qualityMin>2</qualityMin>
+				<qualityMax>2</qualityMax>
+			</requirement></requirements>
+		<branches>
+			<branch>
+				<title>title</title>
+				<description>description</description>
+				<icon>icon</icon>
+				<buttonText>buttonText</buttonText>
+				<requirements></requirements>
+				<defaultResult>
+					<title>title</title>
+					<description>description</description>
+					<timeCost>1</timeCost>
+					<effect>
+						<quality>
+							<statusQuality>Chapter1</statusQuality>
+							
+						</quality>
+						<changedBy>1</changedBy>
+					</effect>
+				</defaultResult>
+				<testedQualities></testedQualities>
+				<difficulty>1</difficulty>
+				<linkedEvent>null</linkedEvent>
+			</branch>
+		</branches>
+	</trunk>
+	<trunk>
+		<title>Finish Ch1</title>
+		<description>description</description>
+		<icon>icon</icon>
+		<buttonText>buttonText</buttonText>
+		<trunkTag>trunkTag</trunkTag>
+		<area>area</area>
+		<urgency>1</urgency>
+		<deck>deck</deck>
+		<requirements>
+			<requirement>
+				<quality>
+					<statusQuality>Chapter1</statusQuality>
+					
+				</quality>
+				<qualityMin>3</qualityMin>
+				<qualityMax>3</qualityMax>
+			</requirement></requirements>
+		<branches>
+			<branch>
+				<title>title</title>
+				<description>description</description>
+				<icon>icon</icon>
+				<buttonText>buttonText</buttonText>
+				<requirements></requirements>
+				<defaultResult>
+					<title>title</title>
+					<description>description</description>
+					<timeCost>1</timeCost>
+					<effect>
+						<quality>
+							<statusQuality>Well Rested</statusQuality>
+							
+						</quality>
+						<changedBy>-3</changedBy>
+					</effect>
+				</defaultResult>
+				<testedQualities></testedQualities>
+				<difficulty>1</difficulty>
+				<linkedEvent>null</linkedEvent>
+			</branch>
+		</branches>
+	</trunk>

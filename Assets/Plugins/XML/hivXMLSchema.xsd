@@ -30,6 +30,7 @@
 				<xs:enumeration value="At Risk"></xs:enumeration>
 				<xs:enumeration value="Insecure"></xs:enumeration>
 				<xs:enumeration value="Intro Complete"></xs:enumeration>
+				<xs:enumeration value="Chapter1"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>

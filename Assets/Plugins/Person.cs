@@ -1,11 +1,12 @@
 ﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Person {
+public class Person{
 
 	private string name;
-	private Avatar avatar;
 
 	private BaseAttributes baseAttributes = new BaseAttributes();
 	private BaseStatuses baseStatuses = new BaseStatuses();
@@ -48,15 +49,6 @@ public class Person {
 		}
 		set {
 			name = value;
-		}
-	}
-
-	Avatar Avatar {
-		get {
-			return this.avatar;
-		}
-		set {
-			avatar = value;
 		}
 	}
 
