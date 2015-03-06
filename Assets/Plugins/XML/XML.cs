@@ -54,25 +54,7 @@ public class XML : MonoBehaviour{
 				trunks.Last ().Branches.Add(ElementToBranch(branch));
 
 			}
-				
-//			print (trunk.Element("requirements").Value);
 		}
-
-		foreach(Trunk trunk in trunks)
-		{
-			print (trunks.Count);
-			print (trunk.Title);
-			foreach(Branch branch in trunk.Branches)
-			{
-//				print (branch.Title);
-			}
-		}
-
-//		foreach(Trunk trunk in result)
-//		{
-//			print (trunk.Icon);
-//		}
-
 	}
 
 	private Branch ElementToBranch(XElement eBranch)
