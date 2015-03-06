@@ -65,7 +65,7 @@ public class ColorPicker : MonoBehaviour{
 		print (clickSpot);
 		pickedColor = texture.GetPixel((int) clickSpot.x, (int) (256 + clickSpot.y));
 		avatarPanel.GetComponent<AvatarView>().body.color = pickedColor;
-		avatarPanel.GetComponent<AvatarView>().head.color = pickedColor;
+		avatarPanel.GetComponent<AvatarView>().headColor.color = pickedColor;
 	}
 
 	public void ChangeSelectedImageColor()
