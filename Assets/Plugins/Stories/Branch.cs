@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Collections;
+using System;
 
 /// <summary>
 /// A Branch represents a possible path from a Trunk. Branches need unique names within their story trees.
@@ -139,7 +140,7 @@ public class Branch : Story{
 		}
 		float qualityLevel = (float) qualityLevelSum/TestedQualities.Count;
 		float difficultyScaler = 0.6f;
-		ChanceOfSuccess = qualityLevel*difficultyScaler*100/difficulty;
+		ChanceOfSuccess = Math.Min(100, qualityLevel*difficultyScaler*100/difficulty);
 	}
 
 	public void ChooseBranch(Person person)

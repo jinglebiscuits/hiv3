@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 8fd85cc5eda314c2c92799b79d5e532e
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - storiesXML: {fileID: 4900000, guid: a81fde8692c4542ae8cc3d9cc4ca939a, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

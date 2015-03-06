@@ -14,47 +14,41 @@ public class XML : MonoBehaviour{
 	void Awake()
 	{
 		xDoc = XDocument.Parse(storiesXML.text);
-		var result = from q in xDoc.Descendants("trunk")
-			select new Trunk
-				{
-					Title = q.Element("title").Value,
-					Description = q.Element("description").Value,
-					Icon = q.Element("icon").Value,
-					ButtonText = q.Element("buttonText").Value,
-					TrunkTag = q.Element("trunkTag").Value,
-					Area = q.Element("area").Value,
-					Urgency = q.Element("urgency").Value,
-					Deck = q.Element("deck").Value
-				};
-
 		foreach(XElement trunk in xDoc.Descendants("trunk"))
 		{
-			trunks.Add(new Trunk(
-				trunk.Element("title").Value,
-				trunk.Element("description").Value,
-				trunk.Element("icon").Value,
-				trunk.Element("buttonText").Value,
-				new List<Requirement>(),
-				trunk.Element("trunkTag").Value,
-				trunk.Element("area").Value,
-				trunk.Element("urgency").Value,
-				trunk.Element("deck").Value,
-				new List<Branch>()));
+			trunks.Add(ElementToTrunk(trunk));
 
+			//Not all trunks have requirements
 			if(trunk.Element("requirements").Value != "")
 			{
-
 				foreach(XElement requirement in trunk.Element("requirements").Descendants("requirement"))
 				{
 					trunks.Last().Requirements.Add(ElementToRequirement(requirement));
 				}
 			}
+
+			//All trunks have at least one default branch
 			foreach(XElement branch in trunk.Element("branches").Descendants("branch"))
 			{
 				trunks.Last ().Branches.Add(ElementToBranch(branch));
-
 			}
 		}
+	}
+
+	private Trunk ElementToTrunk(XElement eTrunk)
+	{
+		Trunk trunk = new Trunk(
+			eTrunk.Element("title").Value,
+			eTrunk.Element("description").Value,
+			eTrunk.Element("icon").Value,
+			eTrunk.Element("buttonText").Value,
+			new List<Requirement>(),
+			eTrunk.Element("trunkTag").Value,
+			eTrunk.Element("area").Value,
+			eTrunk.Element("urgency").Value,
+			eTrunk.Element("deck").Value,
+			new List<Branch>());
+		return trunk;
 	}
 
 	private Branch ElementToBranch(XElement eBranch)
@@ -64,19 +58,40 @@ public class XML : MonoBehaviour{
 		branch.Description = eBranch.Element("description").Value;
 		branch.Icon = eBranch.Element("icon").Value;
 		branch.ButtonText = eBranch.Element("buttonText").Value;
-		foreach(XElement requirement in eBranch.Element("requirements").Descendants("requirement"))
+		branch.Difficulty = int.Parse(eBranch.Element("difficulty").Value);
+
+		//Not all branches have requirements
+		if(eBranch.Element("requirements").Value != "")
 		{
-			branch.Requirements.Add(ElementToRequirement(requirement));
+			foreach(XElement requirement in eBranch.Element("requirements").Descendants("requirement"))
+			{
+				branch.Requirements.Add(ElementToRequirement(requirement));
+			}
 		}
 
+		//All branches have a defaultResult
 		branch.DefaultResult = ElementToResult(eBranch.Element("defaultResult"));
 
+		if(eBranch.Element("successResult").Value != "")
+		{
+			branch.SuccessResult = ElementToResult(eBranch.Element("successResult"));
+		}
+
+		if(eBranch.Element("testedQualities").Value != "")
+		{
+			foreach(XElement testedQuality in eBranch.Element("testedQualities").Descendants("quality"))
+			{
+				print ("testedQuality.Value = " + testedQuality.Value);
+				print ("way that counts = " + testedQuality.Descendants().First().Name.ToString());
+				branch.TestedQualities.Add(ElementToQuality(testedQuality));
+			}
+		}
 		return branch;
 	}
 
 	private Requirement ElementToRequirement(XElement requirement)
 	{
-		IQuality quality = MatchQuality(requirement);
+		IQuality quality = ElementToQuality(requirement.Element("quality"));
 		int min = int.Parse(requirement.Element("qualityMin").Value);
 		int max = int.Parse (requirement.Element("qualityMax").Value);
 
@@ -92,35 +107,34 @@ public class XML : MonoBehaviour{
 
 		foreach(XElement effect in eResult.Descendants("effect"))
 		{
-			IQuality quality = MatchQuality(effect);
+			IQuality quality = ElementToQuality(effect.Element("quality"));
 			result.Effects.Add (new Effect(quality, int.Parse(effect.Element("changedBy").Value)));
-			print ("effected quality is " + quality.Name);
 		}
 		return result;
 	}
 
-	private IQuality MatchQuality(XElement element)
+	private IQuality ElementToQuality(XElement eQuality)
 	{
 		IQuality quality = null;
-		string caseSwitch = element.Element("quality").Descendants().First().Name.ToString();
+		print ("testing passed quality: " + eQuality.Descendants().First().Name.ToString());
+		string caseSwitch = eQuality.Descendants().First().Name.ToString();
 		switch (caseSwitch)
 		{
 			case "attributeQuality":
-			quality = new Attribute(element.Element("quality").Value);
-			break;
+				quality = new Attribute(eQuality.Value);
+				break;
 			case "statusQuality":
-			quality = new Status(element.Element("quality").Value);
-			break;
+				quality = new Status(eQuality.Value);
+				break;
 			case "itemQuality":
-			print ("item");
-			quality = new Item(element.Element("quality").Value);
-			break;
+				quality = new Item(eQuality.Value);
+				break;
 			case "timeQuality":
-			quality = new Clock(element.Element("quality").Value);
-			break;
+				quality = new Clock(eQuality.Value);
+				break;
 			default:
-			print ("unknown quality type");
-			break;
+				Debug.Log("unknown quality type");
+				break;
 		}
 
 		return quality;
