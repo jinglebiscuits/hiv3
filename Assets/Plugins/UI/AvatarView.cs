@@ -26,6 +26,9 @@ public class AvatarView : MonoBehaviour {
 	private Image irisProfile;
 	private Image lipsProfile;
 
+	public Image profilePic;
+	public Sprite profilePicSprite;
+
 	public Sprite[] headColors;
 	public Sprite[] headLineses;
 
@@ -33,7 +36,7 @@ public class AvatarView : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		profilePicSprite = Sprite.Create(CalculateTexture(1869, 589, 30, 294, 1500, body.sprite.texture), new Rect(0, 0, 100, 100), new Vector2(50, 50));
 	}
 	
 	// Update is called once per frame

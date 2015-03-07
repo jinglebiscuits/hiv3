@@ -19,7 +19,6 @@ public class ColorPicker : MonoBehaviour{
 
 	// Use this for initialization
 	void Start () {
-		print ((float) hValue/359);
 		texture = image.sprite.texture;
 		int y = 0;
 		while (y < texture.height) {

@@ -81,8 +81,6 @@ public class XML : MonoBehaviour{
 		{
 			foreach(XElement testedQuality in eBranch.Element("testedQualities").Descendants("quality"))
 			{
-				print ("testedQuality.Value = " + testedQuality.Value);
-				print ("way that counts = " + testedQuality.Descendants().First().Name.ToString());
 				branch.TestedQualities.Add(ElementToQuality(testedQuality));
 			}
 		}
@@ -116,7 +114,6 @@ public class XML : MonoBehaviour{
 	private IQuality ElementToQuality(XElement eQuality)
 	{
 		IQuality quality = null;
-		print ("testing passed quality: " + eQuality.Descendants().First().Name.ToString());
 		string caseSwitch = eQuality.Descendants().First().Name.ToString();
 		switch (caseSwitch)
 		{
