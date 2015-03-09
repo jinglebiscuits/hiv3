@@ -24,8 +24,6 @@ public class ColorPicker : MonoBehaviour{
 		while (y < texture.height) {
 			int x = 0;
 			while (x < texture.width) {
-				//Color color = ((x & y) ? Color.white : Color.gray);
-//				Color color = EditorGUIUtility.HSVToRGB((float) hValue/359, (float) x/texture.width, (float) y/texture.height);
 				Color color = HSVToRGB((float) hValue/359, (float) x/texture.width, (float) y/texture.height);
 				texture.SetPixel(x, y, color);
 				++x;
@@ -45,8 +43,6 @@ public class ColorPicker : MonoBehaviour{
 		while (y < texture.height) {
 			int x = 0;
 			while (x < texture.width) {
-				//Color color = ((x & y) ? Color.white : Color.gray);
-//				Color color = EditorGUIUtility.HSVToRGB((float) hValue/359, (float) x/texture.width, (float) y/texture.height);
 				Color color = HSVToRGB((float) hValue/359, (float) x/texture.width, (float) y/texture.height);
 				texture.SetPixel(x, y, color);
 				++x;
