@@ -15,23 +15,20 @@ public class AvatarView : MonoBehaviour {
 	public Image iris;
 	public Image lips;
 
-	private Image hairProfile;
-	private Image bodyProfile;
-	private Image headColorProfile;
-	private Image headLinesProfile;
-	private Image pantsProfile;
-	private Image shirtProfile;
-	private Image shoesProfile;
-	private Image scleraProfile;
-	private Image irisProfile;
-	private Image lipsProfile;
-
-	public Image profilePic;
+	public Image profileHair;
+	public Image profileBody;
+	public Image profileHeadColor;
+	public Image profileHeadLines;
+	public Image profileShirt;
+	public Image profileSclera;
+	public Image profileIris;
+	public Image profileLips;
+	public Image profileBorder;
+	public Image profileBackground;
+	
 	public Sprite profilePicSprite = new Sprite();
 	private Texture2D newBodyTexture;
-	public Rect readPixelRect;
-	public Material testMaterial;
-
+	public Vector2 bottomLeft;
 
 	public Sprite[] headColors;
 	public Sprite[] headLineses;
@@ -60,45 +57,53 @@ public class AvatarView : MonoBehaviour {
 
 	public void CreateProfileIcon()
 	{
-		Color[] pix = hair.sprite.texture.GetPixels(0, 0, hair.sprite.texture.width, hair.sprite.texture.height);
-		newBodyTexture = new Texture2D(hair.sprite.texture.width, hair.sprite.texture.height, TextureFormat.RGBA32, false);
-		newBodyTexture.SetPixels(pix);
-//		newBodyTexture = Instantiate(body.sprite.texture) as Texture2D;
+		AvatarToProfile(hair, profileHair);
+		AvatarToProfile(shirt, profileShirt);
+		AvatarToProfile(body, profileBody);
+		AvatarToProfile(headColor, profileHeadColor);
+		AvatarToProfile(headLines, profileHeadLines);
+		AvatarToProfile(iris, profileIris);
+		AvatarToProfile(sclera, profileSclera);
+		AvatarToProfile(lips, profileLips);
 
-
-//		newBodyTexture = new Texture2D(body.sprite.texture.width, body.sprite.texture.height, TextureFormat.ARGB32, true);
-//		
-//		int y = 0;
-//		while (y < body.sprite.texture.height) {
-//			int x = 0;
-//			while (x < body.sprite.texture.width) {
-//				newBodyTexture.SetPixel(x, y, body.sprite.texture.GetPixel(x, y));
-//				++x;
-//			}
-//			++y;
-//		}
-		newBodyTexture.Apply();
+		newBodyTexture = MakeBorder();
 		profilePicSprite = Sprite.Create(newBodyTexture, new Rect(0, 0, newBodyTexture.width, newBodyTexture.height), new Vector2(0.5f, 0.5f));
 		profilePicSprite.name = "profilePick";
-		profilePic.sprite = profilePicSprite;
-		print(profilePic.GetComponent<RectTransform>().sizeDelta);
-		GameObject quad = GameObject.Find ("SpriteTest");
-		quad.GetComponent<SpriteRenderer>().sprite = profilePic.sprite;
-		testMaterial.color = Color.red;
-		testMaterial.mainTexture = newBodyTexture;
+		profileBorder.sprite = profilePicSprite;
+		profileBorder.color = Color.white;
+
+		newBodyTexture = MakeBackground();
+		profilePicSprite = Sprite.Create(newBodyTexture, new Rect(0, 0, newBodyTexture.width, newBodyTexture.height), new Vector2(0.5f, 0.5f));
+		profilePicSprite.name = "profilePick";
+		profileBackground.sprite = profilePicSprite;
+		profileBackground.color = Color.white;
 	}
 
-	Texture2D CalculateTexture(
-		int h, int w,float r,float cx,float cy,Texture2D sourceTex
-		){
-		Color [] c= sourceTex.GetPixels(0, 0, sourceTex.width, sourceTex.height);
-		Texture2D b=new Texture2D(h,w);
-		for (int i = 0 ; i<(h*w);i++){
+	void AvatarToProfile(Image avatarImage, Image profileImage)
+	{
+		newBodyTexture = CalculateTexture(avatarImage.sprite.texture);
+		profilePicSprite = Sprite.Create(newBodyTexture, new Rect(0, 0, newBodyTexture.width, newBodyTexture.height), new Vector2(0.5f, 0.5f));
+		profilePicSprite.name = "profilePick";
+		profileImage.sprite = profilePicSprite;
+		profileImage.color = avatarImage.color;
+	}
+
+	Texture2D CalculateTexture(Texture2D sourceTex){
+		int w = 589;
+		int h = 589;
+		int cx = 294;
+		int cy = 294;
+		int r = 294;
+		Color [] c= sourceTex.GetPixels((int) bottomLeft.x, (int) bottomLeft.y, 589, 589);
+		Texture2D b=new Texture2D(h,w, TextureFormat.RGBA32, false);
+		for (int i = 0 ; i<c.Length;i++){
 			int y=Mathf.FloorToInt(((float)i)/((float)w));
 			int x=Mathf.FloorToInt(((float)i-((float)(y*w))));
-			if (r*r>=(x-cx)*(x-cx)+(y-cy)*(y-cy)){
+			if (Mathf.Pow(r, 2)>=(x-cx)*(x-cx)+(y-cy)*(y-cy)){
 				b.SetPixel(x, y, c[i]);
-			}else{
+			}
+			else
+			{
 				b.SetPixel(x, y, Color.clear);
 			}
 		}
@@ -106,8 +111,50 @@ public class AvatarView : MonoBehaviour {
 		return b;
 	}
 
-	void OnGUI()
-	{
-		GUI.DrawTexture(new Rect(10, 10, 60, 60), profilePicSprite.texture, ScaleMode.ScaleToFit);
+	Texture2D MakeBorder(){
+		int w = 589;
+		int h = 589;
+		int cx = 294;
+		int cy = 294;
+		int r = 294;
+		Texture2D b=new Texture2D(h,w, TextureFormat.RGBA32, false);
+		for (int i = 0; i < w * h; i++){
+			int y=Mathf.FloorToInt(((float)i)/((float)w));
+			int x=Mathf.FloorToInt(((float)i-((float)(y*w))));
+			if (Mathf.Pow(r - 20, 2)>(x-cx)*(x-cx)+(y-cy)*(y-cy)){
+				b.SetPixel(x, y, Color.clear);
+			}
+			else if(r*r>=(x-cx)*(x-cx)+(y-cy)*(y-cy)){
+				b.SetPixel(x, y, Color.white);
+			}
+			else
+			{
+				b.SetPixel(x, y, Color.clear);
+			}
+		}
+		b.Apply ();
+		return b;
+	}
+
+	Texture2D MakeBackground(){
+		int w = 589;
+		int h = 589;
+		int cx = 294;
+		int cy = 294;
+		int r = 294;
+		Texture2D b=new Texture2D(h,w, TextureFormat.RGBA32, false);
+		for (int i = 0; i < w * h; i++){
+			int y=Mathf.FloorToInt(((float)i)/((float)w));
+			int x=Mathf.FloorToInt(((float)i-((float)(y*w))));
+			if (Mathf.Pow(r, 2)>(x-cx)*(x-cx)+(y-cy)*(y-cy)){
+				b.SetPixel(x, y, Color.grey);
+			}
+			else
+			{
+				b.SetPixel(x, y, Color.clear);
+			}
+		}
+		b.Apply ();
+		return b;
 	}
 }
