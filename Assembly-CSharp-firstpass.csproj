@@ -51,6 +51,9 @@
      <Compile Include="Assets\Plugins\Interfaces\IQuality.cs" />
      <Compile Include="Assets\Plugins\Interfaces\IStory.cs" />
      <Compile Include="Assets\Plugins\Manager.cs" />
+     <Compile Include="Assets\Plugins\MaterialUI\Anims.cs" />
+     <Compile Include="Assets\Plugins\MaterialUI\HSBColor.cs" />
+     <Compile Include="Assets\Plugins\MaterialUI\MaterialGlobals.cs" />
      <Compile Include="Assets\Plugins\Person.cs" />
      <Compile Include="Assets\Plugins\Player.cs" />
      <Compile Include="Assets\Plugins\Qualities\Attributes\Attribute.cs" />

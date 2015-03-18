@@ -4,15 +4,16 @@ using System.Collections;
 
 public class Avatar : MonoBehaviour {
 
-	public Sprite hair;
-	public Sprite body;
-	public Sprite head;
-	public Sprite pants;
-	public Sprite shirt;
-	public Sprite shoes;
-	public Sprite sclera;
-	public Sprite iris;
-	public Sprite lips;
+	public Image hair;
+	public Image body;
+	public Image headColor;
+	public Image headLines;
+	public Image pants;
+	public Image shirt;
+	public Image shoes;
+	public Image sclera;
+	public Image iris;
+	public Image lips;
 	
 	void Awake ()
 	{

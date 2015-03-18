@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class Person{
 
 	private string name;
+	private BodyType bodyType;
 
 	private BaseAttributes baseAttributes = new BaseAttributes();
 	private BaseStatuses baseStatuses = new BaseStatuses();
@@ -40,6 +41,7 @@ public class Person{
 		forest = new Forest();
 		availableTrunks = new List<Trunk>();
 //		UpdateAvailableTrunkList();
+
 	}
 
 	#region Accessor Methods
@@ -49,6 +51,15 @@ public class Person{
 		}
 		set {
 			name = value;
+		}
+	}
+
+	public BodyType BodyType {
+		get {
+			return this.bodyType;
+		}
+		set {
+			bodyType = value;
 		}
 	}
 
@@ -116,4 +127,10 @@ public class Person{
 		}
 		return availableTrunks;
 	}
+}
+
+public enum BodyType
+{
+	male,
+	female
 }

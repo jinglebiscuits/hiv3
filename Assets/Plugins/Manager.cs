@@ -44,6 +44,11 @@ public class Manager : MonoBehaviour {
 		person.UpdateAvailableTrunkList(xmlScript.trunks);
 	}
 
+	public void LoadScene(string scene)
+	{
+		Application.LoadLevel(scene);
+	}
+
 //	public void Save()
 //	{
 //		BinaryFormatter bf = new BinaryFormatter();
