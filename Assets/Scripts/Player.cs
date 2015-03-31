@@ -7,8 +7,11 @@ public class Player : MonoBehaviour {
 	
 	private Person focusedPerson;
 	public AvatarView avatarView;
+	public bool hasCreatedCharacter = false;
 
 	public static Player player;
+
+	public int test = 4;
 
 	void Awake ()
 	{
@@ -25,6 +28,27 @@ public class Player : MonoBehaviour {
 		if(focusedPerson == null)
 		{
 			DefaultSetup();
+		}
+	}
+
+	void Start ()
+	{
+		if(Application.loadedLevelName == "CharacterCreation")
+		{
+			avatarView = GameObject.Find("AvatarView").GetComponent<AvatarView>();
+			GameObject.Find("ProfileAvatar").GetComponent<ProfileAvatarView>().player = this.gameObject;
+		}
+	}
+
+	void OnLevelWasLoaded(int level)
+	{
+		if(level == 1)
+		{
+			if(Application.loadedLevelName == "CharacterCreation")
+			{
+				avatarView = GameObject.Find("AvatarView").GetComponent<AvatarView>();
+				GameObject.Find("ProfileAvatar").GetComponent<ProfileAvatarView>().player = GameObject.Find("Player");
+			}
 		}
 	}
 
@@ -52,7 +76,6 @@ public class Player : MonoBehaviour {
 		else
 			focusedPerson.BodyType = BodyType.male;
 
-		print(focusedPerson.BodyType);
 		avatarView.DisplayAppropriateBody(focusedPerson.BodyType);
 	}
 

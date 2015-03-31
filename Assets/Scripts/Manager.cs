@@ -13,7 +13,13 @@ public class Manager : MonoBehaviour {
 	public StoryContainer storyContainer;
 	
 	public static Manager manager;
-	
+
+
+	//level 1 stuff
+	private GameObject player;
+	private GameObject profileAvatar;
+	private GameObject avatarView;
+
 	void Awake ()
 	{
 		if(manager == null)
@@ -27,13 +33,37 @@ public class Manager : MonoBehaviour {
 		}
 	}
 
+	void OnEnable()
+	{
+
+	}
+
 	// Use this for initialization
 	void Start () {
 		person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
-		person.UpdateAvailableTrunkList(xmlScript.trunks);
-		storyContainer.ShowStories();
+		//person.UpdateAvailableTrunkList(xmlScript.trunks);
+//		storyContainer.ShowStories();
 	}
-	
+
+	void OnLevelWasLoaded(int level)
+	{
+		if(level == 1)
+		{
+			player = GameObject.Find ("Player");
+			profileAvatar = GameObject.Find("ProfileAvatar");
+			avatarView = GameObject.Find ("AvatarView");
+
+			profileAvatar.GetComponent<ProfileAvatarView>().player = player;
+		}
+		else if(level == 2)
+		{
+			storyContainer = GameObject.Find ("StoryContainer").GetComponent<StoryContainer>();
+			person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
+			person.UpdateAvailableTrunkList(xmlScript.trunks);
+			storyContainer.ShowStories();
+		}
+	}
+
 	// Update is called once per frame
 	void Update () {
 	

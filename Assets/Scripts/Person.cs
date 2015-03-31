@@ -20,6 +20,7 @@ public class Person{
 
 	public Person()
 	{
+		bodyType = BodyType.female;
 		foreach(IQuality attribute in baseAttributes.attributes)
 		{
 			qualities.Add (attribute);

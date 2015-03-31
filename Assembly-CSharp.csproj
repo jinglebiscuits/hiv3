@@ -76,17 +76,57 @@
      <Compile Include="Assets\MaterialUI\Scripts\Layout\SnapButtonToText.cs" />
      <Compile Include="Assets\MaterialUI\Scripts\Layout\SpriteSwapperScale.cs" />
      <Compile Include="Assets\MaterialUI\Scripts\Tools\ShadowGen.cs" />
-     <None Include="Assets\Plugins\XML\hivXMLSchema.xml" />
-     <None Include="Assets\Plugins\XML\stories.xml" />
-     <None Include="Assets\Plugins\XML\testing.xml" />
-     <None Include="Assets\Plugins\XML\caleb_stories.xml" />
+     <Compile Include="Assets\Scripts\Avatar.cs" />
+     <Compile Include="Assets\Scripts\AvatarSceneManager.cs" />
+     <Compile Include="Assets\Scripts\GameClock.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IQuality.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IStory.cs" />
+     <Compile Include="Assets\Scripts\MainSceneManager.cs" />
+     <Compile Include="Assets\Scripts\Manager.cs" />
+     <Compile Include="Assets\Scripts\MaterialUI\Anims.cs" />
+     <Compile Include="Assets\Scripts\MaterialUI\HSBColor.cs" />
+     <Compile Include="Assets\Scripts\MaterialUI\MaterialGlobals.cs" />
+     <Compile Include="Assets\Scripts\Person.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Attributes\Attribute.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Attributes\BaseAttributes.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Items\BaseItems.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Items\Item.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Statuses\BaseStatuses.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Statuses\Status.cs" />
+     <Compile Include="Assets\Scripts\Stories\Branch.cs" />
+     <Compile Include="Assets\Scripts\Stories\Effect.cs" />
+     <Compile Include="Assets\Scripts\Stories\Requirement.cs" />
+     <Compile Include="Assets\Scripts\Stories\Result.cs" />
+     <Compile Include="Assets\Scripts\Stories\SceneLoader.cs" />
+     <Compile Include="Assets\Scripts\Stories\Story.cs" />
+     <Compile Include="Assets\Scripts\Stories\Storylets\Forest.cs" />
+     <Compile Include="Assets\Scripts\Stories\Trunk.cs" />
+     <Compile Include="Assets\Scripts\UI\AttributeView.cs" />
+     <Compile Include="Assets\Scripts\UI\AvatarView.cs" />
+     <Compile Include="Assets\Scripts\UI\BrowseStoriesView.cs" />
+     <Compile Include="Assets\Scripts\UI\CharacterStatsView.cs" />
+     <Compile Include="Assets\Scripts\UI\Clock\Clock.cs" />
+     <Compile Include="Assets\Scripts\UI\Clock\ClockView.cs" />
+     <Compile Include="Assets\Scripts\UI\ColorPicker.cs" />
+     <Compile Include="Assets\Scripts\UI\IntroScrollingPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\PersonView.cs" />
+     <Compile Include="Assets\Scripts\UI\ProfileAvatarView.cs" />
+     <Compile Include="Assets\Scripts\UI\StoryContainer.cs" />
+     <Compile Include="Assets\Scripts\UI\StoryViews\BranchView.cs" />
+     <Compile Include="Assets\Scripts\UI\StoryViews\EffectView.cs" />
+     <Compile Include="Assets\Scripts\UI\StoryViews\ResultView.cs" />
+     <Compile Include="Assets\Scripts\UI\StoryViews\StoryView.cs" />
+     <Compile Include="Assets\Scripts\UI\StoryViews\TrunkView.cs" />
+     <Compile Include="Assets\Scripts\UI\ViewManager.cs" />
+     <Compile Include="Assets\Scripts\XML\XML.cs" />
+     <None Include="Assets\Scripts\XML\hivXMLSchema.xml" />
+     <None Include="Assets\Scripts\XML\stories.xml" />
+     <None Include="Assets\Scripts\XML\testing.xml" />
+     <None Include="Assets\Scripts\XML\caleb_stories.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{7CD97F57-7FCB-8C92-9B14-6C960FEFDF19}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

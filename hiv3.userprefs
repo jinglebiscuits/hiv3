@@ -1,15 +1,16 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/UI/ColorPicker.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/AvatarView.cs">
     <Files>
-      <File FileName="Assets/Plugins/Person.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/UI/ViewManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/Manager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/XML/XML.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/Avatar.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/Player.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/UI/AvatarView.cs" Line="1" Column="1" />
-      <File FileName="Assets/Plugins/UI/ColorPicker.cs" Line="75" Column="2" />
+      <File FileName="Assets/Scripts/Manager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AvatarSceneManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Player.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MainSceneManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/AvatarView.cs" Line="57" Column="40" />
+      <File FileName="Assets/Scripts/UI/ProfileAvatarView.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Avatar.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/XML/XML.cs" Line="75" Column="1" />
+      <File FileName="Assets/Scripts/UI/ColorPicker.cs" Line="73" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
