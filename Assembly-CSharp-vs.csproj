@@ -90,10 +90,12 @@
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Qualities\Attributes\Attribute.cs" />
      <Compile Include="Assets\Scripts\Qualities\Attributes\BaseAttributes.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Day.cs" />
      <Compile Include="Assets\Scripts\Qualities\Items\BaseItems.cs" />
      <Compile Include="Assets\Scripts\Qualities\Items\Item.cs" />
      <Compile Include="Assets\Scripts\Qualities\Statuses\BaseStatuses.cs" />
      <Compile Include="Assets\Scripts\Qualities\Statuses\Status.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Week.cs" />
      <Compile Include="Assets\Scripts\Stories\Branch.cs" />
      <Compile Include="Assets\Scripts\Stories\Effect.cs" />
      <Compile Include="Assets\Scripts\Stories\Requirement.cs" />

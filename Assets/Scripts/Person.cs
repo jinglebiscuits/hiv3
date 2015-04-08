@@ -14,6 +14,8 @@ public class Person{
 	private BaseItems baseItems = new BaseItems();
 	private List<IQuality> qualities = new List<IQuality>();
 	private Clock clock;
+	private Day day;
+	private Week week;
 
 	private Forest forest;
 	private List<Trunk> availableTrunks;
@@ -36,8 +38,14 @@ public class Person{
 			qualities.Add (item);
 		}
 
-		clock = new Clock(8);
+		clock = new Clock(21);
 		qualities.Add (clock);
+
+		day = new Day(0);
+		qualities.Add (day);
+
+		week = new Week(0);
+		qualities.Add (week);
 
 		forest = new Forest();
 		availableTrunks = new List<Trunk>();
@@ -97,6 +105,24 @@ public class Person{
 		}
 		set {
 			clock = value;
+		}
+	}
+
+	public Day Day {
+		get {
+			return this.day;
+		}
+		set {
+			day = value;
+		}
+	}
+
+	public Week Week {
+		get {
+			return this.week;
+		}
+		set {
+			week = value;
 		}
 	}
 

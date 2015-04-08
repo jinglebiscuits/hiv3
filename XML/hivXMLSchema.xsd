@@ -29,8 +29,6 @@
 				<xs:enumeration value="Angry"></xs:enumeration>
 				<xs:enumeration value="At Risk"></xs:enumeration>
 				<xs:enumeration value="Insecure"></xs:enumeration>
-				<xs:enumeration value="Intro Complete"></xs:enumeration>
-				<xs:enumeration value="Chapter1"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
@@ -53,7 +51,7 @@
 	<xs:element name="storylineQuality">
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
-				<xs:enumeration value="Welder"></xs:enumeration>
+				<xs:enumeration value="Intro"></xs:enumeration>
 				<xs:enumeration value="Electrician"></xs:enumeration>
 				<xs:enumeration value="Carpenter"></xs:enumeration>
 				<xs:enumeration value="Auto Mechanic"></xs:enumeration>

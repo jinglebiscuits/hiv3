@@ -1,16 +1,16 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/AvatarView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Qualities/Day.cs">
     <Files>
-      <File FileName="Assets/Scripts/Manager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/AvatarSceneManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/MainSceneManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/AvatarView.cs" Line="57" Column="40" />
-      <File FileName="Assets/Scripts/UI/ProfileAvatarView.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Avatar.cs" Line="7" Column="1" />
-      <File FileName="Assets/Scripts/XML/XML.cs" Line="75" Column="1" />
-      <File FileName="Assets/Scripts/UI/ColorPicker.cs" Line="73" Column="1" />
+      <File FileName="Assets/Scripts/Qualities/Day.cs" Line="93" Column="16" />
+      <File FileName="Assets/Scripts/Stories/Result.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/Clock/Clock.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/Clock/ClockView.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameClock.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Person.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Qualities/Statuses/Status.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/XML/XML.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Qualities/Week.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

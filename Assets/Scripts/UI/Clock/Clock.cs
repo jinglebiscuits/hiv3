@@ -11,6 +11,7 @@ public class Clock : IQuality {
 
 	public delegate void MyEventHandler();
 	public event MyEventHandler pointEvent;
+	public event MyEventHandler newDayEvent;
 
 	#region Constructors
 	public Clock()
@@ -164,6 +165,10 @@ public class Clock : IQuality {
 
 	private void NewDay()
 	{
-		//start a new day
+		//let subscribers know
+		if(newDayEvent != null)
+		{
+			newDayEvent();
+		}
 	}
 }
