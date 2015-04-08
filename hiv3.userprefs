@@ -1,16 +1,18 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Qualities/Day.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EndSceneManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Qualities/Day.cs" Line="93" Column="16" />
+      <File FileName="Assets/Scripts/EndSceneManager.cs" Line="11" Column="39" />
+      <File FileName="Assets/Scripts/Qualities/Day.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Stories/Result.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/UI/Clock/Clock.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/Clock/ClockView.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/Clock/ClockView.cs" Line="46" Column="37" />
       <File FileName="Assets/Scripts/GameClock.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Person.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Qualities/Statuses/Status.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/XML/XML.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Qualities/Week.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Manager.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

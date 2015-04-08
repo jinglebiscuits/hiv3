@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ClockView : MonoBehaviour {
@@ -6,28 +7,44 @@ public class ClockView : MonoBehaviour {
 	private Person person;
 	private Clock clock;
 	private Day day;
+	private Week week;
 	public GameObject hourHand;
+	public Text dayText;
+	public Text weekNumber;
 
 	// Use this for initialization
 	void Start ()
 	{
 		clock = GameObject.Find("Player").GetComponent<Player>().FocusedPerson.Clock;
 		day = GameObject.Find("Player").GetComponent<Player>().FocusedPerson.Day;
+		week = GameObject.Find("Player").GetComponent<Player>().FocusedPerson.Week;
 		clock.pointEvent += UpdateClock;
 		clock.newDayEvent += NewDay;
+		day.newWeekEvent += NewWeek;
 		UpdateClock();
 	}
 	
 	private void UpdateClock()
 	{
 		hourHand.transform.rotation = Quaternion.Euler(0, 0, -30 * clock.Level);
+		dayText.text = day.DayName;
+		weekNumber.text = week.Level.ToString();
 	}
 
 	private void NewDay()
 	{
-		print ("new day!!!!!!!!!");
+		print ("new day");
 		day.AddPoints(1);
-		print (day.DayName);
+	}
+
+	private void NewWeek()
+	{
+		print ("new week");
+		week.AddPoints(1);
+		if(week.Level == 10)
+		{
+			Application.LoadLevel("EndScene");
+		}
 	}
 
 	public void Sleep(int hours=8)

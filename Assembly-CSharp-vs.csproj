@@ -78,6 +78,7 @@
      <Compile Include="Assets\MaterialUI\Scripts\Tools\ShadowGen.cs" />
      <Compile Include="Assets\Scripts\Avatar.cs" />
      <Compile Include="Assets\Scripts\AvatarSceneManager.cs" />
+     <Compile Include="Assets\Scripts\EndSceneManager.cs" />
      <Compile Include="Assets\Scripts\GameClock.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IQuality.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IStory.cs" />
@@ -96,6 +97,7 @@
      <Compile Include="Assets\Scripts\Qualities\Statuses\BaseStatuses.cs" />
      <Compile Include="Assets\Scripts\Qualities\Statuses\Status.cs" />
      <Compile Include="Assets\Scripts\Qualities\Week.cs" />
+     <Compile Include="Assets\Scripts\StartSceneManager.cs" />
      <Compile Include="Assets\Scripts\Stories\Branch.cs" />
      <Compile Include="Assets\Scripts\Stories\Effect.cs" />
      <Compile Include="Assets\Scripts\Stories\Requirement.cs" />

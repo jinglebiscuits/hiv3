@@ -19,7 +19,7 @@ public class Day : IQuality {
 	#region Constructors
 	public Day()
 	{
-		this.level = 1;
+		this.level = 0;
 		this.points = 0;
 		this.pyramid = false;
 	}
