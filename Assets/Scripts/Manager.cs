@@ -55,13 +55,14 @@ public class Manager : MonoBehaviour {
 
 			profileAvatar.GetComponent<ProfileAvatarView>().player = player;
 		}
-		else if(level == 2)
-		{
-			storyContainer = GameObject.Find ("StoryContainer").GetComponent<StoryContainer>();
-			person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
-			person.UpdateAvailableTrunkList(xmlScript.trunks);
-			storyContainer.ShowStories();
-		}
+	}
+
+	public void MainSceneStart()
+	{
+		storyContainer = GameObject.Find ("StoryContainer").GetComponent<StoryContainer>();
+		person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
+		person.UpdateAvailableTrunkList(xmlScript.trunks);
+		storyContainer.ShowStories();
 	}
 
 	// Update is called once per frame

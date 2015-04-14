@@ -40,15 +40,18 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	public void MainSceneStart()
+	{
+		avatarView = GameObject.Find("AvatarView").GetComponent<AvatarView>();
+		GameObject.Find("ProfileAvatar").GetComponent<ProfileAvatarView>().player = this.gameObject;
+	}
+
 	void OnLevelWasLoaded(int level)
 	{
-		if(level == 1)
+		if(level == 1 | level == 2)
 		{
-			if(Application.loadedLevelName == "CharacterCreation")
-			{
-				avatarView = GameObject.Find("AvatarView").GetComponent<AvatarView>();
-				GameObject.Find("ProfileAvatar").GetComponent<ProfileAvatarView>().player = GameObject.Find("Player");
-			}
+			avatarView = GameObject.Find("AvatarView").GetComponent<AvatarView>();
+			GameObject.Find("ProfileAvatar").GetComponent<ProfileAvatarView>().player = GameObject.Find("Player");
 		}
 	}
 
@@ -63,6 +66,7 @@ public class Player : MonoBehaviour {
 
 	public void DefaultSetup()
 	{
+		print ("cheese");
 		Person scott = new Person();
 		focusedPerson = scott;
 	}

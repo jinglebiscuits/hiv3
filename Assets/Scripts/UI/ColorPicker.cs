@@ -55,7 +55,6 @@ public class ColorPicker : MonoBehaviour{
 		Vector2 clickSpot = Input.mousePosition;
 		clickSpot -= (Vector2) gameObject.transform.parent.GetComponent<RectTransform>().position;
 		clickSpot = clickSpot * ((float) texture.width / (float) this.gameObject.GetComponent<RectTransform>().sizeDelta.x) / canvasScaler.scaleFactor / ((float) Screen.width/targetScreenWidth);
-		print (clickSpot);
 		pickedColor = texture.GetPixel((int) clickSpot.x, (int) (256 + clickSpot.y));
 		avatarPanel.GetComponent<AvatarView>().body.color = pickedColor;
 		if(avatarPanel.GetComponent<AvatarView>().headColor)

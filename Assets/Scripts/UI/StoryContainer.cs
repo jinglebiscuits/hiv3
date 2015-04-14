@@ -25,10 +25,7 @@ public class StoryContainer : MonoBehaviour {
 
 	void Awake ()
 	{
-		person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
-		//manager = GameObject.Find("Manager").GetComponent<Manager>();
-		storyHeight = -2*storyViewPrefab.GetComponent<RectTransform>().anchoredPosition.y;
-		padding = storyHeight*-0.1f;
+
 	}
 
 	// Use this for initialization
@@ -36,7 +33,15 @@ public class StoryContainer : MonoBehaviour {
 	{
 
 	}
-	
+
+	public void MainSceneStart()
+	{
+		person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
+		//manager = GameObject.Find("Manager").GetComponent<Manager>();
+		storyHeight = -2*storyViewPrefab.GetComponent<RectTransform>().anchoredPosition.y;
+		padding = storyHeight*-0.1f;
+	}
+
 	// Update is called once per frame
 	void Update () {
 	

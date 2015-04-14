@@ -11,6 +11,7 @@ public class ClockView : MonoBehaviour {
 	public GameObject hourHand;
 	public Text dayText;
 	public Text weekNumber;
+	public GameObject sleepButton;
 
 	// Use this for initialization
 	void Start ()
@@ -29,6 +30,10 @@ public class ClockView : MonoBehaviour {
 		hourHand.transform.rotation = Quaternion.Euler(0, 0, -30 * clock.Level);
 		dayText.text = day.DayName;
 		weekNumber.text = week.Level.ToString();
+		if(clock.Level >= 20 | clock.Level <= 6)
+			sleepButton.GetComponent<Button>().interactable = true;
+		else
+			sleepButton.GetComponent<Button>().interactable = false;
 	}
 
 	private void NewDay()
@@ -49,6 +54,9 @@ public class ClockView : MonoBehaviour {
 
 	public void Sleep(int hours=8)
 	{
-		clock.AddPoints(hours);
+		while(clock.Level >= 20 | clock.Level <= 6)
+		{
+			clock.AddPoints(1);
+		}
 	}
 }
