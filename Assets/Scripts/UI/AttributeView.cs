@@ -40,6 +40,12 @@ public class AttributeView : MonoBehaviour {
 		}
 	}
 
+	void OnDestroy()
+	{
+		attribute.pointEvent -= UpdateView;
+		print ("Unsubscribed");
+	}
+
 	public void UpdateView()
 	{
 		StartCoroutine(AnimatePointChange(attribute.Level, attribute.Points));

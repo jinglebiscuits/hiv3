@@ -13,11 +13,13 @@ public class ViewManager : MonoBehaviour {
 
 	void OnLevelWasLoaded(int level)
 	{
-		if(level == 2)
-		{
-			characterStatsView = GameObject.Find ("CharacterStatsView").GetComponent<CharacterStatsView>();
-			characterStatsView.BaseAttributes = GameObject.Find("Player").GetComponent<Player>().FocusedPerson.BaseAttributes;
-			characterStatsView.ViewConstructor();
-		}
+
+	}
+
+	public void MainSceneStart(GameObject player)
+	{
+		characterStatsView = GameObject.Find ("CharacterStatsView").GetComponent<CharacterStatsView>();
+		characterStatsView.BaseAttributes = player.GetComponent<Player>().FocusedPerson.BaseAttributes;
+		characterStatsView.ViewConstructor();
 	}
 }

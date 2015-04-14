@@ -24,7 +24,14 @@ public class ClockView : MonoBehaviour {
 		day.newWeekEvent += NewWeek;
 		UpdateClock();
 	}
-	
+
+	void OnDestroy()
+	{
+		clock.pointEvent -= UpdateClock;
+		clock.newDayEvent -= NewDay;
+		day.newWeekEvent -= NewWeek;
+	}
+
 	private void UpdateClock()
 	{
 		hourHand.transform.rotation = Quaternion.Euler(0, 0, -30 * clock.Level);
@@ -38,13 +45,11 @@ public class ClockView : MonoBehaviour {
 
 	private void NewDay()
 	{
-		print ("new day");
 		day.AddPoints(1);
 	}
 
 	private void NewWeek()
 	{
-		print ("new week");
 		week.AddPoints(1);
 		if(week.Level == 10)
 		{

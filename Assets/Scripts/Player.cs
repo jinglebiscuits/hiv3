@@ -66,7 +66,6 @@ public class Player : MonoBehaviour {
 
 	public void DefaultSetup()
 	{
-		print ("cheese");
 		Person scott = new Person();
 		focusedPerson = scott;
 	}

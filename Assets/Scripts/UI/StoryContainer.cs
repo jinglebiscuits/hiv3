@@ -40,6 +40,7 @@ public class StoryContainer : MonoBehaviour {
 		//manager = GameObject.Find("Manager").GetComponent<Manager>();
 		storyHeight = -2*storyViewPrefab.GetComponent<RectTransform>().anchoredPosition.y;
 		padding = storyHeight*-0.1f;
+		ShowStories();
 	}
 
 	// Update is called once per frame

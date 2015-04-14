@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Person{
+public class Person : MonoBehaviour{
 
 	private string name;
 	private BodyType bodyType;
@@ -38,7 +38,7 @@ public class Person{
 			qualities.Add (item);
 		}
 
-		clock = new Clock(21);
+		clock = new Clock(7);
 		qualities.Add (clock);
 
 		day = new Day(0);
