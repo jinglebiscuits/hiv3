@@ -42,8 +42,8 @@ public class AttributeView : MonoBehaviour {
 
 	void OnDestroy()
 	{
-		attribute.pointEvent -= UpdateView;
-		print ("Unsubscribed");
+		if(attribute != null)
+			attribute.pointEvent -= UpdateView;
 	}
 
 	public void UpdateView()

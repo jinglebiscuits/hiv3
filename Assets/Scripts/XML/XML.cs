@@ -8,29 +8,31 @@ using System.IO;
 public class XML : MonoBehaviour{
 
 	public XDocument xDoc;
-	public TextAsset storiesXML;
+	public TextAsset[] storiesXML;
 	public List<Trunk> trunks = new List<Trunk>();
 
 	void Awake()
 	{
-		xDoc = XDocument.Parse(storiesXML.text);
-		foreach(XElement trunk in xDoc.Descendants("trunk"))
+		foreach(TextAsset xmlText in storiesXML)
 		{
-			trunks.Add(ElementToTrunk(trunk));
-
-			//Not all trunks have requirements
-			if(trunk.Element("requirements").Value != "")
+			xDoc = XDocument.Parse(xmlText.text);
+			foreach(XElement trunk in xDoc.Descendants("trunk"))
 			{
-				foreach(XElement requirement in trunk.Element("requirements").Descendants("requirement"))
+				trunks.Add(ElementToTrunk(trunk));
+				//Not all trunks have requirements
+				if(trunk.Element("requirements").Value != "")
 				{
-					trunks.Last().Requirements.Add(ElementToRequirement(requirement));
+					foreach(XElement requirement in trunk.Element("requirements").Descendants("requirement"))
+					{
+						trunks.Last().Requirements.Add(ElementToRequirement(requirement));
+					}
 				}
-			}
-
-			//All trunks have at least one default branch
-			foreach(XElement branch in trunk.Element("branches").Descendants("branch"))
-			{
-				trunks.Last ().Branches.Add(ElementToBranch(branch));
+				
+				//All trunks have at least one default branch
+				foreach(XElement branch in trunk.Element("branches").Descendants("branch"))
+				{
+					trunks.Last ().Branches.Add(ElementToBranch(branch));
+				}
 			}
 		}
 	}
@@ -71,10 +73,12 @@ public class XML : MonoBehaviour{
 
 		//All branches have a defaultResult
 		branch.DefaultResult = ElementToResult(eBranch.Element("defaultResult"));
-
-		if(eBranch.Element("successResult").Value != "")
+		if(eBranch.Element("successResult") != null)
 		{
-			branch.SuccessResult = ElementToResult(eBranch.Element("successResult"));
+			if(eBranch.Element("successResult").Value != "")
+			{
+				branch.SuccessResult = ElementToResult(eBranch.Element("successResult"));
+			}
 		}
 
 		if(eBranch.Element("testedQualities").Value != "")
@@ -128,6 +132,9 @@ public class XML : MonoBehaviour{
 				break;
 			case "timeQuality":
 				quality = new Clock(eQuality.Value);
+				break;
+			case "storylineQuality":
+				quality = new Storyline(eQuality.Value);
 				break;
 			default:
 				Debug.Log("unknown quality type");

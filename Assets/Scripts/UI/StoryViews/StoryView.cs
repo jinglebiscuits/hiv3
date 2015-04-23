@@ -10,6 +10,12 @@ public class StoryView : MonoBehaviour {
 	public Text storyDescription;
 	public Text buttonText;
 
+
+	void Start()
+	{
+
+	}
+
 	public Story Story {
 		get {
 			return this.story;

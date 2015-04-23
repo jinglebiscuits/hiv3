@@ -62,13 +62,13 @@ public class Manager : MonoBehaviour {
 		player = GameObject.Find("Player");
 		storyContainer = GameObject.Find ("StoryContainer").GetComponent<StoryContainer>();
 		person = player.GetComponent<Player>().FocusedPerson;
-		person.UpdateAvailableTrunkList(xmlScript.trunks);
+//		person.UpdateAvailableTrunkList(xmlScript.trunks);
 		gameObject.GetComponent<ViewManager>().MainSceneStart(player);
 	}
 
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	public void UpdateTrunks()

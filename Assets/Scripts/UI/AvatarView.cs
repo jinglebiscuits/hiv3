@@ -45,47 +45,58 @@ public class AvatarView : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find("Player");
-		Avatar avatar = player.GetComponent<Avatar>();
-		profileHair = avatar.profileHair;
-		profileBody = avatar.profileBody;
-		profileHeadColor = avatar.profileHeadColor;
-		profileHeadLines = avatar.profileHeadLines;
-		profileShirt = avatar.profileShirt;
-		profileSclera = avatar.profileSclera;
-		profileIris = avatar.profileIris;
-		profileLips = avatar.profileLips;
-		profileBorder = avatar.profileBorder;
-		profileBackground = avatar.profileBackground;
+		Avatar playerAvatar = player.GetComponent<Avatar>();
+		profileHair = playerAvatar.profileHair;
+		profileBody = playerAvatar.profileBody;
+		profileHeadColor = playerAvatar.profileHeadColor;
+		profileHeadLines = playerAvatar.profileHeadLines;
+		profileShirt = playerAvatar.profileShirt;
+		profileSclera = playerAvatar.profileSclera;
+		profileIris = playerAvatar.profileIris;
+		profileLips = playerAvatar.profileLips;
+		profileBorder = playerAvatar.profileBorder;
+		profileBackground = playerAvatar.profileBackground;
 
-		if(player.GetComponent<Player>().FocusedPerson.BodyType == BodyType.female)
-		{
-			headColor.sprite = avatar.headColor.sprite;
-			headColor.color = avatar.headColor.color;
-			lips.sprite = avatar.lips.sprite;
-			lips.color = avatar.lips.color;
-		}
 
-		hair.sprite = avatar.hair.sprite;
-		hair.color = avatar.hair.color;
-		body.sprite = avatar.body.sprite;
-		body.color = avatar.body.color;
 
-		headLines.sprite = avatar.headLines.sprite;
-		headLines.color = avatar.headLines.color;
-		pants.sprite = avatar.pants.sprite;
-		pants.color = avatar.pants.color;
-		shirt.sprite = avatar.shirt.sprite;
-		shirt.color = avatar.shirt.color;
-		shoes.sprite = avatar.shoes.sprite;
-		shoes.color = avatar.shoes.color;
-		sclera.sprite = avatar.sclera.sprite;
-		sclera.color = avatar.sclera.color;
-		iris.sprite = avatar.iris.sprite;
-		iris.color = avatar.iris.color;
 
 //		profilePicSprite = Sprite.Create(CalculateTexture(1869, 589, 30, 294, 1500, body.sprite.texture), new Rect(0, 0, 100, 100), new Vector2(50, 50));
 	}
-	
+
+	void OnLevelWasLoaded(int level)
+	{
+		player = GameObject.Find("Player");
+		Avatar playerAvatar = player.GetComponent<Avatar>();
+		if(level == 1)
+		{
+			if(player.GetComponent<Player>().FocusedPerson.BodyType == BodyType.female)
+			{
+				headColor.sprite = playerAvatar.headColor.sprite;
+				headColor.color = playerAvatar.headColor.color;
+				lips.sprite = playerAvatar.lips.sprite;
+				lips.color = playerAvatar.lips.color;
+			}
+			
+			hair.sprite = playerAvatar.hair.sprite;
+			hair.color = playerAvatar.hair.color;
+			body.sprite = playerAvatar.body.sprite;
+			body.color = playerAvatar.body.color;
+			
+			headLines.sprite = playerAvatar.headLines.sprite;
+			headLines.color = playerAvatar.headLines.color;
+			pants.sprite = playerAvatar.pants.sprite;
+			pants.color = playerAvatar.pants.color;
+			shirt.sprite = playerAvatar.shirt.sprite;
+			shirt.color = playerAvatar.shirt.color;
+			shoes.sprite = playerAvatar.shoes.sprite;
+			shoes.color = playerAvatar.shoes.color;
+			sclera.sprite = playerAvatar.sclera.sprite;
+			sclera.color = playerAvatar.sclera.color;
+			iris.sprite = playerAvatar.iris.sprite;
+			iris.color = playerAvatar.iris.color;
+		}
+	}
+
 	// Update is called once per frame
 	void LateUpdate () {
 
@@ -160,7 +171,6 @@ public class AvatarView : MonoBehaviour {
 
 	public void SyncAvatar()
 	{
-		print ("syncing");
 		if(player == null)
 		{
 			player = GameObject.Find("Player");

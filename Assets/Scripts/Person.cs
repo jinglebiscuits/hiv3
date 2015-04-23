@@ -12,6 +12,7 @@ public class Person : MonoBehaviour{
 	private BaseAttributes baseAttributes = new BaseAttributes();
 	private BaseStatuses baseStatuses = new BaseStatuses();
 	private BaseItems baseItems = new BaseItems();
+	private BaseStorylines baseStorylines = new BaseStorylines();
 	private List<IQuality> qualities = new List<IQuality>();
 	private Clock clock;
 	private Day day;
@@ -36,6 +37,11 @@ public class Person : MonoBehaviour{
 		foreach(IQuality item in baseItems.items)
 		{
 			qualities.Add (item);
+		}
+
+		foreach(IQuality storyline in baseStorylines.storylines)
+		{
+			qualities.Add (storyline);
 		}
 
 		clock = new Clock(7);
@@ -87,6 +93,15 @@ public class Person : MonoBehaviour{
 		}
 		set {
 			baseStatuses = value;
+		}
+	}
+
+	public BaseStorylines BaseStorylines {
+		get {
+			return this.baseStorylines;
+		}
+		set {
+			baseStorylines = value;
 		}
 	}
 

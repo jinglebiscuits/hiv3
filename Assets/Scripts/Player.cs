@@ -66,7 +66,9 @@ public class Player : MonoBehaviour {
 
 	public void DefaultSetup()
 	{
+
 		Person scott = new Person();
+		scott.Name = "Scott";
 		focusedPerson = scott;
 	}
 

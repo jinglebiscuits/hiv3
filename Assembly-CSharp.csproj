@@ -96,6 +96,8 @@
      <Compile Include="Assets\Scripts\Qualities\Items\Item.cs" />
      <Compile Include="Assets\Scripts\Qualities\Statuses\BaseStatuses.cs" />
      <Compile Include="Assets\Scripts\Qualities\Statuses\Status.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Storylines\BaseStorylines.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Storylines\Storyline.cs" />
      <Compile Include="Assets\Scripts\Qualities\Week.cs" />
      <Compile Include="Assets\Scripts\StartSceneManager.cs" />
      <Compile Include="Assets\Scripts\Stories\Branch.cs" />
@@ -125,6 +127,7 @@
      <Compile Include="Assets\Scripts\UI\StoryViews\TrunkView.cs" />
      <Compile Include="Assets\Scripts\UI\ViewManager.cs" />
      <Compile Include="Assets\Scripts\XML\XML.cs" />
+     <None Include="Assets\Scripts\XML\chapter_one.xml" />
      <None Include="Assets\Scripts\XML\hivXMLSchema.xml" />
      <None Include="Assets\Scripts\XML\stories.xml" />
      <None Include="Assets\Scripts\XML\testing.xml" />
