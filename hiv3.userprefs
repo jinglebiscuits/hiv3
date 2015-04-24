@@ -1,8 +1,11 @@
 ﻿<Properties GitUserInfo="UsingGIT">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/XML/XML.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/StoryViews/StoryView.cs">
     <Files>
       <File FileName="Assets/Scripts/XML/XML.cs" Line="23" Column="50" />
+      <File FileName="Assets/Scripts/UI/StoryViews/StoryView.cs" Line="16" Column="3" />
+      <File FileName="Assets/Scripts/UI/StoryViews/TrunkView.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/UI/StoryViews/BranchView.cs" Line="29" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
