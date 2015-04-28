@@ -219,4 +219,37 @@
       </branch>
     </branches>
   </trunk>
+  <trunk>
+  	<title>title</title>
+  	<description>description</description>
+  	<icon>
+  		<sex>sex</sex>
+  		
+  	</icon>
+  	<buttonText>buttonText</buttonText>
+  	<trunkTag>trunkTag</trunkTag>
+  	<area>area</area>
+  	<urgency>1</urgency>
+  	<deck>deck</deck>
+  	<requirements></requirements>
+  	<branches>
+  		<branch>
+  			<title>title</title>
+  			<description>description</description>
+  			<icon>
+  				<drinking_drugs>drinking_drugs</drinking_drugs>
+  			</icon>
+  			<buttonText>buttonText</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>title</title>
+  				<description>description</description>
+  				<timeCost>1</timeCost>
+  			</defaultResult>
+  			<testedQualities></testedQualities>
+  			<difficulty>1</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  	</branches>
+  </trunk>
 </forest>

@@ -94,6 +94,7 @@ public class Result {
 	{
 		foreach(IQuality quality in qualities)
 		{
+
 			if(quality.Name == qualityToMatch.Name)
 			{
 				return quality;

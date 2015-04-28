@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hivXMLSchema.xsd">
+  <title>Chapter 1</title>
+  <trunk>
+  	<title>Day Before School</title>
+  	<description>It's the day before AT's first day of school in his new living arrangement with Uncle Harry and Auntie Gina. It's 2pm, and the AT and his auntie and uncle have just had a quiet lunch after church. You are in control of AT's actions for a time. Through the actions you choose, we will predict possible futures for AT. What should he do now?</description>
+  	<icon>
+  		<empty>empty</empty>
+  		
+  		
+  	</icon>
+  	<buttonText>Go</buttonText>
+  	<trunkTag>Story</trunkTag>
+  	<area>area</area>
+  	<urgency>1</urgency>
+  	<deck>deck</deck>
+  	<requirements>
+  		<requirement>
+  			<quality>
+  				<storylineQuality>Intro</storylineQuality>
+  				
+  			</quality>
+  			<qualityMin>0</qualityMin>
+  			<qualityMax>0</qualityMax>
+  		</requirement></requirements>
+  	<branches>
+  		<branch>
+  			<title>Study to get a head start on classes.</title>
+  			<description>AT spends the afternoon studying to get ready for his first day of school.</description>
+  			<icon>
+  				<studying>studying</studying>
+  				
+  			</icon>
+  			<buttonText>Study</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>AT studies for 2 hours</title>
+  				<description>He knows that switching schools is going to be tough and falling behind in classes is the last thing he wants to worry about.</description>
+  				<timeCost>2</timeCost>
+  				<effect>
+  					<quality>
+  						<attributeQuality>
+  							Intelligence
+  						</attributeQuality>
+  					</quality>
+  					<changedBy>3</changedBy>
+  				</effect>
+  				<effect>
+  					<quality>
+  						<storylineQuality>Intro</storylineQuality>
+  						
+  					</quality>
+  					<changedBy>1</changedBy>
+  				</effect>
+  			</defaultResult>
+  			<testedQualities></testedQualities>
+  			<difficulty>1</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  	</branches>
+  </trunk>
+</forest>

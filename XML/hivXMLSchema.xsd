@@ -3,7 +3,6 @@
 
 	<xs:element name="title" type="xs:string"/>
 	<xs:element name="description" type="xs:string"/>
-	<xs:element name="icon" type="xs:string"/>
 	<xs:element name="buttonText" type="xs:string" default="Go"/>
 
 	<xs:element name="attributeQuality">
@@ -29,6 +28,22 @@
 				<xs:enumeration value="Angry"></xs:enumeration>
 				<xs:enumeration value="At Risk"></xs:enumeration>
 				<xs:enumeration value="Insecure"></xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="relationshipQuality">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Auntie Gina"></xs:enumeration>
+				<xs:enumeration value="Uncle Harry"></xs:enumeration>
+				<xs:enumeration value="Jimmy"></xs:enumeration>
+				<xs:enumeration value="Jay Jay"></xs:enumeration>
+				<xs:enumeration value="Tia"></xs:enumeration>
+				<xs:enumeration value="Monique"></xs:enumeration>
+				<xs:enumeration value="Mrs. Lake"></xs:enumeration>
+				<xs:enumeration value="Coach Woodfin"></xs:enumeration>
+				<xs:enumeration value="Nurse Roberts"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
@@ -90,10 +105,30 @@
 			<xs:choice>
 				<xs:element ref="attributeQuality"/>
 				<xs:element ref="statusQuality"/>
+				<xs:element ref="relationshipQuality"/>
 				<xs:element ref="tradeQuality"/>
 				<xs:element ref="itemQuality"/>
 				<xs:element ref="timeQuality"/>
 				<xs:element ref="storylineQuality"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="icon">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="drinking_drugs" type="xs:string"/>
+				<xs:element name="jogging" type="xs:string"/>
+				<xs:element name="helping" type="xs:string"/>
+				<xs:element name="party" type="xs:string"/>
+				<xs:element name="basketball" type="xs:string"/>
+				<xs:element name="videoGames" type="xs:string"/>
+				<xs:element name="sex" type="xs:string"/>
+				<xs:element name="socialMedia" type="xs:string"/>
+				<xs:element name="studying" type="xs:string"/>
+				<xs:element name="flirting" type="xs:string"/>
+				<xs:element name="nurse" type="xs:string"/>
+				<xs:element name="empty" type="xs:string"/>
 			</xs:choice>
 		</xs:complexType>
 	</xs:element>

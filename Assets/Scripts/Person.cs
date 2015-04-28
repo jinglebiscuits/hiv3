@@ -13,6 +13,7 @@ public class Person : MonoBehaviour{
 	private BaseStatuses baseStatuses = new BaseStatuses();
 	private BaseItems baseItems = new BaseItems();
 	private BaseStorylines baseStorylines = new BaseStorylines();
+	private BaseRelationships baseRelationships = new BaseRelationships();
 	private List<IQuality> qualities = new List<IQuality>();
 	private Clock clock;
 	private Day day;
@@ -44,10 +45,15 @@ public class Person : MonoBehaviour{
 			qualities.Add (storyline);
 		}
 
-		clock = new Clock(7);
+		foreach(IQuality relationship in baseRelationships.relationships)
+		{
+			qualities.Add (relationship);
+		}
+
+		clock = new Clock(14);
 		qualities.Add (clock);
 
-		day = new Day(0);
+		day = new Day(6);
 		qualities.Add (day);
 
 		week = new Week(0);

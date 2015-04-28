@@ -94,6 +94,8 @@
      <Compile Include="Assets\Scripts\Qualities\Day.cs" />
      <Compile Include="Assets\Scripts\Qualities\Items\BaseItems.cs" />
      <Compile Include="Assets\Scripts\Qualities\Items\Item.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Relationships\BaseRelationships.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Relationships\Relationship.cs" />
      <Compile Include="Assets\Scripts\Qualities\Statuses\BaseStatuses.cs" />
      <Compile Include="Assets\Scripts\Qualities\Statuses\Status.cs" />
      <Compile Include="Assets\Scripts\Qualities\Storylines\BaseStorylines.cs" />
@@ -130,6 +132,7 @@
      <None Include="Assets\Scripts\XML\chapter_one.xml" />
      <None Include="Assets\Scripts\XML\hivXMLSchema.xml" />
      <None Include="Assets\Scripts\XML\stories.xml" />
+     <None Include="Assets\Scripts\XML\intro.xml" />
      <None Include="Assets\Scripts\XML\testing.xml" />
      <None Include="Assets\Scripts\XML\caleb_stories.xml" />
  <Reference Include="UnityEngine.UI">

@@ -136,6 +136,9 @@ public class XML : MonoBehaviour{
 			case "storylineQuality":
 				quality = new Storyline(eQuality.Value);
 				break;
+			case "relationshipQuality":
+				quality = new Relationship(eQuality.Value);
+				break;
 			default:
 				Debug.Log("unknown quality type");
 				break;

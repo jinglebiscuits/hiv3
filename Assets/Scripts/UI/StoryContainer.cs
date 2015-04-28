@@ -83,7 +83,7 @@ public class StoryContainer : MonoBehaviour {
 			GameObject clone = (GameObject) Instantiate(branchViewPrefab);
 			clone.GetComponent<BranchView>().Branch = branch;
 			clone.transform.SetParent(this.transform, false);
-			clone.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, count * (-storyHeight + padding));
+			clone.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, count * (-207 + padding));
 			branchViews.Add (clone);
 			count ++;
 		}

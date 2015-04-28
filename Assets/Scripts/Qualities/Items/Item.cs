@@ -16,6 +16,7 @@ public class Item : IQuality {
 	{
 		this.name = name;
 		this.tag = "Item";
+		this.pyramid = false;
 	}
 	
 	public Item (string name, string description, int level, int points, int modifier, bool pyramid)

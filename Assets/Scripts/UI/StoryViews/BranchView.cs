@@ -11,6 +11,7 @@ public class BranchView : MonoBehaviour {
 	public Text branchDescription;
 	public Text chanceOfSuccess;
 	public Text buttonText;
+	public Sprite[] branchIcons;
 	public Player player;
 
 	public void Awake()
@@ -36,6 +37,50 @@ public class BranchView : MonoBehaviour {
 			branchTitle.text = branch.Title;
 			branchDescription.text = branch.Description;
 			buttonText.text = branch.ButtonText;
+			AssignIcon();
+		}
+	}
+
+	private void AssignIcon()
+	{
+		string icon = branch.Icon;
+		switch (icon) {
+		case "drinking_drugs":
+			branchIcon.sprite = branchIcons[0];
+			break;
+		case "jogging":
+			branchIcon.sprite = branchIcons[1];
+			break;
+		case "helping":
+			branchIcon.sprite = branchIcons[2];
+			break;
+		case "party":
+			branchIcon.sprite = branchIcons[3];
+			break;
+		case "basketball":
+			branchIcon.sprite = branchIcons[4];
+			break;
+		case "videoGames":
+			branchIcon.sprite = branchIcons[5];
+			break;
+		case "sex":
+			branchIcon.sprite = branchIcons[6];
+			break;
+		case "socialMedia":
+			branchIcon.sprite = branchIcons[7];
+			break;
+		case "studying":
+			branchIcon.sprite = branchIcons[8];
+			break;
+		case "flirting":
+			branchIcon.sprite = branchIcons[9];
+			break;
+		case "nurse":
+			branchIcon.sprite = branchIcons[10];
+			break;
+		case "empty":
+			branchIcon.sprite = branchIcons[11];
+			break;
 		}
 	}
 
