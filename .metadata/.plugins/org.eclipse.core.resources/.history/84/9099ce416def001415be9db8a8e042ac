@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hivXMLSchema.xsd">
+  <title>School Day</title>
+  <trunk>
+    <title>Go to school</title>
+    <description>AT rides the bus to school</description>
+    <icon>
+    	<empty>empty</empty>
+    	
+    </icon>
+    <buttonText>Go</buttonText>
+    <trunkTag>trunkTag</trunkTag>
+    <area>area</area>
+    <urgency>1</urgency>
+    <deck>deck</deck>
+    <requirements>
+    	<requirement>
+    		<quality>
+    			<timeQuality>Day</timeQuality>
+    			
+    		</quality>
+    		<qualityMin>0</qualityMin>
+    		<qualityMax>4</qualityMax>
+    	</requirement></requirements>
+    <branches>
+      <branch>
+        <title>Get on the bus</title>
+        <description>AT gets on the bus. It's a normal ride. Quiet.</description>
+        <icon>
+        	<empty>empty</empty>
+        </icon>
+        <buttonText>Go</buttonText>
+        <requirements/>
+        <defaultResult>
+          <title>Arrives at school</title>
+          <description>Nothing out of the ordinary happened on the bus today.</description>
+          <timeCost>1</timeCost>
+        </defaultResult>
+        <testedQualities/>
+        <difficulty>1</difficulty>
+        <linkedEvent>null</linkedEvent>
+      </branch>
+    </branches>
+  </trunk>
+  
+  <trunk>
+    <title>7 hours of school</title>
+    <description>A typical day at school. 8am - 3pm</description>
+    <icon>
+    	<studying>studying</studying>
+    	
+    	
+    </icon>
+    <buttonText>Go</buttonText>
+    <trunkTag>trunkTag</trunkTag>
+    <area>area</area>
+    <urgency>1</urgency>
+    <deck>deck</deck>
+    <requirements>
+    	<requirement>
+    		<quality>
+    			<timeQuality>Day</timeQuality>
+    			
+    		</quality>
+    		<qualityMin>0</qualityMin>
+    		<qualityMax>4</qualityMax>
+    	</requirement>
+    	<requirement>
+    		<quality>
+    			<timeQuality>Time</timeQuality>
+    			
+    		</quality>
+    		<qualityMin>8</qualityMin>
+    		<qualityMax>8</qualityMax>
+    	</requirement></requirements>
+    <branches>
+      <branch>
+        <title>Work hard in school</title>
+        <description>AT focuses real hard at school today. Learning as much as he can, even if it means ignoring some social opportunities.</description>
+        <icon>
+        	<studying>studying</studying>
+        	
+        </icon>
+        <buttonText>Go</buttonText>
+        <requirements/>
+        <defaultResult>
+          <title>AT learns</title>
+          <description>A good day of learning. AT did well in his classes today.</description>
+          <timeCost>7</timeCost>
+          <effect>
+          	<quality>
+          		<attributeQuality>Intelligence</attributeQuality>
+          	</quality>
+          	<changedBy>2</changedBy>
+          </effect>
+        </defaultResult>
+        <testedQualities/>
+        <difficulty>1</difficulty>
+        <linkedEvent>null</linkedEvent>
+      </branch>
+    </branches>
+  </trunk>
+</forest>

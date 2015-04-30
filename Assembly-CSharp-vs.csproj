@@ -130,6 +130,7 @@
      <Compile Include="Assets\Scripts\UI\ViewManager.cs" />
      <Compile Include="Assets\Scripts\XML\XML.cs" />
      <None Include="Assets\Scripts\XML\chapter_one.xml" />
+     <None Include="Assets\Scripts\XML\schoolDay.xml" />
      <None Include="Assets\Scripts\XML\hivXMLSchema.xml" />
      <None Include="Assets\Scripts\XML\stories.xml" />
      <None Include="Assets\Scripts\XML\intro.xml" />

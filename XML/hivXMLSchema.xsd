@@ -96,6 +96,8 @@
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
 				<xs:enumeration value="Time"></xs:enumeration>
+				<xs:enumeration value="Day"></xs:enumeration>
+				<xs:enumeration value="Week"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
@@ -117,6 +119,14 @@
 	<xs:element name="icon">
 		<xs:complexType>
 			<xs:choice>
+				<xs:element name="auntie_gina_uncle_harry" type="xs:string"/>
+				<xs:element name="coach_woodfin" type="xs:string"/>
+				<xs:element name="jay_jay" type="xs:string"/>
+				<xs:element name="jimmy" type="xs:string"/>
+				<xs:element name="monique" type="xs:string"/>
+				<xs:element name="mrs_lake" type="xs:string"/>
+				<xs:element name="nurse_roberts" type="xs:string"/>
+				<xs:element name="tia" type="xs:string"/>
 				<xs:element name="drinking_drugs" type="xs:string"/>
 				<xs:element name="jogging" type="xs:string"/>
 				<xs:element name="helping" type="xs:string"/>

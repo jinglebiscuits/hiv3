@@ -16,13 +16,8 @@ public class Clock : IQuality {
 	#region Constructors
 	public Clock()
 	{
+		this.name = "Time";
 		level = 0;
-	}
-
-	public Clock (string name)
-	{
-		this.name = name;
-		this.tag = "Clock";
 	}
 
 	/// <summary>
@@ -32,14 +27,14 @@ public class Clock : IQuality {
 	public Clock(int level)
 	{
 		this.level = level;
-		this.name = "Clock";
+		this.name = "Time";
 		this.description = "keeps the time";
 		this.points = 0;
 	}
 
-	public Clock (string name, string description, string tag, int level, int points)
+	public Clock (string description, string tag, int level, int points)
 	{
-		this.name = name;
+		this.name = "Time";
 		this.description = description;
 		this.tag = tag;
 		this.level = level;

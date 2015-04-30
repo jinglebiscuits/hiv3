@@ -19,6 +19,7 @@ public class Day : IQuality {
 	#region Constructors
 	public Day()
 	{
+		this.name = "Day";
 		this.level = 0;
 		this.points = 0;
 		this.pyramid = false;
@@ -29,6 +30,7 @@ public class Day : IQuality {
 	/// <param name="level">Level.</param>
 	public Day (int level)
 	{
+		this.name = "Day";
 		this.level = level;
 		this.points = 0;
 		this.pyramid = false;

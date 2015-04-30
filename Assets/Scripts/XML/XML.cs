@@ -131,7 +131,21 @@ public class XML : MonoBehaviour{
 				quality = new Item(eQuality.Value);
 				break;
 			case "timeQuality":
-				quality = new Clock(eQuality.Value);
+				switch(eQuality.Value)
+				{
+				case "Time":
+					quality = new Clock();
+					break;
+				case "Day":
+					quality = new Day();
+					break;
+				case "Week":
+					quality = new Week();
+					break;
+				default:
+					Debug.Log("unknown quality type");
+					break;
+				}
 				break;
 			case "storylineQuality":
 				quality = new Storyline(eQuality.Value);

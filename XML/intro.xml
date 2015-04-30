@@ -96,7 +96,7 @@
   			<requirements></requirements>
   			<defaultResult>
   				<title>AT gets closer to his Auntie and Uncle</title>
-  				<description>AT learns that his new town, Rahp, isn't so different from where he lived before. [Insert something here about his relationship with his parents]</description>
+  				<description>AT learns that his new town, Rahp, isn't so different from where he lived before. [Dad is off to war. Mom is in school and cannot support him at this time. Might not need to be that specific.]</description>
   				<timeCost>2</timeCost>
   				<effect>
   					<quality>
@@ -347,7 +347,7 @@
   	<branches>
   		<branch>
   			<title>The next 10 weeks</title>
-  			<description>AT will have 10 weeks to adjust to his new environment and build some lasting habits. [insert a few more tips about playing the game]</description>
+  			<description>AT will have 10 weeks to adjust to his new environment and build some lasting habits. [mention the stats and getting help from others. Have to decide who his friends are.]</description>
   			<icon>
   				<drinking_drugs>empty</drinking_drugs>
   			</icon>
