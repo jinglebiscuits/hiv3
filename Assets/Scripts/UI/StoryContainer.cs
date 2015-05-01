@@ -22,6 +22,7 @@ public class StoryContainer : MonoBehaviour {
 	//public Forest forest = new Forest();
 	public Person person;
 	public Manager manager;
+	private MainSceneManager mainSceneManager;
 
 	void Awake ()
 	{
@@ -40,6 +41,8 @@ public class StoryContainer : MonoBehaviour {
 		//manager = GameObject.Find("Manager").GetComponent<Manager>();
 		storyHeight = -2*storyViewPrefab.GetComponent<RectTransform>().anchoredPosition.y;
 		padding = storyHeight*-0.1f;
+		mainSceneManager = GameObject.Find("MainSceneManager").GetComponent<MainSceneManager>();
+		mainSceneManager.UpdateLocationText();
 		ShowStories();
 	}
 
@@ -49,11 +52,12 @@ public class StoryContainer : MonoBehaviour {
 	}
 
 	/// <summary>
-	/// Shows the stories. Currently just displaying garbage 1/7/15
+	/// Shows the stories.
 	/// </summary>
 	public void ShowStories()
 	{
 		WipeViews();
+		mainSceneManager.UpdateLocationText();
 		manager.UpdateTrunks();
 		int count = 0;
 		//foreach(Story story in forest.trunks)
@@ -79,13 +83,16 @@ public class StoryContainer : MonoBehaviour {
 		int count = 1;
 		foreach(Branch branch in trunk.Branches)
 		{
-			//Create and place a BranchView prefab
-			GameObject clone = (GameObject) Instantiate(branchViewPrefab);
-			clone.GetComponent<BranchView>().Branch = branch;
-			clone.transform.SetParent(this.transform, false);
-			clone.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, count * (-207 + padding));
-			branchViews.Add (clone);
-			count ++;
+			if(branch.IsPlayableByPerson(person))
+			{
+				//Create and place a BranchView prefab
+				GameObject clone = (GameObject) Instantiate(branchViewPrefab);
+				clone.GetComponent<BranchView>().Branch = branch;
+				clone.transform.SetParent(this.transform, false);
+				clone.GetComponent<RectTransform>().anchoredPosition += new Vector2(0, count * (-207 + padding));
+				branchViews.Add (clone);
+				count ++;
+			}
 		}
 
 		transform.parent.GetComponent<BrowseStoriesView>().ResetScrollToTop();

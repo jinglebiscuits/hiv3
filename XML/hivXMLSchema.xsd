@@ -116,6 +116,24 @@
 		</xs:complexType>
 	</xs:element>
 	
+	<xs:element name="area">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Home"></xs:enumeration>
+				<xs:enumeration value="School"></xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="travelToArea">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Home"></xs:enumeration>
+				<xs:enumeration value="School"></xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
 	<xs:element name="icon">
 		<xs:complexType>
 			<xs:choice>
@@ -181,7 +199,7 @@
 				<xs:element ref="icon" maxOccurs="1"/>
 				<xs:element ref="buttonText" maxOccurs="1"/>
 				<xs:element name="trunkTag" type="xs:string"/>
-				<xs:element name="area" type="xs:string" maxOccurs="1"/>
+				<xs:element ref="area" maxOccurs="1"/>
 				<xs:element name="urgency" type="xs:positiveInteger" default="1" maxOccurs="1"/>
 				<xs:element name="deck" type="xs:string" maxOccurs="1"/>
 				<xs:element ref="requirements" maxOccurs="1"/>
@@ -226,6 +244,7 @@
 				<xs:element ref="requirements"/>
 				<xs:element ref="defaultResult" minOccurs="1" maxOccurs="1"/>
 				<xs:element ref="successResult" minOccurs="0" maxOccurs="1"/>
+				<xs:element ref="travelToArea" minOccurs="0" maxOccurs="1"/>
 				<xs:element ref="testedQualities"/>
 				<xs:element name="difficulty" type="xs:positiveInteger" default="1"/>
 				<xs:element name="linkedEvent" type="xs:string" default="null"/>

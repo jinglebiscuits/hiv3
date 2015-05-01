@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class MainSceneManager : MonoBehaviour {
@@ -8,6 +9,8 @@ public class MainSceneManager : MonoBehaviour {
 	public GameObject storyContainer;
 	public AvatarView avatarView;
 	public GameObject sleepButton;
+	public Text locationText;
+
 
 	// Use this for initialization
 	void Start () {
@@ -29,5 +32,10 @@ public class MainSceneManager : MonoBehaviour {
 	public void LoadScene(string scene)
 	{
 		Application.LoadLevel(scene);
+	}
+
+	public void UpdateLocationText()
+	{
+		locationText.text = player.GetComponent<Player>().FocusedPerson.Area;
 	}
 }

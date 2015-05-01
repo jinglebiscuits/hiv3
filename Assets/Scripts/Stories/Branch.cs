@@ -12,6 +12,7 @@ public class Branch : Story{
 	private List<IQuality> testedQualities;
 	private int difficulty;
 	private float chanceOfSuccess;
+	private string travelToArea;
 	private Result chosenResult;
 	private Story linkedEvent;
 
@@ -109,6 +110,15 @@ public class Branch : Story{
 		}
 		set {
 			chanceOfSuccess = value;
+		}
+	}
+
+	public string TravelToArea {
+		get {
+			return this.travelToArea;
+		}
+		set {
+			travelToArea = value;
 		}
 	}
 

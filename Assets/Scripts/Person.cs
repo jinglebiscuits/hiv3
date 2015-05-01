@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class Person : MonoBehaviour{
 
 	private string name;
+	private string area;
 	private BodyType bodyType;
 
 	private BaseAttributes baseAttributes = new BaseAttributes();
@@ -63,6 +64,8 @@ public class Person : MonoBehaviour{
 		availableTrunks = new List<Trunk>();
 //		UpdateAvailableTrunkList();
 
+		area = "Home";
+
 	}
 
 	#region Accessor Methods
@@ -81,6 +84,15 @@ public class Person : MonoBehaviour{
 		}
 		set {
 			bodyType = value;
+		}
+	}
+
+	public string Area {
+		get {
+			return this.area;
+		}
+		set {
+			area = value;
 		}
 	}
 

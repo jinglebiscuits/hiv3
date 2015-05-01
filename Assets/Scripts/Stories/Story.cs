@@ -87,10 +87,10 @@ public class Story {
 		return true;
 	}
 
-	public bool IsPlayableByPerson(Person person)
+	public virtual bool IsPlayableByPerson(Person person)
 	{
 		List<IQuality> qualities = person.Qualities;
-		
+
 		if(Requirements.Count > 0)
 		{
 			foreach(Requirement requirement in Requirements)

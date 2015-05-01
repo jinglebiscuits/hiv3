@@ -81,6 +81,30 @@ public class BranchView : MonoBehaviour {
 		case "empty":
 			branchIcon.sprite = branchIcons[11];
 			break;
+		case "auntie_gina_uncle_harry":
+			branchIcon.sprite = branchIcons[12];
+			break;
+		case "coach_woodfin":
+			branchIcon.sprite = branchIcons[13];
+			break;
+		case "jay_jay":
+			branchIcon.sprite = branchIcons[14];
+			break;
+		case "jimmy":
+			branchIcon.sprite = branchIcons[15];
+			break;
+		case "monique":
+			branchIcon.sprite = branchIcons[16];
+			break;
+		case "mrs_lake":
+			branchIcon.sprite = branchIcons[17];
+			break;
+		case "nurse_roberts":
+			branchIcon.sprite = branchIcons[18];
+			break;
+		case "tia":
+			branchIcon.sprite = branchIcons[19];
+			break;
 		}
 	}
 
@@ -96,6 +120,8 @@ public class BranchView : MonoBehaviour {
 	public void ChooseBranch()
 	{
 		branch.ChooseBranch(player.FocusedPerson);
+		if(branch.TravelToArea != null)
+			player.FocusedPerson.Area = branch.TravelToArea;
 		transform.parent.GetComponent<StoryContainer>().ShowResult(branch.ChosenResult);
 	}
 }

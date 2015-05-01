@@ -71,6 +71,12 @@ public class XML : MonoBehaviour{
 			}
 		}
 
+		//Not all branches have travelToArea
+		if(eBranch.Element("travelToArea") != null)
+		{
+			branch.TravelToArea = eBranch.Element("travelToArea").Value;
+		}
+
 		//All branches have a defaultResult
 		branch.DefaultResult = ElementToResult(eBranch.Element("defaultResult"));
 		if(eBranch.Element("successResult") != null)

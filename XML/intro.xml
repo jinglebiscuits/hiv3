@@ -11,7 +11,7 @@
   	</icon>
   	<buttonText>Go</buttonText>
   	<trunkTag>Story</trunkTag>
-  	<area>area</area>
+  	<area>Home</area>
   	<urgency>1</urgency>
   	<deck>deck</deck>
   	<requirements>
@@ -209,7 +209,7 @@
   	</icon>
   	<buttonText>Go</buttonText>
   	<trunkTag>trunkTag</trunkTag>
-  	<area>area</area>
+  	<area>Home</area>
   	<urgency>1</urgency>
   	<deck>deck</deck>
   	<requirements>
@@ -332,7 +332,7 @@
   	</icon>
   	<buttonText>Go</buttonText>
   	<trunkTag>trunkTag</trunkTag>
-  	<area>area</area>
+  	<area>Home</area>
   	<urgency>1</urgency>
   	<deck>deck</deck>
   	<requirements>

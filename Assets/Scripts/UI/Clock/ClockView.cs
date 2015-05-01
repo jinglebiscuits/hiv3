@@ -63,5 +63,6 @@ public class ClockView : MonoBehaviour {
 		{
 			clock.AddPoints(1);
 		}
+		GameObject.Find("StoryContainer").GetComponent<StoryContainer>().ShowStories();
 	}
 }

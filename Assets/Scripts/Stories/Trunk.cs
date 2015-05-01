@@ -93,4 +93,31 @@ public class Trunk : Story{
 		}
 	}
 	#endregion
+
+	public override bool IsPlayableByPerson (Person person)
+	{
+		List<IQuality> qualities = person.Qualities;
+		if(Area != person.Area)
+			return false;
+
+		if(Requirements.Count > 0)
+		{
+			foreach(Requirement requirement in Requirements)
+			{
+				IQuality matchingQuality = FindMatchingQuality(qualities, requirement.Quality);
+				if(matchingQuality == null)
+				{
+					return false;
+				}
+				else if (matchingQuality.Level > requirement.QualityMax || matchingQuality.Level < requirement.QualityMin) {
+					return false;
+				}
+			}
+		}
+		else
+		{
+			return true;
+		}
+		return true;
+	}
 }
