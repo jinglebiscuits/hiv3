@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hivXMLSchema.xsd">
+  <title>Party</title>
+  <trunk>
+    <title>Friday night</title>
+    <description>Friday night presents exciting options for AT. Maybe there's a chance to feel like he belongs tonight.</description>
+    <icon>
+    	<socialMedia>socialMedia</socialMedia>
+    </icon>
+    <buttonText>Go</buttonText>
+    <trunkTag>trunkTag</trunkTag>
+    <area>Home</area>
+    <urgency>1</urgency>
+    <deck>deck</deck>
+    <requirements/>
+    <branches>
+      <branch>
+        <title>Party at Jay Jay's</title>
+        <description>Jay Jay has invited AT to chill at his house tonight. It's definitely not something Auntie Gina would approve of, but it's a great chance to make some new friends and have some fun.</description>
+        <icon>
+        	<jay_jay>jay_jay</jay_jay>
+        </icon>
+        <buttonText>Go</buttonText>
+        <requirements/>
+        <defaultResult>
+          <title>Party time</title>
+          <description>AT heads to Jay Jay's house</description>
+          <timeCost>1</timeCost>
+        </defaultResult>
+        <travelToArea>Jay Jay's House</travelToArea>
+        <testedQualities/>
+        <difficulty>1</difficulty>
+        <linkedEvent>null</linkedEvent>
+      </branch>
+      <branch>
+      	<title>Stay home</title>
+      	<description>AT decides tonight is not the night for a party.</description>
+      	<icon>
+      		<auntie_gina_uncle_harry>
+      			auntie_gina_uncle_harry
+      		</auntie_gina_uncle_harry>
+      	</icon>
+      	<buttonText>Stay</buttonText>
+      	<requirements></requirements>
+      	<defaultResult>
+      		<title>title</title>
+      		<description>description</description>
+      		<timeCost>1</timeCost>
+      	</defaultResult>
+      	<testedQualities></testedQualities>
+      	<difficulty>1</difficulty>
+      	<linkedEvent>null</linkedEvent>
+      </branch>
+    </branches>
+  </trunk>
+  <trunk>
+  	<title>Jay Jay offers AT a beer</title>
+  	<description>Jay Jay sees that AT is having a hard time relaxing, so he opens a beer and holds it out for AT to grab.</description>
+  	<icon>
+  		<jay_jay>jay_jay</jay_jay>
+  		
+  		
+  	</icon>
+  	<buttonText>Decide</buttonText>
+  	<trunkTag>trunkTag</trunkTag>
+  	<area>Jay Jay's House</area>
+  	<urgency>1</urgency>
+  	<deck>deck</deck>
+  	<requirements></requirements>
+  	<branches>
+  		<branch>
+  			<title>Accept the beer</title>
+  			<description>AT takes the beer and start drinking. It's cold and refreshing, and more importantly helps AT feel more at ease.</description>
+  			<icon>
+  				<drinking_drugs>drinking_drugs</drinking_drugs>
+  				
+  			</icon>
+  			<buttonText>Drink</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>title</title>
+  				<description>description</description>
+  				<timeCost>1</timeCost>
+  			</defaultResult>
+  			<testedQualities></testedQualities>
+  			<difficulty>1</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  		<branch>
+  			<title>Refuse the beer</title>
+  			<description>AT is not comfortable with drinking tonight. Maybe it's the pressure of the situation, his discomfort with underage drinking, or something else.</description>
+  			<icon>
+  				<drinking_drugs>drinking_drugs</drinking_drugs>
+  				
+  			</icon>
+  			<buttonText>Refuse</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>Peer pressure</title>
+  				<description>AT turns down the beer, but Jay Jay insists heavily that it will be a good decision. Afraid to say no again, AT caves and accepts the beer.</description>
+  				<timeCost>1</timeCost>
+  			</defaultResult>
+  			<successResult>
+  				<title>Peer pressure</title>
+  				<description>AT turns down the beer, but Jay Jay insists heavily that it will be a good decision. AT knows what he wants though, and he will need fall to the pressure. He successfuly turns down the offer!</description>
+  				<timeCost>1</timeCost>
+  				<effect>
+  					<quality>
+  						<attributeQuality>Mettle</attributeQuality>
+  					</quality>
+  					<changedBy>2</changedBy>
+  				</effect>
+  			</successResult>
+  			<testedQualities>
+  				<quality>
+  					<attributeQuality>Mettle</attributeQuality>
+  				</quality></testedQualities>
+  			<difficulty>6</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  		<branch>
+  			<title>Ask a friend</title>
+  			<description>AT looks to Jimmy for support. Is he drinking?</description>
+  			<icon>
+  				<jimmy>jimmy</jimmy>
+  				
+  			</icon>
+  			<buttonText>Go</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>title</title>
+  				<description>description</description>
+  				<timeCost>1</timeCost>
+  			</defaultResult>
+  			<testedQualities></testedQualities>
+  			<difficulty>1</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  	</branches>
+  </trunk>
+</forest>
