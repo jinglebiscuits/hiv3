@@ -250,7 +250,7 @@
   </trunk>
   <trunk>
   	<title>Evening free time</title>
-  	<description>It's a school night. How should AT spend his time?</description>
+  	<description>It's a school night. How should [AT] spend [his] time?</description>
   	<icon>
   		<empty>empty</empty>
   		
@@ -346,6 +346,54 @@
   				<quality>
   					<attributeQuality>Mettle</attributeQuality>
   				</quality></testedQualities>
+  			<difficulty>1</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  		<branch>
+  			<title>Homework and study</title>
+  			<description>[AT] decides to do some school work.</description>
+  			<icon>
+  				<studying>studying</studying>
+  				
+  			</icon>
+  			<buttonText>Study</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>[AT]'s knowledge grows</title>
+  				<description>After an hour of studying, [AT] has made a sizeable dent in seemingly endless schoolwork that needs to be done.</description>
+  				<timeCost>1</timeCost>
+  				<effect>
+  					<quality>
+  						<attributeQuality>Intelligence</attributeQuality>
+  					</quality>
+  					<changedBy>1</changedBy>
+  				</effect>
+  			</defaultResult>
+  			<testedQualities></testedQualities>
+  			<difficulty>1</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  		<branch>
+  			<title>Quiet time</title>
+  			<description>An hour of thought can make [AT] more productive, focused, and confident.</description>
+  			<icon>
+  				<empty>empty</empty>
+  				
+  			</icon>
+  			<buttonText>Go</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>[AT] gains awareness</title>
+  				<description>[AT] gains a little insight into what [he] wants, and finds a little peace about [his] life.</description>
+  				<timeCost>1</timeCost>
+  				<effect>
+  					<quality>
+  						<attributeQuality>Mettle</attributeQuality>
+  					</quality>
+  					<changedBy>1</changedBy>
+  				</effect>
+  			</defaultResult>
+  			<testedQualities></testedQualities>
   			<difficulty>1</difficulty>
   			<linkedEvent>null</linkedEvent>
   		</branch>

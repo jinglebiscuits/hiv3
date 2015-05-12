@@ -15,7 +15,8 @@ public class Person : MonoBehaviour{
 	private BaseItems baseItems = new BaseItems();
 	private BaseStorylines baseStorylines = new BaseStorylines();
 	private BaseRelationships baseRelationships = new BaseRelationships();
-	private List<IQuality> qualities = new List<IQuality>();
+//	private List<IQuality> qualities = new List<IQuality>();
+	private Dictionary<string, IQuality> qualitiesDict = new Dictionary<string, IQuality>();
 	private Clock clock;
 	private Day day;
 	private Week week;
@@ -28,44 +29,52 @@ public class Person : MonoBehaviour{
 		bodyType = BodyType.female;
 		foreach(IQuality attribute in baseAttributes.attributes)
 		{
-			qualities.Add (attribute);
+//			qualities.Add (attribute);
+			qualitiesDict.Add(attribute.Name, attribute);
 		}
 
 		foreach(IQuality status in baseStatuses.statuses)
 		{
-			qualities.Add (status);
+//			qualities.Add (status);
+			qualitiesDict.Add(status.Name, status);
 		}
 
 		foreach(IQuality item in baseItems.items)
 		{
-			qualities.Add (item);
+//			qualities.Add (item);
+			qualitiesDict.Add(item.Name, item);
 		}
 
 		foreach(IQuality storyline in baseStorylines.storylines)
 		{
-			qualities.Add (storyline);
+//			qualities.Add (storyline);
+			qualitiesDict.Add(storyline.Name, storyline);
 		}
 
 		foreach(IQuality relationship in baseRelationships.relationships)
 		{
-			qualities.Add (relationship);
+//			qualities.Add (relationship);
+			qualitiesDict.Add(relationship.Name, relationship);
 		}
 
 		clock = new Clock(14);
-		qualities.Add (clock);
+//		qualities.Add (clock);
+		qualitiesDict.Add(clock.Name, clock);
 
 		day = new Day(6);
-		qualities.Add (day);
+//		qualities.Add (day);
+		qualitiesDict.Add(day.Name, day);
 
 		week = new Week(0);
-		qualities.Add (week);
+//		qualities.Add (week);
+		qualitiesDict.Add(week.Name, week);
 
 		forest = new Forest();
 		availableTrunks = new List<Trunk>();
 //		UpdateAvailableTrunkList();
 
 		area = "Home";
-
+//		UpdateStatuses();
 	}
 
 	#region Accessor Methods
@@ -123,12 +132,21 @@ public class Person : MonoBehaviour{
 		}
 	}
 
-	public List<IQuality> Qualities {
+//	public List<IQuality> Qualities {
+//		get {
+//			return this.qualities;
+//		}
+//		set {
+//			qualities = value;
+//		}
+//	}
+
+	public Dictionary<string, IQuality> QualitiesDict {
 		get {
-			return this.qualities;
+			return this.qualitiesDict;
 		}
 		set {
-			qualities = value;
+			qualitiesDict = value;
 		}
 	}
 
@@ -187,6 +205,18 @@ public class Person : MonoBehaviour{
 		}
 		return availableTrunks;
 	}
+
+//	public void UpdateStatuses()
+//	{
+//		foreach(IQuality quality in qualities)
+//		{
+//			if(quality.Tag == "Status")
+//			{
+//				Status status = (Status) quality;
+//
+//			}
+//		}
+//	}
 }
 
 public enum BodyType

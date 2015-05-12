@@ -96,7 +96,6 @@ public class Trunk : Story{
 
 	public override bool IsPlayableByPerson (Person person)
 	{
-		List<IQuality> qualities = person.Qualities;
 		if(Area != person.Area)
 			return false;
 
@@ -104,7 +103,7 @@ public class Trunk : Story{
 		{
 			foreach(Requirement requirement in Requirements)
 			{
-				IQuality matchingQuality = FindMatchingQuality(qualities, requirement.Quality);
+				IQuality matchingQuality = person.QualitiesDict[requirement.Quality.Name];
 				if(matchingQuality == null)
 				{
 					return false;

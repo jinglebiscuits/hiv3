@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hivXMLSchema.xsd">
+  <title>Saturday</title>
+  <trunk>
+    <title>Get hammered</title>
+    <description>There's a bucket of beer and no one else to drink it!</description>
+    <icon>
+    	<drinking_drugs>drinking_drugs</drinking_drugs>
+    	
+    </icon>
+    <buttonText>Drank</buttonText>
+    <trunkTag>trunkTag</trunkTag>
+    <area>Home</area>
+    <urgency>1</urgency>
+    <deck>deck</deck>
+    <requirements>
+    	<requirement>
+    		<quality>
+    			<timeQuality>Time</timeQuality>
+    			
+    		</quality>
+    		<qualityMin>16</qualityMin>
+    		<qualityMax>24</qualityMax>
+    	</requirement></requirements>
+    <branches>
+      <branch>
+        <title>You get to drinkin</title>
+        <description>stuff</description>
+        <icon>
+        	<drinking_drugs>drinking_drugs</drinking_drugs>
+        	
+        </icon>
+        <buttonText>drink hard</buttonText>
+        <requirements/>
+        <defaultResult>
+          <title>title</title>
+          <description>description</description>
+          <timeCost>1</timeCost>
+        </defaultResult>
+        <testedQualities/>
+        <difficulty>1</difficulty>
+        <linkedEvent>null</linkedEvent>
+      </branch>
+      <branch>
+      	<title>Throw it away</title>
+      	<description>You dump all that sweet beer down the drain.</description>
+      	<icon>
+      		<helping>helping</helping>
+      		
+      	</icon>
+      	<buttonText>dump</buttonText>
+      	<requirements></requirements>
+      	<defaultResult>
+      		<title>title</title>
+      		<description>description</description>
+      		<timeCost>1</timeCost>
+      	</defaultResult>
+      	<testedQualities></testedQualities>
+      	<difficulty>1</difficulty>
+      	<linkedEvent>null</linkedEvent>
+      </branch>
+    </branches>
+  </trunk>
+</forest>

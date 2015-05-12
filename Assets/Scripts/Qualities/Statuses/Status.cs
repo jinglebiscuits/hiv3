@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 
 public class Status : IQuality {
 
@@ -7,7 +8,7 @@ public class Status : IQuality {
 	private string tag;
 	private int level;
 	private int points;
-	private int modifier;
+	private Dictionary<IQuality, int> modDictionary = new Dictionary<IQuality, int>();
 	private bool pyramid;
 
 
@@ -17,13 +18,16 @@ public class Status : IQuality {
 		this.tag = "Status";
 	}
 
-	public Status (string name, string description, int level, int points, int modifier, bool pyramid)
+	public Status (string name, string description, int level, int points, int intMod, int physMod, int socMod, int mettleMod, bool pyramid)
 	{
 		this.name = name;
 		this.description = description;
 		this.level = level;
 		this.points = points;
-		this.modifier = modifier;
+		this.modDictionary.Add(new Attribute("Intelligence"), intMod);
+		this.modDictionary.Add(new Attribute("Physical"), physMod);
+		this.modDictionary.Add(new Attribute("Social"), socMod);
+		this.modDictionary.Add(new Attribute("Mettle"), mettleMod);
 		this.pyramid = pyramid;
 		this.tag = "Status";
 	}
@@ -74,12 +78,12 @@ public class Status : IQuality {
 		}
 	}
 
-	public int Modifier {
+	public Dictionary<IQuality, int> ModDictionary {
 		get {
-			return this.modifier;
+			return this.modDictionary;
 		}
 		set {
-			modifier = value;
+			modDictionary = value;
 		}
 	}
 

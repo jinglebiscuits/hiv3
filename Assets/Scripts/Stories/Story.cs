@@ -89,13 +89,11 @@ public class Story {
 
 	public virtual bool IsPlayableByPerson(Person person)
 	{
-		List<IQuality> qualities = person.Qualities;
-
 		if(Requirements.Count > 0)
 		{
 			foreach(Requirement requirement in Requirements)
 			{
-				IQuality matchingQuality = FindMatchingQuality(qualities, requirement.Quality);
+				IQuality matchingQuality = person.QualitiesDict[requirement.Quality.Name];
 				if(matchingQuality == null)
 				{
 					return false;
@@ -118,16 +116,9 @@ public class Story {
 	/// <returns>The matching quality.</returns>
 	/// <param name="qualities">List of person's qualities.</param>
 	/// <param name="requirement">Requirement to match qualities with.</param>
-	protected IQuality FindMatchingQuality(List<IQuality> qualities, IQuality qualityToMatch)
-	{
-		foreach(IQuality quality in qualities)
-		{
-			if(quality.Name == qualityToMatch.Name)
-			{
-				return quality;
-			}
-		}
-		return null;
-	}
+//	protected IQuality FindMatchingQuality(Dictionary<string, IQuality> qualities, IQuality qualityToMatch)
+//	{
+//		return qualities[qualityToMatch.Name];
+//	}
 	#endregion
 }

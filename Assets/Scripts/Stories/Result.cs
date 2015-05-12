@@ -85,21 +85,8 @@ public class Result {
 
 		foreach(Effect effect in this.effects)
 		{
-			FindMatchingQuality(person.Qualities, effect.QualityEffected).AddPoints(effect.ChangedBy);
+			person.QualitiesDict[effect.QualityEffected.Name].AddPoints(effect.ChangedBy);
 		}
 		person.Clock.AddPoints(TimeCost);
-	}
-
-	private IQuality FindMatchingQuality(List<IQuality> qualities, IQuality qualityToMatch) //duplicate code. needs cleaning
-	{
-		foreach(IQuality quality in qualities)
-		{
-
-			if(quality.Name == qualityToMatch.Name)
-			{
-				return quality;
-			}
-		}
-		return null;
 	}
 }

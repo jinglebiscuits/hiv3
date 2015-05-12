@@ -12,7 +12,15 @@
     <area>Home</area>
     <urgency>1</urgency>
     <deck>deck</deck>
-    <requirements/>
+    <requirements>
+    	<requirement>
+    		<quality>
+    			<timeQuality>Day</timeQuality>
+    			
+    		</quality>
+    		<qualityMin>4</qualityMin>
+    		<qualityMax>4</qualityMax>
+    	</requirement></requirements>
     <branches>
       <branch>
         <title>Party at Jay Jay's</title>

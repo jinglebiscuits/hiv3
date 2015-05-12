@@ -146,7 +146,7 @@ public class Branch : Story{
 		int qualityLevelSum = 0;
 		foreach(IQuality quality in TestedQualities)
 		{
-			qualityLevelSum += FindMatchingQuality(person.Qualities, quality).Level;
+			qualityLevelSum += person.QualitiesDict[quality.Name].Level;
 		}
 		float qualityLevel = (float) qualityLevelSum/TestedQualities.Count;
 		float difficultyScaler = 0.6f;
@@ -158,7 +158,7 @@ public class Branch : Story{
 		//Decide which result to use
 		if(successResult != null)
 		{
-			PickResult(person.Qualities);
+			PickResult(person.QualitiesDict);
 		}
 		else
 			chosenResult = defaultResult;
@@ -166,7 +166,7 @@ public class Branch : Story{
 		chosenResult.EffectPerson(person);
 	}
 
-	private void PickResult(List<IQuality> qualities)
+	private void PickResult(Dictionary<string, IQuality> qualities)
 	{
 		if(Manager.rand.Next(101) <= ChanceOfSuccess)
 			chosenResult = successResult;
