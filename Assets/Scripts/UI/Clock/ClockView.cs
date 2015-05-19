@@ -16,9 +16,10 @@ public class ClockView : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		clock = GameObject.Find("Player").GetComponent<Player>().FocusedPerson.Clock;
-		day = GameObject.Find("Player").GetComponent<Player>().FocusedPerson.Day;
-		week = GameObject.Find("Player").GetComponent<Player>().FocusedPerson.Week;
+		person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
+		clock = person.Clock;
+		day = person.Day;
+		week = person.Week;
 		clock.pointEvent += UpdateClock;
 		clock.newDayEvent += NewDay;
 		day.newWeekEvent += NewWeek;

@@ -85,7 +85,14 @@ public class Result {
 
 		foreach(Effect effect in this.effects)
 		{
-			person.QualitiesDict[effect.QualityEffected.Name].AddPoints(effect.ChangedBy);
+			IQuality quality = person.QualitiesDict[effect.QualityEffected.Name];
+			if(effect.ChangedBy != 169)
+				quality.AddPoints((int) effect.ChangedBy);
+			else
+			{
+				quality.Level = effect.SetTo;
+				quality.Points = 0;
+			}
 		}
 		person.Clock.AddPoints(TimeCost);
 	}

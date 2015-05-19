@@ -195,11 +195,13 @@ public class Person : MonoBehaviour{
 		return availableTrunks;
 	}
 
-	public void UpdateStatus(string statusName, int setLevel=null, int levelChange=null)
+	public void UpdateStatus(string statusName, int? setLevel=null, int? levelChange=null)
 	{
-		Status statusToUpdate = qualitiesDict[statusName];
-		if(setLevel)
-			statusToUpdate.Level = setLevel;
+		Status statusToUpdate = (Status) qualitiesDict[statusName];
+		if(setLevel != null)
+			statusToUpdate.Level = (int) setLevel;
+		else if(levelChange != null)
+			statusToUpdate.Level += (int) levelChange;
 	}
 
 //	public void UpdateStatuses()

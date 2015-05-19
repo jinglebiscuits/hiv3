@@ -131,10 +131,10 @@
      <Compile Include="Assets\Scripts\XML\XML.cs" />
      <None Include="Assets\Scripts\XML\chapter_one.xml" />
      <None Include="Assets\Scripts\XML\hivXMLSchema.xml" />
-     <None Include="Assets\Scripts\XML\schoolDay.xml" />
      <None Include="Assets\Scripts\XML\saturday.xml" />
      <None Include="Assets\Scripts\XML\intro.xml" />
      <None Include="Assets\Scripts\XML\party.xml" />
+     <None Include="Assets\Scripts\XML\schoolDay.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

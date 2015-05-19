@@ -45,7 +45,7 @@
           <timeCost>1</timeCost>
           <effect>
           	<quality>
-          		<attributeQuality>Social</attributeQuality>
+          		<attributeQuality>Intelligence</attributeQuality>
           	</quality>
           	<setTo>10</setTo>
           	

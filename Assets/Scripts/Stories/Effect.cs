@@ -4,12 +4,14 @@ public class Effect {
 
 	private IQuality qualityEffected;
 	private int changedBy;
+	private int setTo;
 
 	#region Constructors
-	public Effect (IQuality qualityEffected, int changedBy)
+	public Effect (IQuality qualityEffected, int changedBy = 169, int setTo = 169)
 	{
 		this.qualityEffected = qualityEffected;
 		this.changedBy = changedBy;
+		this.setTo = setTo;
 	}
 	#endregion
 
@@ -28,7 +30,16 @@ public class Effect {
 			return this.changedBy;
 		}
 		set {
-			changedBy = value;
+			changedBy = (int) value;
+		}
+	}
+
+	public int SetTo {
+		get {
+			return this.setTo;
+		}
+		set {
+			setTo = value;
 		}
 	}
 	#endregion

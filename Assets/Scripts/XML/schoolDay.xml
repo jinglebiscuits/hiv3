@@ -43,9 +43,16 @@
           <title>Arrives at school</title>
           <description>Nothing out of the ordinary happened on the bus today.</description>
           <timeCost>1</timeCost>
+          <effect>
+          	<quality>
+          		<attributeQuality>Social</attributeQuality>
+          	</quality>
+          	<setTo>10</setTo>
+          	
+          </effect>
         </defaultResult>
         <travelToArea>School</travelToArea>
-        <testedQualities/>
+        <testedQualities></testedQualities>
         <difficulty>1</difficulty>
         <linkedEvent>null</linkedEvent>
       </branch>
@@ -100,7 +107,9 @@
           	<quality>
           		<attributeQuality>Intelligence</attributeQuality>
           	</quality>
-          	<changedBy>2</changedBy>
+          	<changedBy>0</changedBy>
+          	
+          	
           </effect>
         </defaultResult>
         <testedQualities/>

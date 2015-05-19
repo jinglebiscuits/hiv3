@@ -37,6 +37,9 @@ public class AttributeView : MonoBehaviour {
 			attribute.pointEvent -=	UpdateView;
 			attribute.pointEvent +=	UpdateView;
 
+			attribute.setLevelEvent -= UpdateLevel;
+			attribute.setLevelEvent += UpdateLevel;
+
 			attribute.modifierEvent -= UpdateModifier;
 			attribute.modifierEvent += UpdateModifier;
 
@@ -58,6 +61,7 @@ public class AttributeView : MonoBehaviour {
 		{
 			attribute.pointEvent -= UpdateView;
 			attribute.modifierEvent -= UpdateModifier;
+			attribute.setLevelEvent -= UpdateLevel;
 		}
 	}
 
@@ -80,6 +84,13 @@ public class AttributeView : MonoBehaviour {
 		}
 		else
 			attributeModifier.text = "";
+	}
+
+	private void UpdateLevel()
+	{
+		attributePointsProgress.value = 0;
+		attributePointsProgress.maxValue = attribute.Level;
+		attributeLevel.text = attribute.Level.ToString();
 	}
 
 	private IEnumerator AnimatePointChange(int actualLevel, int actualPoints)

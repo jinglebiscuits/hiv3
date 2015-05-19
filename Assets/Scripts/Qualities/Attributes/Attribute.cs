@@ -5,6 +5,7 @@ public class Attribute : IQuality {
 	public delegate void MyEventHandler();
 	public event MyEventHandler pointEvent;
 	public event MyEventHandler modifierEvent;
+	public event MyEventHandler setLevelEvent;
 
 	private string name;
 	private string description;
@@ -72,8 +73,17 @@ public class Attribute : IQuality {
 
 	public int Level
 	{
-		get;
-		set;
+		get {
+			return this.level;
+		}
+		set {
+			level = value;
+			//let subscribers know
+			if(setLevelEvent != null)
+			{
+				setLevelEvent();
+			}
+		}
 	}
 
 	public int Modifier {
@@ -205,16 +215,16 @@ public class Attribute : IQuality {
 	/// </summary>
 	private void LevelUp()
 	{
-		Level += 1;
+		level += 1;
 		Points = 0;
 	}
 	
 	private void LevelDown()
 	{
-		Level -= 1;
+		level -= 1;
 		if(Pyramid)
 		{
-			Points = Level - 1;
+			Points = level - 1;
 		}
 		else
 		{

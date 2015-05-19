@@ -116,7 +116,18 @@ public class XML : MonoBehaviour{
 		foreach(XElement effect in eResult.Descendants("effect"))
 		{
 			IQuality quality = ElementToQuality(effect.Element("quality"));
-			result.Effects.Add (new Effect(quality, int.Parse(effect.Element("changedBy").Value)));
+			if(effect.Element("changedBy") != null)
+				result.Effects.Add (new Effect(quality, int.Parse(effect.Element("changedBy").Value), 169));
+			else
+			{
+				result.Effects.Add (new Effect(quality, 169, int.Parse(effect.Element("setTo").Value)));
+				if(result.Effects[result.Effects.Count - 1].ChangedBy == 169)
+				{
+					print (quality.Name);
+					print (int.Parse(effect.Element("setTo").Value));
+				}
+			}
+				
 		}
 		return result;
 	}
