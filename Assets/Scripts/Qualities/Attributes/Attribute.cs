@@ -4,7 +4,7 @@ public class Attribute : IQuality {
 
 	public delegate void MyEventHandler();
 	public event MyEventHandler pointEvent;
-	//public event MyEventHandler levelEvent; //I don't think I'll ever use this.
+	public event MyEventHandler modifierEvent;
 
 	private string name;
 	private string description;
@@ -74,6 +74,20 @@ public class Attribute : IQuality {
 	{
 		get;
 		set;
+	}
+
+	public int Modifier {
+		get {
+			return this.modifier;
+		}
+		set {
+			modifier = value;
+			//let subscribers know
+			if(modifierEvent != null)
+			{
+				modifierEvent();
+			}
+		}
 	}
 
 	/// <summary>

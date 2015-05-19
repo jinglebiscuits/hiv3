@@ -8,11 +8,13 @@
 	public Storyline chapterFive = new Storyline("Chapter 5", "How can I win when the rules have been written by my opponent?", 0, 0, 1, false);
 	public Storyline chapterSix = new Storyline("Chapter 6", "Your health might be compromised.", 0, 0, 1, false);
 	public Storyline chapterSeven = new Storyline("Chapter 7", "Doubt takes over as you begin questioning your ability to perform even simple tasks.", 0, 0, 1, false);
-	
+
+	public Storyline party = new Storyline("Party", "Party time!", 0, 0, 1, false);
+
 	public Storyline[] storylines;
 	
 	public BaseStorylines()
 	{
-		storylines = new Storyline[]{intro, chapterOne, chapterTwo, chapterThree, chapterFour, chapterFive, chapterSix, chapterSeven};
+		storylines = new Storyline[]{intro, chapterOne, chapterTwo, chapterThree, chapterFour, chapterFive, chapterSix, chapterSeven, party};
 	}
 }

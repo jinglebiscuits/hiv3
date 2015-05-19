@@ -139,13 +139,6 @@
   					</quality>
   					<changedBy>2</changedBy>
   				</effect>
-  				<effect>
-  					<quality>
-  						<storylineQuality>Party</storylineQuality>
-  						
-  					</quality>
-  					<changedBy>11</changedBy>
-  				</effect>
   			</defaultResult>
   			<travelToArea>Jay Jay's House</travelToArea>
   			<testedQualities></testedQualities>
@@ -354,69 +347,6 @@
   			</defaultResult>
   			<testedQualities></testedQualities>
   			<difficulty>1</difficulty>
-  			<linkedEvent>null</linkedEvent>
-  		</branch>
-  	</branches>
-  </trunk>
-  <trunk>
-  	<title>Talk with Tia</title>
-  	<description>[AT] sees Tia and decides to go over to her.</description>
-  	<icon>
-  		<tia>tia</tia>
-  		
-  	</icon>
-  	<buttonText>Talk</buttonText>
-  	<trunkTag>trunkTag</trunkTag>
-  	<area>Jay Jay's House</area>
-  	<urgency>1</urgency>
-  	<deck>deck</deck>
-  	<requirements>
-  		<requirement>
-  			<quality>
-  				<storylineQuality>Party</storylineQuality>
-  				
-  			</quality>
-  			<qualityMin>10</qualityMin>
-  			<qualityMax>19</qualityMax>
-  		</requirement></requirements>
-  	<branches>
-  		<branch>
-  			<title>[AT] has a friendly coversation with Tia</title>
-  			<description>[AT] doesn't try anything funny with her. [He] is just happy to see someone that he recognizes.</description>
-  			<icon>
-  				<tia>tia</tia>
-  				
-  			</icon>
-  			<buttonText>Talk</buttonText>
-  			<requirements></requirements>
-  			<defaultResult>
-  				<title>Tia isn't interested</title>
-  				<description>[AT] fumbles over his own words, and isn't able to communicate well under the pressure of the party.</description>
-  				<timeCost>1</timeCost>
-  			</defaultResult>
-  			<successResult>
-  				<title>Friendly conversation with Tia</title>
-  				<description>[AT] and Tia talk about school and life in Rahp. [He] is glad Tia is at the party.</description>
-  				<timeCost>1</timeCost>
-  				<effect>
-  					<quality>
-  						<relationshipQuality>Tia</relationshipQuality>
-  						
-  					</quality>
-  					<changedBy>1</changedBy>
-  				</effect>
-  				<effect>
-  					<quality>
-  						<attributeQuality>Social</attributeQuality>
-  					</quality>
-  					<changedBy>1</changedBy>
-  				</effect>
-  			</successResult>
-  			<testedQualities>
-  				<quality>
-  					<attributeQuality>Social</attributeQuality>
-  				</quality></testedQualities>
-  			<difficulty>3</difficulty>
   			<linkedEvent>null</linkedEvent>
   		</branch>
   	</branches>

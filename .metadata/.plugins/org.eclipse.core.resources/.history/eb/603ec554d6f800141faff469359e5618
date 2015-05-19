@@ -139,13 +139,6 @@
   					</quality>
   					<changedBy>2</changedBy>
   				</effect>
-  				<effect>
-  					<quality>
-  						<storylineQuality>Party</storylineQuality>
-  						
-  					</quality>
-  					<changedBy>11</changedBy>
-  				</effect>
   			</defaultResult>
   			<travelToArea>Jay Jay's House</travelToArea>
   			<testedQualities></testedQualities>

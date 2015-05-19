@@ -15,7 +15,6 @@ public class Person : MonoBehaviour{
 	private BaseItems baseItems = new BaseItems();
 	private BaseStorylines baseStorylines = new BaseStorylines();
 	private BaseRelationships baseRelationships = new BaseRelationships();
-//	private List<IQuality> qualities = new List<IQuality>();
 	private Dictionary<string, IQuality> qualitiesDict = new Dictionary<string, IQuality>();
 	private Clock clock;
 	private Day day;
@@ -29,52 +28,42 @@ public class Person : MonoBehaviour{
 		bodyType = BodyType.female;
 		foreach(IQuality attribute in baseAttributes.attributes)
 		{
-//			qualities.Add (attribute);
 			qualitiesDict.Add(attribute.Name, attribute);
 		}
 
 		foreach(IQuality status in baseStatuses.statuses)
 		{
-//			qualities.Add (status);
 			qualitiesDict.Add(status.Name, status);
 		}
 
 		foreach(IQuality item in baseItems.items)
 		{
-//			qualities.Add (item);
 			qualitiesDict.Add(item.Name, item);
 		}
 
 		foreach(IQuality storyline in baseStorylines.storylines)
 		{
-//			qualities.Add (storyline);
 			qualitiesDict.Add(storyline.Name, storyline);
 		}
 
 		foreach(IQuality relationship in baseRelationships.relationships)
 		{
-//			qualities.Add (relationship);
 			qualitiesDict.Add(relationship.Name, relationship);
 		}
 
 		clock = new Clock(14);
-//		qualities.Add (clock);
 		qualitiesDict.Add(clock.Name, clock);
 
 		day = new Day(6);
-//		qualities.Add (day);
 		qualitiesDict.Add(day.Name, day);
 
 		week = new Week(0);
-//		qualities.Add (week);
 		qualitiesDict.Add(week.Name, week);
 
 		forest = new Forest();
 		availableTrunks = new List<Trunk>();
-//		UpdateAvailableTrunkList();
 
 		area = "Home";
-//		UpdateStatuses();
 	}
 
 	#region Accessor Methods
@@ -204,6 +193,13 @@ public class Person : MonoBehaviour{
 			}
 		}
 		return availableTrunks;
+	}
+
+	public void UpdateStatus(string statusName, int setLevel=null, int levelChange=null)
+	{
+		Status statusToUpdate = qualitiesDict[statusName];
+		if(setLevel)
+			statusToUpdate.Level = setLevel;
 	}
 
 //	public void UpdateStatuses()

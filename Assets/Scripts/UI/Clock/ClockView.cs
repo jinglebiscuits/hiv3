@@ -59,10 +59,16 @@ public class ClockView : MonoBehaviour {
 
 	public void Sleep(int hours=8)
 	{
+		int hoursSlept = 0;
 		while(clock.Level >= 20 | clock.Level <= 6)
 		{
 			clock.AddPoints(1);
+			hoursSlept ++;
 		}
+		if(hoursSlept >= 7)
+			person.QualitiesDict["Well Rested"].Level = 1;
+		else
+			person.QualitiesDict["Well Rested"].Level --;
 		GameObject.Find("StoryContainer").GetComponent<StoryContainer>().ShowStories();
 	}
 }

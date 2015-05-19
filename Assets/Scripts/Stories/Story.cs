@@ -109,16 +109,5 @@ public class Story {
 		}
 		return true;
 	}
-
-	/// <summary>
-	/// Finds the matching quality.
-	/// </summary>
-	/// <returns>The matching quality.</returns>
-	/// <param name="qualities">List of person's qualities.</param>
-	/// <param name="requirement">Requirement to match qualities with.</param>
-//	protected IQuality FindMatchingQuality(Dictionary<string, IQuality> qualities, IQuality qualityToMatch)
-//	{
-//		return qualities[qualityToMatch.Name];
-//	}
 	#endregion
 }

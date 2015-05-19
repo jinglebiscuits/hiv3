@@ -169,11 +169,8 @@
 	<xs:element name="effect">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="quality" />
-				<xs:choice>
-					<xs:element name="changedBy" type="xs:int"></xs:element>
-					<xs:element name="setTo" type="xs:int"></xs:element>
-				</xs:choice>
+				<xs:element ref="quality"/>
+				<xs:element name="changedBy" type="xs:int"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

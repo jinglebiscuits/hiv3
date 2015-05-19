@@ -9,7 +9,11 @@ public class AttributeView : MonoBehaviour {
 	public Image attributeIcon;
 	public Text attributeName;
 	public Text attributeLevel;
+	public Text attributeModifier;
 	public Slider attributePointsProgress;
+
+	private Color plusModifierColor = new Color(51, 187, 238);
+	private Color minusModifierColor = new Color(255, 68, 68);
 
 	/// <summary>
 	/// how much the point value changes per tick of the coroutine.
@@ -32,23 +36,50 @@ public class AttributeView : MonoBehaviour {
 			attribute = value;
 			attribute.pointEvent -=	UpdateView;
 			attribute.pointEvent +=	UpdateView;
+
+			attribute.modifierEvent -= UpdateModifier;
+			attribute.modifierEvent += UpdateModifier;
+
 			attributeName.text = attribute.Name;
 			attributeLevel.text = attribute.Level.ToString();
+
 			attributePointsProgress.maxValue = attribute.Level;
 			attributePointsProgress.value = attribute.Points;
+
+			UpdateModifier();
 			UpdateView();
+
 		}
 	}
 
 	void OnDestroy()
 	{
 		if(attribute != null)
+		{
 			attribute.pointEvent -= UpdateView;
+			attribute.modifierEvent -= UpdateModifier;
+		}
 	}
 
 	public void UpdateView()
 	{
 		StartCoroutine(AnimatePointChange(attribute.Level, attribute.Points));
+	}
+
+	private void UpdateModifier()
+	{
+		if(attribute.Modifier > 0)
+		{
+			attributeModifier.text = "+" + attribute.Modifier.ToString();
+			attributeModifier.color = plusModifierColor;
+		}
+		else if(attribute.Modifier < 0)
+		{
+			attributeModifier.text = "-" + attribute.Modifier.ToString();
+			attributeModifier.color = minusModifierColor;
+		}
+		else
+			attributeModifier.text = "";
 	}
 
 	private IEnumerator AnimatePointChange(int actualLevel, int actualPoints)

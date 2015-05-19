@@ -97,118 +97,6 @@
       	<linkedEvent>null</linkedEvent>
       </branch>
     </branches>
-  </trunk><trunk>
-  	<title>Text from Tia</title>
-  	<description>[AT] receives a text from Tia. She really wants him at the party.</description>
-  	<icon>
-  		<tia>tia</tia>
-  		
-  	</icon>
-  	<buttonText>Reply</buttonText>
-  	<trunkTag>Text</trunkTag>
-  	<area>Home</area>
-  	<urgency>1</urgency>
-  	<deck>deck</deck>
-  	<requirements>
-  		<requirement>
-  			<quality>
-  				<storylineQuality>Party</storylineQuality>
-  				
-  			</quality>
-  			<qualityMin>1</qualityMin>
-  			<qualityMax>1</qualityMax>
-  		</requirement></requirements>
-  	<branches>
-  		<branch>
-  			<title>Well if she insists...</title>
-  			<description>[AT] reads Tia's text and is excited she is showing an interest. Maybe something will happen tonight with her.</description>
-  			<icon>
-  				<flirting>flirting</flirting>
-  				
-  			</icon>
-  			<buttonText>Go</buttonText>
-  			<requirements></requirements>
-  			<defaultResult>
-  				<title>Party time</title>
-  				<description>[AT] heads to Jay Jay's house</description>
-  				<timeCost>1</timeCost>
-  				<effect>
-  					<quality>
-  						<statusQuality>At Risk</statusQuality>
-  						
-  					</quality>
-  					<changedBy>2</changedBy>
-  				</effect>
-  				<effect>
-  					<quality>
-  						<storylineQuality>Party</storylineQuality>
-  						
-  					</quality>
-  					<changedBy>11</changedBy>
-  				</effect>
-  			</defaultResult>
-  			<travelToArea>Jay Jay's House</travelToArea>
-  			<testedQualities></testedQualities>
-  			<difficulty>1</difficulty>
-  			<linkedEvent>null</linkedEvent>
-  		</branch>
-  		<branch>
-  			<title>[AT] sticks to his decision</title>
-  			<description>Even though Tia is an interesting girl, [AT] feels the party still isn't for [him] tonight.</description>
-  			<icon>
-  				<auntie_gina_uncle_harry>
-  					auntie_gina_uncle_harry
-  				</auntie_gina_uncle_harry>
-  				
-  				
-  			</icon>
-  			<buttonText>Stay</buttonText>
-  			<requirements></requirements>
-  			<defaultResult>
-  				<title>The temptation is too strong</title>
-  				<description>[AT] can't shake the feeling that something good might happen at the party. [He] struggles for a few minutes, but ultimately decides he should go to the party so that [he] doesn't miss out on an opportunity.</description>
-  				<timeCost>1</timeCost>
-  				<effect>
-  					<quality>
-  						<statusQuality>At Risk</statusQuality>
-  						
-  					</quality>
-  					<changedBy>2</changedBy>
-  				</effect>
-  				<effect>
-  					<quality>
-  						<storylineQuality>Party</storylineQuality>
-  						
-  					</quality>
-  					<changedBy>11</changedBy>
-  				</effect>
-  			</defaultResult>
-  			<successResult>
-  				<title>[AT] struggles with temptation</title>
-  				<description>Temptation is strong, but [AT]'s will is stronger! [He] knows that this is not the night for a party, and [he] can not be easily swayed.</description>
-  				<timeCost>0</timeCost>
-  				<effect>
-  					<quality>
-  						<attributeQuality>Mettle</attributeQuality>
-  					</quality>
-  					<changedBy>2</changedBy>
-  				</effect>
-  				<effect>
-  					<quality>
-  						<storylineQuality>Party</storylineQuality>
-  						
-  					</quality>
-  					<changedBy>1</changedBy>
-  				</effect>
-  			</successResult>
-  			<testedQualities>
-  				<quality>
-  					<attributeQuality>Mettle</attributeQuality>
-  				</quality></testedQualities>
-  			<difficulty>7</difficulty>
-  			<linkedEvent>null</linkedEvent>
-  		</branch>
-  	</branches>
   </trunk>
   <trunk>
   	<title>Jay Jay offers AT a beer</title>
@@ -296,78 +184,15 @@
   	</branches>
   </trunk>
   <trunk>
-  	<title>Run home</title>
-  	<description>[AT] panicks at the party. [He] doesn't feel comfortable, so [he] decides to leave.</description>
-  	<icon>
-  		<auntie_gina_uncle_harry>
-  			auntie_gina_uncle_harry
-  		</auntie_gina_uncle_harry>
-  	</icon>
-  	<buttonText>Leave</buttonText>
-  	<trunkTag>trunkTag</trunkTag>
-  	<area>Jay Jay's House</area>
-  	<urgency>1</urgency>
-  	<deck>deck</deck>
-  	<requirements>
-  		<requirement>
-  			<quality>
-  				<storylineQuality>Party</storylineQuality>
-  				
-  			</quality>
-  			<qualityMin>10</qualityMin>
-  			<qualityMax>100</qualityMax>
-  		</requirement></requirements>
-  	<branches>
-  		<branch>
-  			<title>Run home</title>
-  			<description>With no one else around [he] can rely on, [AT] decides to just run home.</description>
-  			<icon>
-  				<jogging>jogging</jogging>
-  				
-  				
-  			</icon>
-  			<buttonText>Run</buttonText>
-  			<requirements></requirements>
-  			<defaultResult>
-  				<title>[AT] runs home</title>
-  				<description>It's a 2 mile trip back home, and [AT] walks a good bit of it.</description>
-  				<timeCost>2</timeCost>
-  				<effect>
-  					<quality>
-  						<attributeQuality>Physical</attributeQuality>
-  					</quality>
-  					<changedBy>1</changedBy>
-  				</effect>
-  				<effect>
-  					<quality>
-  						<attributeQuality>Social</attributeQuality>
-  					</quality>
-  					<changedBy>-2</changedBy>
-  				</effect>
-  				<effect>
-  					<quality>
-  						<storylineQuality>Party</storylineQuality>
-  						
-  					</quality>
-  					<changedBy>100</changedBy>
-  				</effect>
-  			</defaultResult>
-  			<testedQualities></testedQualities>
-  			<difficulty>1</difficulty>
-  			<linkedEvent>null</linkedEvent>
-  		</branch>
-  	</branches>
-  </trunk>
-  <trunk>
-  	<title>Talk with Tia</title>
-  	<description>[AT] sees Tia and decides to go over to her.</description>
+  	<title>Text from Tia</title>
+  	<description>[AT] receives a text from Tia. She really wants him at the party.</description>
   	<icon>
   		<tia>tia</tia>
   		
   	</icon>
-  	<buttonText>Talk</buttonText>
-  	<trunkTag>trunkTag</trunkTag>
-  	<area>Jay Jay's House</area>
+  	<buttonText>Reply</buttonText>
+  	<trunkTag>Text</trunkTag>
+  	<area>Home</area>
   	<urgency>1</urgency>
   	<deck>deck</deck>
   	<requirements>
@@ -376,47 +201,63 @@
   				<storylineQuality>Party</storylineQuality>
   				
   			</quality>
-  			<qualityMin>10</qualityMin>
-  			<qualityMax>19</qualityMax>
+  			<qualityMin>1</qualityMin>
+  			<qualityMax>1</qualityMax>
   		</requirement></requirements>
   	<branches>
   		<branch>
-  			<title>[AT] has a friendly coversation with Tia</title>
-  			<description>[AT] doesn't try anything funny with her. [He] is just happy to see someone that he recognizes.</description>
+  			<title>Well if she insists...</title>
+  			<description>[AT] reads Tia's text and is excited she is showing an interest. Maybe something will happen tonight with her.</description>
   			<icon>
-  				<tia>tia</tia>
+  				<flirting>flirting</flirting>
   				
   			</icon>
-  			<buttonText>Talk</buttonText>
+  			<buttonText>Go</buttonText>
   			<requirements></requirements>
   			<defaultResult>
-  				<title>Tia isn't interested</title>
-  				<description>[AT] fumbles over his own words, and isn't able to communicate well under the pressure of the party.</description>
+  				<title>Party time</title>
+  				<description>[AT] heads to Jay Jay's house</description>
+  				<timeCost>1</timeCost>
+  				<effect>
+  					<quality>
+  						<statusQuality>At Risk</statusQuality>
+  						
+  					</quality>
+  					<changedBy>2</changedBy>
+  				</effect>
+  			</defaultResult>
+  			<travelToArea>Jay Jay's House</travelToArea>
+  			<testedQualities></testedQualities>
+  			<difficulty>1</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  		<branch>
+  			<title>[AT] sticks to his decision</title>
+  			<description>Even though Tia is an interesting girl, [AT] feels the party still isn't for [him] tonight.</description>
+  			<icon>
+  				<auntie_gina_uncle_harry>
+  					auntie_gina_uncle_harry
+  				</auntie_gina_uncle_harry>
+  				
+  				
+  			</icon>
+  			<buttonText>Stay</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>The temptation is too strong</title>
+  				<description>[AT] can't shake the feeling that something good might happen at the party. [He] struggles for a few minutes, but ultimately decides he should go to the party so that [he] doesn't miss out on an opportunity.</description>
   				<timeCost>1</timeCost>
   			</defaultResult>
   			<successResult>
-  				<title>Friendly conversation with Tia</title>
-  				<description>[AT] and Tia talk about school and life in Rahp. [He] is glad Tia is at the party.</description>
-  				<timeCost>1</timeCost>
-  				<effect>
-  					<quality>
-  						<relationshipQuality>Tia</relationshipQuality>
-  						
-  					</quality>
-  					<changedBy>1</changedBy>
-  				</effect>
-  				<effect>
-  					<quality>
-  						<attributeQuality>Social</attributeQuality>
-  					</quality>
-  					<changedBy>1</changedBy>
-  				</effect>
+  				<title>[AT] struggles with temtation</title>
+  				<description>Temptation is strong, but [AT]'s will is stronger! [He] knows that this is not the night for a party, and [he] can not be easily swayed.</description>
+  				<timeCost>0</timeCost>
   			</successResult>
   			<testedQualities>
   				<quality>
-  					<attributeQuality>Social</attributeQuality>
+  					<attributeQuality>Mettle</attributeQuality>
   				</quality></testedQualities>
-  			<difficulty>3</difficulty>
+  			<difficulty>6</difficulty>
   			<linkedEvent>null</linkedEvent>
   		</branch>
   	</branches>
