@@ -30,10 +30,12 @@ public class Person : MonoBehaviour{
 		{
 			qualitiesDict.Add(attribute.Name, attribute);
 		}
-
-		foreach(IQuality status in baseStatuses.statuses)
+		print (qualitiesDict["Intelligence"].Name);
+		foreach(Status status in baseStatuses.statuses)
 		{
 			qualitiesDict.Add(status.Name, status);
+			status.levelEvent -= UpdateStatus;
+			status.levelEvent += UpdateStatus;
 		}
 
 		foreach(IQuality item in baseItems.items)
@@ -121,15 +123,6 @@ public class Person : MonoBehaviour{
 		}
 	}
 
-//	public List<IQuality> Qualities {
-//		get {
-//			return this.qualities;
-//		}
-//		set {
-//			qualities = value;
-//		}
-//	}
-
 	public Dictionary<string, IQuality> QualitiesDict {
 		get {
 			return this.qualitiesDict;
@@ -176,10 +169,14 @@ public class Person : MonoBehaviour{
 	}
 	#endregion
 
+	void OnDestroy()
+	{
+
+	}
+
 	public void UpdateAvailableTrunkList(List<Trunk> trunks)
 	{
 		availableTrunks.Clear();
-		//availableTrunks = forest.FetchAvailableTrunks(this);
 		availableTrunks = FetchAvailableTrunks(trunks);
 	}
 
@@ -195,26 +192,13 @@ public class Person : MonoBehaviour{
 		return availableTrunks;
 	}
 
-	public void UpdateStatus(string statusName, int? setLevel=null, int? levelChange=null)
+	public void UpdateStatus(Status status)
 	{
-		Status statusToUpdate = (Status) qualitiesDict[statusName];
-		if(setLevel != null)
-			statusToUpdate.Level = (int) setLevel;
-		else if(levelChange != null)
-			statusToUpdate.Level += (int) levelChange;
+		(qualitiesDict["Intelligence"] as Attribute).Modifier = status.ModDictionary["Intelligence"] * status.Level;
+		(qualitiesDict["Physical"] as Attribute).Modifier = status.ModDictionary["Physical"] * status.Level;
+		(qualitiesDict["Social"] as Attribute).Modifier = status.ModDictionary["Social"] * status.Level;
+		(qualitiesDict["Mettle"] as Attribute).Modifier = status.ModDictionary["Mettle"] * status.Level;
 	}
-
-//	public void UpdateStatuses()
-//	{
-//		foreach(IQuality quality in qualities)
-//		{
-//			if(quality.Tag == "Status")
-//			{
-//				Status status = (Status) quality;
-//
-//			}
-//		}
-//	}
 }
 
 public enum BodyType

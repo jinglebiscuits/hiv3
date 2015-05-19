@@ -3,12 +3,15 @@ using System.Collections.Generic;
 
 public class Status : IQuality {
 
+	public delegate void MyEventHandler(Status status);
+	public event MyEventHandler levelEvent;
+
 	private string name;
 	private string description;
 	private string tag;
 	private int level;
 	private int points;
-	private Dictionary<IQuality, int> modDictionary = new Dictionary<IQuality, int>();
+	private Dictionary<string, int> modDictionary = new Dictionary<string, int>();
 	private bool pyramid;
 
 
@@ -24,10 +27,10 @@ public class Status : IQuality {
 		this.description = description;
 		this.level = level;
 		this.points = points;
-		this.modDictionary.Add(new Attribute("Intelligence"), intMod);
-		this.modDictionary.Add(new Attribute("Physical"), physMod);
-		this.modDictionary.Add(new Attribute("Social"), socMod);
-		this.modDictionary.Add(new Attribute("Mettle"), mettleMod);
+		this.modDictionary.Add("Intelligence", intMod);
+		this.modDictionary.Add("Physical", physMod);
+		this.modDictionary.Add("Social", socMod);
+		this.modDictionary.Add("Mettle", mettleMod);
 		this.pyramid = pyramid;
 		this.tag = "Status";
 	}
@@ -66,6 +69,10 @@ public class Status : IQuality {
 		}
 		set {
 			level = value;
+			if(levelEvent != null)
+			{
+				levelEvent(this);
+			}
 		}
 	}
 
@@ -78,7 +85,7 @@ public class Status : IQuality {
 		}
 	}
 
-	public Dictionary<IQuality, int> ModDictionary {
+	public Dictionary<string, int> ModDictionary {
 		get {
 			return this.modDictionary;
 		}

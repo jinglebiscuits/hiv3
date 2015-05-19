@@ -121,11 +121,6 @@ public class XML : MonoBehaviour{
 			else
 			{
 				result.Effects.Add (new Effect(quality, 169, int.Parse(effect.Element("setTo").Value)));
-				if(result.Effects[result.Effects.Count - 1].ChangedBy == 169)
-				{
-					print (quality.Name);
-					print (int.Parse(effect.Element("setTo").Value));
-				}
 			}
 				
 		}

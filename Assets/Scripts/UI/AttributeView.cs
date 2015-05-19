@@ -12,8 +12,8 @@ public class AttributeView : MonoBehaviour {
 	public Text attributeModifier;
 	public Slider attributePointsProgress;
 
-	private Color plusModifierColor = new Color(51, 187, 238);
-	private Color minusModifierColor = new Color(255, 68, 68);
+	public Color plusModifierColor = new Color(51, 187, 238);
+	public Color minusModifierColor = new Color(255, 68, 68);
 
 	/// <summary>
 	/// how much the point value changes per tick of the coroutine.
