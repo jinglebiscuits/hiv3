@@ -71,6 +71,11 @@ public class Week : IQuality {
 		}
 	}
 
+	public int GetModifiedLevel ()
+	{
+		return Level;
+	}
+
 	public int Points {
 		get {
 			return this.points;

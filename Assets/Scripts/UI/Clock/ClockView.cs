@@ -67,7 +67,10 @@ public class ClockView : MonoBehaviour {
 			hoursSlept ++;
 		}
 		if(hoursSlept >= 7)
+		{
+			print ("7 hours");
 			person.QualitiesDict["Well Rested"].Level = 1;
+		}
 		else
 			person.QualitiesDict["Well Rested"].Level --;
 		GameObject.Find("StoryContainer").GetComponent<StoryContainer>().ShowStories();

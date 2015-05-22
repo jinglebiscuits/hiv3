@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class Status : IQuality {
+public class Status : MonoBehaviour, IQuality {
 
 	public delegate void MyEventHandler(Status status);
 	public event MyEventHandler levelEvent;
@@ -10,6 +12,7 @@ public class Status : IQuality {
 	private string description;
 	private string tag;
 	private int level;
+	private int oldLevel;
 	private int points;
 	private Dictionary<string, int> modDictionary = new Dictionary<string, int>();
 	private bool pyramid;
@@ -26,6 +29,7 @@ public class Status : IQuality {
 		this.name = name;
 		this.description = description;
 		this.level = level;
+		this.oldLevel = level;
 		this.points = points;
 		this.modDictionary.Add("Intelligence", intMod);
 		this.modDictionary.Add("Physical", physMod);
@@ -63,17 +67,40 @@ public class Status : IQuality {
 		}
 	}
 
+	/// <summary>
+	/// Gets or sets the level. Only set to -1, 0, or 1
+	/// </summary>
+	/// <value>The level.</value>
 	public int Level {
 		get {
 			return this.level;
 		}
 		set {
-			level = value;
-			if(levelEvent != null)
+			print (value);
+			int newValue = Math.Max(value, -1);
+			newValue = Math.Min (newValue, 1);
+			print (newValue);
+			if(newValue != level)
 			{
-				levelEvent(this);
+				oldLevel = level;
+				level = newValue;
+				if(levelEvent != null)
+				{
+					levelEvent(this);
+				}
 			}
 		}
+	}
+
+	public int OldLevel {
+		get {
+			return this.oldLevel;
+		}
+	}
+
+	public int GetModifiedLevel ()
+	{
+		return Level;
 	}
 
 	public int Points {

@@ -36,7 +36,6 @@ public class ResultView : MonoBehaviour {
 					resultEffects.text += effect.QualityEffected.Name + " gains " + effect.ChangedBy + " points!\n";
 				else
 				{
-					print ("come on now");
 					resultEffects.text += effect.QualityEffected.Name + " set to level " + effect.SetTo + "\n";
 				}
 					

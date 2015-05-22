@@ -17,6 +17,7 @@ public interface IQuality : IComparable<IQuality>{
 	/// <value><c>true</c> if pyramid; otherwise, <c>false</c>.</value>
 	bool Pyramid { get;	set; }
 
+	int GetModifiedLevel();
 	void AddPoints(int points);
 	void RemovePoints(int points);
 }

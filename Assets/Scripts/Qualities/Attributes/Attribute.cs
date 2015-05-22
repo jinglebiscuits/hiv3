@@ -100,6 +100,11 @@ public class Attribute : IQuality {
 		}
 	}
 
+	public int GetModifiedLevel ()
+	{
+		return (Level + Modifier);
+	}
+
 	/// <summary>
 	/// Counts progress towards next level.
 	/// </summary>

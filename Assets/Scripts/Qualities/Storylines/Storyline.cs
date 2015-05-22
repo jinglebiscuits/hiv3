@@ -7,7 +7,6 @@ public class Storyline : IQuality {
 	private string tag;
 	private int level;
 	private int points;
-	private int modifier;
 	private bool pyramid;
 	
 	
@@ -17,13 +16,12 @@ public class Storyline : IQuality {
 		this.tag = "Storyline";
 	}
 	
-	public Storyline (string name, string description, int level, int points, int modifier, bool pyramid)
+	public Storyline (string name, string description, int level, int points, bool pyramid)
 	{
 		this.name = name;
 		this.description = description;
 		this.level = level;
 		this.points = points;
-		this.modifier = modifier;
 		this.pyramid = pyramid;
 		this.tag = "Storyline";
 	}
@@ -64,22 +62,18 @@ public class Storyline : IQuality {
 			level = value;
 		}
 	}
-	
+
+	public int GetModifiedLevel ()
+	{
+		return Level;
+	}
+
 	public int Points {
 		get {
 			return this.points;
 		}
 		set {
 			points = value;
-		}
-	}
-	
-	public int Modifier {
-		get {
-			return this.modifier;
-		}
-		set {
-			modifier = value;
 		}
 	}
 	

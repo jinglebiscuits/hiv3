@@ -146,7 +146,7 @@ public class Branch : Story{
 		int qualityLevelSum = 0;
 		foreach(IQuality quality in TestedQualities)
 		{
-			qualityLevelSum += person.QualitiesDict[quality.Name].Level;
+			qualityLevelSum += person.QualitiesDict[quality.Name].GetModifiedLevel();
 		}
 		float qualityLevel = (float) qualityLevelSum/TestedQualities.Count;
 		float difficultyScaler = 0.6f;

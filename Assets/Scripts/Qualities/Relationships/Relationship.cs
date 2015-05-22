@@ -64,6 +64,20 @@ public class Relationship : IQuality {
 			level = value;
 		}
 	}
+
+	public int Modifier {
+		get {
+			return this.modifier;
+		}
+		set {
+			modifier = value;
+		}
+	}
+
+	public int GetModifiedLevel ()
+	{
+		return Level;
+	}
 	
 	public int Points {
 		get {
@@ -71,15 +85,6 @@ public class Relationship : IQuality {
 		}
 		set {
 			points = value;
-		}
-	}
-	
-	public int Modifier {
-		get {
-			return this.modifier;
-		}
-		set {
-			modifier = value;
 		}
 	}
 	

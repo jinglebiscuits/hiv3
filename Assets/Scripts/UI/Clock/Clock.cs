@@ -119,6 +119,11 @@ public class Clock : IQuality {
 			level = value;
 		}
 	}
+
+	public int GetModifiedLevel ()
+	{
+		return Level;
+	}
 	#endregion
 
 	public void AddPoints(int _points)

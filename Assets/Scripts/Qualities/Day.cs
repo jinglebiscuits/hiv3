@@ -114,6 +114,11 @@ public class Day : IQuality {
 			DayName = DayName;
 		}
 	}
+
+	public int GetModifiedLevel ()
+	{
+		return Level;
+	}
 	
 	/// <summary>
 	/// Counts progress towards next level.

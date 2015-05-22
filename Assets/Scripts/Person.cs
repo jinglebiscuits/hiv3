@@ -194,10 +194,11 @@ public class Person : MonoBehaviour{
 
 	public void UpdateStatus(Status status)
 	{
-		(qualitiesDict["Intelligence"] as Attribute).Modifier = status.ModDictionary["Intelligence"] * status.Level;
-		(qualitiesDict["Physical"] as Attribute).Modifier = status.ModDictionary["Physical"] * status.Level;
-		(qualitiesDict["Social"] as Attribute).Modifier = status.ModDictionary["Social"] * status.Level;
-		(qualitiesDict["Mettle"] as Attribute).Modifier = status.ModDictionary["Mettle"] * status.Level;
+		print (status.Name);
+		(qualitiesDict["Intelligence"] as Attribute).Modifier += status.ModDictionary["Intelligence"] * status.Level - status.ModDictionary["Intelligence"] * status.OldLevel;
+		(qualitiesDict["Physical"] as Attribute).Modifier += status.ModDictionary["Physical"] * status.Level - status.ModDictionary["Physical"] * status.OldLevel;
+		(qualitiesDict["Social"] as Attribute).Modifier += status.ModDictionary["Social"] * status.Level - status.ModDictionary["Social"] * status.OldLevel;;
+		(qualitiesDict["Mettle"] as Attribute).Modifier += status.ModDictionary["Mettle"] * status.Level - status.ModDictionary["Mettle"] * status.OldLevel;;
 	}
 }
 
