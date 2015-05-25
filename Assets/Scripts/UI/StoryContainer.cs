@@ -16,6 +16,7 @@ public class StoryContainer : MonoBehaviour {
 	public List<GameObject> branchViews = new List<GameObject>();
 	public GameObject trunkView = null;
 	public GameObject resultView = null;
+    public GameObject backButton;
 
 	public float storyHeight;
 	public float padding;
@@ -71,6 +72,8 @@ public class StoryContainer : MonoBehaviour {
 			count ++;
 		}
 
+        backButton.gameObject.SetActive(false);
+
 		transform.parent.GetComponent<BrowseStoriesView>().ResetScrollToTop();
 	}
 
@@ -94,6 +97,8 @@ public class StoryContainer : MonoBehaviour {
 				count ++;
 			}
 		}
+
+        backButton.gameObject.SetActive(true);
 
 		transform.parent.GetComponent<BrowseStoriesView>().ResetScrollToTop();
 	}

@@ -1,5 +1,6 @@
 ﻿public class BaseItems {
-	
+
+	public Item coins = new Item("Coins", "Buy stuff with coins.", 0, 0, false);
 	public Item tools = new Item("Tools", "Get paid", 0, 0, false);
 	public Item clothes = new Item("Clothes", "Looking good", 0, 0, false);
 	public Item books = new Item("Books", "Who needs tv?", 0, 0, false);
@@ -12,6 +13,6 @@
 	
 	public BaseItems()
 	{
-		items = new Item[]{tools, clothes, books, games, cellPhone, condoms, birthControl};
+		items = new Item[]{coins, tools, clothes, books, games, cellPhone, condoms, birthControl};
 	}
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -86,8 +87,12 @@ public class Result {
 		foreach(Effect effect in this.effects)
 		{
 			IQuality quality = person.QualitiesDict[effect.QualityEffected.Name];
-			if(effect.ChangedBy != 169)
-				quality.AddPoints((int) effect.ChangedBy);
+			if(effect.ChangedBy != 169) {
+				if(effect.ChangedBy > 0)
+					quality.AddPoints((int) effect.ChangedBy);
+				else if(effect.ChangedBy < 0)
+					quality.RemovePoints(Math.Abs((int) effect.ChangedBy));
+			}
 			else
 			{
 				quality.Level = effect.SetTo;

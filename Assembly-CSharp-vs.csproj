@@ -96,6 +96,8 @@
      <Compile Include="Assets\Scripts\Qualities\Items\Item.cs" />
      <Compile Include="Assets\Scripts\Qualities\Relationships\BaseRelationships.cs" />
      <Compile Include="Assets\Scripts\Qualities\Relationships\Relationship.cs" />
+     <Compile Include="Assets\Scripts\Qualities\School\GradePointAverage.cs" />
+     <Compile Include="Assets\Scripts\Qualities\School\Homework.cs" />
      <Compile Include="Assets\Scripts\Qualities\Statuses\BaseStatuses.cs" />
      <Compile Include="Assets\Scripts\Qualities\Statuses\Status.cs" />
      <Compile Include="Assets\Scripts\Qualities\Storylines\BaseStorylines.cs" />

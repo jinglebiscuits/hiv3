@@ -79,9 +79,18 @@
 		</xs:simpleType>
 	</xs:element>
 	
+	<xs:element name="schoolQuality">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Homework"></xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
 	<xs:element name="itemQuality">
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
+				<xs:enumeration value="Coins"></xs:enumeration>
 				<xs:enumeration value="Tools"></xs:enumeration>
 				<xs:enumeration value="Clothes"></xs:enumeration>
 				<xs:enumeration value="Books"></xs:enumeration>

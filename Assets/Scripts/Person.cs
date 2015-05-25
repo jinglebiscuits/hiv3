@@ -19,6 +19,7 @@ public class Person : MonoBehaviour{
 	private Clock clock;
 	private Day day;
 	private Week week;
+	private Homework homework;
 
 	private Forest forest;
 	private List<Trunk> availableTrunks;
@@ -61,6 +62,8 @@ public class Person : MonoBehaviour{
 
 		week = new Week(0);
 		qualitiesDict.Add(week.Name, week);
+
+		homework = new Homework("Homework", "Affects your GPA on Monday mornings", 0, 0, false);
 
 		forest = new Forest();
 		availableTrunks = new List<Trunk>();
