@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Person : MonoBehaviour{
+public class Person {
 
 	private string name;
 	private string area;
@@ -15,6 +15,7 @@ public class Person : MonoBehaviour{
 	private BaseItems baseItems = new BaseItems();
 	private BaseStorylines baseStorylines = new BaseStorylines();
 	private BaseRelationships baseRelationships = new BaseRelationships();
+    private BaseSkills baseSkills = new BaseSkills();
 	private Dictionary<string, IQuality> qualitiesDict = new Dictionary<string, IQuality>();
 	private Clock clock;
 	private Day day;
@@ -31,7 +32,7 @@ public class Person : MonoBehaviour{
 		{
 			qualitiesDict.Add(attribute.Name, attribute);
 		}
-		print (qualitiesDict["Intelligence"].Name);
+		Debug.Log (qualitiesDict["Intelligence"].Name);
 		foreach(Status status in baseStatuses.statuses)
 		{
 			qualitiesDict.Add(status.Name, status);
@@ -54,6 +55,11 @@ public class Person : MonoBehaviour{
 			qualitiesDict.Add(relationship.Name, relationship);
 		}
 
+        foreach(IQuality skill in baseSkills.skills)
+        {
+            qualitiesDict.Add(skill.Name, skill);
+        }
+
 		clock = new Clock(14);
 		qualitiesDict.Add(clock.Name, clock);
 
@@ -64,6 +70,7 @@ public class Person : MonoBehaviour{
 		qualitiesDict.Add(week.Name, week);
 
 		homework = new Homework("Homework", "Affects your GPA on Monday mornings", 0, 0, false);
+        qualitiesDict.Add(homework.Name, homework);
 
 		forest = new Forest();
 		availableTrunks = new List<Trunk>();
@@ -197,7 +204,7 @@ public class Person : MonoBehaviour{
 
 	public void UpdateStatus(Status status)
 	{
-		print (status.Name);
+		Debug.Log (status.Name);
 		(qualitiesDict["Intelligence"] as Attribute).Modifier += status.ModDictionary["Intelligence"] * status.Level - status.ModDictionary["Intelligence"] * status.OldLevel;
 		(qualitiesDict["Physical"] as Attribute).Modifier += status.ModDictionary["Physical"] * status.Level - status.ModDictionary["Physical"] * status.OldLevel;
 		(qualitiesDict["Social"] as Attribute).Modifier += status.ModDictionary["Social"] * status.Level - status.ModDictionary["Social"] * status.OldLevel;;

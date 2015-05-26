@@ -98,6 +98,8 @@
      <Compile Include="Assets\Scripts\Qualities\Relationships\Relationship.cs" />
      <Compile Include="Assets\Scripts\Qualities\School\GradePointAverage.cs" />
      <Compile Include="Assets\Scripts\Qualities\School\Homework.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Skills\BaseSkills.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Skills\Skill.cs" />
      <Compile Include="Assets\Scripts\Qualities\Statuses\BaseStatuses.cs" />
      <Compile Include="Assets\Scripts\Qualities\Statuses\Status.cs" />
      <Compile Include="Assets\Scripts\Qualities\Storylines\BaseStorylines.cs" />
@@ -120,6 +122,7 @@
      <Compile Include="Assets\Scripts\UI\Clock\ClockView.cs" />
      <Compile Include="Assets\Scripts\UI\Clock\SleepButton.cs" />
      <Compile Include="Assets\Scripts\UI\ColorPicker.cs" />
+     <Compile Include="Assets\Scripts\UI\HomeworkIndicator.cs" />
      <Compile Include="Assets\Scripts\UI\IntroScrollingPanel.cs" />
      <Compile Include="Assets\Scripts\UI\PersonView.cs" />
      <Compile Include="Assets\Scripts\UI\ProfileAvatarView.cs" />
@@ -135,8 +138,8 @@
      <None Include="Assets\Scripts\XML\hivXMLSchema.xml" />
      <None Include="Assets\Scripts\XML\saturday.xml" />
      <None Include="Assets\Scripts\XML\intro.xml" />
-     <None Include="Assets\Scripts\XML\party.xml" />
      <None Include="Assets\Scripts\XML\schoolDay.xml" />
+     <None Include="Assets\Scripts\XML\party.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -152,5 +155,6 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
+  <ProjectExtensions xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><MonoDevelop><Properties><Policies><TextStylePolicy inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" /><CSharpFormattingPolicy IndentSwitchBody="True" AnonymousMethodBraceStyle="NextLine" PropertyBraceStyle="NextLine" PropertyGetBraceStyle="NextLine" PropertySetBraceStyle="NextLine" EventBraceStyle="NextLine" EventAddBraceStyle="NextLine" EventRemoveBraceStyle="NextLine" StatementBraceStyle="NextLine" ArrayInitializerBraceStyle="NextLine" BeforeMethodDeclarationParentheses="False" BeforeMethodCallParentheses="False" BeforeConstructorDeclarationParentheses="False" BeforeDelegateDeclarationParentheses="False" NewParentheses="False" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" /><TextStylePolicy FileWidth="120" TabWidth="4" EolMarker="Unix" inheritsSet="Mono" inheritsScope="text/plain" scope="text/plain" /><TextStylePolicy inheritsSet="null" scope="application/xml" /><XmlFormattingPolicy inheritsSet="Mono" inheritsScope="application/xml" scope="application/xml" /></Policies></Properties></MonoDevelop></ProjectExtensions>
+
 </Project>

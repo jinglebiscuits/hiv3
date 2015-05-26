@@ -10,7 +10,9 @@ public class Homework : IQuality {
 	private int points;
 	private bool pyramid;
 	
-	
+    public delegate void MyEventHandler(int level);
+    public event MyEventHandler levelEvent;
+
 	public Homework ()
 	{
 		this.name = "Homework";
@@ -62,6 +64,10 @@ public class Homework : IQuality {
 		}
 		set {
 			level = value;
+            if(levelEvent != null)
+            {
+                levelEvent(level);
+            }
 		}
 	}
 	
@@ -115,6 +121,12 @@ public class Homework : IQuality {
 	{
 		while (_points > 0)
 		{
+            //Homework can't be negative
+            if(Level == 0) {
+                Points = 0;
+                break;
+            }
+
 			Points -= 1;
 			if(Pyramid)
 			{

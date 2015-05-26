@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Status : MonoBehaviour, IQuality {
+public class Status : IQuality {
 
 	public delegate void MyEventHandler(Status status);
 	public event MyEventHandler levelEvent;
@@ -76,10 +76,10 @@ public class Status : MonoBehaviour, IQuality {
 			return this.level;
 		}
 		set {
-			print (value);
+			Debug.Log (value);
 			int newValue = Math.Max(value, -1);
 			newValue = Math.Min (newValue, 1);
-			print (newValue);
+			Debug.Log (newValue);
 			if(newValue != level)
 			{
 				oldLevel = level;

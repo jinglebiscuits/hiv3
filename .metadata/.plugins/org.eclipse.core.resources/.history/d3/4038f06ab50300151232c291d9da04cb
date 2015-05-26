@@ -43,6 +43,13 @@
           <title>Arrives at school</title>
           <description>Nothing out of the ordinary happened on the bus today.</description>
           <timeCost>1</timeCost>
+          <effect>
+          	<quality>
+          		<attributeQuality>Social</attributeQuality>
+          	</quality>
+          	<setTo>10</setTo>
+          	
+          </effect>
         </defaultResult>
         <travelToArea>School</travelToArea>
         <testedQualities></testedQualities>
@@ -174,11 +181,8 @@
         		<changedBy>1</changedBy>
         	</effect>
         </successResult>
-        <testedQualities>
-        	<quality>
-        		<attributeQuality>Intelligence</attributeQuality>
-        	</quality></testedQualities>
-        <difficulty>6</difficulty>
+        <testedQualities/>
+        <difficulty>1</difficulty>
         <linkedEvent>null</linkedEvent>
       </branch>
     </branches>
@@ -411,13 +415,6 @@
   						<attributeQuality>Intelligence</attributeQuality>
   					</quality>
   					<changedBy>1</changedBy>
-  				</effect>
-  				<effect>
-  					<quality>
-  						<schoolQuality>Homework</schoolQuality>
-  						
-  					</quality>
-  					<changedBy>-1</changedBy>
   				</effect>
   			</defaultResult>
   			<testedQualities></testedQualities>

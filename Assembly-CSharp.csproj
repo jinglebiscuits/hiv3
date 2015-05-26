@@ -1,147 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.20506</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2F7B9379-8867-AF57-095D-3787E98E5DE0}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <BaseDirectory>Assets</BaseDirectory>
+	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	<ProductVersion>10.0.20506</ProductVersion>
+	<SchemaVersion>2.0</SchemaVersion>
+	<ProjectGuid>{2F7B9379-8867-AF57-095D-3787E98E5DE0}</ProjectGuid>
+	<OutputType>Library</OutputType>
+	<AppDesignerFolder>Properties</AppDesignerFolder>
+	<RootNamespace></RootNamespace>
+	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<FileAlignment>512</FileAlignment>
+	<BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>True</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>False</Optimize>
-    <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>0169</NoWarn>
+	<DebugSymbols>true</DebugSymbols>
+	<DebugType>full</DebugType>
+	<Optimize>false</Optimize>
+	<OutputPath>Temp\bin\Debug\</OutputPath>
+	<DefineConstants>DEBUG;TRACE;UNITY_5_0_1;UNITY_5_0;UNITY_5;ENABLE_LICENSE_RENAME;ENABLE_NEW_BUGREPORTER;ENABLE_2D_PHYSICS;ENABLE_4_6_FEATURES;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_NEW_HIERARCHY;ENABLE_PHYSICS;ENABLE_PHYSICS_PHYSX3;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_AUDIOMIXER_SUSPEND;ENABLE_NONPRO;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_TEXTUREID_MAP;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_MONO;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>True</Optimize>
-    <OutputPath>Temp\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <NoWarn>0169</NoWarn>
+	<DebugType>pdbonly</DebugType>
+	<Optimize>true</Optimize>
+	<OutputPath>Temp\bin\Release\</OutputPath>
+	<DefineConstants>TRACE</DefineConstants>
+	<ErrorReport>prompt</ErrorReport>
+	<WarningLevel>4</WarningLevel>
+	<NoWarn>0169</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\..\..\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor">
-      <HintPath>..\..\..\..\..\..\..\Applications\Unity\Unity.app\Contents\Frameworks\Managed\UnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml" />
+	<Reference Include="System" />
+    <Reference Include="System.XML" />
+	<Reference Include="System.Core" />
+	<Reference Include="System.Xml.Linq" />
+	<Reference Include="UnityEngine">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll</HintPath>
+	</Reference>
+	<Reference Include="UnityEditor">
+	  <HintPath>/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll</HintPath>
+	</Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MaterialUI\Demos\AnimsDemo\SquareAnimate.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\ButtonConfig.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\CheckBoxToggler.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\CheckboxConfig.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\CustomInkBlotCreator.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\FPSCounter.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\InkBlot.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\InkBlotsControl.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\InputFieldConfig.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\MaterialUI.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\RadioConfig.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\RadioGroupConfig.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\SelectionBoxConfig.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\SelectionBoxSubscriber.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\SelectionListItemConfig.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\ShadowAnim.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\ShadowsControl.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\SliderConfig.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\SwitchConfig.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\TextInputConfig.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\TextInputLine.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\ToastAnim.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\ToastControl.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\Toaster.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Components\ToggleConfig.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Layout\MaterialUIScale.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Layout\ShadowSnap.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Layout\SnapButtonToText.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Layout\SpriteSwapperScale.cs" />
-    <Compile Include="Assets\MaterialUI\Scripts\Tools\ShadowGen.cs" />
-    <Compile Include="Assets\Scripts\Avatar.cs" />
-    <Compile Include="Assets\Scripts\AvatarSceneManager.cs" />
-    <Compile Include="Assets\Scripts\EndSceneManager.cs" />
-    <Compile Include="Assets\Scripts\GameClock.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IQuality.cs" />
-    <Compile Include="Assets\Scripts\Interfaces\IStory.cs" />
-    <Compile Include="Assets\Scripts\MainSceneManager.cs" />
-    <Compile Include="Assets\Scripts\Manager.cs" />
-    <Compile Include="Assets\Scripts\MaterialUI\Anims.cs" />
-    <Compile Include="Assets\Scripts\MaterialUI\HSBColor.cs" />
-    <Compile Include="Assets\Scripts\MaterialUI\MaterialGlobals.cs" />
-    <Compile Include="Assets\Scripts\Person.cs" />
-    <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\Qualities\Attributes\Attribute.cs" />
-    <Compile Include="Assets\Scripts\Qualities\Attributes\BaseAttributes.cs" />
-    <Compile Include="Assets\Scripts\Qualities\Day.cs" />
-    <Compile Include="Assets\Scripts\Qualities\Items\BaseItems.cs" />
-    <Compile Include="Assets\Scripts\Qualities\Items\Item.cs" />
-    <Compile Include="Assets\Scripts\Qualities\Relationships\BaseRelationships.cs" />
-    <Compile Include="Assets\Scripts\Qualities\Relationships\Relationship.cs" />
-    <Compile Include="Assets\Scripts\Qualities\School\GradePointAverage.cs" />
-    <Compile Include="Assets\Scripts\Qualities\School\Homework.cs" />
-    <Compile Include="Assets\Scripts\Qualities\Statuses\BaseStatuses.cs" />
-    <Compile Include="Assets\Scripts\Qualities\Statuses\Status.cs" />
-    <Compile Include="Assets\Scripts\Qualities\Storylines\BaseStorylines.cs" />
-    <Compile Include="Assets\Scripts\Qualities\Storylines\Storyline.cs" />
-    <Compile Include="Assets\Scripts\Qualities\Week.cs" />
-    <Compile Include="Assets\Scripts\StartSceneManager.cs" />
-    <Compile Include="Assets\Scripts\Stories\Branch.cs" />
-    <Compile Include="Assets\Scripts\Stories\Effect.cs" />
-    <Compile Include="Assets\Scripts\Stories\Requirement.cs" />
-    <Compile Include="Assets\Scripts\Stories\Result.cs" />
-    <Compile Include="Assets\Scripts\Stories\SceneLoader.cs" />
-    <Compile Include="Assets\Scripts\Stories\Story.cs" />
-    <Compile Include="Assets\Scripts\Stories\Storylets\Forest.cs" />
-    <Compile Include="Assets\Scripts\Stories\Trunk.cs" />
-    <Compile Include="Assets\Scripts\UI\AttributeView.cs" />
-    <Compile Include="Assets\Scripts\UI\AvatarView.cs" />
-    <Compile Include="Assets\Scripts\UI\BrowseStoriesView.cs" />
-    <Compile Include="Assets\Scripts\UI\CharacterStatsView.cs" />
-    <Compile Include="Assets\Scripts\UI\Clock\Clock.cs" />
-    <Compile Include="Assets\Scripts\UI\Clock\ClockView.cs" />
-    <Compile Include="Assets\Scripts\UI\Clock\SleepButton.cs" />
-    <Compile Include="Assets\Scripts\UI\ColorPicker.cs" />
-    <Compile Include="Assets\Scripts\UI\IntroScrollingPanel.cs" />
-    <Compile Include="Assets\Scripts\UI\PersonView.cs" />
-    <Compile Include="Assets\Scripts\UI\ProfileAvatarView.cs" />
-    <Compile Include="Assets\Scripts\UI\StoryContainer.cs" />
-    <Compile Include="Assets\Scripts\UI\StoryViews\BranchView.cs" />
-    <Compile Include="Assets\Scripts\UI\StoryViews\EffectView.cs" />
-    <Compile Include="Assets\Scripts\UI\StoryViews\ResultView.cs" />
-    <Compile Include="Assets\Scripts\UI\StoryViews\StoryView.cs" />
-    <Compile Include="Assets\Scripts\UI\StoryViews\TrunkView.cs" />
-    <Compile Include="Assets\Scripts\UI\ViewManager.cs" />
-    <Compile Include="Assets\Scripts\XML\XML.cs" />
-    <None Include="Assets\Scripts\XML\chapter_one.xml" />
-    <None Include="Assets\Scripts\XML\hivXMLSchema.xml" />
-    <None Include="Assets\Scripts\XML\saturday.xml" />
-    <None Include="Assets\Scripts\XML\intro.xml" />
-    <None Include="Assets\Scripts\XML\party.xml" />
-    <None Include="Assets\Scripts\XML\schoolDay.xml" />
-    <Reference Include="UnityEngine.UI">
-      <HintPath>..\..\..\..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\GUISystem\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>..\..\..\..\..\..\..\Applications\Unity\Unity.app\Contents\PlaybackEngines\iossupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
+     <Compile Include="Assets\MaterialUI\Demos\AnimsDemo\SquareAnimate.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\ButtonConfig.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\CheckBoxToggler.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\CheckboxConfig.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\CustomInkBlotCreator.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\FPSCounter.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\InkBlot.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\InkBlotsControl.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\InputFieldConfig.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\MaterialUI.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\RadioConfig.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\RadioGroupConfig.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\SelectionBoxConfig.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\SelectionBoxSubscriber.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\SelectionListItemConfig.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\ShadowAnim.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\ShadowsControl.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\SliderConfig.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\SwitchConfig.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\TextInputConfig.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\TextInputLine.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\ToastAnim.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\ToastControl.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\Toaster.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Components\ToggleConfig.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Layout\MaterialUIScale.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Layout\ShadowSnap.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Layout\SnapButtonToText.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Layout\SpriteSwapperScale.cs" />
+     <Compile Include="Assets\MaterialUI\Scripts\Tools\ShadowGen.cs" />
+     <Compile Include="Assets\Scripts\Avatar.cs" />
+     <Compile Include="Assets\Scripts\AvatarSceneManager.cs" />
+     <Compile Include="Assets\Scripts\EndSceneManager.cs" />
+     <Compile Include="Assets\Scripts\GameClock.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IQuality.cs" />
+     <Compile Include="Assets\Scripts\Interfaces\IStory.cs" />
+     <Compile Include="Assets\Scripts\MainSceneManager.cs" />
+     <Compile Include="Assets\Scripts\Manager.cs" />
+     <Compile Include="Assets\Scripts\MaterialUI\Anims.cs" />
+     <Compile Include="Assets\Scripts\MaterialUI\HSBColor.cs" />
+     <Compile Include="Assets\Scripts\MaterialUI\MaterialGlobals.cs" />
+     <Compile Include="Assets\Scripts\Person.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Attributes\Attribute.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Attributes\BaseAttributes.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Day.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Items\BaseItems.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Items\Item.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Relationships\BaseRelationships.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Relationships\Relationship.cs" />
+     <Compile Include="Assets\Scripts\Qualities\School\GradePointAverage.cs" />
+     <Compile Include="Assets\Scripts\Qualities\School\Homework.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Skills\BaseSkills.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Skills\Skill.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Statuses\BaseStatuses.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Statuses\Status.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Storylines\BaseStorylines.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Storylines\Storyline.cs" />
+     <Compile Include="Assets\Scripts\Qualities\Week.cs" />
+     <Compile Include="Assets\Scripts\StartSceneManager.cs" />
+     <Compile Include="Assets\Scripts\Stories\Branch.cs" />
+     <Compile Include="Assets\Scripts\Stories\Effect.cs" />
+     <Compile Include="Assets\Scripts\Stories\Requirement.cs" />
+     <Compile Include="Assets\Scripts\Stories\Result.cs" />
+     <Compile Include="Assets\Scripts\Stories\SceneLoader.cs" />
+     <Compile Include="Assets\Scripts\Stories\Story.cs" />
+     <Compile Include="Assets\Scripts\Stories\Storylets\Forest.cs" />
+     <Compile Include="Assets\Scripts\Stories\Trunk.cs" />
+     <Compile Include="Assets\Scripts\UI\AttributeView.cs" />
+     <Compile Include="Assets\Scripts\UI\AvatarView.cs" />
+     <Compile Include="Assets\Scripts\UI\BrowseStoriesView.cs" />
+     <Compile Include="Assets\Scripts\UI\CharacterStatsView.cs" />
+     <Compile Include="Assets\Scripts\UI\Clock\Clock.cs" />
+     <Compile Include="Assets\Scripts\UI\Clock\ClockView.cs" />
+     <Compile Include="Assets\Scripts\UI\Clock\SleepButton.cs" />
+     <Compile Include="Assets\Scripts\UI\ColorPicker.cs" />
+     <Compile Include="Assets\Scripts\UI\HomeworkIndicator.cs" />
+     <Compile Include="Assets\Scripts\UI\IntroScrollingPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\PersonView.cs" />
+     <Compile Include="Assets\Scripts\UI\ProfileAvatarView.cs" />
+     <Compile Include="Assets\Scripts\UI\StoryContainer.cs" />
+     <Compile Include="Assets\Scripts\UI\StoryViews\BranchView.cs" />
+     <Compile Include="Assets\Scripts\UI\StoryViews\EffectView.cs" />
+     <Compile Include="Assets\Scripts\UI\StoryViews\ResultView.cs" />
+     <Compile Include="Assets\Scripts\UI\StoryViews\StoryView.cs" />
+     <Compile Include="Assets\Scripts\UI\StoryViews\TrunkView.cs" />
+     <Compile Include="Assets\Scripts\UI\ViewManager.cs" />
+     <Compile Include="Assets\Scripts\XML\XML.cs" />
+     <None Include="Assets\Scripts\XML\chapter_one.xml" />
+     <None Include="Assets\Scripts\XML\hivXMLSchema.xml" />
+     <None Include="Assets\Scripts\XML\saturday.xml" />
+     <None Include="Assets\Scripts\XML\intro.xml" />
+     <None Include="Assets\Scripts\XML\schoolDay.xml" />
+     <None Include="Assets\Scripts\XML\party.xml" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+ <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -151,17 +155,6 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <ProjectExtensions>
-    <MonoDevelop>
-      <Properties>
-        <Policies>
-          <TextStylePolicy inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" />
-          <CSharpFormattingPolicy IndentSwitchBody="True" AnonymousMethodBraceStyle="NextLine" PropertyBraceStyle="NextLine" PropertyGetBraceStyle="NextLine" PropertySetBraceStyle="NextLine" EventBraceStyle="NextLine" EventAddBraceStyle="NextLine" EventRemoveBraceStyle="NextLine" StatementBraceStyle="NextLine" ArrayInitializerBraceStyle="NextLine" BeforeMethodDeclarationParentheses="False" BeforeMethodCallParentheses="False" BeforeConstructorDeclarationParentheses="False" BeforeDelegateDeclarationParentheses="False" NewParentheses="False" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" />
-          <TextStylePolicy FileWidth="120" TabWidth="4" EolMarker="Unix" inheritsSet="Mono" inheritsScope="text/plain" scope="text/plain" />
-          <TextStylePolicy inheritsSet="null" scope="application/xml" />
-          <XmlFormattingPolicy inheritsSet="Mono" inheritsScope="application/xml" scope="application/xml" />
-        </Policies>
-      </Properties>
-    </MonoDevelop>
-  </ProjectExtensions>
+  <ProjectExtensions xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><MonoDevelop><Properties><Policies><TextStylePolicy inheritsSet="VisualStudio" inheritsScope="text/plain" scope="text/x-csharp" /><CSharpFormattingPolicy IndentSwitchBody="True" AnonymousMethodBraceStyle="NextLine" PropertyBraceStyle="NextLine" PropertyGetBraceStyle="NextLine" PropertySetBraceStyle="NextLine" EventBraceStyle="NextLine" EventAddBraceStyle="NextLine" EventRemoveBraceStyle="NextLine" StatementBraceStyle="NextLine" ArrayInitializerBraceStyle="NextLine" BeforeMethodDeclarationParentheses="False" BeforeMethodCallParentheses="False" BeforeConstructorDeclarationParentheses="False" BeforeDelegateDeclarationParentheses="False" NewParentheses="False" inheritsSet="Mono" inheritsScope="text/x-csharp" scope="text/x-csharp" /><TextStylePolicy FileWidth="120" TabWidth="4" EolMarker="Unix" inheritsSet="Mono" inheritsScope="text/plain" scope="text/plain" /><TextStylePolicy inheritsSet="null" scope="application/xml" /><XmlFormattingPolicy inheritsSet="Mono" inheritsScope="application/xml" scope="application/xml" /></Policies></Properties></MonoDevelop></ProjectExtensions>
+
 </Project>

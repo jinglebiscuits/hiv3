@@ -110,6 +110,8 @@ public class StoryContainer : MonoBehaviour {
 		resultView.GetComponent<ResultView>().Result = result;
 		resultView.transform.SetParent(this.transform, false);
 
+        backButton.gameObject.SetActive(false);
+
 		transform.parent.GetComponent<BrowseStoriesView>().ResetScrollToTop();
 	}
 

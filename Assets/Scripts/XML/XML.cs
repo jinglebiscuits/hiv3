@@ -147,6 +147,7 @@ public class XML : MonoBehaviour
                 switch (eQuality.Value)
                 {
                     case "Homework":
+                        Debug.Log (eQuality.Value + " XML");
                         quality = new Homework();
                         break;
                     default:

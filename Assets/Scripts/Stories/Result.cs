@@ -1,3 +1,4 @@
+using UnityEngine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -86,6 +87,7 @@ public class Result {
 
 		foreach(Effect effect in this.effects)
 		{
+            Debug.Log (effect.QualityEffected.Name + " looked for in person");
 			IQuality quality = person.QualitiesDict[effect.QualityEffected.Name];
 			if(effect.ChangedBy != 169) {
 				if(effect.ChangedBy > 0)

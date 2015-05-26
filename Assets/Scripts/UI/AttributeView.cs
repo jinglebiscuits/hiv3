@@ -72,7 +72,7 @@ public class AttributeView : MonoBehaviour {
 
 	private void UpdateModifier()
 	{
-		print ("UpdateModifier " + attribute.Name + " " + attribute.Modifier);
+		Debug.Log ("UpdateModifier " + attribute.Name + " " + attribute.Modifier);
 		if(attribute.Modifier > 0)
 		{
 			print ("good modifier");
