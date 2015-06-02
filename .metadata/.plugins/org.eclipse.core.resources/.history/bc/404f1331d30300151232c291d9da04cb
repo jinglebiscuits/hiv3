@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+1<?xml version="1.0" encoding="UTF-8"?>
 <forest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hivXMLSchema.xsd">
   <title>School Day</title>
   <trunk>
@@ -43,20 +43,89 @@
           <title>Arrives at school</title>
           <description>Nothing out of the ordinary happened on the bus today.</description>
           <timeCost>1</timeCost>
-          <effect>
-          	<quality>
-          		<attributeQuality>Social</attributeQuality>
-          	</quality>
-          	<setTo>10</setTo>
-          	
-          </effect>
         </defaultResult>
         <travelToArea>School</travelToArea>
         <testedQualities></testedQualities>
         <difficulty>1</difficulty>
         <linkedEvent>null</linkedEvent>
       </branch>
+      <branch>
+      	<title>Sit next to Jimmy on the bus</title>
+      	<description>[AT] gets on the bus and sits next to Jimmy. It looks like he's got something on his mind.</description>
+      	<icon>
+      		<jimmy>jimmy</jimmy>
+      		
+      	</icon>
+      	<buttonText>Go</buttonText>
+      	<requirements>
+      		<requirement>
+      			<quality>
+      				<storylineQuality>Bus</storylineQuality>
+      				
+      			</quality>
+      			<qualityMin>0</qualityMin>
+      			<qualityMax>0</qualityMax>
+      		</requirement></requirements>
+      	<defaultResult>
+      		<title>[AT] sits next to Jimmy</title>
+      		<description>As soon as the bus starts rolling, Jimmy tells [AT] that Tia sent him a picture last night.</description>
+      		<timeCost>0</timeCost>
+      		<effect>
+      			<quality>
+      				<storylineQuality>Bus</storylineQuality>
+      				
+      			</quality>
+      			<setTo>1</setTo>
+      			
+      		</effect>
+      	</defaultResult>
+      	<travelToArea>Bus</travelToArea>
+      	<testedQualities></testedQualities>
+      	<difficulty>1</difficulty>
+      	<linkedEvent>null</linkedEvent>
+      </branch>
     </branches>
+  </trunk><trunk>
+  	<title>Sext</title>
+  	<description>Tia sent Jimmy a sexual picture last night. How should [AT] respond to Jimmy letting [him] know?</description>
+  	<icon>
+  		<tia>tia</tia>
+  		
+  	</icon>
+  	<buttonText>Decide</buttonText>
+  	<trunkTag>trunkTag</trunkTag>
+  	<area>Bus</area>
+  	<urgency>1</urgency>
+  	<deck>deck</deck>
+  	<requirements>
+  		<requirement>
+  			<quality>
+  				<storylineQuality>Bus</storylineQuality>
+  				
+  			</quality>
+  			<qualityMin>1</qualityMin>
+  			<qualityMax>1</qualityMax>
+  		</requirement></requirements>
+  	<branches>
+  		<branch>
+  			<title>Let's see it</title>
+  			<description>[AT] tells Jimmy to let [him] see the picture.</description>
+  			<icon>
+  				<tia>tia</tia>
+  				
+  			</icon>
+  			<buttonText>Look</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>Jimmy shows [AT] the picture</title>
+  				<description>Jimmy shows [AT] the picture, but he doesn't look comfortable about it.</description>
+  				<timeCost>0</timeCost>
+  			</defaultResult>
+  			<testedQualities></testedQualities>
+  			<difficulty>1</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  	</branches>
   </trunk>
   
   <trunk>
@@ -107,9 +176,17 @@
           	<quality>
           		<attributeQuality>Intelligence</attributeQuality>
           	</quality>
-          	<changedBy>0</changedBy>
+          	<changedBy>2</changedBy>
           	
           	
+          </effect>
+          <effect>
+          	<quality>
+          		<schoolQuality>Homework</schoolQuality>
+          		
+          		
+          	</quality>
+          	<changedBy>1</changedBy>
           </effect>
         </defaultResult>
         <testedQualities/>
@@ -141,9 +218,45 @@
           	</quality>
           	<changedBy>1</changedBy>
           </effect>
+          <effect>
+          	<quality>
+          		<schoolQuality>Homework</schoolQuality>
+          		
+          	</quality>
+          	<setTo>8</setTo>
+          	
+          </effect>
         </defaultResult>
-        <testedQualities/>
-        <difficulty>1</difficulty>
+        <successResult>
+        	<title>[AT] maakes time to socialize without penalty</title>
+        	<description>Somehow [AT] managed to pick up all the right information in between socializing. [He] won't get as much homework tonight!</description>
+        	<timeCost>1</timeCost>
+        	<effect>
+        		<quality>
+        			<attributeQuality>Intelligence</attributeQuality>
+        		</quality>
+        		<changedBy>1</changedBy>
+        	</effect>
+        	<effect>
+        		<quality>
+        			<attributeQuality>Social</attributeQuality>
+        		</quality>
+        		<changedBy>1</changedBy>
+        	</effect>
+        	<effect>
+        		<quality>
+        			<schoolQuality>Homework</schoolQuality>
+        			
+        		</quality>
+        		<setTo>5</setTo>
+        		
+        	</effect>
+        </successResult>
+        <testedQualities>
+        	<quality>
+        		<attributeQuality>Intelligence</attributeQuality>
+        	</quality></testedQualities>
+        <difficulty>6</difficulty>
         <linkedEvent>null</linkedEvent>
       </branch>
     </branches>
@@ -377,6 +490,13 @@
   					</quality>
   					<changedBy>1</changedBy>
   				</effect>
+  				<effect>
+  					<quality>
+  						<schoolQuality>Homework</schoolQuality>
+  						
+  					</quality>
+  					<changedBy>-1</changedBy>
+  				</effect>
   			</defaultResult>
   			<testedQualities></testedQualities>
   			<difficulty>1</difficulty>
@@ -408,4 +528,5 @@
   		</branch>
   	</branches>
   </trunk>
+  
 </forest>

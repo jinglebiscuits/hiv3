@@ -42,6 +42,6 @@ public class HomeworkIndicator : MonoBehaviour {
             indicatorText.text = "HELP!";
         }
 
-        indicatorText.color = Color.Lerp(noHomeworkColor, maxHomeworkColor, (float) (level/maxHomework));
+        indicatorText.color = Color.Lerp(noHomeworkColor, maxHomeworkColor, (float) ((float) level/(float) maxHomework));
     }
 }

@@ -1,4 +1,8 @@
-﻿public class BaseStorylines {
+﻿/// <summary>
+/// Base storylines. To use a new storyline, create a new Storyline class and make sure its name matches the XML tag you use.
+/// Add the new Storyline to storylines and the Person class will handle the rest.
+/// </summary>
+public class BaseStorylines {
 	
 	public Storyline intro = new Storyline("Intro", "Rested and ready to go!", 0, 0, false);
 	public Storyline chapterOne = new Storyline("Chapter 1", "Either I will find a way, or I will make a way.", 0, 0, false);
@@ -10,11 +14,13 @@
 	public Storyline chapterSeven = new Storyline("Chapter 7", "Doubt takes over as you begin questioning your ability to perform even simple tasks.", 0, 0, false);
 
 	public Storyline party = new Storyline("Party", "Party time!", 0, 0, false);
+    public Storyline basketballGame = new Storyline("Basketball Game", "Big ol' game", 0, 0, false);
+    public Storyline bus = new Storyline("Bus", "Drama on the bus", 0, 0, false);
 
 	public Storyline[] storylines;
 	
 	public BaseStorylines()
 	{
-		storylines = new Storyline[]{intro, chapterOne, chapterTwo, chapterThree, chapterFour, chapterFive, chapterSix, chapterSeven, party};
+		storylines = new Storyline[]{intro, chapterOne, chapterTwo, chapterThree, chapterFour, chapterFive, chapterSix, chapterSeven, party, basketballGame, bus};
 	}
 }

@@ -79,6 +79,11 @@
 				<xs:enumeration value="Cosmetologist"></xs:enumeration>
 				<xs:enumeration value="Manicurist"></xs:enumeration>
 				<xs:enumeration value="Baby Sitter"></xs:enumeration>
+				<xs:enumeration value="Chess"></xs:enumeration>
+				<xs:enumeration value="Art"></xs:enumeration>
+				<xs:enumeration value="Music"></xs:enumeration>
+				<xs:enumeration value="Basketball"></xs:enumeration>
+				<xs:enumeration value="Football"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
@@ -95,6 +100,8 @@
 				<xs:enumeration value="Chapter 6"></xs:enumeration>
 				<xs:enumeration value="Chapter 7"></xs:enumeration>
 				<xs:enumeration value="Party"></xs:enumeration>
+				<xs:enumeration value="Basketball Game"></xs:enumeration>
+				<xs:enumeration value="Bus"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
@@ -155,6 +162,7 @@
 				<xs:enumeration value="School"></xs:enumeration>
 				<xs:enumeration value="Jay Jay's House"></xs:enumeration>
 				<xs:enumeration value="Jimmy's House"></xs:enumeration>
+				<xs:enumeration value="Bus"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
@@ -166,6 +174,7 @@
 				<xs:enumeration value="School"></xs:enumeration>
 				<xs:enumeration value="Jay Jay's House"></xs:enumeration>
 				<xs:enumeration value="Jimmy's House"></xs:enumeration>
+				<xs:enumeration value="Bus"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>

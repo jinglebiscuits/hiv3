@@ -122,8 +122,10 @@
      <Compile Include="Assets\Scripts\UI\Clock\ClockView.cs" />
      <Compile Include="Assets\Scripts\UI\Clock\SleepButton.cs" />
      <Compile Include="Assets\Scripts\UI\ColorPicker.cs" />
+     <Compile Include="Assets\Scripts\UI\FriendsView.cs" />
      <Compile Include="Assets\Scripts\UI\HomeworkIndicator.cs" />
      <Compile Include="Assets\Scripts\UI\IntroScrollingPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\MentorsView.cs" />
      <Compile Include="Assets\Scripts\UI\PersonView.cs" />
      <Compile Include="Assets\Scripts\UI\ProfileAvatarView.cs" />
      <Compile Include="Assets\Scripts\UI\StoryContainer.cs" />
@@ -138,8 +140,12 @@
      <None Include="Assets\Scripts\XML\hivXMLSchema.xml" />
      <None Include="Assets\Scripts\XML\saturday.xml" />
      <None Include="Assets\Scripts\XML\intro.xml" />
+     <None Include="Assets\Scripts\XML\tia.xml" />
+     <None Include="Assets\Scripts\XML\jimmy.xml" />
      <None Include="Assets\Scripts\XML\schoolDay.xml" />
      <None Include="Assets\Scripts\XML\party.xml" />
+     <None Include="Assets\Scripts\XML\jayJay.xml" />
+     <None Include="Assets\Scripts\XML\monique.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

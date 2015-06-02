@@ -49,7 +49,117 @@
         <difficulty>1</difficulty>
         <linkedEvent>null</linkedEvent>
       </branch>
+      <branch>
+      	<title>Sit next to Jimmy on the bus</title>
+      	<description>[AT] gets on the bus and sits next to Jimmy. It looks like he's got something on his mind.</description>
+      	<icon>
+      		<jimmy>jimmy</jimmy>
+      		
+      	</icon>
+      	<buttonText>Go</buttonText>
+      	<requirements>
+      		<requirement>
+      			<quality>
+      				<storylineQuality>Bus</storylineQuality>
+      				
+      			</quality>
+      			<qualityMin>0</qualityMin>
+      			<qualityMax>0</qualityMax>
+      		</requirement></requirements>
+      	<defaultResult>
+      		<title>[AT] sits next to Jimmy</title>
+      		<description>As soon as the bus starts rolling, Jimmy tells [AT] that Tia sent him a picture last night.</description>
+      		<timeCost>0</timeCost>
+      		<effect>
+      			<quality>
+      				<storylineQuality>Bus</storylineQuality>
+      				
+      			</quality>
+      			<setTo>1</setTo>
+      			
+      		</effect>
+      	</defaultResult>
+      	<travelToArea>Bus</travelToArea>
+      	<testedQualities></testedQualities>
+      	<difficulty>1</difficulty>
+      	<linkedEvent>null</linkedEvent>
+      </branch>
     </branches>
+  </trunk><trunk>
+  	<title>Sext</title>
+  	<description>Tia sent Jimmy a sexual picture last night. How should [AT] respond to Jimmy letting [him] know?</description>
+  	<icon>
+  		<tia>tia</tia>
+  		
+  	</icon>
+  	<buttonText>Decide</buttonText>
+  	<trunkTag>trunkTag</trunkTag>
+  	<area>Bus</area>
+  	<urgency>1</urgency>
+  	<deck>deck</deck>
+  	<requirements>
+  		<requirement>
+  			<quality>
+  				<storylineQuality>Bus</storylineQuality>
+  				
+  			</quality>
+  			<qualityMin>1</qualityMin>
+  			<qualityMax>1</qualityMax>
+  		</requirement></requirements>
+  	<branches>
+  		<branch>
+  			<title>Let's see it</title>
+  			<description>[AT] tells Jimmy to let [him] see the picture.</description>
+  			<icon>
+  				<tia>tia</tia>
+  				
+  			</icon>
+  			<buttonText>Look</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>Jimmy shows [AT] the picture</title>
+  				<description>Jimmy shows [AT] the picture, but he doesn't look comfortable about it.</description>
+  				<timeCost>0</timeCost>
+  				<effect>
+  					<quality>
+  						<storylineQuality>Bus</storylineQuality>
+  						
+  					</quality>
+  					<setTo>11</setTo>
+  					
+  				</effect>
+  			</defaultResult>
+  			<testedQualities></testedQualities>
+  			<difficulty>1</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  		<branch>
+  			<title>What does Jimmy think?</title>
+  			<description>[AT] asks Jimmy what he thinks.</description>
+  			<icon>
+  				<jimmy>jimmy</jimmy>
+  				
+  			</icon>
+  			<buttonText>Ask</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>Jimmy tells [AT] what he thinks</title>
+  				<description>"I think she wants to have sex man," he tells [AT]. "I don't think I'm ready for this. What should I do?"</description>
+  				<timeCost>0</timeCost>
+  				<effect>
+  					<quality>
+  						<storylineQuality>Bus</storylineQuality>
+  						
+  					</quality>
+  					<setTo>2</setTo>
+  					
+  				</effect>
+  			</defaultResult>
+  			<testedQualities></testedQualities>
+  			<difficulty>1</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  	</branches>
   </trunk>
   
   <trunk>
@@ -101,6 +211,16 @@
           		<attributeQuality>Intelligence</attributeQuality>
           	</quality>
           	<changedBy>2</changedBy>
+          	
+          	
+          </effect>
+          <effect>
+          	<quality>
+          		<schoolQuality>Homework</schoolQuality>
+          		
+          		
+          	</quality>
+          	<changedBy>1</changedBy>
           </effect>
         </defaultResult>
         <testedQualities/>
@@ -132,9 +252,45 @@
           	</quality>
           	<changedBy>1</changedBy>
           </effect>
+          <effect>
+          	<quality>
+          		<schoolQuality>Homework</schoolQuality>
+          		
+          	</quality>
+          	<setTo>8</setTo>
+          	
+          </effect>
         </defaultResult>
-        <testedQualities/>
-        <difficulty>1</difficulty>
+        <successResult>
+        	<title>[AT] maakes time to socialize without penalty</title>
+        	<description>Somehow [AT] managed to pick up all the right information in between socializing. [He] won't get as much homework tonight!</description>
+        	<timeCost>1</timeCost>
+        	<effect>
+        		<quality>
+        			<attributeQuality>Intelligence</attributeQuality>
+        		</quality>
+        		<changedBy>1</changedBy>
+        	</effect>
+        	<effect>
+        		<quality>
+        			<attributeQuality>Social</attributeQuality>
+        		</quality>
+        		<changedBy>1</changedBy>
+        	</effect>
+        	<effect>
+        		<quality>
+        			<schoolQuality>Homework</schoolQuality>
+        			
+        		</quality>
+        		<setTo>5</setTo>
+        		
+        	</effect>
+        </successResult>
+        <testedQualities>
+        	<quality>
+        		<attributeQuality>Intelligence</attributeQuality>
+        	</quality></testedQualities>
+        <difficulty>6</difficulty>
         <linkedEvent>null</linkedEvent>
       </branch>
     </branches>
@@ -368,6 +524,13 @@
   					</quality>
   					<changedBy>1</changedBy>
   				</effect>
+  				<effect>
+  					<quality>
+  						<schoolQuality>Homework</schoolQuality>
+  						
+  					</quality>
+  					<changedBy>-1</changedBy>
+  				</effect>
   			</defaultResult>
   			<testedQualities></testedQualities>
   			<difficulty>1</difficulty>
@@ -392,6 +555,49 @@
   					</quality>
   					<changedBy>1</changedBy>
   				</effect>
+  			</defaultResult>
+  			<testedQualities></testedQualities>
+  			<difficulty>1</difficulty>
+  			<linkedEvent>null</linkedEvent>
+  		</branch>
+  	</branches>
+  </trunk>
+  <trunk>
+  	<title>Guide Jimmy</title>
+  	<description>Jimmy has asked [AT] for advice on how to handle Tia. Tia probably wants to have sex, but Jimmy isn't sure he should go through with it.</description>
+  	<icon>
+  		<helping>helping</helping>
+  		
+  	</icon>
+  	<buttonText>Help</buttonText>
+  	<trunkTag>trunkTag</trunkTag>
+  	<area>Bus</area>
+  	<urgency>1</urgency>
+  	<deck>deck</deck>
+  	<requirements>
+  		<requirement>
+  			<quality>
+  				<storylineQuality>Bus</storylineQuality>
+  				
+  			</quality>
+  			<qualityMin>2</qualityMin>
+  			<qualityMax>2</qualityMax>
+  		</requirement></requirements>
+  	<branches>
+  		<branch>
+  			<title>Do it</title>
+  			<description>description</description>
+  			<icon>
+  				<auntie_gina_uncle_harry>
+  					auntie_gina_uncle_harry
+  				</auntie_gina_uncle_harry>
+  			</icon>
+  			<buttonText>buttonText</buttonText>
+  			<requirements></requirements>
+  			<defaultResult>
+  				<title>title</title>
+  				<description>description</description>
+  				<timeCost>1</timeCost>
   			</defaultResult>
   			<testedQualities></testedQualities>
   			<difficulty>1</difficulty>

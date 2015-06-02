@@ -1,5 +1,5 @@
 ﻿using System;
-public interface IQuality : IComparable<IQuality>{
+public interface IQuality {
 
 	string Name { get; set;	}
 	string Description { get; set; }

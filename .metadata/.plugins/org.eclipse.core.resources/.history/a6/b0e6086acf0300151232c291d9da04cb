@@ -32,6 +32,26 @@
 		</xs:simpleType>
 	</xs:element>
 	
+	<xs:element name="skillQuality">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Welding"></xs:enumeration>
+				<xs:enumeration value="Electrician"></xs:enumeration>
+				<xs:enumeration value="Carpentry"></xs:enumeration>
+				<xs:enumeration value="Auto Mechanic"></xs:enumeration>
+				<xs:enumeration value="Hair Dresser"></xs:enumeration>
+				<xs:enumeration value="Cosmetology"></xs:enumeration>
+				<xs:enumeration value="Manicurist"></xs:enumeration>
+				<xs:enumeration value="Babysitting"></xs:enumeration>
+				<xs:enumeration value="Chess"></xs:enumeration>
+				<xs:enumeration value="Art"></xs:enumeration>
+				<xs:enumeration value="Music"></xs:enumeration>
+				<xs:enumeration value="Basketball"></xs:enumeration>
+				<xs:enumeration value="Football"></xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
 	<xs:element name="relationshipQuality">
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
@@ -79,9 +99,18 @@
 		</xs:simpleType>
 	</xs:element>
 	
+	<xs:element name="schoolQuality">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Homework"></xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
 	<xs:element name="itemQuality">
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
+				<xs:enumeration value="Coins"></xs:enumeration>
 				<xs:enumeration value="Tools"></xs:enumeration>
 				<xs:enumeration value="Clothes"></xs:enumeration>
 				<xs:enumeration value="Books"></xs:enumeration>
@@ -110,6 +139,8 @@
 				<xs:element ref="statusQuality"/>
 				<xs:element ref="relationshipQuality"/>
 				<xs:element ref="tradeQuality"/>
+				<xs:element ref="skillQuality"/>
+				<xs:element ref="schoolQuality"/>
 				<xs:element ref="itemQuality"/>
 				<xs:element ref="timeQuality"/>
 				<xs:element ref="storylineQuality"/>

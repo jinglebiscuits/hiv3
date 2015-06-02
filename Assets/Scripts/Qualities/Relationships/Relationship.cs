@@ -7,9 +7,12 @@ public class Relationship : IQuality {
 	private string tag;
 	private int level;
 	private int points;
+    private int friendPoints;
 	private int modifier;
 	private bool pyramid;
 	
+    public delegate void MyEventHandler(string name);
+    public event MyEventHandler pointEvent;
 	
 	public Relationship (string name)
 	{
@@ -87,6 +90,12 @@ public class Relationship : IQuality {
 			points = value;
 		}
 	}
+
+    public int FriendPoints {
+        get {
+            return GetFriendPoints();
+        }
+    }
 	
 	public bool Pyramid {
 		get {
@@ -98,6 +107,18 @@ public class Relationship : IQuality {
 	}
 	#endregion
 	
+    public int GetFriendPoints() {
+        int friendPoints = 0;
+
+        for (int i = 1; i <= level; i++) {
+            friendPoints += i;
+        }
+
+        friendPoints += points;
+
+        return friendPoints;
+    }
+
 	public void AddPoints(int _points)
 	{
 		while (_points > 0)
@@ -118,6 +139,12 @@ public class Relationship : IQuality {
 			
 			_points --;
 		}
+
+        //let subscribers know
+        if(pointEvent != null)
+        {
+            pointEvent(this.name);
+        }
 	}
 	
 	public void RemovePoints(int _points)
@@ -140,6 +167,12 @@ public class Relationship : IQuality {
 			
 			_points --;
 		}
+
+        //let subscribers know
+        if(pointEvent != null)
+        {
+            pointEvent(this.name);
+        }
 	}
 	
 	/// <summary>
@@ -164,8 +197,13 @@ public class Relationship : IQuality {
 		}
 	}
 	
-	public int CompareTo (IQuality other)
+//    public int CompareTo (IQuality other)
+//    {
+//        return (this as Relationship).FriendPoints.CompareTo((other as Relationship).FriendPoints);
+//    }
+
+	public int CompareTo (Relationship other)
 	{
-		return this.Level.CompareTo(other.Level);
+		return this.FriendPoints.CompareTo(other.FriendPoints);
 	}
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../hivXMLSchema.xsd">
+  <title>title</title>
+  <trunk>
+    <title>Talk with Jay Jay</title>
+    <description>[AT] begins talking with Jay Jay</description>
+    <icon>
+    	<jay_jay>jay_jay</jay_jay>
+    	
+    </icon>
+    <buttonText>Go</buttonText>
+    <trunkTag>trunkTag</trunkTag>
+    <area>Home</area>
+    <urgency>1</urgency>
+    <deck>deck</deck>
+    <requirements/>
+    <branches>
+      <branch>
+        <title>Slap Jay Jay</title>
+        <description>[AT] slaps Jay Jay in the face.</description>
+        <icon>
+          <auntie_gina_uncle_harry>auntie_gina_uncle_harry</auntie_gina_uncle_harry>
+        </icon>
+        <buttonText>Go</buttonText>
+        <requirements/>
+        <defaultResult>
+          <title>Jay Jay is not happy with you</title>
+          <description>[AT]'s relationship with Jay Jay is damaged.</description>
+          <timeCost>1</timeCost>
+          <effect>
+          	<quality>
+          		<relationshipQuality>Jay Jay</relationshipQuality>
+          		
+          	</quality>
+          	<changedBy>-1</changedBy>
+          </effect>
+        </defaultResult>
+        <testedQualities/>
+        <difficulty>1</difficulty>
+        <linkedEvent>null</linkedEvent>
+      </branch>
+    </branches>
+  </trunk>
+</forest>
