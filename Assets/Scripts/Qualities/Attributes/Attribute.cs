@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-public class Luck : IQuality {
+public class Attribute : IQuality {
 
 	public delegate void MyEventHandler();
 	public event MyEventHandler pointEvent;
@@ -18,12 +18,12 @@ public class Luck : IQuality {
 	/// <summary>
 	/// Default constructor
 	/// </summary>
-	public Luck() : this("null", "null", 0, 0, false)
+	public Attribute() : this("null", "null", 0, 0, false)
 	{
 		this.tag = "Attribute";
 	}
 	
-	public Luck (string name)
+	public Attribute (string name)
 	{
 		this.name = name;
 		this.tag = "Luck";
@@ -32,7 +32,7 @@ public class Luck : IQuality {
 	/// <summary>
 	/// Constructor
 	/// </summary>
-	public Luck(string name, string description, int level, int points, bool pyramid)
+	public Attribute(string name, string description, int level, int points, bool pyramid)
 	{
 		Name = name;
 		Description = description;

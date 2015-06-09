@@ -4,6 +4,9 @@ using System.Collections;
 public class ViewManager : MonoBehaviour {
 	
 	public CharacterStatsView characterStatsView;
+    public StatusView statusView;
+    public FriendsView friendsView;
+    public MentorsView mentorsView;
 		
 	// Use this for initialization
 	void Start () {
@@ -18,8 +21,19 @@ public class ViewManager : MonoBehaviour {
 
 	public void MainSceneStart(GameObject player)
 	{
+        Person person = player.GetComponent<Player>().FocusedPerson;
+
 		characterStatsView = GameObject.Find ("CharacterStatsView").GetComponent<CharacterStatsView>();
-		characterStatsView.BaseAttributes = player.GetComponent<Player>().FocusedPerson.BaseAttributes;
+		characterStatsView.BaseAttributes = person.BaseAttributes;
 		characterStatsView.ViewConstructor();
+
+        statusView = GameObject.Find ("StatusView").GetComponent<StatusView>();
+        statusView.ViewConstructor(person);
+
+        friendsView = GameObject.Find ("FriendsView").GetComponent<FriendsView>();
+        friendsView.ViewConstructor(person);
+
+        mentorsView = GameObject.Find ("MentorsView").GetComponent<MentorsView>();
+        mentorsView.ViewConstructor(person);
 	}
 }

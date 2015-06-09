@@ -20,14 +20,13 @@
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
 				<xs:enumeration value="Well Rested"></xs:enumeration>
-				<xs:enumeration value="Not Enough Sleep"></xs:enumeration>
 				<xs:enumeration value="Motivated"></xs:enumeration>
 				<xs:enumeration value="Confident"></xs:enumeration>
-				<xs:enumeration value="Sick"></xs:enumeration>
-				<xs:enumeration value="Heartbroken"></xs:enumeration>
-				<xs:enumeration value="Angry"></xs:enumeration>
+				<xs:enumeration value="In Love"></xs:enumeration>
+				<xs:enumeration value="Calm"></xs:enumeration>
+				<xs:enumeration value="Healthy"></xs:enumeration>
+				<xs:enumeration value="Secure"></xs:enumeration>
 				<xs:enumeration value="At Risk"></xs:enumeration>
-				<xs:enumeration value="Insecure"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
@@ -138,6 +137,14 @@
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
+	
+	<xs:element name="luckQuality">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="Luck"></xs:enumeration>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
 
 	<xs:element name="quality">
 		<xs:complexType>
@@ -151,6 +158,7 @@
 				<xs:element ref="itemQuality"/>
 				<xs:element ref="timeQuality"/>
 				<xs:element ref="storylineQuality"/>
+				<xs:element ref="luckQuality"/>
 			</xs:choice>
 		</xs:complexType>
 	</xs:element>
@@ -163,6 +171,7 @@
 				<xs:enumeration value="Jay Jay's House"></xs:enumeration>
 				<xs:enumeration value="Jimmy's House"></xs:enumeration>
 				<xs:enumeration value="Bus"></xs:enumeration>
+				<xs:enumeration value="Basketball Game"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
@@ -175,6 +184,7 @@
 				<xs:enumeration value="Jay Jay's House"></xs:enumeration>
 				<xs:enumeration value="Jimmy's House"></xs:enumeration>
 				<xs:enumeration value="Bus"></xs:enumeration>
+				<xs:enumeration value="Basketball Game"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>

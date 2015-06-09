@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -177,6 +177,9 @@ public class XML : MonoBehaviour
                 break;
             case "relationshipQuality":
                 quality = new Relationship(eQuality.Value);
+                break;
+            case "luckQuality":
+                quality = new Attribute(eQuality.Value);
                 break;
             default:
                 Debug.Log("unknown quality type");

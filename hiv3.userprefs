@@ -1,15 +1,22 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/FriendsView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Qualities/Statuses/BaseStatuses.cs">
     <Files>
-      <File FileName="Assets/Scripts/Qualities/Relationships/Relationship.cs" Line="3" Column="1" />
-      <File FileName="Assets/Scripts/UI/FriendsView.cs" Line="33" Column="5" />
-      <File FileName="Assets/Scripts/Qualities/Relationships/BaseRelationships.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/StatusView.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/XML/XML.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Qualities/School/Homework.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Qualities/Attributes/Attribute.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/UI/AttributeView.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Qualities/Statuses/Status.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Qualities/Luck.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Manager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/StoryContainer.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Person.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Interfaces/IQuality.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/FriendsView.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/ViewManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/CharacterStatsView.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/UI/MentorsView.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Qualities/Relationships/Relationship.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Qualities/Statuses/Status.cs" Line="24" Column="23" />
+      <File FileName="Assets/Scripts/Qualities/Statuses/BaseStatuses.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -11,7 +11,7 @@ public class Manager : MonoBehaviour {
 	public XML xmlScript;
 	public Person person;
 	public StoryContainer storyContainer;
-	
+
 	public static Manager manager;
 
 
@@ -64,11 +64,6 @@ public class Manager : MonoBehaviour {
 		person = player.GetComponent<Player>().FocusedPerson;
 //		person.UpdateAvailableTrunkList(xmlScript.trunks);
 		gameObject.GetComponent<ViewManager>().MainSceneStart(player);
-	}
-
-	// Update is called once per frame
-	void Update () {
-
 	}
 
 	public void UpdateTrunks()

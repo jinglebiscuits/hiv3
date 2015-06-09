@@ -14,8 +14,8 @@ public class FriendsView : MonoBehaviour {
     private int friendsInGame = 4;
 
 	// Use this for initialization
-	void Start () {
-        person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
+	public void ViewConstructor (Person person) {
+        this.person = person;
         friendsDict.Add("Monique", friendImages[0]);
         friendsDict.Add("Jimmy", friendImages[1]);
         friendsDict.Add("Jay Jay", friendImages[2]);
@@ -30,6 +30,7 @@ public class FriendsView : MonoBehaviour {
             (person.QualitiesDict[entry.Key] as Relationship).pointEvent -= UpdateRelationship;
             (person.QualitiesDict[entry.Key] as Relationship).pointEvent += UpdateRelationship;
         }
+        UpdateRelationship(null);
 	}
 
     public void UpdateRelationship(string name) {

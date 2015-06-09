@@ -21,6 +21,7 @@ public class Person {
 	private Day day;
 	private Week week;
 	private Homework homework;
+    private Luck luck;
 
 	private Forest forest;
 	private List<Trunk> availableTrunks;
@@ -71,6 +72,8 @@ public class Person {
 
 		homework = new Homework("Homework", "Affects your GPA on Monday mornings", 0, 0, false);
         qualitiesDict.Add(homework.Name, homework);
+
+        luck = new Luck("How lucky are you?", 5, 0, false);
 
 		forest = new Forest();
 		availableTrunks = new List<Trunk>();

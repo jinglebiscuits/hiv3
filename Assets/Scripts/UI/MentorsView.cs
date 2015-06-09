@@ -14,8 +14,8 @@ public class MentorsView : MonoBehaviour {
     private int mentorsInGame = 5;
 
 	// Use this for initialization
-	void Start () {
-        person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
+	public void ViewConstructor (Person person) {
+        this.person = person;
         mentorsDict.Add("Auntie Gina", mentorImages[0]);
         mentorsDict.Add("Coach Woodfin", mentorImages[1]);
         mentorsDict.Add("Mrs. Lake", mentorImages[2]);
@@ -32,6 +32,7 @@ public class MentorsView : MonoBehaviour {
             (person.QualitiesDict[entry.Key] as Relationship).pointEvent -= UpdateRelationship;
             (person.QualitiesDict[entry.Key] as Relationship).pointEvent += UpdateRelationship;
         }
+        UpdateRelationship(null);
 	}
 
     public void UpdateRelationship(string name) {
