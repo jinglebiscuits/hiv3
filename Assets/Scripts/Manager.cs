@@ -98,6 +98,7 @@ public class Manager : MonoBehaviour {
 			FileStream file = File.Open(Application.persistentDataPath + "/hivPlayerInfo.dat", FileMode.Open);
             GameObject.Find("Player").GetComponent<Player>().FocusedPerson = (Person) bf.Deserialize(file);
 			file.Close();
+            GameObject.Find("Player").GetComponent<Player>().FocusedPerson.AvailableTrunks = new System.Collections.Generic.List<Trunk>();
 		}
 	}
 }

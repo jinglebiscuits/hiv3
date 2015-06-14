@@ -7,7 +7,6 @@ using System.Collections;
 /// </summary>
 public class BrowseStoriesView : MonoBehaviour {
 
-	private Forest forest = new Forest();
 	private ScrollRect scrollRect;
 
 	// Use this for initialization
@@ -19,15 +18,6 @@ public class BrowseStoriesView : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-	}
-
-	public Forest Forest {
-		get {
-			return this.forest;
-		}
-		set {
-			forest = value;
-		}
 	}
 
 	public void ResetScrollToTop()

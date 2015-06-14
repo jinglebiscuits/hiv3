@@ -25,8 +25,6 @@ public class Person {
     private Luck luck;
 
     [NonSerialized]
-	private Forest forest;
-    [NonSerialized]
 	private List<Trunk> availableTrunks;
 
 	public Person()
@@ -36,7 +34,7 @@ public class Person {
 		{
 			qualitiesDict.Add(attribute.Name, attribute);
 		}
-		Debug.Log (qualitiesDict["Intelligence"].Name);
+
 		foreach(Status status in baseStatuses.statuses)
 		{
 			qualitiesDict.Add(status.Name, status);
@@ -78,7 +76,6 @@ public class Person {
 
         luck = new Luck("How lucky are you?", 5, 0, false);
 
-		forest = new Forest();
 		availableTrunks = new List<Trunk>();
 
 		area = "Home";
