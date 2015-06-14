@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
+[Serializable]
 public class Person {
 
 	private string name;
@@ -23,7 +24,9 @@ public class Person {
 	private Homework homework;
     private Luck luck;
 
+    [NonSerialized]
 	private Forest forest;
+    [NonSerialized]
 	private List<Trunk> availableTrunks;
 
 	public Person()

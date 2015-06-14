@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Status : IQuality {
 
 	public delegate void MyEventHandler(Status status);
+    [field:NonSerialized]
 	public event MyEventHandler levelEvent;
 
 	private string name;

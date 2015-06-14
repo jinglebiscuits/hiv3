@@ -1,4 +1,7 @@
-﻿public class BaseRelationships {
+﻿using System;
+
+[Serializable]
+public class BaseRelationships {
 
 	public Relationship auntieGina = new Relationship("Auntie Gina", "Everything is normal", 0, 0, 1, true);
 	public Relationship uncleHarry = new Relationship("Uncle Harry", "Everything is normal", 0, 0, 1, true);

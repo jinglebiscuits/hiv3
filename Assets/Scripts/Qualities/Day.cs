@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
+[Serializable]
 public class Day : IQuality
 {
 
@@ -14,7 +16,9 @@ public class Day : IQuality
 
     public delegate void MyEventHandler();
 
+    [field:NonSerialized]
     public event MyEventHandler pointEvent;
+    [field:NonSerialized]
     public event MyEventHandler newWeekEvent;
 
     #region Constructors

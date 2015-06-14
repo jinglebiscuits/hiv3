@@ -1,4 +1,7 @@
-﻿public class BaseItems {
+﻿using System;
+
+[Serializable]
+public class BaseItems {
 
 	public Item coins = new Item("Coins", "Buy stuff with coins.", 0, 0, false);
 	public Item tools = new Item("Tools", "Get paid", 0, 0, false);

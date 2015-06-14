@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using System;
 
+[Serializable]
 public class Clock : IQuality {
 
 	private string name;
@@ -10,7 +12,9 @@ public class Clock : IQuality {
 	private bool pyramid;
 
 	public delegate void MyEventHandler();
+    [field:NonSerialized]
 	public event MyEventHandler pointEvent;
+    [field:NonSerialized]
 	public event MyEventHandler newDayEvent;
 
 	#region Constructors

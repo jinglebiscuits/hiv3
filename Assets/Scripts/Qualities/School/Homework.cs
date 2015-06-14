@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
+[Serializable]
 public class Homework : IQuality {
 
 	private string name;
@@ -11,6 +13,7 @@ public class Homework : IQuality {
 	private bool pyramid;
 	
     public delegate void MyEventHandler(int level);
+    [field:NonSerialized]
     public event MyEventHandler levelEvent;
 
 	public Homework ()

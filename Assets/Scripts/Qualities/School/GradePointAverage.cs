@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
+[Serializable]
 public class GradePointAverage {
 
 //	private float gPA = 4.0f;

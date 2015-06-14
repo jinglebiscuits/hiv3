@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using System;
 
+[Serializable]
 public class Week : IQuality {
 
 	private string name;

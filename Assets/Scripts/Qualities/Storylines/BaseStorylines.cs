@@ -1,4 +1,7 @@
-﻿/// <summary>
+﻿using System;
+
+[Serializable]
+/// <summary>
 /// Base storylines. To use a new storyline, create a new Storyline class and make sure its name matches the XML tag you use.
 /// Add the new Storyline to storylines and the Person class will handle the rest.
 /// </summary>

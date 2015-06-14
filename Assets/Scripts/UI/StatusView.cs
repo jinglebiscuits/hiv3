@@ -147,10 +147,6 @@ public class StatusView : MonoBehaviour {
                 statusSlots[i].image.sprite = null;
                 statusSlots[i].name = null;
 
-                print("--------");
-                foreach(int z in holes) {
-                    print (z + " number");
-                }
                 holes.RemoveAt(0);
                 holes.Add(i);
                 holes.Sort();

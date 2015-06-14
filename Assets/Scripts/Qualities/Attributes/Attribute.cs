@@ -1,10 +1,15 @@
 ﻿using System.Collections;
+using System;
 
+[Serializable]
 public class Attribute : IQuality {
 
 	public delegate void MyEventHandler();
+    [field:NonSerialized]
 	public event MyEventHandler pointEvent;
+    [field:NonSerialized]
 	public event MyEventHandler modifierEvent;
+    [field:NonSerialized]
 	public event MyEventHandler setLevelEvent;
 
 	private string name;

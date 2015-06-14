@@ -1,3 +1,6 @@
+using System;
+
+[Serializable]
 public class BaseAttributes {
 
 	public Attribute intelligence = new Attribute("Intelligence", "You've got a brain!", 1, 0, true);

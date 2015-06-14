@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using System;
 
+[Serializable]
 public class Luck : IQuality {
    
     private string name;

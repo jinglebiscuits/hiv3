@@ -1,4 +1,7 @@
-﻿public class BaseSkills {
+﻿using System;
+
+[Serializable]
+public class BaseSkills {
     
     public Skill welding = new Skill("Welding", "That's the ticket", 0, 0, true);
     public Skill electrician = new Skill("Electrician", "That's the ticket", 0, 0, true);

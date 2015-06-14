@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using System;
 
+[Serializable]
 public class Relationship : IQuality {
 	
 	private string name;
@@ -12,6 +14,7 @@ public class Relationship : IQuality {
 	private bool pyramid;
 	
     public delegate void MyEventHandler(string name);
+    [field:NonSerialized]
     public event MyEventHandler pointEvent;
 	
 	public Relationship (string name)

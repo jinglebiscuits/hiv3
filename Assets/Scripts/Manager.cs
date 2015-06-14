@@ -35,8 +35,13 @@ public class Manager : MonoBehaviour {
 
 	void OnEnable()
 	{
-
+        Load();
 	}
+
+    void OnDisable()
+    {
+        Save();
+    }
 
 	// Use this for initialization
 	void Start () {
@@ -76,40 +81,25 @@ public class Manager : MonoBehaviour {
 		Application.LoadLevel(scene);
 	}
 
-//	public void Save()
-//	{
-//		BinaryFormatter bf = new BinaryFormatter();
-//		FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
-//		
-//		Character character = GameObject.Find("Character").GetComponent<Character>();
-//		foreach(int itemNumber in character.avatar.SavedAvatar)
-//		{
-//			print (itemNumber);
-//		}
-//		
-//		PlayerData data = new PlayerData();
-//		data.savedAvatar = character.avatar.SavedAvatar;
-//		data.gender = character.Gender;
-//		
-//		bf.Serialize(file, data);
-//		file.Close();
-//	}
-//	
-//	public void Load()
-//	{
-//		if(File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
-//		{
-//			BinaryFormatter bf = new BinaryFormatter();
-//			FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
-//			PlayerData data = (PlayerData) bf.Deserialize(file);
-//			file.Close();
-//			
-//			Character character = GameObject.Find("Character").GetComponent<Character>();
-//			
-//			character.avatar.SavedAvatar = data.savedAvatar;
-//			character.Gender = data.gender;
-//		}
-//	}
+	public void Save()
+	{
+		BinaryFormatter bf = new BinaryFormatter();
+		FileStream file = File.Create(Application.persistentDataPath + "/hivPlayerInfo.dat");
+		
+		bf.Serialize(file, GameObject.Find("Player").GetComponent<Player>().FocusedPerson);
+		file.Close();
+	}
+	
+	public void Load()
+	{
+		if(File.Exists(Application.persistentDataPath + "/hivPlayerInfo.dat"))
+		{
+			BinaryFormatter bf = new BinaryFormatter();
+			FileStream file = File.Open(Application.persistentDataPath + "/hivPlayerInfo.dat", FileMode.Open);
+            GameObject.Find("Player").GetComponent<Player>().FocusedPerson = (Person) bf.Deserialize(file);
+			file.Close();
+		}
+	}
 }
 //
 //[Serializable]

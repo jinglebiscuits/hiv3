@@ -1,4 +1,7 @@
-﻿public class BaseStatuses {
+﻿using System;
+
+[Serializable]
+public class BaseStatuses {
 
 	public Status wellRested = new Status("Well Rested", "Rested and ready to go!", 0, 0, 1, 1, 1, 1, false);
 	public Status motivated = new Status("Motivated", "Either I will find a way, or I will make a way.", 0, 0, 0, 0, 0, 0, false);

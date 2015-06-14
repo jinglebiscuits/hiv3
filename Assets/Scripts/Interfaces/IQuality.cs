@@ -1,4 +1,5 @@
 ﻿using System;
+
 public interface IQuality {
 
 	string Name { get; set;	}
