@@ -121,13 +121,10 @@
      <Compile Include="Assets\Scripts\UI\CharacterStatsView.cs" />
      <Compile Include="Assets\Scripts\UI\Clock\Clock.cs" />
      <Compile Include="Assets\Scripts\UI\Clock\ClockView.cs" />
-     <Compile Include="Assets\Scripts\UI\Clock\SleepButton.cs" />
      <Compile Include="Assets\Scripts\UI\ColorPicker.cs" />
      <Compile Include="Assets\Scripts\UI\FriendsView.cs" />
      <Compile Include="Assets\Scripts\UI\HomeworkIndicator.cs" />
-     <Compile Include="Assets\Scripts\UI\IntroScrollingPanel.cs" />
      <Compile Include="Assets\Scripts\UI\MentorsView.cs" />
-     <Compile Include="Assets\Scripts\UI\PersonView.cs" />
      <Compile Include="Assets\Scripts\UI\ProfileAvatarView.cs" />
      <Compile Include="Assets\Scripts\UI\StatusView.cs" />
      <Compile Include="Assets\Scripts\UI\StoryContainer.cs" />

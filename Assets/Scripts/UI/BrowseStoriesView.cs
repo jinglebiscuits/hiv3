@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 /// <summary>
 /// Scrolling rect is the region of the screen that contains the stories. It is a scrolling area.

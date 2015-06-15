@@ -20,8 +20,6 @@ public class StoryContainer : MonoBehaviour {
 
 	public float storyHeight;
 	public float padding;
-	//public Forest forest = new Forest();
-	public Person person;
 	public Manager manager;
 	private MainSceneManager mainSceneManager;
 
@@ -38,7 +36,6 @@ public class StoryContainer : MonoBehaviour {
 
 	public void MainSceneStart()
 	{
-		person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
 		//manager = GameObject.Find("Manager").GetComponent<Manager>();
 		storyHeight = -2*storyViewPrefab.GetComponent<RectTransform>().anchoredPosition.y;
 		padding = storyHeight*-0.1f;
@@ -59,10 +56,10 @@ public class StoryContainer : MonoBehaviour {
 	{
 		WipeViews();
 		mainSceneManager.UpdateLocationText();
-		manager.UpdateTrunks();
+		Manager.manager.UpdateTrunks();
 		int count = 0;
 		//foreach(Story story in forest.trunks)
-		foreach(Story story in person.AvailableTrunks)
+		foreach(Story story in Player.player.FocusedPerson.AvailableTrunks)
 		{
 			GameObject clone = (GameObject) Instantiate(storyViewPrefab);
 			clone.GetComponent<StoryView>().Story = story;
@@ -86,7 +83,7 @@ public class StoryContainer : MonoBehaviour {
 		int count = 1;
 		foreach(Branch branch in trunk.Branches)
 		{
-			if(branch.IsPlayableByPerson(person))
+			if(branch.IsPlayableByPerson(Player.player.FocusedPerson))
 			{
 				//Create and place a BranchView prefab
 				GameObject clone = (GameObject) Instantiate(branchViewPrefab);

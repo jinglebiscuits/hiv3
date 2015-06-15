@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class StoryView : MonoBehaviour {
 
@@ -10,11 +9,6 @@ public class StoryView : MonoBehaviour {
 	public Text storyDescription;
 	public Text buttonText;
 	public Sprite[] storyIcons;
-
-	void Start()
-	{
-
-	}
 
 	public Story Story {
 		get {

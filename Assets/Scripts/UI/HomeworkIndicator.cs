@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class HomeworkIndicator : MonoBehaviour {
 
@@ -13,8 +12,7 @@ public class HomeworkIndicator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Person person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
-        homework = (Homework) person.QualitiesDict["Homework"];
+        homework = (Homework) Player.player.FocusedPerson.QualitiesDict["Homework"];
         homework.levelEvent -= UpdateIndicator;
         homework.levelEvent += UpdateIndicator;
 	}

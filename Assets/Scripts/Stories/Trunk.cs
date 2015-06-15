@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Collections;
 
 /// <summary>
 /// A Trunk represents the base of a story. Each trunk needs a unique name.

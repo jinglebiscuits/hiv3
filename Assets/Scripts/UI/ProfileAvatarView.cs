@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class ProfileAvatarView : MonoBehaviour {
 
@@ -22,11 +21,6 @@ public class ProfileAvatarView : MonoBehaviour {
 	void Start () {
 		SyncAvatarProfile();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-//		player = GameObject.Find("Player");
-	}
 
 	public void SyncAvatarProfile()
 	{
@@ -38,7 +32,7 @@ public class ProfileAvatarView : MonoBehaviour {
 		else
 			playerAvatar = player.GetComponent<Avatar>();
 
-		if(player.GetComponent<Player>().FocusedPerson.BodyType == BodyType.female)
+		if(Player.player.FocusedPerson.BodyType == BodyType.female)
 		{
 			profileHeadColor.SetActive(true);
 			profileLips.SetActive(true);

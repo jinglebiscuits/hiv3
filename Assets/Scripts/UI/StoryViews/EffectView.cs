@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class EffectView : MonoBehaviour {
 	
@@ -9,16 +8,6 @@ public class EffectView : MonoBehaviour {
 	public Text resultDescription;
 	public Text resultEffects;
 	public Text buttonText;
-	
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 	
 	public Result Result {
 		get {

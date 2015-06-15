@@ -1,10 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class ClockView : MonoBehaviour {
 
-	private Person person;
 	private Clock clock;
 	private Day day;
 	private Week week;
@@ -16,7 +14,7 @@ public class ClockView : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		person = GameObject.Find("Player").GetComponent<Player>().FocusedPerson;
+		Person person = Player.player.FocusedPerson;
 		clock = person.Clock;
 		day = person.Day;
 		week = person.Week;
@@ -69,10 +67,10 @@ public class ClockView : MonoBehaviour {
 		if(hoursSlept >= 7)
 		{
 			print ("7 hours");
-			person.QualitiesDict["Well Rested"].Level = 1;
+			Player.player.FocusedPerson.QualitiesDict["Well Rested"].Level = 1;
 		}
 		else
-			person.QualitiesDict["Well Rested"].Level --;
+			Player.player.FocusedPerson.QualitiesDict["Well Rested"].Level --;
 		GameObject.Find("StoryContainer").GetComponent<StoryContainer>().ShowStories();
 	}
 }

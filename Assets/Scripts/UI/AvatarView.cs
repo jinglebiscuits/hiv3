@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class AvatarView : MonoBehaviour {
 
@@ -56,10 +55,6 @@ public class AvatarView : MonoBehaviour {
 		profileLips = playerAvatar.profileLips;
 		profileBorder = playerAvatar.profileBorder;
 		profileBackground = playerAvatar.profileBackground;
-
-
-
-
 //		profilePicSprite = Sprite.Create(CalculateTexture(1869, 589, 30, 294, 1500, body.sprite.texture), new Rect(0, 0, 100, 100), new Vector2(50, 50));
 	}
 
@@ -69,7 +64,7 @@ public class AvatarView : MonoBehaviour {
 		Avatar playerAvatar = player.GetComponent<Avatar>();
 		if(level == 1)
 		{
-			if(player.GetComponent<Player>().FocusedPerson.BodyType == BodyType.female)
+			if(Player.player.FocusedPerson.BodyType == BodyType.female)
 			{
 				headColor.sprite = playerAvatar.headColor.sprite;
 				headColor.color = playerAvatar.headColor.color;
@@ -179,7 +174,7 @@ public class AvatarView : MonoBehaviour {
 		else
 			playerAvatar = player.GetComponent<Avatar>();
 		
-		if(player.GetComponent<Player>().FocusedPerson.BodyType == BodyType.female)
+		if(Player.player.FocusedPerson.BodyType == BodyType.female)
 		{
 			playerAvatar.headColor.GetComponent<Image>().sprite = headColor.sprite;
 			playerAvatar.headColor.GetComponent<Image>().color = headColor.color;

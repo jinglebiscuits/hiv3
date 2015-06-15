@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-public class Requirement {
+﻿public class Requirement {
 
 	private IQuality quality;
 	private int qualityMin;

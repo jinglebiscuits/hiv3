@@ -21,7 +21,7 @@ public class ViewManager : MonoBehaviour {
 
 	public void MainSceneStart(GameObject player)
 	{
-        Person person = player.GetComponent<Player>().FocusedPerson;
+        Person person = Player.player.FocusedPerson;
 
 		characterStatsView = GameObject.Find ("CharacterStatsView").GetComponent<CharacterStatsView>();
 		characterStatsView.BaseAttributes = person.BaseAttributes;

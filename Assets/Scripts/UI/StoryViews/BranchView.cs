@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
 
 public class BranchView : MonoBehaviour {
 	
@@ -12,12 +10,6 @@ public class BranchView : MonoBehaviour {
 	public Text chanceOfSuccess;
 	public Text buttonText;
 	public Sprite[] branchIcons;
-	public Player player;
-
-	public void Awake()
-	{
-		player = GameObject.FindWithTag("Player").GetComponent<Player>();
-	}
 
 	public Branch Branch {
 		get {
@@ -27,7 +19,7 @@ public class BranchView : MonoBehaviour {
 			branch = value;
 			if(branch.SuccessResult != null)
 			{
-				branch.CalculateChanceOfSuccess(player.FocusedPerson);
+				branch.CalculateChanceOfSuccess(Player.player.FocusedPerson);
 				chanceOfSuccess.text = branch.ChanceOfSuccess.ToString() + "% chance of success";
 			}
 			else
@@ -108,20 +100,11 @@ public class BranchView : MonoBehaviour {
 		}
 	}
 
-//	public void TestMethod()
-//	{
-//		branch = new Branch("Get Smart!", "You will gain knowledge", "brain_icon", "Learn", new List<Requirement>(), new Result());
-//		branch.DefaultResult.Title = "You out smart them!";
-//		branch.DefaultResult.Description = "They were never really a threat anyway.";
-//		branch.DefaultResult.QualityAffected = new Attribute("Social"); //This determines which quality is affected. This is temporary.
-//		branch.DefaultResult.ChangedBy = 2;
-//	}
-
 	public void ChooseBranch()
 	{
-		branch.ChooseBranch(player.FocusedPerson);
+		branch.ChooseBranch(Player.player.FocusedPerson);
 		if(branch.TravelToArea != null)
-			player.FocusedPerson.Area = branch.TravelToArea;
+			Player.player.FocusedPerson.Area = branch.TravelToArea;
 		transform.parent.GetComponent<StoryContainer>().ShowResult(branch.ChosenResult);
 	}
 }

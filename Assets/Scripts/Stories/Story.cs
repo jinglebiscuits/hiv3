@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
-using System.Collections;
+﻿using System.Collections.Generic;
 
 /// <summary>
 /// A story is any card the player can click on to unfold some of the game. Trunks and Branches are both stories.

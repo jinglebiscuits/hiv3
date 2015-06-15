@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-using System;
+﻿using System;
 
 [Serializable]
 public class Day : IQuality
@@ -51,28 +49,20 @@ public class Day : IQuality
             {
                 case 0:
                     return "Mon";
-//                    break;
                 case 1:
                     return "Tue";
-//                    break;
                 case 2:
                     return "Wed";
-//                    break;
                 case 3:
                     return "Thu";
-//                    break;
                 case 4:
                     return "Fri";
-//                    break;
                 case 5:
                     return "Sat";
-//                    break;
                 case 6:
                     return "Sun";
-//                    break;
                 default:
                     return "not a day";
-//                    break;
             }
         }
         set

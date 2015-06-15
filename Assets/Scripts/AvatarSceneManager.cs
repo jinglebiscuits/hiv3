@@ -4,19 +4,17 @@ using System.Collections;
 
 public class AvatarSceneManager : MonoBehaviour {
 
-	public GameObject player;
 	public AvatarView avatarView;
 	public GameObject genderTogglePanel;
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find ("Player");
-		if(player.GetComponent<Player>().hasCreatedCharacter)
+		if(Player.player.hasCreatedCharacter)
 		{
 			genderTogglePanel.SetActive(false);
 		}
 
-		avatarView.DisplayAppropriateBody(player.GetComponent<Player>().FocusedPerson.BodyType);
+		avatarView.DisplayAppropriateBody(Player.player.FocusedPerson.BodyType);
 	}
 	
 	// Update is called once per frame
@@ -26,13 +24,12 @@ public class AvatarSceneManager : MonoBehaviour {
 
 	public void ChangeGenderConnector(Toggle maleToggle)
 	{
-		player.GetComponent<Player>().ChangeGender(maleToggle);
+		Player.player.ChangeGender(maleToggle);
 	}
 
 	public void CommitChanges()
 	{
-		Player playerScript = player.GetComponent<Player>();
-		playerScript.hasCreatedCharacter = true;
+		Player.player.hasCreatedCharacter = true;
 //		player.GetComponent<Avatar>().hair = (Image) Instantiate(avatarView.hair) as Image;
 //		player.GetComponent<Avatar>().body = (Image) Instantiate(avatarView.body) as Image;
 //		player.GetComponent<Avatar>().headColor = (Image) Instantiate(avatarView.headColor) as Image;

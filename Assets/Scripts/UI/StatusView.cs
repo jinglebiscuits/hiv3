@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 public class StatusView : MonoBehaviour {
 
-    public Person person;
     public BaseStatuses baseStatuses;
     public List<Image> images = new List<Image>();
     public List<StatusSlot> statusSlots = new List<StatusSlot>();
@@ -136,7 +135,6 @@ public class StatusView : MonoBehaviour {
             count ++;
         }
 
-        int holesFilled = 0;
         for (int i = 0; i < statusSlots.Count; i++) {
             if (statusSlots[i].image.sprite != null && i > holes[0]) {
                 statusSlots[holes[0]].image.color = Color.white;

@@ -1,6 +1,4 @@
-﻿using System.Collections;
-
-public class Effect {
+﻿public class Effect {
 
 	private IQuality qualityEffected;
 	private int changedBy;

@@ -4,8 +4,6 @@ using System.Collections;
 
 public class MainSceneManager : MonoBehaviour {
 
-	public GameObject player;
-	public GameObject manager;
 	public GameObject storyContainer;
 	public AvatarView avatarView;
 	public GameObject sleepButton;
@@ -14,19 +12,12 @@ public class MainSceneManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find ("Player");
-		manager = GameObject.Find ("Manager");
 		storyContainer = GameObject.Find ("StoryContainer");
 
-		manager.GetComponent<Manager>().MainSceneStart();
-		player.GetComponent<Player>().MainSceneStart();
-		storyContainer.GetComponent<StoryContainer>().manager = manager.GetComponent<Manager>();
+		Manager.manager.MainSceneStart();
+		Player.player.MainSceneStart();
+		storyContainer.GetComponent<StoryContainer>().manager = Manager.manager;
 		storyContainer.GetComponent<StoryContainer>().MainSceneStart();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
 	public void LoadScene(string scene)
@@ -36,6 +27,6 @@ public class MainSceneManager : MonoBehaviour {
 
 	public void UpdateLocationText()
 	{
-		locationText.text = player.GetComponent<Player>().FocusedPerson.Area;
+		locationText.text = Player.player.FocusedPerson.Area;
 	}
 }
