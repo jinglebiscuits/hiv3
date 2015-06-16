@@ -108,6 +108,7 @@ public class Manager : MonoBehaviour {
 	}
 	
 	public void NewGame () {
+		print (Player.player.Username);
 		Save ();
 		Load ();
 	}

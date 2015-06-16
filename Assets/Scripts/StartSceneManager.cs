@@ -59,7 +59,7 @@ public class StartSceneManager : MonoBehaviour {
 		}
 		else
 			readyToLogin = false;
-			
+		
 		this.username = username;
 		UpdateButtons();
 	}
@@ -67,10 +67,15 @@ public class StartSceneManager : MonoBehaviour {
 	private void UpdateButtons() {
 		if (newUsername && readyToLogin) {
 			newButton.interactable = true;
+			continueButton.interactable = false;
 		}
 		else if (readyToLogin) {
 			newButton.interactable = false;
 			continueButton.interactable = true;
+		}
+		else {
+			newButton.interactable = false;
+			continueButton.interactable = false;
 		}
 	}
 	
@@ -97,7 +102,7 @@ public class StartSceneManager : MonoBehaviour {
 	private string[] ListToArray (List<string> myList) {
 		string[] myArray = new string[myList.Count];
 		for (int i = 0; i < myList.Count; i++) {
-			myArray[i] = myList[0];
+			myArray[i] = myList[i];
 		}
 		return myArray;
 	}
