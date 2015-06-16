@@ -9,17 +9,12 @@ public class AvatarSceneManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		if(Player.player.hasCreatedCharacter)
+		if(Player.player.FocusedPerson.GenderHasBeenSet)
 		{
 			genderTogglePanel.SetActive(false);
 		}
 
 		avatarView.DisplayAppropriateBody(Player.player.FocusedPerson.BodyType);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 
 	public void ChangeGenderConnector(Toggle maleToggle)
@@ -29,7 +24,7 @@ public class AvatarSceneManager : MonoBehaviour {
 
 	public void CommitChanges()
 	{
-		Player.player.hasCreatedCharacter = true;
+		Player.player.FocusedPerson.GenderHasBeenSet = true;
 //		player.GetComponent<Avatar>().hair = (Image) Instantiate(avatarView.hair) as Image;
 //		player.GetComponent<Avatar>().body = (Image) Instantiate(avatarView.body) as Image;
 //		player.GetComponent<Avatar>().headColor = (Image) Instantiate(avatarView.headColor) as Image;

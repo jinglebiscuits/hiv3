@@ -10,6 +10,7 @@ public class Person {
 	private string name;
 	private string area;
 	private BodyType bodyType;
+	private bool genderHasBeenSet;
 
 	private BaseAttributes baseAttributes = new BaseAttributes();
 	private BaseStatuses baseStatuses = new BaseStatuses();
@@ -30,6 +31,7 @@ public class Person {
 	public Person()
 	{
 		bodyType = BodyType.female;
+		genderHasBeenSet = false;
 		foreach(IQuality attribute in baseAttributes.attributes)
 		{
 			qualitiesDict.Add(attribute.Name, attribute);
@@ -98,6 +100,15 @@ public class Person {
 		}
 		set {
 			bodyType = value;
+		}
+	}
+	
+	public bool GenderHasBeenSet {
+		get {
+			return this.genderHasBeenSet;
+		}
+		set {
+			genderHasBeenSet = value;
 		}
 	}
 
