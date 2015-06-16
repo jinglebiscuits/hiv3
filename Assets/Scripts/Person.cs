@@ -79,6 +79,7 @@ public class Person {
 		availableTrunks = new List<Trunk>();
 
 		area = "Home";
+		name = null;
 	}
 
 	#region Accessor Methods

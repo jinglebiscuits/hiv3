@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour {
 	
 	private Person focusedPerson;
+	private string username;
 	public AvatarView avatarView;
 	public bool hasCreatedCharacter = false;
 
@@ -63,13 +64,20 @@ public class Player : MonoBehaviour {
 			focusedPerson = value;
 		}
 	}
+	
+	public string Username {
+		get {
+			return this.username;
+		}
+		set {
+			username = value;
+		}
+	}
 
 	public void DefaultSetup()
 	{
-
-		Person scott = new Person();
-		scott.Name = "Scott";
-		focusedPerson = scott;
+		Person person = new Person();
+		focusedPerson = person;
 	}
 
 	public void ChangeGender(Toggle maleToggle)

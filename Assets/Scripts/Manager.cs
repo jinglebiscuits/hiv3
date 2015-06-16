@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
@@ -33,11 +34,12 @@ public class Manager : MonoBehaviour {
 
 	void OnEnable()
 	{
-        Load();
+        
 	}
 
     void OnDisable()
     {
+		print("saving");
         Save();
     }
 
@@ -51,20 +53,18 @@ public class Manager : MonoBehaviour {
 	{
 		if(level == 1)
 		{
-			GameObject player = GameObject.Find ("Player");
 			profileAvatar = GameObject.Find("ProfileAvatar");
 			avatarView = GameObject.Find ("AvatarView");
 
-			profileAvatar.GetComponent<ProfileAvatarView>().player = player;
+			profileAvatar.GetComponent<ProfileAvatarView>().player = GameObject.Find("Player");
 		}
 	}
 
 	public void MainSceneStart()
 	{
-		GameObject player = GameObject.Find("Player");
 		storyContainer = GameObject.Find ("StoryContainer").GetComponent<StoryContainer>();
 //		person.UpdateAvailableTrunkList(xmlScript.trunks);
-		gameObject.GetComponent<ViewManager>().MainSceneStart(player);
+		gameObject.GetComponent<ViewManager>().MainSceneStart(GameObject.Find("Player"));
 	}
 
 	public void UpdateTrunks()
@@ -77,24 +77,38 @@ public class Manager : MonoBehaviour {
 		Application.LoadLevel(scene);
 	}
 
-	public void Save()
+	public void Save ()
 	{
+		string username = Player.player.Username;
 		BinaryFormatter bf = new BinaryFormatter();
-		FileStream file = File.Create(Application.persistentDataPath + "/hivPlayerInfo.dat");
-		
+		FileStream file;
+		try {
+			file = File.Create(Application.persistentDataPath + "/Hiv/PlayerInfo/" + username + ".dat");
+		}
+		catch (DirectoryNotFoundException e) {
+			Debug.Log (e);
+			Debug.Log ("Creating it now");
+			Directory.CreateDirectory (Application.persistentDataPath + "/Hiv/PlayerInfo");
+			file = File.Create(Application.persistentDataPath + "/Hiv/PlayerInfo/" + username + ".dat");
+		}
 		bf.Serialize(file, Player.player.FocusedPerson);
 		file.Close();
 	}
 	
-	public void Load()
-	{
-		if(File.Exists(Application.persistentDataPath + "/hivPlayerInfo.dat"))
+	public void Load () {
+		if(File.Exists(Application.persistentDataPath + "/Hiv/PlayerInfo/" + Player.player.Username + ".dat"))
 		{
 			BinaryFormatter bf = new BinaryFormatter();
-			FileStream file = File.Open(Application.persistentDataPath + "/hivPlayerInfo.dat", FileMode.Open);
+			FileStream file = File.Open(Application.persistentDataPath + 
+										"/Hiv/PlayerInfo/" + Player.player.Username + ".dat", FileMode.Open);
             Player.player.FocusedPerson = (Person) bf.Deserialize(file);
 			file.Close();
             Player.player.FocusedPerson.AvailableTrunks = new System.Collections.Generic.List<Trunk>();
 		}
+	}
+	
+	public void NewGame () {
+		Save ();
+		Load ();
 	}
 }
