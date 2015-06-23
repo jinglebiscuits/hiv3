@@ -25,7 +25,6 @@ public class AvatarView : MonoBehaviour {
 	public Image profileBorder;
 	public Image profileBackground;
 
-	public GameObject player;
 	private Avatar playerAvatar;
 	public ProfileAvatarView profileAvatarView;
 
@@ -43,8 +42,7 @@ public class AvatarView : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find("Player");
-		Avatar playerAvatar = player.GetComponent<Avatar>();
+		playerAvatar = Player.player.avatar;
 		profileHair = playerAvatar.profileHair;
 		profileBody = playerAvatar.profileBody;
 		profileHeadColor = playerAvatar.profileHeadColor;
@@ -60,8 +58,7 @@ public class AvatarView : MonoBehaviour {
 
 	void OnLevelWasLoaded(int level)
 	{
-		player = GameObject.Find("Player");
-		Avatar playerAvatar = player.GetComponent<Avatar>();
+		Avatar playerAvatar = Player.player.avatar;
 		if(level == 1)
 		{
 			if(Player.player.FocusedPerson.BodyType == BodyType.female)
@@ -108,7 +105,7 @@ public class AvatarView : MonoBehaviour {
 
 	public void CreateProfileIcon()
 	{
-		Avatar avatar = player.GetComponent<Avatar>();
+		Avatar avatar = Player.player.avatar;
 		if(headColor)
 		{
 			profileLips.gameObject.SetActive(true);
@@ -166,13 +163,7 @@ public class AvatarView : MonoBehaviour {
 
 	public void SyncAvatar()
 	{
-		if(player == null)
-		{
-			player = GameObject.Find("Player");
-			playerAvatar = player.GetComponent<Avatar>();
-		}
-		else
-			playerAvatar = player.GetComponent<Avatar>();
+		playerAvatar = Player.player.avatar;
 		
 		if(Player.player.FocusedPerson.BodyType == BodyType.female)
 		{

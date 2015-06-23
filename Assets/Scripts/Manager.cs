@@ -15,9 +15,6 @@ public class Manager : MonoBehaviour {
 	public static Manager manager;
 
 
-	//level 1 stuff
-	private GameObject profileAvatar;
-	private GameObject avatarView;
 
 	void Awake ()
 	{
@@ -53,8 +50,7 @@ public class Manager : MonoBehaviour {
 	{
 		if(level == 1)
 		{
-			profileAvatar = GameObject.Find("ProfileAvatar");
-			avatarView = GameObject.Find ("AvatarView");
+			//anything that needs to happen on level 1
 		}
 	}
 

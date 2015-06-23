@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	
 	private Person focusedPerson;
 	private string username;
+	public Avatar avatar;
 	public AvatarView avatarView;
 	public bool hasCreatedCharacter = false;
 

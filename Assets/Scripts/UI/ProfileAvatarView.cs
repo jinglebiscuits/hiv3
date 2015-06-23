@@ -21,7 +21,7 @@ public class ProfileAvatarView : MonoBehaviour {
 
 	public void SyncAvatarProfile()
 	{
-		Avatar playerAvatar = Player.player.GetComponent<Avatar>();
+		Avatar playerAvatar = Player.player.avatar;
 		
 		if(Player.player.FocusedPerson.BodyType == BodyType.female)
 		{
