@@ -3,9 +3,6 @@ using UnityEngine.UI;
 
 public class ProfileAvatarView : MonoBehaviour {
 
-	public GameObject player;
-	private Avatar playerAvatar;
-
 	public GameObject profileHair;
 	public GameObject profileBody;
 	public GameObject profileHeadColor;
@@ -24,14 +21,8 @@ public class ProfileAvatarView : MonoBehaviour {
 
 	public void SyncAvatarProfile()
 	{
-		if(player == null)
-		{
-			player = GameObject.Find("Player");
-			playerAvatar = player.GetComponent<Avatar>();
-		}
-		else
-			playerAvatar = player.GetComponent<Avatar>();
-
+		Avatar playerAvatar = Player.player.GetComponent<Avatar>();
+		
 		if(Player.player.FocusedPerson.BodyType == BodyType.female)
 		{
 			profileHeadColor.SetActive(true);

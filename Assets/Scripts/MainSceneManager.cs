@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using UnityEngine.Analytics;
+using System.Collections.Generic;
 
 public class MainSceneManager : MonoBehaviour {
 
@@ -18,6 +19,10 @@ public class MainSceneManager : MonoBehaviour {
 		Player.player.MainSceneStart();
 		storyContainer.GetComponent<StoryContainer>().manager = Manager.manager;
 		storyContainer.GetComponent<StoryContainer>().MainSceneStart();
+		Analytics.CustomEvent("mainSceneStart", new Dictionary<string, object>
+			{
+				{ "time", Time.time }
+			});
 	}
 
 	public void LoadScene(string scene)

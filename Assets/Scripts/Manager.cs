@@ -55,8 +55,6 @@ public class Manager : MonoBehaviour {
 		{
 			profileAvatar = GameObject.Find("ProfileAvatar");
 			avatarView = GameObject.Find ("AvatarView");
-
-			profileAvatar.GetComponent<ProfileAvatarView>().player = GameObject.Find("Player");
 		}
 	}
 

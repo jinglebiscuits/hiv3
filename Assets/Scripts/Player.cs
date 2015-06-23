@@ -37,14 +37,14 @@ public class Player : MonoBehaviour {
 		if(Application.loadedLevelName == "CharacterCreation")
 		{
 			avatarView = GameObject.Find("AvatarView").GetComponent<AvatarView>();
-			GameObject.Find("ProfileAvatar").GetComponent<ProfileAvatarView>().player = this.gameObject;
+// 			GameObject.Find("ProfileAvatar").GetComponent<ProfileAvatarView>().player = this.gameObject;
 		}
 	}
 
 	public void MainSceneStart()
 	{
 		avatarView = GameObject.Find("AvatarView").GetComponent<AvatarView>();
-		GameObject.Find("ProfileAvatar").GetComponent<ProfileAvatarView>().player = this.gameObject;
+// 		GameObject.Find("ProfileAvatar").GetComponent<ProfileAvatarView>().player = this.gameObject;
 	}
 
 	void OnLevelWasLoaded(int level)
@@ -52,7 +52,7 @@ public class Player : MonoBehaviour {
 		if(level == 1 | level == 2)
 		{
 			avatarView = GameObject.Find("AvatarView").GetComponent<AvatarView>();
-			GameObject.Find("ProfileAvatar").GetComponent<ProfileAvatarView>().player = GameObject.Find("Player");
+// 			GameObject.Find("ProfileAvatar").GetComponent<ProfileAvatarView>().player = GameObject.Find("Player");
 		}
 	}
 
