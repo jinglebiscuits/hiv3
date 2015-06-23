@@ -58,7 +58,7 @@ public class AvatarView : MonoBehaviour {
 
 	void OnLevelWasLoaded(int level)
 	{
-		Avatar playerAvatar = Player.player.avatar;
+		playerAvatar = Player.player.avatar;
 		if(level == 1)
 		{
 			if(Player.player.FocusedPerson.BodyType == BodyType.female)
@@ -118,15 +118,6 @@ public class AvatarView : MonoBehaviour {
 			AvatarToProfile(iris, profileIris);
 			AvatarToProfile(sclera, profileSclera);
 			AvatarToProfile(lips, profileLips);
-
-			avatar.profileHair = profileHair;
-			avatar.profileShirt = profileShirt;
-			avatar.profileBody = profileBody;
-			avatar.profileHeadColor = profileHeadColor;
-			avatar.profileHeadLines = profileHeadLines;
-			avatar.profileIris = profileIris;
-			avatar.profileSclera = profileSclera;
-			avatar.profileLips = profileLips;
 		}
 		else
 		{
@@ -138,13 +129,6 @@ public class AvatarView : MonoBehaviour {
 			AvatarToProfile(headLines, profileHeadLines);
 			AvatarToProfile(iris, profileIris);
 			AvatarToProfile(sclera, profileSclera);
-
-			avatar.profileHair = profileHair;
-			avatar.profileShirt = profileShirt;
-			avatar.profileBody = profileBody;
-			avatar.profileHeadLines = profileHeadLines;
-			avatar.profileIris = profileIris;
-			avatar.profileSclera = profileSclera;
 		}
 		profileAvatarView.SyncAvatarProfile();
 		SyncAvatar();
