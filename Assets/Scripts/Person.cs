@@ -24,6 +24,13 @@ public class Person {
 	private Week week;
 	private Homework homework;
     private Luck luck;
+	
+	private int headColor;
+	private int headLine;
+	private int hair;
+	private int shirt;
+	private int pants;
+	private int shoes;
 
     [NonSerialized]
 	private List<Trunk> availableTrunks;
@@ -31,6 +38,13 @@ public class Person {
 	public Person()
 	{
 		bodyType = BodyType.female;
+		headColor = Constants.FEMALE_HEAD_ONE;
+		headLine = Constants.FEMALE_HEAD_ONE;
+		hair = Constants.FEMALE_HAIR_ONE;
+		shirt = Constants.FEMALE_SHIRT_ONE;
+		pants = Constants.FEMALE_PANTS_ONE;
+		shoes = Constants.FEMALE_SHOES_ONE;
+		
 		genderHasBeenSet = false;
 		foreach(IQuality attribute in baseAttributes.attributes)
 		{
@@ -181,6 +195,60 @@ public class Person {
 		}
 		set {
 			week = value;
+		}
+	}
+	
+	public int HeadColor {
+		get {
+			return this.headColor;
+		}
+		set {
+			headColor = value;
+		}
+	}
+	
+	public int HeadLine {
+		get {
+			return this.headLine;
+		}
+		set {
+			headLine = value;
+		}
+	}
+	
+	public int Hair {
+		get {
+			return this.hair;
+		}
+		set {
+			hair = value;
+		}
+	}
+	
+	public int Shirt {
+		get {
+			return this.shirt;
+		}
+		set {
+			shirt = value;
+		}
+	}
+	
+	public int Pants {
+		get {
+			return this.pants;
+		}
+		set {
+			pants = value;
+		}
+	}
+
+	public int Shoes {
+		get {
+			return this.shoes;
+		}
+		set {
+			shoes = value;
 		}
 	}
 

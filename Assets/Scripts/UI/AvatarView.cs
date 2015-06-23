@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class AvatarView : MonoBehaviour {
 
@@ -35,13 +36,60 @@ public class AvatarView : MonoBehaviour {
 	private Texture2D newBodyTexture;
 	private Vector2 bottomLeft = new Vector2(0, 1226);
 
-	public Sprite[] headColors;
-	public Sprite[] headLineses;
+	public Sprite[] femaleHeadColors;
+	public Sprite[] femaleHeadLineses;
+	public Sprite[] femaleHairs;
+	public Sprite[] femaleShirts;
+	public Sprite[] femalePants;
+	public Sprite[] femaleShoes;
+	
+	public Sprite[] maleHeadColors;
+	public Sprite[] maleHeadLineses;
+	public Sprite[] maleHairs;
+	public Sprite[] maleShirts;
+	public Sprite[] malePants;
+	public Sprite[] maleShoes;
 
+	private Dictionary<int, Sprite> avatarDictionary = new Dictionary<int, Sprite>();
 	private int head = 0;
+	
 
 	// Use this for initialization
 	void Start () {
+		avatarDictionary.Add(Constants.FEMALE_HEAD_ONE, femaleHeadColors[0]);
+		avatarDictionary.Add(Constants.FEMALE_HEAD_TWO, femaleHeadColors[1]);
+		avatarDictionary.Add(Constants.FEMALE_HEAD_THREE, femaleHeadColors[2]);
+		avatarDictionary.Add(Constants.FEMALE_HAIR_ONE, femaleHairs[0]);
+		avatarDictionary.Add(Constants.FEMALE_HAIR_TWO, femaleHairs[1]);
+		avatarDictionary.Add(Constants.FEMALE_HAIR_THREE, femaleHairs[2]);
+		avatarDictionary.Add(Constants.FEMALE_HAIR_FOUR, femaleHairs[3]);
+		avatarDictionary.Add(Constants.FEMALE_SHIRT_ONE, femaleShirts[0]);
+		avatarDictionary.Add(Constants.FEMALE_SHIRT_TWO, femaleShirts[1]);
+		avatarDictionary.Add(Constants.FEMALE_SHIRT_THREE, femaleShirts[2]);
+		avatarDictionary.Add(Constants.FEMALE_PANTS_ONE, femalePants[0]);
+		avatarDictionary.Add(Constants.FEMALE_PANTS_TWO, femalePants[1]);
+		avatarDictionary.Add(Constants.FEMALE_PANTS_THREE, femalePants[2]);
+		avatarDictionary.Add(Constants.FEMALE_PANTS_FOUR, femalePants[3]);
+		avatarDictionary.Add(Constants.FEMALE_SHOES_ONE, femaleShoes[0]);
+		avatarDictionary.Add(Constants.FEMALE_SHOES_TWO, femaleShoes[1]);
+		avatarDictionary.Add(Constants.FEMALE_SHOES_THREE, femaleShoes[2]);
+		
+		avatarDictionary.Add(Constants.MALE_HEAD_ONE, maleHeadColors[0]);
+		avatarDictionary.Add(Constants.MALE_HEAD_TWO, maleHeadColors[1]);
+		avatarDictionary.Add(Constants.MALE_HEAD_THREE, maleHeadColors[2]);
+		avatarDictionary.Add(Constants.MALE_HAIR_ONE, maleHairs[0]);
+		avatarDictionary.Add(Constants.MALE_HAIR_TWO, maleHairs[1]);
+		avatarDictionary.Add(Constants.MALE_HAIR_THREE, maleHairs[2]);
+		avatarDictionary.Add(Constants.MALE_HAIR_FOUR, maleHairs[3]);
+		avatarDictionary.Add(Constants.MALE_SHIRT_ONE, maleShirts[0]);
+		avatarDictionary.Add(Constants.MALE_SHIRT_TWO, maleShirts[1]);
+		avatarDictionary.Add(Constants.MALE_SHIRT_THREE, maleShirts[2]);
+		avatarDictionary.Add(Constants.MALE_PANTS_ONE, malePants[0]);
+		avatarDictionary.Add(Constants.MALE_PANTS_TWO, malePants[1]);
+		avatarDictionary.Add(Constants.MALE_PANTS_THREE, malePants[2]);
+		avatarDictionary.Add(Constants.MALE_SHOES_ONE, maleShoes[0]);
+		avatarDictionary.Add(Constants.MALE_SHOES_TWO, maleShoes[1]);
+		
 		playerAvatar = Player.player.avatar;
 		profileHair = playerAvatar.profileHair;
 		profileBody = playerAvatar.profileBody;
@@ -97,10 +145,10 @@ public class AvatarView : MonoBehaviour {
 	public void CycleHeads()
 	{
 		head ++;
-		if(head >= headColors.Length)
+		if(head >= femaleHeadColors.Length)
 			head = 0;
-		headColor.sprite = headColors[head];
-		headLines.sprite = headLineses[head];
+		headColor.sprite = femaleHeadColors[head];
+		headLines.sprite = femaleHeadLineses[head];
 	}
 
 	public void CreateProfileIcon()

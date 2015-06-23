@@ -78,6 +78,7 @@
      <Compile Include="Assets\MaterialUI\Scripts\Tools\ShadowGen.cs" />
      <Compile Include="Assets\Scripts\Avatar.cs" />
      <Compile Include="Assets\Scripts\AvatarSceneManager.cs" />
+     <Compile Include="Assets\Scripts\Constants.cs" />
      <Compile Include="Assets\Scripts\EndSceneManager.cs" />
      <Compile Include="Assets\Scripts\GameClock.cs" />
      <Compile Include="Assets\Scripts\Interfaces\IQuality.cs" />
@@ -123,6 +124,7 @@
      <Compile Include="Assets\Scripts\UI\Clock\ClockView.cs" />
      <Compile Include="Assets\Scripts\UI\ColorPicker.cs" />
      <Compile Include="Assets\Scripts\UI\FriendsView.cs" />
+     <Compile Include="Assets\Scripts\UI\Gallery.cs" />
      <Compile Include="Assets\Scripts\UI\HomeworkIndicator.cs" />
      <Compile Include="Assets\Scripts\UI\MentorsView.cs" />
      <Compile Include="Assets\Scripts\UI\ProfileAvatarView.cs" />
