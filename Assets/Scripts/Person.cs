@@ -31,6 +31,13 @@ public class Person {
 	private int shirt;
 	private int pants;
 	private int shoes;
+	
+
+	private Color headColorColor;
+	private Color hairColor;
+	private Color shirtColor;
+	private Color pantsColor;
+	private Color shoesColor;
 
     [NonSerialized]
 	private List<Trunk> availableTrunks;
