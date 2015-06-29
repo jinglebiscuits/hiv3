@@ -31,13 +31,19 @@ public class Person {
 	private int shirt;
 	private int pants;
 	private int shoes;
+	private int lips;
+	private int body;
+	private int sclera;
+	private int iris;
 	
-
-	private Color headColorColor;
-	private Color hairColor;
-	private Color shirtColor;
-	private Color pantsColor;
-	private Color shoesColor;
+	private float[] headColorColor = new float[3];
+	private float[] hairColor = new float[3];
+	private float[] shirtColor = new float[3];
+	private float[] pantsColor = new float[3];
+	private float[] shoesColor = new float[3];
+	private float[] lipsColor = new float[3];
+	private float[] bodyColor = new float[3];
+	private float[] irisColor = new float[3];
 
     [NonSerialized]
 	private List<Trunk> availableTrunks;
@@ -51,6 +57,10 @@ public class Person {
 		shirt = Constants.FEMALE_SHIRT_ONE;
 		pants = Constants.FEMALE_PANTS_ONE;
 		shoes = Constants.FEMALE_SHOES_ONE;
+		lips = Constants.FEMALE_LIPS_ONE;
+		body = Constants.FEMALE_BODY_ONE;
+		sclera = Constants.FEMALE_SCLERA_ONE;
+		iris = Constants.FEMALE_IRIS_ONE;
 		
 		genderHasBeenSet = false;
 		foreach(IQuality attribute in baseAttributes.attributes)
@@ -256,6 +266,114 @@ public class Person {
 		}
 		set {
 			shoes = value;
+		}
+	}
+	
+	public int Lips {
+		get {
+			return this.lips;
+		}
+		set {
+			lips = value;
+		}
+	}
+	
+	public int Body {
+		get {
+			return this.body;
+		}
+		set {
+			body = value;
+		}
+	}
+	
+	public int Sclera {
+		get {
+			return this.sclera;
+		}
+		set {
+			sclera = value;
+		}
+	}
+	
+	public int Iris {
+		get {
+			return this.iris;
+		}
+		set {
+			iris = value;
+		}
+	}
+	
+	public float[] HeadColorColor {
+		get {
+			return this.headColorColor;
+		}
+		set {
+			headColorColor = value;
+		}
+	}
+
+	public float[] HairColor {
+		get {
+			return this.hairColor;
+		}
+		set {
+			hairColor = value;
+		}
+	}
+	
+	public float[] ShirtColor {
+		get {
+			return this.shirtColor;
+		}
+		set {
+			shirtColor = value;
+		}
+	}
+	
+	public float[] PantsColor {
+		get {
+			return this.pantsColor;
+		}
+		set {
+			pantsColor = value;
+		}
+	}
+	
+	public float[] ShoesColor {
+		get {
+			return this.shoesColor;
+		}
+		set {
+			shoesColor = value;
+		}
+	}
+	
+	public float[] LipsColor {
+		get {
+			return this.lipsColor;
+		}
+		set {
+			lipsColor = value;
+		}
+	}
+	
+	public float[] BodyColor {
+		get {
+			return this.bodyColor;
+		}
+		set {
+			bodyColor = value;
+		}
+	}
+	
+	public float[] IrisColor {
+		get {
+			return this.irisColor;
+		}
+		set {
+			irisColor = value;
 		}
 	}
 

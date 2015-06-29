@@ -42,6 +42,10 @@ public class AvatarView : MonoBehaviour {
 	public Sprite[] femaleShirts;
 	public Sprite[] femalePants;
 	public Sprite[] femaleShoes;
+	public Sprite[] femaleLips;
+	public Sprite[] femaleBody;
+	public Sprite[] femaleSclera;
+	public Sprite[] femaleIris;
 	
 	public Sprite[] maleHeadColors;
 	public Sprite[] maleHeadLineses;
@@ -49,13 +53,18 @@ public class AvatarView : MonoBehaviour {
 	public Sprite[] maleShirts;
 	public Sprite[] malePants;
 	public Sprite[] maleShoes;
+	public Sprite[] maleBody;
+	public Sprite[] maleSclera;
+	public Sprite[] maleIris;
+	
+	private Person person;
 
 	private Dictionary<int, Sprite> avatarDictionary = new Dictionary<int, Sprite>();
 	private int head = 0;
 	
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		avatarDictionary.Add(Constants.FEMALE_HEAD_ONE, femaleHeadColors[0]);
 		avatarDictionary.Add(Constants.FEMALE_HEAD_TWO, femaleHeadColors[1]);
 		avatarDictionary.Add(Constants.FEMALE_HEAD_THREE, femaleHeadColors[2]);
@@ -73,6 +82,10 @@ public class AvatarView : MonoBehaviour {
 		avatarDictionary.Add(Constants.FEMALE_SHOES_ONE, femaleShoes[0]);
 		avatarDictionary.Add(Constants.FEMALE_SHOES_TWO, femaleShoes[1]);
 		avatarDictionary.Add(Constants.FEMALE_SHOES_THREE, femaleShoes[2]);
+		avatarDictionary.Add(Constants.FEMALE_LIPS_ONE, femaleLips[0]);
+		avatarDictionary.Add(Constants.FEMALE_BODY_ONE, femaleBody[0]);
+		avatarDictionary.Add(Constants.FEMALE_SCLERA_ONE, femaleSclera[0]);
+		avatarDictionary.Add(Constants.FEMALE_IRIS_ONE, femaleIris[0]);
 		
 		avatarDictionary.Add(Constants.MALE_HEAD_ONE, maleHeadColors[0]);
 		avatarDictionary.Add(Constants.MALE_HEAD_TWO, maleHeadColors[1]);
@@ -89,6 +102,9 @@ public class AvatarView : MonoBehaviour {
 		avatarDictionary.Add(Constants.MALE_PANTS_THREE, malePants[2]);
 		avatarDictionary.Add(Constants.MALE_SHOES_ONE, maleShoes[0]);
 		avatarDictionary.Add(Constants.MALE_SHOES_TWO, maleShoes[1]);
+		avatarDictionary.Add(Constants.MALE_BODY_ONE, maleBody[0]);
+		avatarDictionary.Add(Constants.MALE_SCLERA_ONE, maleSclera[0]);
+		avatarDictionary.Add(Constants.MALE_IRIS_ONE, maleIris[0]);
 		
 		playerAvatar = Player.player.avatar;
 		profileHair = playerAvatar.profileHair;
@@ -101,39 +117,37 @@ public class AvatarView : MonoBehaviour {
 		profileLips = playerAvatar.profileLips;
 		profileBorder = playerAvatar.profileBorder;
 		profileBackground = playerAvatar.profileBackground;
-//		profilePicSprite = Sprite.Create(CalculateTexture(1869, 589, 30, 294, 1500, body.sprite.texture), new Rect(0, 0, 100, 100), new Vector2(50, 50));
 	}
 
 	void OnLevelWasLoaded(int level)
 	{
 		playerAvatar = Player.player.avatar;
+		person = Player.player.FocusedPerson;
 		if(level == 1)
 		{
 			if(Player.player.FocusedPerson.BodyType == BodyType.female)
 			{
-				headColor.sprite = playerAvatar.headColor.sprite;
-				headColor.color = playerAvatar.headColor.color;
-				lips.sprite = playerAvatar.lips.sprite;
-				lips.color = playerAvatar.lips.color;
+				headColor.sprite = avatarDictionary[person.HeadColor];
+				headColor.color = ArrayToColor(person.HeadColorColor);
+				headLines.sprite = femaleHeadLineses[(person.HeadLine % 10) - 1];
+				lips.sprite = avatarDictionary[person.Lips];
+				lips.color = ArrayToColor(person.LipsColor);
 			}
 			
-			hair.sprite = playerAvatar.hair.sprite;
-			hair.color = playerAvatar.hair.color;
-			body.sprite = playerAvatar.body.sprite;
-			body.color = playerAvatar.body.color;
+			hair.sprite = avatarDictionary[person.Hair];
+			hair.color = ArrayToColor(person.HairColor);
+			body.sprite = avatarDictionary[person.Body];
+			body.color = ArrayToColor(person.BodyColor);
 			
-			headLines.sprite = playerAvatar.headLines.sprite;
-			headLines.color = playerAvatar.headLines.color;
-			pants.sprite = playerAvatar.pants.sprite;
-			pants.color = playerAvatar.pants.color;
-			shirt.sprite = playerAvatar.shirt.sprite;
-			shirt.color = playerAvatar.shirt.color;
-			shoes.sprite = playerAvatar.shoes.sprite;
-			shoes.color = playerAvatar.shoes.color;
-			sclera.sprite = playerAvatar.sclera.sprite;
-			sclera.color = playerAvatar.sclera.color;
-			iris.sprite = playerAvatar.iris.sprite;
-			iris.color = playerAvatar.iris.color;
+			pants.sprite = avatarDictionary[person.Pants];
+			pants.color = ArrayToColor(person.PantsColor);
+			shirt.sprite = avatarDictionary[person.Shirt];
+			shirt.color = ArrayToColor(person.ShirtColor);
+			shoes.sprite = avatarDictionary[person.Shoes];
+			shoes.color = ArrayToColor(person.ShoesColor);
+			sclera.sprite = avatarDictionary[person.Sclera];
+			iris.sprite = avatarDictionary[person.Iris];
+			iris.color = ArrayToColor(person.IrisColor);
 		}
 	}
 
@@ -142,19 +156,49 @@ public class AvatarView : MonoBehaviour {
 
 	}
 
-	public void CycleHeads()
+	public void CyclePart(string part)
 	{
-		head ++;
-		if(head >= femaleHeadColors.Length)
-			head = 0;
-		headColor.sprite = femaleHeadColors[head];
-		headLines.sprite = femaleHeadLineses[head];
+		person = Player.player.FocusedPerson;
+		if (part == "head") {
+			int headPos = person.HeadColor % 10;
+			int headBase = person.HeadColor - headPos + 1;
+			if(person.BodyType == BodyType.female) {
+				if(headPos >= femaleHeadColors.Length)
+					headPos = 0;
+				headColor.sprite = femaleHeadColors[headPos];
+				headLines.sprite = femaleHeadLineses[headPos];
+			}
+			else {
+				if(headPos >= maleHeadColors.Length)
+					headPos = 0;
+				headColor.sprite = maleHeadColors[headPos];
+				headLines.sprite = maleHeadLineses[headPos];
+			}
+			
+			person.HeadColor = headBase + headPos;
+			person.HeadLine = headBase + headPos;
+		}
+		else if (part == "shirt") {
+			int shirtPos = person.Shirt % 10;
+			int shirtBase = person.Shirt - shirtPos + 1;
+			if (person.BodyType == BodyType.female) {
+				if(shirtPos >= femaleShirts.Length)
+					shirtPos = 0;
+				shirt.sprite = femaleShirts[shirtPos];
+			}
+			else {
+				if(shirtPos >= maleShirts.Length)
+					shirtPos = 0;
+				shirt.sprite = maleShirts[shirtPos];
+			}
+			person.Shirt = shirtBase + shirtPos;
+		}
 	}
 
 	public void CreateProfileIcon()
 	{
 		Avatar avatar = Player.player.avatar;
-		if(headColor)
+		if(Player.player.FocusedPerson.BodyType == BodyType.female)
 		{
 			profileLips.gameObject.SetActive(true);
 			profileHeadColor.gameObject.SetActive(true);
@@ -170,58 +214,35 @@ public class AvatarView : MonoBehaviour {
 		else
 		{
 			profileLips.gameObject.SetActive(false);
-			profileHeadColor.gameObject.SetActive(false);
 			AvatarToProfile(hair, profileHair);
 			AvatarToProfile(shirt, profileShirt);
 			AvatarToProfile(body, profileBody);
+			AvatarToProfile(headColor, profileHeadColor);
 			AvatarToProfile(headLines, profileHeadLines);
 			AvatarToProfile(iris, profileIris);
 			AvatarToProfile(sclera, profileSclera);
 		}
 		profileAvatarView.SyncAvatarProfile();
 		SyncAvatar();
-//		newBodyTexture = MakeBorder();
-//		profilePicSprite = Sprite.Create(newBodyTexture, new Rect(0, 0, newBodyTexture.width, newBodyTexture.height), new Vector2(0.5f, 0.5f));
-//		profilePicSprite.name = "profilePick";
-//		profileBorder.sprite = profilePicSprite;
-//		profileBorder.color = Color.white;
-//
-//		newBodyTexture = MakeBackground();
-//		profilePicSprite = Sprite.Create(newBodyTexture, new Rect(0, 0, newBodyTexture.width, newBodyTexture.height), new Vector2(0.5f, 0.5f));
-//		profilePicSprite.name = "profilePick";
-//		profileBackground.sprite = profilePicSprite;
-//		profileBackground.color = Color.white;
 	}
 
 	public void SyncAvatar()
 	{
 		playerAvatar = Player.player.avatar;
-		
+		person = Player.player.FocusedPerson;
 		if(Player.player.FocusedPerson.BodyType == BodyType.female)
 		{
-			playerAvatar.headColor.GetComponent<Image>().sprite = headColor.sprite;
-			playerAvatar.headColor.GetComponent<Image>().color = headColor.color;
-			playerAvatar.lips.GetComponent<Image>().sprite = lips.sprite;
-			playerAvatar.lips.GetComponent<Image>().color = lips.color;
+			person.HeadColorColor = new float[3] {headColor.color.r, headColor.color.g, headColor.color.b};
+			person.LipsColor = new float[3] {lips.color.r, lips.color.g, lips.color.b};
 		}
 
-		playerAvatar.hair.GetComponent<Image>().sprite = hair.sprite;
-		playerAvatar.hair.GetComponent<Image>().color = hair.color;
-		playerAvatar.body.GetComponent<Image>().sprite = body.sprite;
-		playerAvatar.body.GetComponent<Image>().color = body.color;
+		person.HairColor = new float[3] {hair.color.r, hair.color.g, hair.color.b};
+		person.BodyColor = new float[3] {body.color.r, body.color.g, body.color.b};
 		
-		playerAvatar.headLines.GetComponent<Image>().sprite = headLines.sprite;
-		playerAvatar.headLines.GetComponent<Image>().color = headLines.color;
-		playerAvatar.shirt.GetComponent<Image>().sprite = shirt.sprite;
-		playerAvatar.shirt.GetComponent<Image>().color = shirt.color;
-		playerAvatar.sclera.GetComponent<Image>().sprite = sclera.sprite;
-		playerAvatar.sclera.GetComponent<Image>().color = sclera.color;
-		playerAvatar.iris.GetComponent<Image>().sprite = iris.sprite;
-		playerAvatar.iris.GetComponent<Image>().color = iris.color;
-		playerAvatar.pants.GetComponent<Image>().sprite = pants.sprite;
-		playerAvatar.pants.GetComponent<Image>().color = pants.color;
-		playerAvatar.shoes.GetComponent<Image>().sprite = shoes.sprite;
-		playerAvatar.shoes.GetComponent<Image>().color = shoes.color;
+		person.ShirtColor = new float[3] {shirt.color.r, shirt.color.g, shirt.color.b};
+		person.IrisColor = new float[3] {iris.color.r, iris.color.g, iris.color.b};
+		person.PantsColor = new float[3] {pants.color.r, pants.color.g, pants.color.b};
+		person.ShoesColor = new float[3] {shoes.color.r, shoes.color.g, shoes.color.b};
 	}
 
 	void AvatarToProfile(Image avatarImage, Image profileImage)
@@ -311,7 +332,6 @@ public class AvatarView : MonoBehaviour {
 			fullMaleView.SetActive(false);
 			fullFemaleView.SetActive(true);
 			appropriateBody = fullFemaleView;
-			headColor = appropriateBody.GetComponent<Avatar>().headColor;
 			lips = appropriateBody.GetComponent<Avatar>().lips;
 			bottomLeft = new Vector2(0, 1226);
 		}
@@ -320,7 +340,6 @@ public class AvatarView : MonoBehaviour {
 			fullMaleView.SetActive(true);
 			fullFemaleView.SetActive(false);
 			appropriateBody = fullMaleView;
-			headColor = null;
 			lips = null;
 			bottomLeft = new Vector2(0, 1280);
 		}
@@ -328,11 +347,16 @@ public class AvatarView : MonoBehaviour {
 
 		hair = appropriateBody.GetComponent<Avatar>().hair;
 		body = appropriateBody.GetComponent<Avatar>().body;
+		headColor = appropriateBody.GetComponent<Avatar>().headColor;
 		headLines = appropriateBody.GetComponent<Avatar>().headLines;
 		pants = appropriateBody.GetComponent<Avatar>().pants;
 		shirt = appropriateBody.GetComponent<Avatar>().shirt;
 		shoes = appropriateBody.GetComponent<Avatar>().shoes;
 		sclera = appropriateBody.GetComponent<Avatar>().sclera;
 		iris = appropriateBody.GetComponent<Avatar>().iris;
+	}
+	
+	private Color ArrayToColor (float[] colorArray) {
+		return new Color(colorArray[0], colorArray[1], colorArray[2]);
 	}
 }
