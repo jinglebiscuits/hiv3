@@ -27,14 +27,11 @@ public class ProfileAvatarView : MonoBehaviour {
 		{
 			profileHeadColor.SetActive(true);
 			profileLips.SetActive(true);
-			profileHeadColor.GetComponent<Image>().sprite = playerAvatar.profileHeadColor.sprite;
-			profileHeadColor.GetComponent<Image>().color = playerAvatar.profileHeadColor.color;
 			profileLips.GetComponent<Image>().sprite = playerAvatar.profileLips.sprite;
 			profileLips.GetComponent<Image>().color = playerAvatar.profileLips.color;
 		}
 		else
 		{
-			profileHeadColor.SetActive(false);
 			profileLips.SetActive(false);
 		}
 		profileHair.GetComponent<Image>().sprite = playerAvatar.profileHair.sprite;
@@ -42,6 +39,8 @@ public class ProfileAvatarView : MonoBehaviour {
 		profileBody.GetComponent<Image>().sprite = playerAvatar.profileBody.sprite;
 		profileBody.GetComponent<Image>().color = playerAvatar.profileBody.color;
 
+		profileHeadColor.GetComponent<Image>().sprite = playerAvatar.profileHeadColor.sprite;
+		profileHeadColor.GetComponent<Image>().color = playerAvatar.profileHeadColor.color;
 		profileHeadLines.GetComponent<Image>().sprite = playerAvatar.profileHeadLines.sprite;
 		profileHeadLines.GetComponent<Image>().color = playerAvatar.profileHeadLines.color;
 		profileShirt.GetComponent<Image>().sprite = playerAvatar.profileShirt.sprite;
