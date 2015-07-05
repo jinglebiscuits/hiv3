@@ -14,7 +14,7 @@ public class AvatarSceneManager : MonoBehaviour {
 			genderTogglePanel.SetActive(false);
 		}
 
-		avatarView.DisplayAppropriateBody(Player.player.FocusedPerson.BodyType);
+// 		avatarView.DisplayAppropriateBody(Player.player.FocusedPerson.BodyType);
 	}
 
 	public void ChangeGenderConnector(Toggle maleToggle)

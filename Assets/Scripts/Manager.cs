@@ -42,6 +42,7 @@ public class Manager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		print(Application.persistentDataPath);
 		//person.UpdateAvailableTrunkList(xmlScript.trunks);
 //		storyContainer.ShowStories();
 	}

@@ -418,6 +418,33 @@ public class Person {
 		(qualitiesDict["Social"] as Attribute).Modifier += status.ModDictionary["Social"] * status.Level - status.ModDictionary["Social"] * status.OldLevel;;
 		(qualitiesDict["Mettle"] as Attribute).Modifier += status.ModDictionary["Mettle"] * status.Level - status.ModDictionary["Mettle"] * status.OldLevel;;
 	}
+	
+	public void ChangeGender(BodyType bodyType) {
+		if (bodyType == BodyType.female) {
+			this.bodyType = BodyType.female;
+			headColor = Constants.FEMALE_HEAD_ONE;
+			headLine = Constants.FEMALE_HEAD_ONE;
+			hair = Constants.FEMALE_HAIR_ONE;
+			shirt = Constants.FEMALE_SHIRT_ONE;
+			pants = Constants.FEMALE_PANTS_ONE;
+			shoes = Constants.FEMALE_SHOES_ONE;
+			lips = Constants.FEMALE_LIPS_ONE;
+			body = Constants.FEMALE_BODY_ONE;
+			sclera = Constants.FEMALE_SCLERA_ONE;
+			iris = Constants.FEMALE_IRIS_ONE;
+		} else {
+			this.bodyType = BodyType.male;
+			headColor = Constants.MALE_HEAD_ONE;
+			headLine = Constants.MALE_HEAD_ONE;
+			hair = Constants.MALE_HAIR_ONE;
+			shirt = Constants.MALE_SHIRT_ONE;
+			pants = Constants.MALE_PANTS_ONE;
+			shoes = Constants.MALE_SHOES_ONE;
+			body = Constants.MALE_BODY_ONE;
+			sclera = Constants.MALE_SCLERA_ONE;
+			iris = Constants.MALE_IRIS_ONE;
+		}
+	}
 }
 
 public enum BodyType

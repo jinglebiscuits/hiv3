@@ -7,7 +7,6 @@ public class Player : MonoBehaviour {
 	
 	private Person focusedPerson;
 	private string username;
-	public Avatar avatar;
 	public AvatarView avatarView;
 	public bool hasCreatedCharacter = false;
 
@@ -85,12 +84,13 @@ public class Player : MonoBehaviour {
 	{
 		if(focusedPerson.BodyType == BodyType.male && !maleToggle.isOn)
 		{
-			focusedPerson.BodyType = BodyType.female;
+			focusedPerson.ChangeGender(BodyType.female);
 		}
-		else
-			focusedPerson.BodyType = BodyType.male;
-
-		avatarView.DisplayAppropriateBody(focusedPerson.BodyType);
+		else {
+			focusedPerson.ChangeGender(BodyType.male);
+		}
+		avatarView.SyncAvatar();
+// 		avatarView.DisplayAppropriateBody(focusedPerson.BodyType);
 	}
 
 

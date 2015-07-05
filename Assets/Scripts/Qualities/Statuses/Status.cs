@@ -87,6 +87,7 @@ public class Status : IQuality {
 				level = newValue;
 				if(levelEvent != null)
 				{
+					Debug.Log("someone is listening");
 					levelEvent(this);
 				}
 			}
