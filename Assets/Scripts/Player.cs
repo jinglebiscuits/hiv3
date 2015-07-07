@@ -10,6 +10,17 @@ public class Player : MonoBehaviour {
 	public AvatarView avatarView;
 	public bool hasCreatedCharacter = false;
 
+	public Image profileHair;
+	public Image profileBody;
+	public Image profileHeadColor;
+	public Image profileHeadLines;
+	public Image profileShirt;
+	public Image profileSclera;
+	public Image profileIris;
+	public Image profileLips;
+	public Image profileBorder;
+	public Image profileBackground;
+
 	public static Player player;
 
 	public int test = 4;

@@ -26,8 +26,8 @@ public class AvatarView : MonoBehaviour {
 	public Image profileBorder;
 	public Image profileBackground;
 
-	private Avatar playerAvatar;
-// 	public ProfileAvatarView profileAvatarView;
+	//  private Avatar playerAvatar;
+	public ProfileAvatarView profileAvatarView;
 
 	public GameObject fullFemaleView;
 	public GameObject fullMaleView;
@@ -121,6 +121,17 @@ public class AvatarView : MonoBehaviour {
 
 	void OnLevelWasLoaded(int level)
 	{
+		profileHair = Player.player.profileHair;
+		profileBody = Player.player.profileBody;
+		profileHeadColor = Player.player.profileHeadColor;
+		profileHeadLines = Player.player.profileHeadLines;
+		profileShirt = Player.player.profileShirt;
+		profileSclera = Player.player.profileSclera;
+		profileIris = Player.player.profileIris;
+		profileLips = Player.player.profileLips;
+		profileBorder = Player.player.profileBorder;
+		profileBackground = Player.player.profileBackground;
+		
 		person = Player.player.FocusedPerson;
 		if(level == 1)
 		{
@@ -153,6 +164,7 @@ public class AvatarView : MonoBehaviour {
 			iris.color = ArrayToColor(person.IrisColor);
 			
 			CreateProfileIcon();
+			profileAvatarView.SyncAvatarProfile();
 		}
 	}
 
@@ -226,8 +238,8 @@ public class AvatarView : MonoBehaviour {
 			AvatarToProfile(iris, profileIris);
 			AvatarToProfile(sclera, profileSclera);
 		}
-// 		profileAvatarView.SyncAvatarProfile();
 		SyncPerson();
+		profileAvatarView.SyncAvatarProfile();
 	}
 
 	public void SyncAvatar() {
