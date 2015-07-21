@@ -19,11 +19,12 @@ public class BaseStorylines {
 	public Storyline party = new Storyline("Party", "Party time!", 0, 0, false);
     public Storyline basketballGame = new Storyline("Basketball Game", "Big ol' game", 0, 0, false);
     public Storyline bus = new Storyline("Bus", "Drama on the bus", 0, 0, false);
+	public Storyline facebook = new Storyline("Facebook", "Drama on Facebook", 0, 0, false);
 
 	public Storyline[] storylines;
 	
 	public BaseStorylines()
 	{
-		storylines = new Storyline[]{intro, chapterOne, chapterTwo, chapterThree, chapterFour, chapterFive, chapterSix, chapterSeven, party, basketballGame, bus};
+		storylines = new Storyline[]{intro, chapterOne, chapterTwo, chapterThree, chapterFour, chapterFive, chapterSix, chapterSeven, party, basketballGame, bus, facebook};
 	}
 }

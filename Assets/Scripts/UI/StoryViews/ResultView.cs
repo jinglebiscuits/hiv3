@@ -20,13 +20,14 @@ public class ResultView : MonoBehaviour {
 			resultEffects.text = "";
 			foreach(Effect effect in result.Effects)
 			{
-				if(effect.ChangedBy != 169)
-					resultEffects.text += effect.QualityEffected.Name + " gains " + effect.ChangedBy + " points!\n";
-				else
-				{
-					resultEffects.text += effect.QualityEffected.Name + " set to level " + effect.SetTo + "\n";
-				}
-					
+				if (effect.Show) {
+					if(effect.ChangedBy != 169)
+						resultEffects.text += effect.QualityEffected.Name + " gains " + effect.ChangedBy + " points!\n";
+					else
+					{
+						resultEffects.text += effect.QualityEffected.Name + " set to level " + effect.SetTo + "\n";
+					}
+				}	
 			}
 //			resultEffects.text = result.Effects[0].QualityEffected.Name + " gains " + result.Effects[0].ChangedBy + " points!\n" + "Time cost:" + result.TimeCost + " hour";
 			//resultEffects.text = effectsString;

@@ -32,7 +32,6 @@
     	<requirement>
     		<quality>
     			<storylineQuality>Party</storylineQuality>
-    			
     		</quality>
     		<qualityMin>0</qualityMin>
     		<qualityMax>0</qualityMax>
@@ -56,13 +55,16 @@
           		
           	</quality>
           	<changedBy>1</changedBy>
+          	<show>false</show>
           </effect>
           <effect>
           	<quality>
           		<storylineQuality>Party</storylineQuality>
           		
           	</quality>
-          	<changedBy>11</changedBy>
+          	<setTo>11</setTo>
+          	
+          	<show>false</show>
           </effect>
         </defaultResult>
         <travelToArea>Jay Jay's House</travelToArea>
@@ -89,7 +91,9 @@
       				<storylineQuality>Party</storylineQuality>
       				
       			</quality>
-      			<changedBy>1</changedBy>
+      			<setTo>1</setTo>
+      			
+      			<show>false</show>
       		</effect>
       	</defaultResult>
       	<testedQualities></testedQualities>
@@ -102,7 +106,6 @@
   	<description>[AT] receives a text from Tia. She really wants him at the party.</description>
   	<icon>
   		<tia>tia</tia>
-  		
   	</icon>
   	<buttonText>Reply</buttonText>
   	<trunkTag>Text</trunkTag>
@@ -113,7 +116,6 @@
   		<requirement>
   			<quality>
   				<storylineQuality>Party</storylineQuality>
-  				
   			</quality>
   			<qualityMin>1</qualityMin>
   			<qualityMax>1</qualityMax>
@@ -124,7 +126,6 @@
   			<description>[AT] reads Tia's text and is excited she is showing an interest. Maybe something will happen tonight with her.</description>
   			<icon>
   				<flirting>flirting</flirting>
-  				
   			</icon>
   			<buttonText>Go</buttonText>
   			<requirements></requirements>
@@ -135,16 +136,16 @@
   				<effect>
   					<quality>
   						<statusQuality>At Risk</statusQuality>
-  						
   					</quality>
   					<changedBy>2</changedBy>
+  					<show>false</show>
   				</effect>
   				<effect>
   					<quality>
   						<storylineQuality>Party</storylineQuality>
-  						
   					</quality>
   					<changedBy>11</changedBy>
+  					<show>false</show>
   				</effect>
   			</defaultResult>
   			<travelToArea>Jay Jay's House</travelToArea>
@@ -159,8 +160,6 @@
   				<auntie_gina_uncle_harry>
   					auntie_gina_uncle_harry
   				</auntie_gina_uncle_harry>
-  				
-  				
   			</icon>
   			<buttonText>Stay</buttonText>
   			<requirements></requirements>
@@ -174,13 +173,16 @@
   						
   					</quality>
   					<changedBy>2</changedBy>
+  					<show>false</show>
   				</effect>
   				<effect>
   					<quality>
   						<storylineQuality>Party</storylineQuality>
   						
   					</quality>
-  					<changedBy>11</changedBy>
+  					<setTo>12</setTo>
+  					
+  					<show>false</show>
   				</effect>
   			</defaultResult>
   			<successResult>
@@ -192,13 +194,16 @@
   						<attributeQuality>Mettle</attributeQuality>
   					</quality>
   					<changedBy>2</changedBy>
+  					<show>true</show>
   				</effect>
   				<effect>
   					<quality>
   						<storylineQuality>Party</storylineQuality>
   						
   					</quality>
-  					<changedBy>1</changedBy>
+  					<setTo>100</setTo>
+  					
+  					<show>false</show>
   				</effect>
   			</successResult>
   			<testedQualities>
@@ -215,8 +220,6 @@
   	<description>Jay Jay sees that AT is having a hard time relaxing, so he opens a beer and holds it out for AT to grab.</description>
   	<icon>
   		<jay_jay>jay_jay</jay_jay>
-  		
-  		
   	</icon>
   	<buttonText>Decide</buttonText>
   	<trunkTag>trunkTag</trunkTag>
@@ -230,7 +233,6 @@
   			<description>AT takes the beer and start drinking. It's cold and refreshing, and more importantly helps AT feel more at ease.</description>
   			<icon>
   				<drinking_drugs>drinking_drugs</drinking_drugs>
-  				
   			</icon>
   			<buttonText>Drink</buttonText>
   			<requirements></requirements>
@@ -248,7 +250,6 @@
   			<description>AT is not comfortable with drinking tonight. Maybe it's the pressure of the situation, his discomfort with underage drinking, or something else.</description>
   			<icon>
   				<drinking_drugs>drinking_drugs</drinking_drugs>
-  				
   			</icon>
   			<buttonText>Refuse</buttonText>
   			<requirements></requirements>
@@ -256,6 +257,14 @@
   				<title>Peer pressure</title>
   				<description>AT turns down the beer, but Jay Jay insists heavily that it will be a good decision. Afraid to say no again, AT caves and accepts the beer.</description>
   				<timeCost>1</timeCost>
+  				<effect>
+  					<quality>
+  						<statusQuality>At Risk</statusQuality>
+  						
+  					</quality>
+  					<changedBy>3</changedBy>
+  					<show>true</show>
+  				</effect>
   			</defaultResult>
   			<successResult>
   				<title>Peer pressure</title>
@@ -266,6 +275,7 @@
   						<attributeQuality>Mettle</attributeQuality>
   					</quality>
   					<changedBy>2</changedBy>
+  					<show>true</show>
   				</effect>
   			</successResult>
   			<testedQualities>
@@ -280,7 +290,6 @@
   			<description>AT looks to Jimmy for support. Is he drinking?</description>
   			<icon>
   				<jimmy>jimmy</jimmy>
-  				
   			</icon>
   			<buttonText>Go</buttonText>
   			<requirements></requirements>
@@ -315,7 +324,7 @@
   				
   			</quality>
   			<qualityMin>10</qualityMin>
-  			<qualityMax>100</qualityMax>
+  			<qualityMax>99</qualityMax>
   		</requirement></requirements>
   	<branches>
   		<branch>
@@ -323,8 +332,6 @@
   			<description>With no one else around [he] can rely on, [AT] decides to just run home.</description>
   			<icon>
   				<jogging>jogging</jogging>
-  				
-  				
   			</icon>
   			<buttonText>Run</buttonText>
   			<requirements></requirements>
@@ -337,19 +344,23 @@
   						<attributeQuality>Physical</attributeQuality>
   					</quality>
   					<changedBy>1</changedBy>
+  					<show>true</show>
   				</effect>
   				<effect>
   					<quality>
   						<attributeQuality>Social</attributeQuality>
   					</quality>
   					<changedBy>-2</changedBy>
+  					<show>true</show>
   				</effect>
   				<effect>
   					<quality>
   						<storylineQuality>Party</storylineQuality>
   						
   					</quality>
-  					<changedBy>100</changedBy>
+  					<setTo>100</setTo>
+  					
+  					<show>false</show>
   				</effect>
   			</defaultResult>
   			<testedQualities></testedQualities>
@@ -391,27 +402,55 @@
   			<requirements></requirements>
   			<defaultResult>
   				<title>Tia isn't interested</title>
-  				<description>[AT] fumbles over his own words, and isn't able to communicate well under the pressure of the party.</description>
-  				<timeCost>1</timeCost>
+  				<description>[AT] fumbles over his own words, and isn't able to communicate well under the pressure of the party. [AT] eventually goes home as things wind down.</description>
+  				<timeCost>2</timeCost>
+  				<effect>
+  					<quality>
+  						<attributeQuality>Social</attributeQuality>
+  					</quality>
+  					<changedBy>1</changedBy>
+  					<show>true</show>
+  				</effect>
+  				<effect>
+  					<quality>
+  						<storylineQuality>Party</storylineQuality>
+  						
+  					</quality>
+  					<setTo>100</setTo>
+  					
+  					<show>false</show>
+  				</effect>
   			</defaultResult>
   			<successResult>
   				<title>Friendly conversation with Tia</title>
-  				<description>[AT] and Tia talk about school and life in Rahp. [He] is glad Tia is at the party.</description>
-  				<timeCost>1</timeCost>
+  				<description>[AT] and Tia talk about school and life in Rahp. [He] is glad Tia is at the party. Eventually things wind down and everyone goes home.</description>
+  				<timeCost>2</timeCost>
   				<effect>
   					<quality>
   						<relationshipQuality>Tia</relationshipQuality>
   						
   					</quality>
   					<changedBy>1</changedBy>
+  					<show>true</show>
   				</effect>
   				<effect>
   					<quality>
   						<attributeQuality>Social</attributeQuality>
   					</quality>
-  					<changedBy>1</changedBy>
+  					<changedBy>2</changedBy>
+  					<show>true</show>
+  				</effect>
+  				<effect>
+  					<quality>
+  						<storylineQuality>Party</storylineQuality>
+  						
+  					</quality>
+  					<setTo>100</setTo>
+  					
+  					<show>false</show>
   				</effect>
   			</successResult>
+  			<travelToArea>Home</travelToArea>
   			<testedQualities>
   				<quality>
   					<attributeQuality>Social</attributeQuality>

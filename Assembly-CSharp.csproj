@@ -138,16 +138,16 @@
      <Compile Include="Assets\Scripts\UI\ViewManager.cs" />
      <Compile Include="Assets\Scripts\XML\XML.cs" />
      <None Include="Assets\Scripts\XML\chapter_one.xml" />
-     <None Include="Assets\Scripts\XML\hivXMLSchema.xml" />
      <None Include="Assets\Scripts\XML\basketballGame.xml" />
      <None Include="Assets\Scripts\XML\testing.xml" />
      <None Include="Assets\Scripts\XML\saturday.xml" />
      <None Include="Assets\Scripts\XML\intro.xml" />
      <None Include="Assets\Scripts\XML\tia.xml" />
      <None Include="Assets\Scripts\XML\jimmy.xml" />
-     <None Include="Assets\Scripts\XML\schoolDay.xml" />
      <None Include="Assets\Scripts\XML\party.xml" />
+     <None Include="Assets\Scripts\XML\schoolDay.xml" />
      <None Include="Assets\Scripts\XML\jayJay.xml" />
+     <None Include="Assets\Scripts\XML\facebook.xml" />
      <None Include="Assets\Scripts\XML\monique.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

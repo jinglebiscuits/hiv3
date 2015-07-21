@@ -19,8 +19,8 @@
     			<timeQuality>Day</timeQuality>
     			
     		</quality>
-    		<qualityMin>0</qualityMin>
-    		<qualityMax>0</qualityMax>
+    		<qualityMin>4</qualityMin>
+    		<qualityMax>4</qualityMax>
     	</requirement>
     	<requirement>
     		<quality>
@@ -36,6 +36,14 @@
     		</quality>
     		<qualityMin>0</qualityMin>
     		<qualityMax>0</qualityMax>
+    	</requirement>
+    	<requirement>
+    		<quality>
+    			<relationshipQuality>Tia</relationshipQuality>
+    			
+    		</quality>
+    		<qualityMin>5</qualityMin>
+    		<qualityMax>100</qualityMax>
     	</requirement></requirements>
     <branches>
       <branch>
@@ -57,7 +65,7 @@
           		
           	</quality>
           	<setTo>2</setTo>
-          	
+          	<show>false</show>
           </effect>
         </defaultResult>
         <travelToArea>Basketball Game</travelToArea>
@@ -85,6 +93,7 @@
       				
       			</quality>
       			<changedBy>1</changedBy>
+      			<show>true</show>
       		</effect>
       		<effect>
       			<quality>
@@ -92,6 +101,7 @@
       				
       			</quality>
       			<changedBy>1</changedBy>
+      			<show>true</show>
       		</effect>
       		<effect>
       			<quality>
@@ -99,7 +109,7 @@
       				
       			</quality>
       			<setTo>1</setTo>
-      			
+      			<show>false</show>
       		</effect>
       	</defaultResult>
       	<travelToArea>Basketball Game</travelToArea>
@@ -130,6 +140,14 @@
   			</quality>
   			<qualityMin>1</qualityMin>
   			<qualityMax>2</qualityMax>
+  		</requirement>
+  		<requirement>
+  			<quality>
+  				<relationshipQuality>Tia</relationshipQuality>
+  				
+  			</quality>
+  			<qualityMin>5</qualityMin>
+  			<qualityMax>100</qualityMax>
   		</requirement></requirements>
   	<branches>
   		<branch>
@@ -160,7 +178,7 @@
   						
   					</quality>
   					<setTo>10</setTo>
-  					
+  					<show>false</show>
   				</effect>
   				<effect>
   					<quality>
@@ -168,6 +186,7 @@
   						
   					</quality>
   					<changedBy>1</changedBy>
+  					<show>true</show>
   				</effect>
   				<effect>
   					<quality>
@@ -175,6 +194,7 @@
   						
   					</quality>
   					<changedBy>1</changedBy>
+  					<show>true</show>
   				</effect>
   			</defaultResult>
   			<successResult>
@@ -186,6 +206,7 @@
   						<attributeQuality>Mettle</attributeQuality>
   					</quality>
   					<changedBy>2</changedBy>
+  					<show>true</show>
   				</effect>
   				<effect>
   					<quality>
@@ -193,6 +214,7 @@
   						
   					</quality>
   					<changedBy>1</changedBy>
+  					<show>true</show>
   				</effect>
   				<effect>
   					<quality>
@@ -200,6 +222,7 @@
   						
   					</quality>
   					<changedBy>1</changedBy>
+  					<show>true</show>
   				</effect>
   				<effect>
   					<quality>
@@ -207,6 +230,7 @@
   						
   					</quality>
   					<changedBy>1</changedBy>
+  					<show>true</show>
   				</effect>
   				<effect>
   					<quality>
@@ -214,7 +238,7 @@
   						
   					</quality>
   					<setTo>10</setTo>
-  					
+  					<show>false</show>
   				</effect>
   			</successResult>
   			<testedQualities>
@@ -250,7 +274,7 @@
   						
   					</quality>
   					<setTo>10</setTo>
-  					
+  					<show>false</show>
   				</effect>
   			</defaultResult>
   			<successResult>
@@ -264,6 +288,7 @@
   						
   					</quality>
   					<changedBy>2</changedBy>
+  					<show>true</show>
   				</effect>
   				<effect>
   					<quality>
@@ -271,7 +296,7 @@
   						
   					</quality>
   					<setTo>10</setTo>
-  					
+  					<show>false</show>
   				</effect>
   			</successResult>
   			<testedQualities>
@@ -307,6 +332,7 @@
   						
   					</quality>
   					<changedBy>6</changedBy>
+  					<show>false</show>
   				</effect>
   			</defaultResult>
   			<testedQualities></testedQualities>
@@ -340,6 +366,7 @@
   						
   					</quality>
   					<changedBy>-1</changedBy>
+  					<show>true</show>
   				</effect>
   				<effect>
   					<quality>
@@ -347,7 +374,7 @@
   						
   					</quality>
   					<setTo>5</setTo>
-  					
+  					<show>false</show>
   				</effect>
   			</defaultResult>
   			<testedQualities></testedQualities>
@@ -399,5 +426,124 @@
   			<linkedEvent>null</linkedEvent>
   		</branch>
   	</branches>
+  </trunk>
+  <trunk>
+    <title>Basketball Game</title>
+    <description>Tonight is a school basketball game. It will be a big social event, and there will probably be chances to get away from grown ups for a while.</description>
+    <icon>
+    	<basketball>basketball</basketball>
+    </icon>
+    <buttonText>Go</buttonText>
+    <trunkTag>trunkTag</trunkTag>
+    <area>Home</area>
+    <urgency>1</urgency>
+    <deck>deck</deck>
+    <requirements>
+    	<requirement>
+    		<quality>
+    			<timeQuality>Day</timeQuality>
+    			
+    		</quality>
+    		<qualityMin>4</qualityMin>
+    		<qualityMax>4</qualityMax>
+    	</requirement>
+    	<requirement>
+    		<quality>
+    			<timeQuality>Time</timeQuality>
+    			
+    		</quality>
+    		<qualityMin>19</qualityMin>
+    		<qualityMax>19</qualityMax>
+    	</requirement>
+    	<requirement>
+    		<quality>
+    			<storylineQuality>Basketball Game</storylineQuality>
+    		</quality>
+    		<qualityMin>0</qualityMin>
+    		<qualityMax>0</qualityMax>
+    	</requirement>
+    	<requirement>
+    		<quality>
+    			<relationshipQuality>Tia</relationshipQuality>
+    			
+    		</quality>
+    		<qualityMin>0</qualityMin>
+    		<qualityMax>4</qualityMax>
+    	</requirement></requirements>
+    <branches>
+      <branch>
+        <title>Go alone</title>
+        <description>[AT] heads to the game alone. [He] will be able to have more fun if [he] doesn't have to worry about Auntie Gina or Uncle Harry watching over [him].</description>
+        <icon>
+        	<basketball>basketball</basketball>
+        	
+        </icon>
+        <buttonText>Go</buttonText>
+        <requirements></requirements>
+        <defaultResult>
+          <title>[AT] goes to the game alone</title>
+          <description>[AT] tells Auntie Gina and Uncle Harry that [he]'s going to a school basketball game, but doesn't invite them. [He] gets a chance to hang out with some friends at the game.</description>
+          <timeCost>2</timeCost>
+          <effect>
+          	<quality>
+          		<attributeQuality>Social</attributeQuality>
+          		
+          		
+          	</quality>
+          	<setTo>2</setTo>
+          	<show>true</show>
+
+          </effect>
+        </defaultResult>
+        <testedQualities/>
+        <difficulty>1</difficulty>
+        <linkedEvent>null</linkedEvent>
+      </branch>
+      <branch>
+      	<title>Go with Auntie Gina and Uncle Harry</title>
+      	<description>[AT] wants to go to the basketball game with [his] auntie and uncle.</description>
+      	<icon>
+      		<auntie_gina_uncle_harry>
+      			auntie_gina_uncle_harry
+      		</auntie_gina_uncle_harry>
+      	</icon>
+      	<buttonText>Go</buttonText>
+      	<requirements></requirements>
+      	<defaultResult>
+      		<title>[AT] goes with Auntie Gina and Uncle Harry</title>
+      		<description>They have a great time.</description>
+      		<timeCost>2</timeCost>
+      		<effect>
+      			<quality>
+      				<relationshipQuality>Auntie Gina</relationshipQuality>
+      				
+      			</quality>
+      			<changedBy>1</changedBy>
+      			<show>true</show>
+      		</effect>
+      		<effect>
+      			<quality>
+      				<relationshipQuality>Uncle Harry</relationshipQuality>
+      			</quality>
+      			<changedBy>1</changedBy>
+      			<show>true</show>
+      		</effect>
+      		<effect>
+      			<quality>
+      				<attributeQuality>Social</attributeQuality>
+      				
+      				
+      			</quality>
+      			<changedBy>1</changedBy>
+      			
+      			<show>true</show>
+
+      		</effect>
+      	</defaultResult>
+      	<testedQualities></testedQualities>
+      	<difficulty>1</difficulty>
+      	<linkedEvent>null</linkedEvent>
+      </branch>
+    </branches>
   </trunk>
 </forest>

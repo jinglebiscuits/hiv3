@@ -113,6 +113,7 @@ public class Person {
 
 		area = "Home";
 		name = null;
+		Debug.Log(qualitiesDict["Facebook"] + "=======");
 	}
 
 	#region Accessor Methods

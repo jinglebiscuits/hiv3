@@ -36,4 +36,9 @@ public class AvatarSceneManager : MonoBehaviour {
 //		player.GetComponent<Avatar>().iris = (Image) Instantiate(avatarView.iris) as Image;
 //		player.GetComponent<Avatar>().lips = (Image) Instantiate(avatarView.lips) as Image;
 	}
+	
+	public void ChangeName(string name) {
+		Player.player.FocusedPerson.Name = name;
+		print(Player.player.FocusedPerson.Name);
+	}
 }

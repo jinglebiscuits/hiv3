@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hivXMLSchema.xsd">
+	<title>Facebook</title>
+	<trunk>
+		<title>Check Facebook</title>
+		<description>[AT] wants to see if anything interesting has been put online.</description>
+		<icon>
+			<socialMedia>socialMedia</socialMedia>
+		</icon>
+		<buttonText>Go</buttonText>
+		<trunkTag></trunkTag>
+		<area>Home</area>
+		<urgency>1</urgency>
+		<deck>deck</deck>
+		<requirements>
+			<requirement>
+    			<quality>
+    				<storylineQuality>Facebook</storylineQuality>
+    			</quality>
+    			<qualityMin>0</qualityMin>
+    			<qualityMax>0</qualityMax>
+    		</requirement>
+		</requirements>
+		<branches>
+			<branch>
+				<title>Check out Tia's page</title>
+				<description>[AT] wants to know what Tia has been up to</description>
+				<icon>
+					<tia>tia</tia>
+				</icon>
+				<buttonText>Go</buttonText>
+				<requirements></requirements>
+				<defaultResult>
+					<title>Tia was tagged in a photo recently</title>
+					<description>It looks like Tia is drinking at a party and someone else is taking pictures of her.</description>
+					<timeCost>0</timeCost>
+					<effect>
+						<quality>
+							<storylineQuality>Facebook</storylineQuality>
+						</quality>
+						<setTo>1</setTo>
+						<show>false</show>
+					</effect>
+				</defaultResult>
+				<testedQualities></testedQualities>
+				<difficulty>1</difficulty>
+  				<linkedEvent>null</linkedEvent>
+			</branch>
+		</branches>
+	</trunk>
+	
+	<trunk>
+		<title>Read comments</title>
+		<description>[AT] reads through the comments on this picture. People are laughing at how drunk she looks and calling her names.</description>
+		<icon>
+			<socialMedia>socialMedia</socialMedia>
+		</icon>
+		<buttonText>Go</buttonText>
+		<trunkTag></trunkTag>
+		<area>Home</area>
+		<urgency>1</urgency>
+		<deck></deck>
+		<requirements>
+			<requirement>
+				<quality>
+					<storylineQuality>Facebook</storylineQuality>
+				</quality>
+				<qualityMin>1</qualityMin>
+				<qualityMax>1</qualityMax>
+			</requirement>
+		</requirements>
+		<branches>
+			<branch>
+				<title>Defend Tia</title>
+				<description>[AT] decides to post [his] own comment on the picture and stand up for Tia.
+				</description>
+				<icon>
+					<socialMedia>socialMedia</socialMedia>
+				</icon>
+				<buttonText>Post</buttonText>
+				<requirements></requirements>
+				<defaultResult>
+					<title>[AT] makes the post</title>
+					<description>Tia will probably be thankful, but maybe she'd rather [AT] stay out of her business.</description>
+					<timeCost>0</timeCost>
+					<effect>
+	  					<quality>
+	  						<storylineQuality>Facebook</storylineQuality>
+	  					</quality>
+	  					<setTo>10</setTo>
+	  					<show>false</show>
+  					</effect>
+				</defaultResult>
+				<testedQualities></testedQualities>
+				<difficulty>1</difficulty>
+				<linkedEvent>null</linkedEvent>
+			</branch>
+			
+			<branch>
+				<title>Make a joke at Tia's expense</title>
+				<description>[AT] decides to join in on the fun and post another joke at Tia's expense.
+				</description>
+				<icon>
+					<socialMedia>socialMedia</socialMedia>
+				</icon>
+				<buttonText>Post</buttonText>
+				<requirements></requirements>
+				<defaultResult>
+					<title>[AT] makes the post</title>
+					<description>Tia will probably be thankful, but maybe she'd rather [AT] stay out of her business.</description>
+					<timeCost>0</timeCost>
+					<effect>
+	  					<quality>
+	  						<storylineQuality>Facebook</storylineQuality>
+	  					</quality>
+	  					<setTo>10</setTo>
+	  					<show>false</show>
+  					</effect>
+				</defaultResult>
+				<testedQualities></testedQualities>
+				<difficulty>1</difficulty>
+				<linkedEvent>null</linkedEvent>
+			</branch>
+			
+			<branch>
+				<title>Keep browsing Facebook</title>
+				<description>[AT] decides not to get involved in this and returns to the main page.
+				</description>
+				<icon>
+					<socialMedia>socialMedia</socialMedia>
+				</icon>
+				<buttonText>Go</buttonText>
+				<requirements></requirements>
+				<defaultResult>
+					<title>[AT] leaves the post</title>
+					<description> </description>
+					<timeCost>0</timeCost>
+					<effect>
+	  					<quality>
+	  						<storylineQuality>Facebook</storylineQuality>
+	  					</quality>
+	  					<setTo>0</setTo>
+  					</effect>
+				</defaultResult>
+				<testedQualities></testedQualities>
+				<difficulty>1</difficulty>
+				<linkedEvent>null</linkedEvent>
+			</branch>
+		</branches>
+	</trunk>
+</forest>

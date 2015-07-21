@@ -3,13 +3,15 @@
 	private IQuality qualityEffected;
 	private int changedBy;
 	private int setTo;
+	private bool show;
 
 	#region Constructors
-	public Effect (IQuality qualityEffected, int changedBy = 169, int setTo = 169)
+	public Effect (IQuality qualityEffected, int changedBy = 169, int setTo = 169, bool show = true)
 	{
 		this.qualityEffected = qualityEffected;
 		this.changedBy = changedBy;
 		this.setTo = setTo;
+		this.show = show;
 	}
 	#endregion
 
@@ -38,6 +40,15 @@
 		}
 		set {
 			setTo = value;
+		}
+	}
+	
+	public bool Show {
+		get {
+			return this.show;
+		}
+		set {
+			show = value;
 		}
 	}
 	#endregion

@@ -67,26 +67,6 @@
 		</xs:simpleType>
 	</xs:element>
 	
-	<xs:element name="tradeQuality">
-		<xs:simpleType>
-			<xs:restriction base="xs:string">
-				<xs:enumeration value="Welder"></xs:enumeration>
-				<xs:enumeration value="Electrician"></xs:enumeration>
-				<xs:enumeration value="Carpenter"></xs:enumeration>
-				<xs:enumeration value="Auto Mechanic"></xs:enumeration>
-				<xs:enumeration value="Hair Dresser"></xs:enumeration>
-				<xs:enumeration value="Cosmetologist"></xs:enumeration>
-				<xs:enumeration value="Manicurist"></xs:enumeration>
-				<xs:enumeration value="Baby Sitter"></xs:enumeration>
-				<xs:enumeration value="Chess"></xs:enumeration>
-				<xs:enumeration value="Art"></xs:enumeration>
-				<xs:enumeration value="Music"></xs:enumeration>
-				<xs:enumeration value="Basketball"></xs:enumeration>
-				<xs:enumeration value="Football"></xs:enumeration>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:element>
-	
 	<xs:element name="storylineQuality">
 		<xs:simpleType>
 			<xs:restriction base="xs:string">
@@ -101,6 +81,7 @@
 				<xs:enumeration value="Party"></xs:enumeration>
 				<xs:enumeration value="Basketball Game"></xs:enumeration>
 				<xs:enumeration value="Bus"></xs:enumeration>
+				<xs:enumeration value="Facebook"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>
@@ -224,6 +205,7 @@
 					<xs:element name="changedBy" type="xs:int"></xs:element>
 					<xs:element name="setTo" type="xs:int"></xs:element>
 				</xs:choice>
+				<xs:element name="show" type="xs:boolean"/>
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>

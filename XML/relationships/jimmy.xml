@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <forest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../hivXMLSchema.xsd">
-  <title>title</title>
+  <title>Jimmy Relationship</title>
   <trunk>
     <title>Talk with Jimmy</title>
     <description>[AT] begins talking with Jimmy</description>

@@ -12,27 +12,29 @@ public class XML : MonoBehaviour
     public TextAsset[] storiesXML;
     public List<Trunk> trunks = new List<Trunk>();
 
-    void Awake()
+    void OnLevelWasLoaded(int level)
     {
-        foreach (TextAsset xmlText in storiesXML)
-        {
-            xDoc = XDocument.Parse(xmlText.text);
-            foreach (XElement trunk in xDoc.Descendants("trunk"))
+        if (level == 2) {
+            foreach (TextAsset xmlText in storiesXML)
             {
-                trunks.Add(ElementToTrunk(trunk));
-                //Not all trunks have requirements
-                if (trunk.Element("requirements").Value != "")
+                xDoc = XDocument.Parse(xmlText.text);
+                foreach (XElement trunk in xDoc.Descendants("trunk"))
                 {
-                    foreach (XElement requirement in trunk.Element("requirements").Descendants("requirement"))
+                    trunks.Add(ElementToTrunk(trunk));
+                    //Not all trunks have requirements
+                    if (trunk.Element("requirements").Value != "")
                     {
-                        trunks.Last().Requirements.Add(ElementToRequirement(requirement));
+                        foreach (XElement requirement in trunk.Element("requirements").Descendants("requirement"))
+                        {
+                            trunks.Last().Requirements.Add(ElementToRequirement(requirement));
+                        }
                     }
-                }
-                
-                //All trunks have at least one default branch
-                foreach (XElement branch in trunk.Element("branches").Descendants("branch"))
-                {
-                    trunks.Last().Branches.Add(ElementToBranch(branch));
+                    
+                    //All trunks have at least one default branch
+                    foreach (XElement branch in trunk.Element("branches").Descendants("branch"))
+                    {
+                        trunks.Last().Branches.Add(ElementToBranch(branch));
+                    }
                 }
             }
         }
@@ -41,8 +43,8 @@ public class XML : MonoBehaviour
     private Trunk ElementToTrunk(XElement eTrunk)
     {
         Trunk trunk = new Trunk(
-            eTrunk.Element("title").Value,
-            eTrunk.Element("description").Value,
+            ReplaceStrings(eTrunk.Element("title").Value),
+            ReplaceStrings(eTrunk.Element("description").Value),
             eTrunk.Element("icon").Value,
             eTrunk.Element("buttonText").Value,
             new List<Requirement>(),
@@ -57,8 +59,8 @@ public class XML : MonoBehaviour
     private Branch ElementToBranch(XElement eBranch)
     {
         Branch branch = new Branch();
-        branch.Title = eBranch.Element("title").Value;
-        branch.Description = eBranch.Element("description").Value;
+        branch.Title = ReplaceStrings(eBranch.Element("title").Value);
+        branch.Description = ReplaceStrings(eBranch.Element("description").Value);
         branch.Icon = eBranch.Element("icon").Value;
         branch.ButtonText = eBranch.Element("buttonText").Value;
         branch.Difficulty = int.Parse(eBranch.Element("difficulty").Value);
@@ -110,8 +112,8 @@ public class XML : MonoBehaviour
     private Result ElementToResult(XElement eResult)
     {
         Result result = new Result();
-        result.Title = eResult.Element("title").Value;
-        result.Description = eResult.Element("description").Value;
+        result.Title = ReplaceStrings(eResult.Element("title").Value);
+        result.Description = ReplaceStrings(eResult.Element("description").Value);
         result.TimeCost = int.Parse(eResult.Element("timeCost").Value);
 
         foreach (XElement effect in eResult.Descendants("effect"))
@@ -123,7 +125,8 @@ public class XML : MonoBehaviour
             {
                 result.Effects.Add(new Effect(quality, 169, int.Parse(effect.Element("setTo").Value)));
             }
-                
+            if (effect.Element("show").Value == "false")
+                result.Effects.Last().Show = false;
         }
         return result;
     }
@@ -139,6 +142,9 @@ public class XML : MonoBehaviour
                 break;
             case "statusQuality":
                 quality = new Status(eQuality.Value);
+                break;
+            case "skillQuality":
+                quality = new Skill(eQuality.Value);
                 break;
             case "itemQuality":
                 quality = new Item(eQuality.Value);
@@ -186,5 +192,21 @@ public class XML : MonoBehaviour
         }
 
         return quality;
+    }
+    
+    private string ReplaceStrings(string input) {
+        Person person = Player.player.FocusedPerson;
+        input = input.Replace("[AT]", person.Name);
+        
+        if (person.BodyType == BodyType.female) {
+            input = input.Replace("[his]", "her");
+            input = input.Replace("[he]", "she");
+            input = input.Replace("[him]", "her");
+            input = input.Replace("[himself]", "herself");
+        } else {
+            input = input.Replace("[", "");
+            input = input.Replace("]", "");
+        }
+        return input;
     }
 }

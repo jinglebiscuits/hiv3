@@ -103,6 +103,4 @@ public class Player : MonoBehaviour {
 		avatarView.SyncAvatar();
 // 		avatarView.DisplayAppropriateBody(focusedPerson.BodyType);
 	}
-
-
 }
