@@ -105,6 +105,7 @@
 				<xs:enumeration value="Cell Phone"></xs:enumeration>
 				<xs:enumeration value="Condoms"></xs:enumeration>
 				<xs:enumeration value="Birth Control"></xs:enumeration>
+				<xs:enumeration value="Sports Equipment"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
 	</xs:element>

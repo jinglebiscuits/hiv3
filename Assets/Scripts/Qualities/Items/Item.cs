@@ -8,6 +8,7 @@ public class Item : IQuality {
 	private string tag;
 	private int level;
 	private int points;
+	private int cost;
 	private bool pyramid;
 	
 	
@@ -18,12 +19,13 @@ public class Item : IQuality {
 		this.pyramid = false;
 	}
 	
-	public Item (string name, string description, int level, int points, bool pyramid)
+	public Item (string name, string description, int level, int points, int cost, bool pyramid)
 	{
 		this.name = name;
 		this.description = description;
 		this.level = level;
 		this.points = points;
+		this.cost = cost;
 		this.pyramid = pyramid;
 		this.tag = "Item";
 	}
@@ -76,6 +78,15 @@ public class Item : IQuality {
 		}
 		set {
 			points = value;
+		}
+	}
+	
+	public int Cost {
+		get {
+			return this.cost;
+		}
+		set {
+			cost = value;
 		}
 	}
 	

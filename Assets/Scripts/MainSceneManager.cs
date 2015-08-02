@@ -9,6 +9,7 @@ public class MainSceneManager : MonoBehaviour {
 	public AvatarView avatarView;
 	public GameObject sleepButton;
 	public Text locationText;
+	public Button shopButton;
 
 
 	// Use this for initialization

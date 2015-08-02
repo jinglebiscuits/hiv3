@@ -23,6 +23,9 @@ public class StoryContainer : MonoBehaviour {
 	public Manager manager;
 	private MainSceneManager mainSceneManager;
 
+	//This doesn't belong here
+	public Button shopButton;
+	
 	void Awake ()
 	{
 
@@ -129,5 +132,10 @@ public class StoryContainer : MonoBehaviour {
 			Destroy(trunkView);
 		if(resultView != null)
 			Destroy(resultView);
+		
+		if (Player.player.FocusedPerson.Area == "Home")
+			shopButton.interactable = true;
+		else
+			shopButton.interactable = false;
 	}
 }

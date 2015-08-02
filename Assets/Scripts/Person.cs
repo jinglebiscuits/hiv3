@@ -113,7 +113,6 @@ public class Person {
 
 		area = "Home";
 		name = null;
-		Debug.Log(qualitiesDict["Facebook"] + "=======");
 	}
 
 	#region Accessor Methods
@@ -387,11 +386,6 @@ public class Person {
 		}
 	}
 	#endregion
-
-	void OnDestroy()
-	{
-
-	}
 
 	public void UpdateAvailableTrunkList(List<Trunk> trunks)
 	{

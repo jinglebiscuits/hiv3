@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.IO;
 using System.Text;
 using System.Collections.Generic;
@@ -95,8 +96,19 @@ public class StartSceneManager : MonoBehaviour {
 	}
 	
 	public void UpdateUsers (string[] usernames) {
-		File.WriteAllLines(Application.persistentDataPath + "/Hiv/users.dat",
+		try {
+			File.WriteAllLines(Application.persistentDataPath + "/Hiv/users.dat",
 											usernames, Encoding.UTF8);
+		}
+		catch (Exception e) {
+			if (e is DirectoryNotFoundException || e is System.IO.IsolatedStorage.IsolatedStorageException) {
+				Directory.CreateDirectory (Application.persistentDataPath + "/Hiv");
+			} else {
+				Directory.CreateDirectory (Application.persistentDataPath + "/Hiv");
+			}
+			File.WriteAllLines(Application.persistentDataPath + "/Hiv/users.dat",
+											usernames, Encoding.UTF8);
+		}
 	}
 	
 	private string[] ListToArray (List<string> myList) {

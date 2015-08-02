@@ -11,6 +11,7 @@ public class Manager : MonoBehaviour {
 	public static System.Random rand = new System.Random();
 	public XML xmlScript;
 	public StoryContainer storyContainer;
+	public Text saveURL;
 
 	public static Manager manager;
 
@@ -18,6 +19,7 @@ public class Manager : MonoBehaviour {
 
 	void Awake ()
 	{
+		saveURL.GetComponent<Text>().text = Application.persistentDataPath;
 		if(manager == null)
 		{
 			DontDestroyOnLoad(gameObject);
@@ -36,7 +38,7 @@ public class Manager : MonoBehaviour {
 
     void OnDisable()
     {
-		print("saving");
+		Debug.Log (this.name + ": OnDisable -> saving");
         Save();
     }
 
@@ -65,6 +67,8 @@ public class Manager : MonoBehaviour {
 	public void UpdateTrunks()
 	{
 		Player.player.FocusedPerson.UpdateAvailableTrunkList(xmlScript.trunks);
+		Debug.Log (this.name + ": UpdateTrunks -> saving");
+        Save();
 	}
 
 	public void LoadScene(string scene)
@@ -80,11 +84,19 @@ public class Manager : MonoBehaviour {
 		try {
 			file = File.Create(Application.persistentDataPath + "/Hiv/PlayerInfo/" + username + ".dat");
 		}
-		catch (DirectoryNotFoundException e) {
-			Debug.Log (e);
-			Debug.Log ("Creating it now");
-			Directory.CreateDirectory (Application.persistentDataPath + "/Hiv/PlayerInfo");
-			file = File.Create(Application.persistentDataPath + "/Hiv/PlayerInfo/" + username + ".dat");
+		catch (Exception e) {
+			if (e is DirectoryNotFoundException || e is System.IO.IsolatedStorage.IsolatedStorageException) {
+				Debug.Log (e);
+				Debug.Log ("Creating it now");
+				Directory.CreateDirectory (Application.persistentDataPath + "/Hiv/PlayerInfo");
+				file = File.Create(Application.persistentDataPath + "/Hiv/PlayerInfo/" + username + ".dat");
+			} else {
+				Debug.Log (e);
+				Debug.Log("something ain't right");
+				Directory.CreateDirectory (Application.persistentDataPath + "/Hiv");
+				Directory.CreateDirectory (Application.persistentDataPath + "/Hiv/PlayerInfo");
+				file = File.Create(Application.persistentDataPath + "/Hiv/PlayerInfo/" + username + ".dat");
+			}
 		}
 		bf.Serialize(file, Player.player.FocusedPerson);
 		file.Close();
@@ -103,7 +115,7 @@ public class Manager : MonoBehaviour {
 	}
 	
 	public void NewGame () {
-		print (Player.player.Username);
+		Debug.Log (Player.player.Username);
 		Save ();
 		Load ();
 	}

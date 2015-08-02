@@ -128,6 +128,9 @@
      <Compile Include="Assets\Scripts\UI\HomeworkIndicator.cs" />
      <Compile Include="Assets\Scripts\UI\MentorsView.cs" />
      <Compile Include="Assets\Scripts\UI\ProfileAvatarView.cs" />
+     <Compile Include="Assets\Scripts\UI\Shop\ItemView.cs" />
+     <Compile Include="Assets\Scripts\UI\Shop\ShopWindow.cs" />
+     <Compile Include="Assets\Scripts\UI\ShopButton.cs" />
      <Compile Include="Assets\Scripts\UI\StatusView.cs" />
      <Compile Include="Assets\Scripts\UI\StoryContainer.cs" />
      <Compile Include="Assets\Scripts\UI\StoryViews\BranchView.cs" />
@@ -138,6 +141,7 @@
      <Compile Include="Assets\Scripts\UI\ViewManager.cs" />
      <Compile Include="Assets\Scripts\XML\XML.cs" />
      <None Include="Assets\Scripts\XML\chapter_one.xml" />
+     <None Include="Assets\SOOMLA Storefronts Pack - Landscape\README.txt" />
      <None Include="Assets\Scripts\XML\basketballGame.xml" />
      <None Include="Assets\Scripts\XML\testing.xml" />
      <None Include="Assets\Scripts\XML\saturday.xml" />
