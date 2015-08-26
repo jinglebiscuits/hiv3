@@ -134,7 +134,6 @@
 				<xs:element ref="attributeQuality"/>
 				<xs:element ref="statusQuality"/>
 				<xs:element ref="relationshipQuality"/>
-				<xs:element ref="tradeQuality"/>
 				<xs:element ref="skillQuality"/>
 				<xs:element ref="schoolQuality"/>
 				<xs:element ref="itemQuality"/>

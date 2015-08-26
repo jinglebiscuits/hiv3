@@ -11,6 +11,8 @@ public class ColorPicker : MonoBehaviour{
 	public Image selectedImage;
 	public Slider hueSlider;
 	public float hValue;
+	
+	private bool hair = false, eyes = false, lips = false, shirt = false, pants = false, shoes = false;
 
 	public int targetScreenWidth = 1280;//has to be updated for each device the game runs on
 	
@@ -29,6 +31,66 @@ public class ColorPicker : MonoBehaviour{
 			++y;
 		}
 		texture.Apply();
+	}
+
+	public bool Hair {
+		get {
+			return this.hair;
+		}
+		set {
+			this.hair = value;
+			ChangeSelectedImage();
+		}
+	}
+	
+	public bool Eyes {
+		get {
+			return this.eyes;
+		}
+		set {
+			this.eyes = value;
+			ChangeSelectedImage();
+		}
+	}
+	
+	public bool Lips {
+		get {
+			return this.lips;
+		}
+		set {
+			this.lips = value;
+			ChangeSelectedImage();
+		}
+	}
+	
+	public bool Shirt {
+		get {
+			return this.shirt;
+		}
+		set {
+			this.shirt = value;
+			ChangeSelectedImage();
+		}
+	}
+	
+	public bool Pants {
+		get {
+			return this.pants;
+		}
+		set {
+			this.pants = value;
+			ChangeSelectedImage();
+		}
+	}
+	
+	public bool Shoes {
+		get {
+			return this.shoes;
+		}
+		set {
+			this.shoes = value;
+			ChangeSelectedImage();
+		}
 	}
 
 	public void UpdateHue()
@@ -63,36 +125,31 @@ public class ColorPicker : MonoBehaviour{
 
 	public void ChangeSelectedImageColor()
 	{
-		Vector2 clickSpot = Input.mousePosition;
-		clickSpot -= (Vector2) gameObject.transform.parent.GetComponent<RectTransform>().position;
-		clickSpot = clickSpot * ((float) texture.width / (float) this.gameObject.GetComponent<RectTransform>().sizeDelta.x) / canvasScaler.scaleFactor / ((float) Screen.width/targetScreenWidth);
-		pickedColor = texture.GetPixel((int) clickSpot.x, (int) (256 + clickSpot.y));
-		selectedImage.color = pickedColor;
+		if (selectedImage) {
+			Vector2 clickSpot = Input.mousePosition;
+			clickSpot -= (Vector2) gameObject.transform.parent.GetComponent<RectTransform>().position;
+			clickSpot = clickSpot * ((float) texture.width / (float) this.gameObject.GetComponent<RectTransform>().sizeDelta.x) / canvasScaler.scaleFactor / ((float) Screen.width/targetScreenWidth);
+			pickedColor = texture.GetPixel((int) clickSpot.x, (int) (256 + clickSpot.y));
+			selectedImage.color = pickedColor;
+		}
 	}
 
-	public void ChangeSelectedImage(string selected)
+	public void ChangeSelectedImage()
 	{
-		switch(selected)
-		{
-		case "Hair":
+		if (hair)
 			selectedImage = avatarPanel.GetComponent<AvatarView>().hair;
-			break;
-		case "Eyes":
+		else if (eyes)
 			selectedImage = avatarPanel.GetComponent<AvatarView>().iris;
-			break;
-		case "Lips":
+		else if (lips)
 			selectedImage = avatarPanel.GetComponent<AvatarView>().lips;
-			break;
-		case "Shirt":
+		else if (shirt)
 			selectedImage = avatarPanel.GetComponent<AvatarView>().shirt;
-			break;
-		case "Pants":
+		else if (pants)
 			selectedImage = avatarPanel.GetComponent<AvatarView>().pants;
-			break;
-		case "Shoes":
+		else if (shoes)
 			selectedImage = avatarPanel.GetComponent<AvatarView>().shoes;
-			break;
-		}
+		else
+			selectedImage = null;
 	}
 
 	public static Color HSVToRGB(float H, float S, float V)
