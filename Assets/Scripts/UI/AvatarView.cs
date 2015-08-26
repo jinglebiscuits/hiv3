@@ -133,7 +133,10 @@ public class AvatarView : MonoBehaviour {
 		profileBackground = Player.player.profileBackground;
 		
 		person = Player.player.FocusedPerson;
-		if(level == 1)
+		
+		//update avatar if we're in the CharacterCreation
+		//or CharacterInfo scene.
+		if(level == 1 || level == 2)
 		{
 			if(Player.player.FocusedPerson.BodyType == BodyType.female)
 			{

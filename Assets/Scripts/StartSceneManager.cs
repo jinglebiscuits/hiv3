@@ -85,14 +85,16 @@ public class StartSceneManager : MonoBehaviour {
 		Player.player.Username = username;
 		if (usernames.Exists (x => x == username)) {
 			Manager.manager.Load();
+			Application.LoadLevel("CharacterInfo");
 		}
 		else {
 			usernames.Add (username);
 			UpdateUsers (ListToArray (usernames));
 			Manager.manager.NewGame ();
+			Application.LoadLevel("CharacterCreation");
 		}
 		
-		StartGame();
+		//  StartGame();
 	}
 	
 	public void UpdateUsers (string[] usernames) {
