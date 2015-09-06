@@ -55,9 +55,6 @@
      <Compile Include="Assets\Scripts\Interfaces\IStory.cs" />
      <Compile Include="Assets\Scripts\MainSceneManager.cs" />
      <Compile Include="Assets\Scripts\Manager.cs" />
-     <Compile Include="Assets\Scripts\MaterialUI\Anims.cs" />
-     <Compile Include="Assets\Scripts\MaterialUI\HSBColor.cs" />
-     <Compile Include="Assets\Scripts\MaterialUI\MaterialGlobals.cs" />
      <Compile Include="Assets\Scripts\Person.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\Qualities\Attributes\Attribute.cs" />
