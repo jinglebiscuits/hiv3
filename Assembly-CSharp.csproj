@@ -46,36 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\MaterialUI\Demos\AnimsDemo\SquareAnimate.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\ButtonConfig.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\CheckBoxToggler.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\CheckboxConfig.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\CustomInkBlotCreator.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\FPSCounter.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\InkBlot.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\InkBlotsControl.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\InputFieldConfig.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\MaterialUI.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\RadioConfig.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\RadioGroupConfig.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\SelectionBoxConfig.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\SelectionBoxSubscriber.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\SelectionListItemConfig.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\ShadowAnim.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\ShadowsControl.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\SliderConfig.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\SwitchConfig.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\TextInputConfig.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\TextInputLine.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\ToastAnim.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\ToastControl.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\Toaster.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Components\ToggleConfig.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Layout\MaterialUIScale.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Layout\ShadowSnap.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Layout\SnapButtonToText.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Layout\SpriteSwapperScale.cs" />
-     <Compile Include="Assets\MaterialUI\Scripts\Tools\ShadowGen.cs" />
      <Compile Include="Assets\Scripts\Avatar.cs" />
      <Compile Include="Assets\Scripts\AvatarSceneManager.cs" />
      <Compile Include="Assets\Scripts\Constants.cs" />
