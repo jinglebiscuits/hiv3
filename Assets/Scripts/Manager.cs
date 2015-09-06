@@ -11,15 +11,11 @@ public class Manager : MonoBehaviour {
 	public static System.Random rand = new System.Random();
 	public XML xmlScript;
 	public StoryContainer storyContainer;
-	public Text saveURL;
 
 	public static Manager manager;
 
-
-
 	void Awake ()
 	{
-		saveURL.GetComponent<Text>().text = Application.persistentDataPath;
 		if(manager == null)
 		{
 			DontDestroyOnLoad(gameObject);

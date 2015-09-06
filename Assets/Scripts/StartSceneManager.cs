@@ -10,11 +10,16 @@ public class StartSceneManager : MonoBehaviour {
 	public bool newUsername = true;
 	public bool readyToLogin = false;
 	private string username;
+	public Text saveURL;
 	
 	private List<string> usernames = new List<string>();
 	
 	public Button continueButton;
 	public Button newButton;
+	
+	void Awake () {
+		saveURL.GetComponent<Text>().text = Application.persistentDataPath;
+	}
 	
 	// Use this for initialization
 	void Start () {
