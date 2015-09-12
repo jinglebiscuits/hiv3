@@ -169,6 +169,15 @@ public class Person {
 			baseStatuses = value;
 		}
 	}
+	
+	public BaseItems BaseItems {
+		get {
+			return this.baseItems;
+		}
+		set {
+			baseItems = value;
+		}
+	}
 
 	public BaseStorylines BaseStorylines {
 		get {

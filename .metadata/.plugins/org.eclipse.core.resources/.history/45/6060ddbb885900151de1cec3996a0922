@@ -106,7 +106,7 @@
 				<xs:enumeration value="Condoms"></xs:enumeration>
 				<xs:enumeration value="Birth Control"></xs:enumeration>
 				<xs:enumeration value="Sports Equipment"></xs:enumeration>
-				<xs:enumeration value="Songs"></xs:enumeration>
+				<xs:enumeration value="Music"></xs:enumeration>
 				<xs:enumeration value="Flowers"></xs:enumeration>
 			</xs:restriction>
 		</xs:simpleType>
