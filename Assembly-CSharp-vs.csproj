@@ -75,12 +75,12 @@
      <Compile Include="Assets\Scripts\Qualities\Storylines\BaseStorylines.cs" />
      <Compile Include="Assets\Scripts\Qualities\Storylines\Storyline.cs" />
      <Compile Include="Assets\Scripts\Qualities\Week.cs" />
+     <Compile Include="Assets\Scripts\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\StartSceneManager.cs" />
      <Compile Include="Assets\Scripts\Stories\Branch.cs" />
      <Compile Include="Assets\Scripts\Stories\Effect.cs" />
      <Compile Include="Assets\Scripts\Stories\Requirement.cs" />
      <Compile Include="Assets\Scripts\Stories\Result.cs" />
-     <Compile Include="Assets\Scripts\Stories\SceneLoader.cs" />
      <Compile Include="Assets\Scripts\Stories\Story.cs" />
      <Compile Include="Assets\Scripts\Stories\Storylets\Forest.cs" />
      <Compile Include="Assets\Scripts\Stories\Trunk.cs" />

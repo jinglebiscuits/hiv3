@@ -14,7 +14,7 @@ public class XML : MonoBehaviour
 
     void OnLevelWasLoaded(int level)
     {
-        if (level == 2) {
+        if (Application.loadedLevelName.Equals("Main") && trunks.Count == 0) {
             foreach (TextAsset xmlText in storiesXML)
             {
                 xDoc = XDocument.Parse(xmlText.text);
