@@ -1,8 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
@@ -27,11 +24,6 @@ public class Manager : MonoBehaviour {
 		}
 	}
 
-	void OnEnable()
-	{
-        
-	}
-
     void OnDisable()
     {
 		Debug.Log (this.name + ": OnDisable -> saving");
@@ -40,9 +32,7 @@ public class Manager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		print(Application.persistentDataPath);
-		//person.UpdateAvailableTrunkList(xmlScript.trunks);
-//		storyContainer.ShowStories();
+		Debug.Log (Application.persistentDataPath);
 	}
 
 	void OnLevelWasLoaded(int level)
@@ -56,7 +46,6 @@ public class Manager : MonoBehaviour {
 	public void MainSceneStart()
 	{
 		storyContainer = GameObject.Find ("StoryContainer").GetComponent<StoryContainer>();
-//		person.UpdateAvailableTrunkList(xmlScript.trunks);
 		gameObject.GetComponent<ViewManager>().MainSceneStart(GameObject.Find("Player"));
 	}
 
